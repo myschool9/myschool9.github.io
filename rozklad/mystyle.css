@@ -1,0 +1,113 @@
+body {
+    font-family: sans-serif,Arial;
+    font-size: 1em;
+    line-height: 2;
+    color: #333333;
+    padding: 5px;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    display: block;
+}
+/* +++++++++++++++++++++++++++++++++++ */
+.header {
+    font-size: 1.2em;
+    text-align: center;
+    background-color: #8fbc8f;
+    border-radius: 5px;
+    width: 94%;
+    max-width: 500px;
+    padding: 2px;
+    position: fixed;
+    top: 2px;
+    left: 7px;
+    display: table;
+}
+.header a {
+    color: #333333;
+} 
+.itemLast, .itemNext { /* кнопки Вперед і Назад */
+    font-size: 1em;
+    text-align: center;
+    color: #333333;
+    background: -webkit-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
+    background: -moz-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
+    background: -ms-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
+    background: linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
+    border-radius: 5px;
+    border: 1px solid #666666;
+    width: 35px;
+    margin: 0 2px;
+    padding: 2px 4px;
+    overflow: hidden;
+    display: table-cell;
+    cursor: pointer;
+}
+.itemSelect { /* випадаючий список для вибору */
+    font-size: 1em;
+    background: -webkit-linear-gradient(top, #fff 0%, #b0c4de 50%, #fff 100%);
+    background: -moz-linear-gradient(top, #fff 0%, #b0c4de 50%, #fff 100%);
+    background: -ms-linear-gradient(top, #fff 0%, #b0c4de 50%, #fff 100%);
+    background: linear-gradient(top, #fff 0%, #b0c4de 50%, #fff 100%);
+    border-radius: 5px;
+    border: 2px outset #808080;
+    min-width: 120px;
+    padding: 2px;
+    display: table-cell;
+}
+.itemWeek { /* чисельник чи знаменник */
+    display: table-cell;
+    cursor: pointer;
+}
+/* ----------------------------------- */
+.timetable { /* таблиця з розкладом */
+    width: 96%;
+    max-width: 500px;
+    margin-top: 45px;
+    margin-left: 6px;
+    display: table;
+}
+.my-block1 { /* непарні і парні дні */
+    background-color: #ffffff;
+    display: table-row;
+}
+.my-block2 {
+    background-color: #f0f8ff;
+    display: table-row;
+}
+/* -------------------------------- */
+.day, .grp, .sub, .kab, .tch { /* 5 стовпців у розкладі */
+    padding: 4px 8px;
+    border-bottom: dotted 1px #808080;
+    display: table-cell;
+}
+.day {
+    text-align: center;
+    min-width: 35px;
+    padding-left: 2px;
+}
+.day a {
+    color: #8b008b;
+}
+.grp {
+    text-align: center; 
+    min-width: 35px;
+}
+.grp a {
+    color: #992211;
+}
+.kab {
+    text-align: center;
+    min-width: 30px;
+}
+.kab a {
+    color: #008000;
+}
+.sub, .tch {
+    max-width: 130px;
+    overflow: hidden;
+}
+.tch a {
+    color: #808000;
+}
