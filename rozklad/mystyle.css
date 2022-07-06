@@ -27,7 +27,7 @@ a {
 .header a {
     color: #333333;
 } 
-.itemLast, .itemNext { /* кнопки Вперед і Назад */
+.itemButton { /* кнопки Вперед і Назад */
     font-size: 1em;
     text-align: center;
     color: #333333;
@@ -56,58 +56,62 @@ a {
     padding: 2px;
     display: table-cell;
 }
-.itemWeek { /* чисельник чи знаменник */
-    display: table-cell;
-    cursor: pointer;
-}
+
 /* ----------------------------------- */
-.timetable { /* таблиця з розкладом */
+.itemTable { /* таблиці з розкладом + записана у скрипті! */
     width: 96%;
     max-width: 500px;
     margin-top: 45px;
     margin-left: 6px;
-    display: table;
-}
-.my-block1 { /* непарні і парні дні */
-    background-color: #ffffff;
-    display: table-row;
-}
-.my-block2 {
-    background-color: #f0f8ff;
-    display: table-row;
-}
-/* -------------------------------- */
-.day, .grp, .sub, .kab, .tch { /* 5 стовпців у розкладі */
-    padding: 4px 8px;
     border-bottom: dotted 1px #808080;
-    display: table-cell;
+		display: table;
 }
-.day {
+.block1 { /* непарні і парні дні */
+    background-color: #ffffff;
+		display: table-row;
+}
+.block2 {
+    background-color: #f0f8ff;
+		display: table-row;
+}
+
+/* -------------------------------- */
+.day, .grp, .kab, .sub, .tch {
+    border-top: dotted 1px #808080;
+    padding: 4px 8px;
+		display: table-cell;
+}
+.day2, .grp2, .kab2, .sub2, .tch2 {
+    border-top: none;
+    padding: 0 8px;
+		display: table-cell;
+}
+.day, .day2 {
     text-align: center;
     min-width: 35px;
     padding-left: 2px;
 }
-.day a {
+.day a, .day2 a{
     color: #8b008b;
 }
-.grp {
+.grp, .grp2 {
     text-align: center; 
     min-width: 35px;
 }
-.grp a {
+.grp a, .grp2 a {
     color: #992211;
 }
-.kab {
+.kab, .kab2 {
     text-align: center;
     min-width: 30px;
 }
-.kab a {
+.kab a, .kab2 a {
     color: #008000;
 }
-.sub, .tch {
+.sub, .sub2, .tch, .tch2 {
     max-width: 130px;
     overflow: hidden;
 }
-.tch a {
+.tch a, .tch2 a {
     color: #808000;
 }
