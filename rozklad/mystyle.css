@@ -78,12 +78,12 @@ a {
 /* -------------------------------- */
 .day, .grp, .kab, .sub, .tch { /* перший (головний) рядок - в основному він є один */
     border-top: dotted 1px #808080;
-    padding: 0 8px 8px 8px;
+    padding: 4px 8px;
 	display: table-cell;
 }
 .day2, .grp2, .kab2, .sub2, .tch2 { /* другий і більше рядок (якщо кілька груп або класів в одному кабінеті */
     border-top: none;
-    padding: 0 8px 0 8px;
+    padding: 0 8px 4px 8px;
 	display: table-cell;
 }
 .day, .day2 {
@@ -109,7 +109,7 @@ a {
     color: #008000;
 }
 .sub, .sub2, .tch, .tch2 {
-    max-width: 130px;
+    max-width: 135px;
     overflow: hidden;
 }
 .tch a, .tch2 a {
