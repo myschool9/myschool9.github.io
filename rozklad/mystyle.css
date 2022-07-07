@@ -1,5 +1,5 @@
 body {
-    font-family: sans-serif,Arial;
+    font-family: sans-serif, Arial;
     font-size: 1em;
     line-height: 2;
     color: #333333;
@@ -22,7 +22,7 @@ a {
     position: fixed;
     top: 2px;
     left: 7px;
-    display: table;
+	display: table;
 }
 .header a {
     color: #333333;
@@ -64,27 +64,27 @@ a {
     margin-top: 45px;
     margin-left: 6px;
     border-bottom: dotted 1px #808080;
-		display: table;
+	display: table;
 }
 .block1 { /* непарні і парні дні */
     background-color: #ffffff;
-		display: table-row;
+	display: table-row;
 }
 .block2 {
     background-color: #f0f8ff;
-		display: table-row;
+	display: table-row;
 }
 
 /* -------------------------------- */
-.day, .grp, .kab, .sub, .tch {
+.day, .grp, .kab, .sub, .tch { /* перший (головний) рядок - в основному він є один */
     border-top: dotted 1px #808080;
-    padding: 4px 8px;
-		display: table-cell;
+    padding: 0 8px 8px 8px;
+	display: table-cell;
 }
-.day2, .grp2, .kab2, .sub2, .tch2 {
+.day2, .grp2, .kab2, .sub2, .tch2 { /* другий і більше рядок (якщо кілька груп або класів в одному кабінеті */
     border-top: none;
-    padding: 0 8px;
-		display: table-cell;
+    padding: 0 8px 0 8px;
+	display: table-cell;
 }
 .day, .day2 {
     text-align: center;

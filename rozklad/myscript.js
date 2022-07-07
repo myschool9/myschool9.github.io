@@ -1,11 +1,11 @@
 function Filtering(nItem, myTime, isTiming) {
-		const myStyle = 'width: 96%; max-width: 500px; margin-top: 45px; margin-left: 6px; border-bottom: dotted 1px #808080; display: table;';
+	const myStyle = 'width: 96%; max-width: 500px; margin-top: 45px; margin-left: 6px; border-bottom: dotted 1px #808080; display: table;';
     let mySel = document.getElementById('id_itemSelect');
 		if (nItem < 0) {
-        nItem = 0;
-    }
+			nItem = 0;
+		}
 		if (nItem >= mySel.length) {
-				nItem = mySel.length - 1;
+			nItem = mySel.length - 1;
 		}
     for (let i = 0; i < mySel.length; i++) {
         if (i == nItem) {
@@ -16,7 +16,7 @@ function Filtering(nItem, myTime, isTiming) {
     }
     mySel.selectedIndex = nItem;
 
-    /* замалювання поточного рядка */    
+    /* замалювання поточного рядка або шапки, якщо день - поточний */    
     let n = GetCurrentNum(myTime);
     document.getElementById('id_header').style.backgroundColor = "#8fbc8f";
     if (!isTiming && n == nItem) {
