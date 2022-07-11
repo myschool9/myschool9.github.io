@@ -256,7 +256,7 @@ function Next() {
 function Check(num) {
 	document.getElementById('radio' + String(num)).checked = !document.getElementById('radio' + String(num)).checked;
 	if (document.getElementById('radio' + String(num)).checked) {
-		document.getElementById('answer' + String(num)).style.backgroundColor = "#FAF0E6";
+		document.getElementById('answer' + String(num)).style.backgroundColor = "#FFF8DC";
 	} else {
 		document.getElementById('answer' + String(num)).style.backgroundColor = document.body.style.backgroundColor;
 	}
@@ -274,13 +274,13 @@ function Exit() {
 	document.getElementById('resForm').hidden = false;
 
 	if (ChoiceCount() < 0.75 * test.Questions.length) {
-		document.getElementById('percent').innerText = 'немає :(';
+		document.getElementById('percent').innerText = 'немає&nbsp;:(';
 		document.getElementById('mark').hidden = true;
 	} else {
 		let p = GetPointsPercent();
-		const colors = ['#FF2400', '#FF007F', '#FF8C69', '#FF7E00', '#FFBF00', '#FBEC5D',
-			'#B5A642', '#50C878', '#03C03C', '#0095B6', '#1E90FF', '#ABCDEF'];
-		document.getElementById('percent').innerHTML = String(Math.round(p) + '%');
+		const colors = ['#F08080', '#FFA07F', '#FFB6C1', '#FFA07A', '#F0E68C', '#F5DEB3',
+			'#9ACD32', '#90EE90', '#00FF7F', '#66CDAA', '#E0FFFF', '#ADD8E6'];
+		document.getElementById('percent').innerHTML = String(Math.round(p) + '&nbsp;%');
 		document.getElementById('mark').innerText = GetMark(p);
 		if (test.MaxMark == 12) {
 			document.getElementById('mark').style.backgroundColor = colors[Number(GetMark(p)) - 1];

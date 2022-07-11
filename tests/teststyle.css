@@ -1,58 +1,52 @@
+:root {
+    --border-color: #696969;
+    --header-color: #8fbc8f;
+    --font-color: #333333;
+    --quest-color: #F8F8FF;
+}
 body {
-    font-family: sans-serif, Arial;
+    font-family: sans-serif, Arial; 
     font-size: 1em;
     line-height: 1.25;
-    color: #333333;
+    color: var(--font-color);
     padding: 5px;
     margin: 0;
 }
 /* +++++++++++++++++++++++++++++++++++ */
 .aHeader {
-    font-size: 1.2em;
     text-align: center;
-    background-color: #8fbc8f;
+    background-color: var(--header-color);
     border-radius: 5px;
     width: 94%;
     max-width: 500px;
-    padding: 2px;
+    padding: 5px 2px;
     position: fixed;
     top: 2px;
     left: 7px;
 	display: table;
 }
 .aButtonExit, .aButtonNext {
-    font-size: 1em;
-    text-align: center;
-    color: #333333;
-    background: -webkit-linear-gradient(top, #e2dfe0 0%, #a09b9d 50%, #e2dfe0 100%);
-    background: -moz-linear-gradient(top, #e2dfe0 0%, #a09b9d 50%, #e2dfe0 100%);
-    background: -ms-linear-gradient(top, #e2dfe0 0%, #a09b9d 50%, #e2dfe0 100%);
-    background: -o-linear-gradient(top, #e2dfe0 0%, #a09b9d 50%, #e2dfe0 100%);
     border-radius: 5px;
-    border: 1px solid #666666;
-    width: 35px;
+    border: 1px solid var(--border-color);
     margin: 0 2px;
-    padding: 2px 4px;
+    padding: 2px;
     overflow: hidden;
     display: table-cell;
     cursor: pointer;
 }
 .aButtonNext {
-    background: -webkit-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
-    background: -moz-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
-    background: -ms-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
-    background: -o-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
-    width: 100px;
+    width: 40px;
+    background-color: #D0ECF4; /* 0%, #5BC9E1 50%, #D0ECF4 100%);*/
 }
 .aButtonExit {
-    font-size: 1.5em;
-}
-.aHeaderCenter {
-    padding: 10px 2px;
+    width: 20px;
+    background-color: #e2dfe0;
+    font-weight: 700;/* 0%, #a09b9d 50%, #e2dfe0 100%);*/
 }
 .aQuestNum {
-    font-weight: 700;    
-    margin: 0 10px;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin: 0 10px 0 5px;
 }
 .aQuestCount {
     font-size: 0.8em;
@@ -60,29 +54,30 @@ body {
 }
 
 /* ----------------------------------- */
-.aForm { /* тіло тесту */
+.aForm {
     width: 96%;
     max-width: 500px;
-    margin-top: 45px;
+    margin-top: 32px;
     margin-left: 6px;
 }
-.aQuest{ 
+.aQuest {
+    min-height: 50px;
     padding: 15px 10px;
-    background-color: #ecfaf7;
-    border: 2px inset #BEBEBE;
+    background-color: var(--quest-color);
+    border: 1px inset var(--border-color);
 }
 .aCorrectCount {
     font-size: 0.8em;
     padding: 10px 10px 2px 0;
     text-align: right;
     width: 88%;
-    border-bottom: dotted 1px #808080;
+    border-bottom: 1px dotted var(--border-color);
 }
 
 /* -------------------------------- */
 .aAnswer {
     width: 90%;
-    border-bottom: dotted 1px #808080;
+    border-bottom: 1px dotted var(--border-color);
     padding: 12px 0; 
     cursor: pointer;
 }
@@ -92,18 +87,16 @@ body {
 }
 .aRadio {
     padding-left: 5px;
-    cursor: pointer;    
 }
 .aLabel {
     padding-left: 5px;
     cursor: pointer;    
 }
 .aObj {
-    text-align: center;
-    padding: 10px;    
+    padding: 20px 0 0 10px;
 }
 .aQuestImg {
-    border: dotted 1px #808080;
+    border: 1px dotted var(--border-color);
 }
     /* -------------------------------- */
 .aResForm {
@@ -128,6 +121,6 @@ body {
     margin: auto;
     width: fit-content;
     min-width: 120px;
-    border: 2px inset #BEBEBE;    
-    background-color:#ecfaf7;
+    border: 2px outset var(--border-color);    
+    background-color: var(--quest-color);
 }
