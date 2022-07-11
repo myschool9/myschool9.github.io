@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="mystyle.css">
+	<title>Розклад</title>
+
+<!------------------------------------------------------------------------>
+	<script>
+		var test = {
+			MinMark: 1, MaxMark: 5, SeeCorrect: false, IsPenalty: true,
+			Questions: [
+{Text: "Виберіть більший об'єкт.", RndAnswers: true, Obj: "", Answers: [
+	{Text: "+", Correct: true, Select: false},
+	{Text: "----", Correct: false, Select: false},
+]},
+{Text: "Виберіть відомий браузер.", RndAnswers: true, Obj: "3.png", Answers: [
+	{Text: "+++", Correct: true, Select: false},
+	{Text: "------", Correct: false, Select: false},
+	{Text: "--------", Correct: false, Select: false},
+]},
+{Text: "Виберіть головний комп'ютер у мережі.", RndAnswers: true, Obj: "", Answers: [
+	{Text: "+++", Correct: true, Select: false},
+	{Text: "+++++", Correct: true, Select: false},
+	{Text: "------", Correct: false, Select: false},
+	{Text: "-------", Correct: false, Select: false},
+]},
+{Text: "Виберіть найбільшу пошукову систему Інтернету.", RndAnswers: true, Obj: "2.png", Answers: [
+	{Text: "+++++", Correct: true, Select: false},
+	{Text: "--------", Correct: false, Select: false},
+	{Text: "----", Correct: false, Select: false},
+	{Text: "--", Correct: false, Select: false},
+	{Text: "---------", Correct: false, Select: false},
+]},
+{Text: "Виберіть пристрій, який потрібен для роботи у комп'ютерній мережі.", RndAnswers: true, Obj: "", Answers: [
+	{Text: "++++", Correct: true, Select: false},
+	{Text: "++++++", Correct: true, Select: false},
+	{Text: "++++++++", Correct: true, Select: false},
+	{Text: "-----", Correct: false, Select: false},
+	{Text: "----", Correct: false, Select: false},
+]},
+{Text: "Для чого призначений браузер?", RndAnswers: true, Obj: "1.png", Answers: [
+	{Text: "+++++", Correct: true, Select: false},
+	{Text: "+++++++", Correct: true, Select: false},
+	{Text: "++++++++", Correct: true, Select: false},
+	{Text: "------", Correct: false, Select: false},
+	{Text: "--------", Correct: false, Select: false},
+	{Text: "---", Correct: false, Select: false},
+]},
+			]
+		}
+	</script>
+	
+	<script src="myscript.js"></script>
+</head>
+
+<!------------------------------------------------------------------------>
+<body onload="Start()">
+	<div class="aHeader" id="header">
+		<div class="aButtonExit" onclick="Exit()"><b>x</b></div>
+		<div class="aHeaderCenter">ПИТАННЯ № 
+			<span class="aQuestNum" id="questNum">1</span>
+			<span class="aQuestCount" id="questCount">(99 пит.)</span>
+		</div>
+		<div class="aButtonNext" onclick="Next()">&#9658; &#9658; &#9658;</div>
+	</div>
+	
+	<div class="aForm" id="form">
+		<div class="aQuest" id="quest">??????????????????</div>
+		<div class="aCorrectCount" id="correctCount">2 відповіді</div>
+
+		<div class="aAnswer" id="answer0" onclick="Check(0)" onmousemove="Highlight(0)" onmouseleave="Out(0)">
+			<span class="aNum" id="num0">1.</span>
+			<input class="aRadio" id="radio0" type="radio" name="answers" onchange="CheckInput(0)">
+			<label class="aLabel" id="label0">------------</label>
+		</div>
+		<div class="aAnswer" id="answer1" onclick="Check(1)" onmousemove="Highlight(1)" onmouseleave="Out(1)">
+			<span class="aNum" id="num1">2.</span>
+			<input class="aRadio" id="radio1" type="radio" name="answers">
+			<label class="aLabel" id="label1" for="radio1">------------</label>
+		</div>
+		<div class="aAnswer" id="answer2" onclick="Check(2)" onmousemove="Highlight(2)" onmouseleave="Out(2)">
+			<span class="aNum" id="num2">3.</span>
+			<input class="aRadio" id="radio2" type="radio" name="answers">
+			<label class="aLabel" id="label2" for="radio2">------------</label>
+		</div>
+		<div class="aAnswer" id="answer3" onclick="Check(3)" onmousemove="Highlight(3)" onmouseleave="Out(3)">
+			<span class="aNum" id="num3">4.</span>
+			<input class="aRadio" id="radio3" type="radio" name="answers">
+			<label class="aLabel" id="label3" for="radio3">------------</label>
+		</div>
+		<div class="aAnswer" id="answer4" onclick="Check(4)" onmousemove="Highlight(4)" onmouseleave="Out(4)">
+			<span class="aNum" id="num4">5.</span>
+			<input class="aRadio" id="radio4" type="radio" name="answers">
+			<label class="aLabel" id="label4" for="radio4">------------</label>
+		</div>
+		<div class="aAnswer" id="answer5" onclick="Check(5)" onmousemove="Highlight(5)" onmouseleave="Out(5)">
+			<span class="aNum" id="num5">6.</span>
+			<input class="aRadio" id="radio5" type="radio" name="answers">
+			<label class="aLabel" id="label5" for="radio5">------------</label>
+		</div>
+
+		<div class="aObj">
+			<img class="aQuestImg" id="questImg" src="" width="320px" alt="">
+		</div>
+	</div>
+
+	<div class="aResForm" id="resForm" hidden="true">
+		<div class="aResTitle">Результат</div>
+		<div class="aResPercent">Відсоток правильних:<span class="aPercent" id="percent">100%</span></div>
+		<div class="aResMark">Оцінка:<span class="aMark" id="mark">12</span></div>
+	</div>
+
+</body>
+</html>
