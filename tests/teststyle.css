@@ -1,0 +1,128 @@
+body {
+    font-family: sans-serif, Arial;
+    font-size: 1em;
+    line-height: 1.2;
+    color: #333333;
+    padding: 5px;
+    margin: 0;
+}
+/* +++++++++++++++++++++++++++++++++++ */
+.aHeader {
+    font-size: 1.2em;
+    text-align: center;
+    background-color: #8fbc8f;
+    border-radius: 5px;
+    width: 94%;
+    max-width: 500px;
+    padding: 2px;
+    position: fixed;
+    top: 2px;
+    left: 7px;
+	display: table;
+}
+.aButtonExit, .aButtonNext {
+    font-size: 1em;
+    text-align: center;
+    color: #333333;
+    background: -webkit-linear-gradient(top, #f4d0d6 0%, #e15b8e 50%, #f4d0d6 100%);
+    background: -moz-linear-gradient(top, #f4d0d6 0%, #e15b8e 50%, #f4d0d6 100%);
+    background: -ms-linear-gradient(top, #f4d0d6 0%, #e15b8e 50%, #f4d0d6 100%);
+    background: -o-linear-gradient(top, #f4d0d6 0%, #e15b8e 50%, #f4d0d6 100%);
+    border-radius: 5px;
+    border: 1px solid #666666;
+    width: 35px;
+    margin: 0 2px;
+    padding: 2px 4px;
+    overflow: hidden;
+    display: table-cell;
+    cursor: pointer;
+}
+.aButtonNext {
+    background: -webkit-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
+    background: -moz-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
+    background: -ms-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
+    background: -o-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
+    width: 100px;
+}
+.aHeaderCenter {
+    padding: 10px 2px;
+}
+.aQuestNum {
+    font-weight: 700;    
+    margin: 0 10px;
+}
+.aQuestCount {
+    font-size: 0.8em;
+    margin-left: 5px;
+}
+
+/* ----------------------------------- */
+.aForm { /* тіло тесту */
+    width: 96%;
+    max-width: 500px;
+    margin-top: 45px;
+    margin-left: 6px;
+}
+.aQuest{ 
+    padding: 10px;
+    background-color: #D0ECF4;
+    border: 2px inset #c4c1c1;
+}
+.aCorrectCount {
+    font-size: 0.8em;
+    padding: 5px;
+    text-align: center;
+    border-bottom: dotted 1px #808080;
+}
+
+/* -------------------------------- */
+.aAnswer {
+    width: 90%;
+    border-bottom: dotted 1px #808080;
+    padding: 12px 0; 
+    cursor: pointer;
+}
+.aNum {
+    padding-left: 5px;
+}
+.aRadio {
+    padding-left: 5px;
+    cursor: pointer;    
+}
+.aLabel {
+    padding-left: 5px;
+    cursor: pointer;    
+}
+.aObj {
+    text-align: center;
+    padding: 10px;    
+}
+.aQuestImg {
+    border: dotted 1px #808080;
+}
+    /* -------------------------------- */
+.aResForm {
+    text-align: center;
+    width: 96%;
+    max-width: 500px;
+    margin-top: 10px;
+    margin-left: 6px;    
+}
+.aAllPercent {
+    margin-bottom: 20px;
+}
+.aPercent {
+    font-size: 1.5em;
+    font-weight: 700;
+    padding-left: 20px;
+}
+.aMark {
+    font-size: 7em;
+    font-weight: 700;
+    padding: 0 20px;
+    margin: auto;
+    width: fit-content;
+    min-width: 120px;
+    border: 2px inset #c4c1c1;    
+    background-color: #D0ECF4;
+}
