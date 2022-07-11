@@ -1,7 +1,7 @@
 body {
     font-family: sans-serif, Arial;
     font-size: 1em;
-    line-height: 1.2;
+    line-height: 1.25;
     color: #333333;
     padding: 5px;
     margin: 0;
@@ -24,10 +24,10 @@ body {
     font-size: 1em;
     text-align: center;
     color: #333333;
-    background: -webkit-linear-gradient(top, #f4d0d6 0%, #e15b8e 50%, #f4d0d6 100%);
-    background: -moz-linear-gradient(top, #f4d0d6 0%, #e15b8e 50%, #f4d0d6 100%);
-    background: -ms-linear-gradient(top, #f4d0d6 0%, #e15b8e 50%, #f4d0d6 100%);
-    background: -o-linear-gradient(top, #f4d0d6 0%, #e15b8e 50%, #f4d0d6 100%);
+    background: -webkit-linear-gradient(top, #e2dfe0 0%, #a09b9d 50%, #e2dfe0 100%);
+    background: -moz-linear-gradient(top, #e2dfe0 0%, #a09b9d 50%, #e2dfe0 100%);
+    background: -ms-linear-gradient(top, #e2dfe0 0%, #a09b9d 50%, #e2dfe0 100%);
+    background: -o-linear-gradient(top, #e2dfe0 0%, #a09b9d 50%, #e2dfe0 100%);
     border-radius: 5px;
     border: 1px solid #666666;
     width: 35px;
@@ -43,6 +43,9 @@ body {
     background: -ms-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
     background: -o-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
     width: 100px;
+}
+.aButtonExit {
+    font-size: 1.5em;
 }
 .aHeaderCenter {
     padding: 10px 2px;
@@ -64,14 +67,15 @@ body {
     margin-left: 6px;
 }
 .aQuest{ 
-    padding: 10px;
-    background-color: #D0ECF4;
-    border: 2px inset #c4c1c1;
+    padding: 15px 10px;
+    background-color: #ecfaf7;
+    border: 2px inset #BEBEBE;
 }
 .aCorrectCount {
     font-size: 0.8em;
-    padding: 5px;
-    text-align: center;
+    padding: 10px 10px 2px 0;
+    text-align: right;
+    width: 88%;
     border-bottom: dotted 1px #808080;
 }
 
@@ -83,6 +87,7 @@ body {
     cursor: pointer;
 }
 .aNum {
+    margin: 2px;
     padding-left: 5px;
 }
 .aRadio {
@@ -123,6 +128,6 @@ body {
     margin: auto;
     width: fit-content;
     min-width: 120px;
-    border: 2px inset #c4c1c1;    
-    background-color: #D0ECF4;
+    border: 2px inset #BEBEBE;    
+    background-color:#ecfaf7;
 }

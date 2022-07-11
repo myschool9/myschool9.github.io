@@ -183,7 +183,7 @@ function Next() {
 		/* Answers */
 	let c = CorrectCount(gN);
 	if (c > 1) {
-		document.getElementById('correctCount').innerText = String(c) + ' відповіді';
+		document.getElementById('correctCount').innerText = '(' + String(c) + ' відповіді)';
 		document.getElementById('radio0').type = "checkbox";
 		document.getElementById('radio1').type = "checkbox";
 		document.getElementById('radio2').type = "checkbox";
@@ -205,12 +205,12 @@ function Next() {
 	document.getElementById('radio3').checked = false;
 	document.getElementById('radio4').checked = false;
 	document.getElementById('radio5').checked = false;
-	document.getElementById('answer0').style.backgroundColor = "#ffffff";
-	document.getElementById('answer1').style.backgroundColor = "#ffffff";
-	document.getElementById('answer2').style.backgroundColor = "#ffffff";
-	document.getElementById('answer3').style.backgroundColor = "#ffffff";
-	document.getElementById('answer4').style.backgroundColor = "#ffffff";
-	document.getElementById('answer5').style.backgroundColor = "#ffffff";
+	document.getElementById('answer0').style.backgroundColor = document.body.style.backgroundColor;
+	document.getElementById('answer1').style.backgroundColor = document.body.style.backgroundColor;
+	document.getElementById('answer2').style.backgroundColor = document.body.style.backgroundColor;
+	document.getElementById('answer3').style.backgroundColor = document.body.style.backgroundColor;
+	document.getElementById('answer4').style.backgroundColor = document.body.style.backgroundColor;
+	document.getElementById('answer5').style.backgroundColor = document.body.style.backgroundColor;
 
 	document.getElementById('label0').innerText = test.Questions[gN].Answers[B[0]].Text;
 	document.getElementById('label1').innerText = test.Questions[gN].Answers[B[1]].Text;
@@ -253,25 +253,16 @@ function Next() {
 	}
 }
 	/* ---------------------------------------*/
-function CheckInput(num) {
-	document.getElementById('radio' + String(num)).checked = !document.getElementById('radio' + String(num)).checked;
-}
 function Check(num) {
 	document.getElementById('radio' + String(num)).checked = !document.getElementById('radio' + String(num)).checked;
+	if (document.getElementById('radio' + String(num)).checked) {
+		document.getElementById('answer' + String(num)).style.backgroundColor = "#FAF0E6";
+	} else {
+		document.getElementById('answer' + String(num)).style.backgroundColor = document.body.style.backgroundColor;
+	}
 	test.Questions[gN].Answers[B[num]].Select = document.getElementById('radio' + String(num)).checked;
 	if (SelectCount(gN) >= CorrectCount(gN)) {
-		setTimeout(Next, 400);
-	}
-}
-	/* ---------------------------------------*/
-function Highlight(num) {
-	document.getElementById('answer' + String(num)).style.backgroundColor = "#cccccc";
-}
-function Out(num) {
-	if (!document.getElementById('radio' + String(num)).checked) {
-		document.getElementById('answer' + String(num)).style.backgroundColor = "#ffffff";
-	} else {
-		document.getElementById('answer' + String(num)).style.backgroundColor = "#cccccc";
+		setTimeout(Next, 300);
 	}
 }
 
@@ -287,12 +278,12 @@ function Exit() {
 		document.getElementById('mark').hidden = true;
 	} else {
 		let p = GetPointsPercent();
-		const colors = ['#FF2400', '#FF007F', '#FF8C69', '#FF7E00', '#FFBF00', '#FBEC5D', 
+		const colors = ['#FF2400', '#FF007F', '#FF8C69', '#FF7E00', '#FFBF00', '#FBEC5D',
 			'#B5A642', '#50C878', '#03C03C', '#0095B6', '#1E90FF', '#ABCDEF'];
 		document.getElementById('percent').innerHTML = String(Math.round(p) + '%');
 		document.getElementById('mark').innerText = GetMark(p);
 		if (test.MaxMark == 12) {
-			document.getElementById('mark').style = "background-color: " + colors[Number(GetMark(p)) - 1];
+			document.getElementById('mark').style.backgroundColor = colors[Number(GetMark(p)) - 1];
 		}
 	}
 }
