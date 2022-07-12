@@ -2,6 +2,7 @@ var gOrderN = -1;	// order number task in User window: 1, 2, 3...
 var gN = -1;		// real number in test
 var A = [];			// mix questions
 var B = [];			// mix answers
+var pause = false;	// pause beetween select answer
 
 /* ---------------------------------------*/
 /* ---------------------------------------*/
@@ -156,6 +157,15 @@ function GetMark(markPercent) {
 	return String(res);
 }
 /* ---------------------------------------*/
+function dec(txt) {
+/*	let s = '';
+	for (let i = txt.length - 1; i > 0; i--) {
+		s += txt.fromCharCode(txt.charCodeAt(i) + 4);
+	}*/
+	return txt;
+}
+
+/* ---------------------------------------*/
 /* ---------------------------------------*/
 function Start () {
 	document.getElementById('questCount').innerText = '(' + String(test.Questions.length) + ' пит.)';
@@ -170,6 +180,7 @@ function Next() {
 		return;		
 	}
 
+	pause = false;
 	gOrderN ++;
 	gN = A[gOrderN];
 	B = GetMixArray(test.Questions[gN].Answers.length, test.Questions[gN].RndAnswers);
@@ -178,7 +189,7 @@ function Next() {
 	document.getElementById('questNum').innerText = String(gOrderN + 1);
 		
 		/* Question */
-	document.getElementById('quest').innerText = test.Questions[gN].Text;
+	document.getElementById('quest').innerText = dec(test.Questions[gN].Text);
 
 		/* Answers */
 	let c = CorrectCount(gN);
@@ -212,34 +223,34 @@ function Next() {
 	document.getElementById('answer4').style.backgroundColor = document.body.style.backgroundColor;
 	document.getElementById('answer5').style.backgroundColor = document.body.style.backgroundColor;
 
-	document.getElementById('label0').innerText = test.Questions[gN].Answers[B[0]].Text;
-	document.getElementById('label1').innerText = test.Questions[gN].Answers[B[1]].Text;
+	document.getElementById('label0').innerText = dec(test.Questions[gN].Answers[B[0]].Text);
+	document.getElementById('label1').innerText = dec(test.Questions[gN].Answers[B[1]].Text);
 	if (test.Questions[gN].Answers.length <= 2) {
 		document.getElementById('label2').innerText = '';
 		document.getElementById('answer2').hidden = true;		
 	} else {
-		document.getElementById('label2').innerText = test.Questions[gN].Answers[B[2]].Text;
+		document.getElementById('label2').innerText = dec(test.Questions[gN].Answers[B[2]].Text);
 		document.getElementById('answer2').hidden = false;
 	}
 	if (test.Questions[gN].Answers.length <= 3) {
 		document.getElementById('label3').innerText = '';
 		document.getElementById('answer3').hidden = true;		
 	} else {
-		document.getElementById('label3').innerText = test.Questions[gN].Answers[B[3]].Text;
+		document.getElementById('label3').innerText = dec(test.Questions[gN].Answers[B[3]].Text);
 		document.getElementById('answer3').hidden = false;
 	}
 	if (test.Questions[gN].Answers.length <= 4) {
 		document.getElementById('label4').innerText = '';
 		document.getElementById('answer4').hidden = true;
 	} else {
-		document.getElementById('label4').innerText = test.Questions[gN].Answers[B[4]].Text;
+		document.getElementById('label4').innerText = dec(test.Questions[gN].Answers[B[4]].Text);
 		document.getElementById('answer4').hidden = false;
 	}
 	if (test.Questions[gN].Answers.length <= 5) {
 		document.getElementById('label5').innerText = '';
 		document.getElementById('answer5').hidden = true;
 	} else {
-		document.getElementById('label5').innerText = test.Questions[gN].Answers[B[5]].Text;
+		document.getElementById('label5').innerText = dec(test.Questions[gN].Answers[B[5]].Text);
 		document.getElementById('answer5').hidden = false;		
 	}
 
@@ -254,6 +265,9 @@ function Next() {
 }
 	/* ---------------------------------------*/
 function Check(num) {
+	if (pause) {
+		return;
+	}
 	document.getElementById('radio' + String(num)).checked = !document.getElementById('radio' + String(num)).checked;
 	if (document.getElementById('radio' + String(num)).checked) {
 		document.getElementById('answer' + String(num)).style.backgroundColor = "#FFF8DC";
@@ -262,7 +276,8 @@ function Check(num) {
 	}
 	test.Questions[gN].Answers[B[num]].Select = document.getElementById('radio' + String(num)).checked;
 	if (SelectCount(gN) >= CorrectCount(gN)) {
-		setTimeout(Next, 300);
+		pause = true;
+		setTimeout(Next, 400);
 	}
 }
 
@@ -274,13 +289,15 @@ function Exit() {
 	document.getElementById('resForm').hidden = false;
 
 	if (ChoiceCount() < 0.75 * test.Questions.length) {
-		document.getElementById('percent').innerText = 'немає&nbsp;:(';
+		document.getElementById('percent').innerText = 'немає :(';
 		document.getElementById('mark').hidden = true;
 	} else {
 		let p = GetPointsPercent();
-		const colors = ['#F08080', '#FFA07F', '#FFB6C1', '#FFA07A', '#F0E68C', '#F5DEB3',
-			'#9ACD32', '#90EE90', '#00FF7F', '#66CDAA', '#E0FFFF', '#ADD8E6'];
-		document.getElementById('percent').innerHTML = String(Math.round(p) + '&nbsp;%');
+		const colors = [
+			'#F08080', '#FFA07F', '#FFB6C1', '#FFA07A', '#F0E68C', '#F5DEB3',
+			'#9ACD32', '#90EE90', '#00FF7F', '#66CDAA', '#E0FFFF', '#ADD8E6'
+		];
+		document.getElementById('percent').innerHTML = String(Math.round(p)) + ' %';
 		document.getElementById('mark').innerText = GetMark(p);
 		if (test.MaxMark == 12) {
 			document.getElementById('mark').style.backgroundColor = colors[Number(GetMark(p)) - 1];

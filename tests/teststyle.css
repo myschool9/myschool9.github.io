@@ -36,12 +36,12 @@ body {
 }
 .aButtonNext {
     width: 40px;
-    background-color: #D0ECF4; /* 0%, #5BC9E1 50%, #D0ECF4 100%);*/
+    background-color: #D0ECF4;
 }
 .aButtonExit {
     width: 20px;
     background-color: #e2dfe0;
-    font-weight: 700;/* 0%, #a09b9d 50%, #e2dfe0 100%);*/
+    font-weight: 700;
 }
 .aQuestNum {
     font-size: 1.2em;
@@ -70,13 +70,11 @@ body {
     font-size: 0.8em;
     padding: 10px 10px 2px 0;
     text-align: right;
-    width: 88%;
     border-bottom: 1px dotted var(--border-color);
 }
 
 /* -------------------------------- */
 .aAnswer {
-    width: 90%;
     border-bottom: 1px dotted var(--border-color);
     padding: 12px 0; 
     cursor: pointer;

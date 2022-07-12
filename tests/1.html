@@ -3,101 +3,56 @@
 <head>
 	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="teststyle.css">
-	<title>Розклад</title>
-
-<!------------------------------------------------------------------------>
+	<title>Windows -s</title>
 	<script>
-		var test = {
-			MinMark: 1, MaxMark: 12, SeeCorrect: false, IsPenalty: true,
-			Questions: [
-{Text: "Виберіть більший об'єкт.", RndAnswers: true, Obj: "", Answers: [
-	{Text: "+", Correct: true, Select: false},
-	{Text: "----", Correct: false, Select: false},
-]},
-{Text: "Виберіть відомий браузер.", RndAnswers: true, Obj: "images/3.png", Answers: [
-	{Text: "+++", Correct: true, Select: false},
-	{Text: "------", Correct: false, Select: false},
-	{Text: "--------", Correct: false, Select: false},
-]},
-{Text: "Виберіть головний комп'ютер у мережі.", RndAnswers: true, Obj: "", Answers: [
-	{Text: "+++", Correct: true, Select: false},
-	{Text: "+++++", Correct: true, Select: false},
-	{Text: "------", Correct: false, Select: false},
-	{Text: "-------", Correct: false, Select: false},
-]},
-{Text: "Виберіть найбільшу пошукову систему Інтернету.", RndAnswers: true, Obj: "images/2.png", Answers: [
-	{Text: "+++++", Correct: true, Select: false},
-	{Text: "--------", Correct: false, Select: false},
-	{Text: "----", Correct: false, Select: false},
-	{Text: "--", Correct: false, Select: false},
-	{Text: "---------", Correct: false, Select: false},
-]},
-{Text: "Виберіть пристрій, який потрібен для роботи у комп'ютерній мережі.", RndAnswers: true, Obj: "", Answers: [
-	{Text: "++++", Correct: true, Select: false},
-	{Text: "++++++", Correct: true, Select: false},
-	{Text: "++++++++", Correct: true, Select: false},
-	{Text: "-----", Correct: false, Select: false},
-	{Text: "----", Correct: false, Select: false},
-]},
-{Text: "Для чого призначений браузер?", RndAnswers: true, Obj: "images/1.png", Answers: [
-	{Text: "+++++", Correct: true, Select: false},
-	{Text: "+++++++", Correct: true, Select: false},
-	{Text: "++++++++", Correct: true, Select: false},
-	{Text: "------", Correct: false, Select: false},
-	{Text: "--------", Correct: false, Select: false},
-	{Text: "---", Correct: false, Select: false},
-]},
-			]
-		}
+		var test={MinMark:1,MaxMark:6,SeeCorrect:true,IsPenalty:true,Questions:[{Text:"Іван намалював дерево і зберіг у файлі. Як правильно слід назвати цей файл?",RndAnswers:true,Obj:"",Answers:[{Text:"дерево",Correct:true,Select:false},{Text:"Іван",Correct:false,Select:false},{Text:"програма",Correct:false,Select:false},{Text:"малюнок",Correct:false,Select:false},]},{Text:"Вікна у Windows бувають програмні та дочірні. Які ще?",RndAnswers:true,Obj:"images/Windows -s-1.jpg",Answers:[{Text:"діалогові",Correct:true,Select:false},{Text:"запитальні",Correct:false,Select:false},{Text:"системні",Correct:false,Select:false},{Text:"внутрішні",Correct:false,Select:false},]},{Text:"Виберіть операційні системи.",RndAnswers:true,Obj:"",Answers:[{Text:"Android",Correct:true,Select:false},{Text:"Delphi",Correct:false,Select:false},{Text:"Linux",Correct:true,Select:false},{Text:"7zip",Correct:false,Select:false},{Text:"Java",Correct:false,Select:false},]},{Text:"Виберіть популярну на сьогодні версію Windows.",RndAnswers:true,Obj:"",Answers:[{Text:"Windows 10",Correct:true,Select:false},{Text:"Windows 98",Correct:false,Select:false},{Text:"Windows XP",Correct:false,Select:false},{Text:"Windows 2000",Correct:false,Select:false},{Text:"Windows 3.11",Correct:false,Select:false},]},{Text:"Виберіть правильну назву найбільшої частини Windows.",RndAnswers:true,Obj:"",Answers:[{Text:"робочий стіл",Correct:true,Select:false},{Text:"робочий інструмент",Correct:false,Select:false},{Text:"робоче полотно",Correct:false,Select:false},{Text:"робочий малюнок",Correct:false,Select:false},]},{Text:"Що таке Windows?",RndAnswers:true,Obj:"",Answers:[{Text:"операційна система",Correct:true,Select:false},{Text:"марка процесора",Correct:false,Select:false},{Text:"комп’ютерна мережа",Correct:false,Select:false},{Text:"фірма-виробник програм",Correct:false,Select:false},]},{Text:"Як називається група програм, що має кожна Windows? Наприклад: Paint, Блокнот, Пінбол, Калькулятор.",RndAnswers:true,Obj:"",Answers:[{Text:"стандартні",Correct:true,Select:false},{Text:"додаткові",Correct:false,Select:false},{Text:"розвивальні",Correct:false,Select:false},{Text:"інформаційні",Correct:false,Select:false},]},{Text:"Як називається набір команд, які може виконати комп’ютер?",RndAnswers:true,Obj:"",Answers:[{Text:"програма",Correct:true,Select:false},{Text:"система",Correct:false,Select:false},{Text:"файл",Correct:false,Select:false},{Text:"код",Correct:false,Select:false},]},{Text:"Як називаються значки, які є лише посиланням на інші значки?",RndAnswers:true,Obj:"",Answers:[{Text:"ярлики",Correct:true,Select:false},{Text:"лічильники",Correct:false,Select:false},{Text:"піктограми",Correct:false,Select:false},{Text:"вкладки",Correct:false,Select:false},]},{Text:"Як перекладається з англійської мови слово «windows»?",RndAnswers:true,Obj:"",Answers:[{Text:"вікна",Correct:true,Select:false},{Text:"програми",Correct:false,Select:false},{Text:"робота",Correct:false,Select:false},{Text:"швидкий",Correct:false,Select:false},]},{Text:"Яка дія виконується, якщо виконати подвійне клацання миші на папці?",RndAnswers:true,Obj:"",Answers:[{Text:"перейменування папки",Correct:false,Select:false},{Text:"переміщення папки",Correct:false,Select:false},{Text:"зміна значка папки",Correct:false,Select:false},{Text:"відкриття папки",Correct:true,Select:false},]},{Text:"Відкрити програму можна подвійно клацнувши мишкою. А якими клавішами чи клавішею це можна зробити?",RndAnswers:true,Obj:"",Answers:[{Text:"Enter",Correct:true,Select:false},{Text:"Ctrl+V",Correct:false,Select:false},{Text:"Alt+F4",Correct:false,Select:false},{Text:"CapsLock",Correct:false,Select:false},]},{Text:"Що виконує сполучення клавіш «Ctrl+C»?",RndAnswers:true,Obj:"",Answers:[{Text:"копіює файл",Correct:true,Select:false},{Text:"видаляє файл",Correct:false,Select:false},{Text:"перейменовує файл",Correct:false,Select:false},{Text:"відкриває файл",Correct:false,Select:false},]},{Text:"Яка клавіша видаляє значки і текст?",RndAnswers:true,Obj:"",Answers:[{Text:"Delete",Correct:true,Select:false},{Text:"Insert",Correct:false,Select:false},{Text:"Tab",Correct:false,Select:false},{Text:"PrtScr",Correct:false,Select:false},]},]}
 	</script>
-	
 	<script src="testscript.js"></script>
 </head>
 
-<!------------------------------------------------------------------------>
 <body onload="Start()">
 	<div class="aHeader" id="header">
 		<div class="aButtonExit" onclick="Exit()">x</div>
-		<div class="aHeaderCenter">№ 
-			<span class="aQuestNum" id="questNum">???</span>
-			<span class="aQuestCount" id="questCount">???</span>
+		<div>№
+			<span class="aQuestNum" id="questNum"></span>
+			<span class="aQuestCount" id="questCount"></span>
 		</div>
 		<div class="aButtonNext" onclick="Next()">&#9658;&#9658;</div>
 	</div>
-	
+
 	<div class="aForm" id="form">
-		<div class="aQuest" id="quest">???</div>
-		<div class="aCorrectCount" id="correctCount">???</div>
+		<div class="aQuest" id="quest"></div>
+		<div class="aCorrectCount" id="correctCount"></div>
 
 		<div class="aAnswer" id="answer0" onclick="Check(0)">
-			<span class="aNum" id="num0">1.</span>
+			<span class="aNum">1.</span>
 			<input class="aRadio" id="radio0" type="radio" name="answers">
-			<label class="aLabel" id="label0">???</label>
+			<label class="aLabel" id="label0"></label>
 		</div>
 		<div class="aAnswer" id="answer1" onclick="Check(1)">
-			<span class="aNum" id="num1">2.</span>
+			<span class="aNum">2.</span>
 			<input class="aRadio" id="radio1" type="radio" name="answers">
-			<label class="aLabel" id="label1" for="radio1">???</label>
+			<label class="aLabel" id="label1" for="radio1"></label>
 		</div>
 		<div class="aAnswer" id="answer2" onclick="Check(2)">
-			<span class="aNum" id="num2">3.</span>
+			<span class="aNum">3.</span>
 			<input class="aRadio" id="radio2" type="radio" name="answers">
-			<label class="aLabel" id="label2" for="radio2">???</label>
+			<label class="aLabel" id="label2" for="radio2"></label>
 		</div>
 		<div class="aAnswer" id="answer3" onclick="Check(3)">
-			<span class="aNum" id="num3">4.</span>
+			<span class="aNum">4.</span>
 			<input class="aRadio" id="radio3" type="radio" name="answers">
-			<label class="aLabel" id="label3" for="radio3">???</label>
+			<label class="aLabel" id="label3" for="radio3"></label>
 		</div>
 		<div class="aAnswer" id="answer4" onclick="Check(4)">
-			<span class="aNum" id="num4">5.</span>
+			<span class="aNum">5.</span>
 			<input class="aRadio" id="radio4" type="radio" name="answers">
-			<label class="aLabel" id="label4" for="radio4">???</label>
+			<label class="aLabel" id="label4" for="radio4"></label>
 		</div>
 		<div class="aAnswer" id="answer5" onclick="Check(5)">
-			<span class="aNum" id="num5">6.</span>
+			<span class="aNum">6.</span>
 			<input class="aRadio" id="radio5" type="radio" name="answers">
-			<label class="aLabel" id="label5" for="radio5">???</label>
+			<label class="aLabel" id="label5" for="radio5"></label>
 		</div>
 
 		<div class="aObj">
@@ -108,9 +63,9 @@
 	<div class="aResForm" id="resForm" hidden="true">
 		<div class="aAllPercent">
 			<span>Результат:</span>
-			<span class="aPercent" id="percent">100%</span>
+			<span class="aPercent" id="percent"></span>
 		</div>
-		<div class="aMark" id="mark">12</div>
+		<div class="aMark" id="mark"></div>
 	</div>
 
 </body>
