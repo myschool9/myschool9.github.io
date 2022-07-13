@@ -62,7 +62,7 @@ body {
 }
 .aQuest {
     min-height: 50px;
-    padding: 10px 12px;
+    padding: 7px 12px 5px 7px;
     background-color: var(--quest-color);
     border: 1px inset var(--border-color);
 }
