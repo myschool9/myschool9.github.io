@@ -24,13 +24,18 @@ a {
     left: 7px;    
     border-radius: 5px;
 }
+.aTable {
+    width: 96%;
+    max-width: 500px;
+    margin-top: 44px;
+    margin-left: 6px;
+}
 .aCenter, .aLeft, .aRight {
     border-bottom: 1px dotted #808080;
     padding: 10px;
 }
 .aCenter {
     text-align: center;
-    margin-top: 40px;
     background-color: azure;
 }
 .aLeft {
