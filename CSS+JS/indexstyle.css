@@ -30,6 +30,7 @@ a {
 }
 .aCenter {
     text-align: center;
+    margin-top: 40px;
     background-color: azure;
 }
 .aLeft {
