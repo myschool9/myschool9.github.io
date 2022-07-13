@@ -3,10 +3,10 @@ body {
     font-size: 1em;
     line-height: 2;
     width: 94%;
-    max-width: 500px;
+    max-width: 700px;
     color: #333333;
-    padding: 2px;
-    margin-left: 5px;
+    padding: 2px 2px 2px 7px;
+    margin: auto;
 }
 a {
     text-decoration: none;
@@ -17,7 +17,7 @@ a {
 .aTitle {
     font-size: 1.5em;
     text-align: center;
-    background-color:darkseagreen;
+    background-color: darkseagreen;
     border-radius: 5px;
 }
 .aCenter, .aLeft, .aRight {
