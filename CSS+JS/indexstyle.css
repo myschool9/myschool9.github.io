@@ -18,6 +18,10 @@ a {
     font-size: 1.5em;
     text-align: center;
     background-color: darkseagreen;
+    padding: 2px;
+    position: fixed;
+    top: 2px;
+    left: 7px;    
     border-radius: 5px;
 }
 .aCenter, .aLeft, .aRight {
