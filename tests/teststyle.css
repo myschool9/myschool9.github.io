@@ -19,7 +19,7 @@ body {
     border-radius: 5px;
     width: 94%;
     max-width: 500px;
-    padding: 5px 2px;
+    padding: 2px 2px;
     position: fixed;
     top: 2px;
     left: 7px;
@@ -57,7 +57,7 @@ body {
 .aForm {
     width: 96%;
     max-width: 500px;
-    margin-top: 32px;
+    margin-top: 30px;
     margin-left: 6px;
 }
 .aQuest {
