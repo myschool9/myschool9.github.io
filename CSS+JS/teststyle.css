@@ -6,17 +6,17 @@
 }
 body {
     font-family: sans-serif, Arial; 
-    width: 96%;
-    max-width: 500px;	
     font-size: 1em;
     line-height: 1.5;
     color: var(--font-color);
     padding: 5px;
-    margin: auto;
+    margin: 0;
 }
 /* +++++++++++++++++++++++++++++++++++ */
 .aHeader {
     text-align: center;
+    width: 94%;
+    max-width: 500px;	
     background-color: var(--header-color);
     border-radius: 5px;
     padding: 2px;
@@ -55,6 +55,8 @@ body {
 
 /* ----------------------------------- */
 .aForm {
+    width: 96%;
+    max-width: 500px;	
     margin-top: 30px;
     margin-left: 6px;
 }
