@@ -1,4 +1,4 @@
-var gOrderN = -1;	// order number task in User window: 1, 2, 3...
+﻿var gOrderN = -1;	// order number task in User window: 1, 2, 3...
 var gN = -1;		// real number in test
 var A = [];			// mix questions
 var B = [];			// mix answers
@@ -25,7 +25,7 @@ function GetMixArray(size, mix) {
 function CorrectCount(questNum) {
 	let count = 0;
 	for (let i = 0; i < test.Questions[questNum].Answers.length; i++) {
-		if (test.Questions[questNum].Answers[i].Correct) {
+		if (test.Questions[questNum].Answers[i].cr) {
 			count ++;
 		}
 	}
@@ -47,7 +47,7 @@ function SelectCount(questNum) {
 function CorrectSelectCount(questNum) {
 	let count = 0;
 	for (let i = 0; i < test.Questions[questNum].Answers.length; i++) {
-		if (test.Questions[questNum].Answers[i].Select && test.Questions[questNum].Answers[i].Correct) {
+		if (test.Questions[questNum].Answers[i].Select && test.Questions[questNum].Answers[i].cr) {
 			count ++;
 		}
 	}
@@ -58,7 +58,7 @@ function CorrectSelectCount(questNum) {
 function WrongSelectCount(questNum) {
 	let count = 0;
 	for (let i = 0; i < test.Questions[questNum].Answers.length; i++) {
-		if (test.Questions[questNum].Answers[i].Select && !test.Questions[questNum].Answers[i].Correct) {
+		if (test.Questions[questNum].Answers[i].Select && !test.Questions[questNum].Answers[i].cr) {
 			count ++;
 		}
 	}
@@ -156,14 +156,6 @@ function GetMark(markPercent) {
 	}
 	return String(res);
 }
-/* ---------------------------------------*/
-function dec(txt) {
-/*	let s = '';
-	for (let i = txt.length - 1; i > 0; i--) {
-		s += txt.fromCharCode(txt.charCodeAt(i) + 4);
-	}*/
-	return txt;
-}
 
 /* ---------------------------------------*/
 /* ---------------------------------------*/
@@ -189,7 +181,7 @@ function Next() {
 	document.getElementById('questNum').innerText = String(gOrderN + 1);
 		
 		/* Question */
-	document.getElementById('quest').innerText = dec(test.Questions[gN].Text);
+	document.getElementById('quest').innerText = test.Questions[gN].Text;
 
 		/* Answers */
 	let c = CorrectCount(gN);
@@ -223,34 +215,34 @@ function Next() {
 	document.getElementById('answer4').style.backgroundColor = document.body.style.backgroundColor;
 	document.getElementById('answer5').style.backgroundColor = document.body.style.backgroundColor;
 
-	document.getElementById('label0').innerText = dec(test.Questions[gN].Answers[B[0]].Text);
-	document.getElementById('label1').innerText = dec(test.Questions[gN].Answers[B[1]].Text);
+	document.getElementById('label0').innerText = test.Questions[gN].Answers[B[0]].Text;
+	document.getElementById('label1').innerText = test.Questions[gN].Answers[B[1]].Text;
 	if (test.Questions[gN].Answers.length <= 2) {
 		document.getElementById('label2').innerText = '';
 		document.getElementById('answer2').hidden = true;		
 	} else {
-		document.getElementById('label2').innerText = dec(test.Questions[gN].Answers[B[2]].Text);
+		document.getElementById('label2').innerText = test.Questions[gN].Answers[B[2]].Text;
 		document.getElementById('answer2').hidden = false;
 	}
 	if (test.Questions[gN].Answers.length <= 3) {
 		document.getElementById('label3').innerText = '';
 		document.getElementById('answer3').hidden = true;		
 	} else {
-		document.getElementById('label3').innerText = dec(test.Questions[gN].Answers[B[3]].Text);
+		document.getElementById('label3').innerText = test.Questions[gN].Answers[B[3]].Text;
 		document.getElementById('answer3').hidden = false;
 	}
 	if (test.Questions[gN].Answers.length <= 4) {
 		document.getElementById('label4').innerText = '';
 		document.getElementById('answer4').hidden = true;
 	} else {
-		document.getElementById('label4').innerText = dec(test.Questions[gN].Answers[B[4]].Text);
+		document.getElementById('label4').innerText = test.Questions[gN].Answers[B[4]].Text;
 		document.getElementById('answer4').hidden = false;
 	}
 	if (test.Questions[gN].Answers.length <= 5) {
 		document.getElementById('label5').innerText = '';
 		document.getElementById('answer5').hidden = true;
 	} else {
-		document.getElementById('label5').innerText = dec(test.Questions[gN].Answers[B[5]].Text);
+		document.getElementById('label5').innerText = test.Questions[gN].Answers[B[5]].Text;
 		document.getElementById('answer5').hidden = false;		
 	}
 
