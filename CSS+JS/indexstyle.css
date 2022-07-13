@@ -2,11 +2,9 @@ body {
     font-family: sans-serif, Arial;
     font-size: 1em;
     line-height: 2;
-    width: 94%;
-    max-width: 500px;
     color: #333333;
     padding: 5px;
-    margin: auto;
+    margin: 0;
 }
 a {
     text-decoration: none;
@@ -17,6 +15,8 @@ a {
 .aTitle {
     font-size: 1.5em;
     text-align: center;
+    width: 94%;    
+    max-width: 500px;    
     background-color: darkseagreen;
     padding: 2px;
     position: fixed;
