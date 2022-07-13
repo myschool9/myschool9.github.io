@@ -3,18 +3,19 @@
 <head>
 	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Вчителі</title>
-	<link rel="stylesheet" href="mystyle.css">
-	<script src="myscript.js"></script>
+	<link rel="stylesheet" href="rozkladstyle.css">
+	<script>var masTime = [585, 645, 705, 780, 840, 900, 960] </script>
+	<script src="rozkladscript.js"></script>
 </head>
 
-<body onload="Filtering(Number(location.search.slice(1)), [585, 645, 705, 780, 840, 900, 960], true)">
+<body onload="Filtering(Number(location.search.slice(1)), masTime, true)">
 
 	<div class="header" id="id_header">
-		<div class="itemButton" onclick="Filtering(id_itemSelect.selectedIndex - 1, [585, 645, 705, 780, 840, 900, 960], true)">&#9668;</div>
-		<select class="itemSelect" id="id_itemSelect" size="1" onchange="Filtering(this.selectedIndex, [585, 645, 705, 780, 840, 900, 960], true)">
+		<div class="itemButton" onclick="Filtering(id_itemSelect.selectedIndex - 1, masTime, true)">&#9668;</div>
+		<select class="itemSelect" id="id_itemSelect" size="1" onchange="Filtering(this.selectedIndex, masTime, true)">
 			<option>Бикова Ю.В.</option><option>Білібін Р.В.</option><option>Боднарчук О.В.</option><option>Гарник Г.І.</option><option>Горбач Л.Ф.</option><option>Грушкевич С.З.</option><option>Гук М.І.</option><option>Гумен Б.Б.</option><option>Денисюк Л.К.</option><option>Друзь О.Ф.</option><option>Дубецька С.Я.</option><option>Дубик М.І.</option><option>Іжик О.М.</option><option>Каравець Г.М.</option><option>Кардинал О.П.</option><option>Кіт Н.П.</option><option>Коваль О.В.</option><option>Когут С.С.</option><option>Косів В.В.</option><option>Кульчицька О.Я.</option><option>Курій Т.Б.</option><option>Лапій В.М.</option><option>Лемеха О.В.</option><option>Лобащук З.В.</option><option>Македонська О.Р.</option><option>Малко Н.Я.</option><option>Мельник Ю.Д.</option><option>Немирка О.В.</option><option>Олійник Т.М.</option><option>Павлів О.Я.</option><option>Паралюш О.М.</option><option>Плетінка В.М.</option><option>Приймак Л.А.</option><option>Притискач Г.М.</option><option>Пронів Х.І.</option><option>Смоляк І.Я.</option><option>Сторощук Н.І.</option><option>Тарасюк Р.М.</option><option>Тєряєва С.С.</option><option>Тиндик Т.О.</option><option>Труш В.О.</option><option>Турко Г.Б.</option><option>Федюк Н.М.</option><option>Цуркан І.М.</option><option>Чуприна О.В.</option><option>Шевчук М.Б.</option><option>Шеремета І.М.</option><option>Шкільник Л.І.</option><option>Шпорлюк Г.М.</option>
 		</select>
-		<div class="itemButton" onclick="Filtering(id_itemSelect.selectedIndex + 1, [585, 645, 705, 780, 840, 900, 960], true)">&#9658;</div>
+		<div class="itemButton" onclick="Filtering(id_itemSelect.selectedIndex + 1, masTime, true)">&#9658;</div>
 	</div>
 
 	<div class="itemTable" id="m0">
