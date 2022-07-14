@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/CSS/main.css">
+	<link rel="stylesheet" href="/CSS/tests.css">
+	<title>Windows</title>
+	<script>
+		var test={MinMark:1,MaxMark:12,IsPenalty:true,Questions:[{Text:"Іван намалював дерево і зберіг у файлі. Як правильно слід назвати цей файл?",RndAnswers:true,Obj:"",Answers:[{Text:"програма",cr:false,Select:false},{Text:"малюнок",cr:false,Select:false},{Text:"Іван",cr:false,Select:false},{Text:"дерево",cr:true,Select:false},]},{Text:"Вікна у Windows бувають програмні та дочірні. Які ще?",RndAnswers:true,Obj:"images/Windows-1.jpg",Answers:[{Text:"системні",cr:false,Select:false},{Text:"запитальні",cr:false,Select:false},{Text:"внутрішні",cr:false,Select:false},{Text:"діалогові",cr:true,Select:false},]},{Text:"Виберіть операційні системи.",RndAnswers:true,Obj:"",Answers:[{Text:"Delphi",cr:false,Select:false},{Text:"Android",cr:true,Select:false},{Text:"7zip",cr:false,Select:false},{Text:"Java",cr:false,Select:false},{Text:"Linux",cr:true,Select:false},]},{Text:"Виберіть популярну на сьогодні версію Windows.",RndAnswers:true,Obj:"",Answers:[{Text:"Windows 10",cr:true,Select:false},{Text:"Windows 2000",cr:false,Select:false},{Text:"Windows 3.11",cr:false,Select:false},{Text:"Windows XP",cr:false,Select:false},{Text:"Windows 98",cr:false,Select:false},]},{Text:"Виберіть правильну назву найбільшої частини Windows.",RndAnswers:true,Obj:"",Answers:[{Text:"робоче полотно",cr:false,Select:false},{Text:"робочий стіл",cr:true,Select:false},{Text:"робочий інструмент",cr:false,Select:false},{Text:"робочий малюнок",cr:false,Select:false},]},{Text:"Що таке Windows?",RndAnswers:true,Obj:"",Answers:[{Text:"фірма-виробник програм",cr:false,Select:false},{Text:"марка процесора",cr:false,Select:false},{Text:"комп’ютерна мережа",cr:false,Select:false},{Text:"операційна система",cr:true,Select:false},]},{Text:"Як називається група програм, що має кожна Windows? Наприклад: Paint, Блокнот, Пінбол, Калькулятор.",RndAnswers:true,Obj:"",Answers:[{Text:"розвивальні",cr:false,Select:false},{Text:"стандартні",cr:true,Select:false},{Text:"додаткові",cr:false,Select:false},{Text:"інформаційні",cr:false,Select:false},]},{Text:"Як називається набір команд, які може виконати комп’ютер?",RndAnswers:true,Obj:"",Answers:[{Text:"файл",cr:false,Select:false},{Text:"програма",cr:true,Select:false},{Text:"система",cr:false,Select:false},{Text:"код",cr:false,Select:false},]},{Text:"Як називаються значки, які є лише посиланням на інші значки?",RndAnswers:true,Obj:"",Answers:[{Text:"піктограми",cr:false,Select:false},{Text:"ярлики",cr:true,Select:false},{Text:"лічильники",cr:false,Select:false},{Text:"вкладки",cr:false,Select:false},]},{Text:"Як перекладається з англійської мови слово «windows»?",RndAnswers:true,Obj:"",Answers:[{Text:"швидкий",cr:false,Select:false},{Text:"програми",cr:false,Select:false},{Text:"вікна",cr:true,Select:false},{Text:"робота",cr:false,Select:false},]},{Text:"Яка дія виконується, якщо виконати подвійне клацання миші на папці?",RndAnswers:true,Obj:"",Answers:[{Text:"перейменування папки",cr:false,Select:false},{Text:"відкриття папки",cr:true,Select:false},{Text:"переміщення папки",cr:false,Select:false},{Text:"зміна значка папки",cr:false,Select:false},]},{Text:"Відкрити програму можна подвійно клацнувши мишкою. А якими клавішами чи клавішею це можна зробити?",RndAnswers:true,Obj:"",Answers:[{Text:"CapsLock",cr:false,Select:false},{Text:"Ctrl+V",cr:false,Select:false},{Text:"Enter",cr:true,Select:false},{Text:"Alt+F4",cr:false,Select:false},]},{Text:"Що виконує сполучення клавіш «Ctrl+C»?",RndAnswers:true,Obj:"",Answers:[{Text:"копіює файл",cr:true,Select:false},{Text:"перейменовує файл",cr:false,Select:false},{Text:"видаляє файл",cr:false,Select:false},{Text:"відкриває файл",cr:false,Select:false},]},{Text:"Яка клавіша видаляє значки і текст?",RndAnswers:true,Obj:"",Answers:[{Text:"PrtScr",cr:false,Select:false},{Text:"Tab",cr:false,Select:false},{Text:"Insert",cr:false,Select:false},{Text:"Delete",cr:true,Select:false},]},]}
+	</script>
+	<script src="/CSS/tests.js"></script>
+</head>
+
+<body onload="Start()">
+	<div class="aHeader" id="header">
+		<div class="aButtonExit" onclick="Exit()">x</div>
+		<div>№
+			<span class="aQuestNum" id="questNum"></span>
+			<span class="aQuestCount" id="questCount"></span>
+		</div>
+		<div class="aButtonNext" onclick="Next()">&#9658;&#9658;</div>
+	</div>
+
+	<div class="aTable" id="form">
+		<div class="aQuest" id="quest"></div>
+		<div class="aCorrectCount" id="correctCount"></div>
+
+		<div class="aAnswer" id="answer0" onclick="Check(0)">
+			<span class="aNum">1.</span>
+			<input class="aRadio" id="radio0" type="radio" name="answers">
+			<label class="aLabel" id="label0"></label>
+		</div>
+		<div class="aAnswer" id="answer1" onclick="Check(1)">
+			<span class="aNum">2.</span>
+			<input class="aRadio" id="radio1" type="radio" name="answers">
+			<label class="aLabel" id="label1" for="radio1"></label>
+		</div>
+		<div class="aAnswer" id="answer2" onclick="Check(2)">
+			<span class="aNum">3.</span>
+			<input class="aRadio" id="radio2" type="radio" name="answers">
+			<label class="aLabel" id="label2" for="radio2"></label>
+		</div>
+		<div class="aAnswer" id="answer3" onclick="Check(3)">
+			<span class="aNum">4.</span>
+			<input class="aRadio" id="radio3" type="radio" name="answers">
+			<label class="aLabel" id="label3" for="radio3"></label>
+		</div>
+		<div class="aAnswer" id="answer4" onclick="Check(4)">
+			<span class="aNum">5.</span>
+			<input class="aRadio" id="radio4" type="radio" name="answers">
+			<label class="aLabel" id="label4" for="radio4"></label>
+		</div>
+		<div class="aAnswer" id="answer5" onclick="Check(5)">
+			<span class="aNum">6.</span>
+			<input class="aRadio" id="radio5" type="radio" name="answers">
+			<label class="aLabel" id="label5" for="radio5"></label>
+		</div>
+
+	</div>
+
+	<div class="aObj">
+		<img class="aQuestImg" id="questImg">
+	</div>
+	<div class="aResForm" id="resForm" hidden="true">
+		<div class="aAllPercent">
+			<span>Результат:</span>
+			<span class="aPercent" id="percent"></span>
+		</div>
+		<div class="aMark" id="mark"></div>
+	</div>
+
+</body>
+</html>

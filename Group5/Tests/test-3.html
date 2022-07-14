@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/CSS/main.css">
+	<link rel="stylesheet" href="/CSS/tests.css">
+	<title>Комп пристрої</title>
+	<script>
+		var test={MinMark:1,MaxMark:12,IsPenalty:true,Questions:[{Text:"До яких пристроїв належить жорсткий магнітний диск?",RndAnswers:false,Obj:"images/Комп пристрої-1.jpg",Answers:[{Text:"уведення даних",cr:false,Select:false},{Text:"зберігання даних",cr:true,Select:false},{Text:"опрацювання даних",cr:false,Select:false},{Text:"виведення даних",cr:false,Select:false},]},{Text:"До яких пристроїв належить флешпам\'ять?",RndAnswers:false,Obj:"images/Комп пристрої-2.jpg",Answers:[{Text:"уведення даних",cr:false,Select:false},{Text:"зберігання даних",cr:true,Select:false},{Text:"опрацювання даних",cr:false,Select:false},{Text:"виведення даних",cr:false,Select:false},]},{Text:"До яких пристроїв належить оптичний диск?",RndAnswers:false,Obj:"images/Комп пристрої-3.jpg",Answers:[{Text:"уведення даних",cr:false,Select:false},{Text:"зберігання даних",cr:true,Select:false},{Text:"опрацювання даних",cr:false,Select:false},{Text:"виведення даних",cr:false,Select:false},]},{Text:"До яких пристроїв належить процесор?",RndAnswers:false,Obj:"images/Комп пристрої-4.jpg",Answers:[{Text:"уведення даних",cr:false,Select:false},{Text:"зберігання даних",cr:false,Select:false},{Text:"опрацювання даних",cr:true,Select:false},{Text:"виведення даних",cr:false,Select:false},]},{Text:"До яких пристроїв належить пам\'ять?",RndAnswers:false,Obj:"images/Комп пристрої-5.jpg",Answers:[{Text:"уведення даних",cr:false,Select:false},{Text:"зберігання даних",cr:false,Select:false},{Text:"опрацювання даних",cr:true,Select:false},{Text:"виведення даних",cr:false,Select:false},]},{Text:"До яких пристроїв належить клавіатура?",RndAnswers:false,Obj:"images/Комп пристрої-6.jpg",Answers:[{Text:"уведення даних",cr:true,Select:false},{Text:"зберігання даних",cr:false,Select:false},{Text:"опрацювання даних",cr:false,Select:false},{Text:"виведення даних",cr:false,Select:false},]},{Text:"До яких пристроїв належить вебкамера?",RndAnswers:false,Obj:"images/Комп пристрої-7.jpg",Answers:[{Text:"уведення даних",cr:true,Select:false},{Text:"зберігання даних",cr:false,Select:false},{Text:"опрацювання даних",cr:false,Select:false},{Text:"виведення даних",cr:false,Select:false},]},{Text:"До яких пристроїв належить монітор?",RndAnswers:false,Obj:"images/Комп пристрої-8.jpg",Answers:[{Text:"уведення даних",cr:false,Select:false},{Text:"зберігання даних",cr:false,Select:false},{Text:"опрацювання даних",cr:false,Select:false},{Text:"виведення даних",cr:true,Select:false},]},{Text:"До яких пристроїв належить принтер?",RndAnswers:false,Obj:"images/Комп пристрої-9.jpg",Answers:[{Text:"уведення даних",cr:false,Select:false},{Text:"зберігання даних",cr:false,Select:false},{Text:"опрацювання даних",cr:false,Select:false},{Text:"виведення даних",cr:true,Select:false},]},{Text:"До яких пристроїв належить звукові колонки?",RndAnswers:false,Obj:"images/Комп пристрої-10.jpg",Answers:[{Text:"уведення даних",cr:false,Select:false},{Text:"зберігання даних",cr:false,Select:false},{Text:"опрацювання даних",cr:false,Select:false},{Text:"виведення даних",cr:true,Select:false},]},{Text:"До яких пристроїв належить мікрофон?",RndAnswers:false,Obj:"images/Комп пристрої-11.jpg",Answers:[{Text:"уведення даних",cr:true,Select:false},{Text:"зберігання даних",cr:false,Select:false},{Text:"опрацювання даних",cr:false,Select:false},{Text:"виведення даних",cr:false,Select:false},]},{Text:"До яких пристроїв належить сканер?",RndAnswers:false,Obj:"images/Комп пристрої-12.jpg",Answers:[{Text:"уведення даних",cr:true,Select:false},{Text:"зберігання даних",cr:false,Select:false},{Text:"опрацювання даних",cr:false,Select:false},{Text:"виведення даних",cr:false,Select:false},]},{Text:"До яких пристроїв належить комп\'ютерна мишка?",RndAnswers:false,Obj:"images/Комп пристрої-13.jpg",Answers:[{Text:"уведення даних",cr:true,Select:false},{Text:"зберігання даних",cr:false,Select:false},{Text:"опрацювання даних",cr:false,Select:false},{Text:"виведення даних",cr:false,Select:false},]},]}
+	</script>
+	<script src="/CSS/tests.js"></script>
+</head>
+
+<body onload="Start()">
+	<div class="aHeader" id="header">
+		<div class="aButtonExit" onclick="Exit()">x</div>
+		<div>№
+			<span class="aQuestNum" id="questNum"></span>
+			<span class="aQuestCount" id="questCount"></span>
+		</div>
+		<div class="aButtonNext" onclick="Next()">&#9658;&#9658;</div>
+	</div>
+
+	<div class="aTable" id="form">
+		<div class="aQuest" id="quest"></div>
+		<div class="aCorrectCount" id="correctCount"></div>
+
+		<div class="aAnswer" id="answer0" onclick="Check(0)">
+			<span class="aNum">1.</span>
+			<input class="aRadio" id="radio0" type="radio" name="answers">
+			<label class="aLabel" id="label0"></label>
+		</div>
+		<div class="aAnswer" id="answer1" onclick="Check(1)">
+			<span class="aNum">2.</span>
+			<input class="aRadio" id="radio1" type="radio" name="answers">
+			<label class="aLabel" id="label1" for="radio1"></label>
+		</div>
+		<div class="aAnswer" id="answer2" onclick="Check(2)">
+			<span class="aNum">3.</span>
+			<input class="aRadio" id="radio2" type="radio" name="answers">
+			<label class="aLabel" id="label2" for="radio2"></label>
+		</div>
+		<div class="aAnswer" id="answer3" onclick="Check(3)">
+			<span class="aNum">4.</span>
+			<input class="aRadio" id="radio3" type="radio" name="answers">
+			<label class="aLabel" id="label3" for="radio3"></label>
+		</div>
+		<div class="aAnswer" id="answer4" onclick="Check(4)">
+			<span class="aNum">5.</span>
+			<input class="aRadio" id="radio4" type="radio" name="answers">
+			<label class="aLabel" id="label4" for="radio4"></label>
+		</div>
+		<div class="aAnswer" id="answer5" onclick="Check(5)">
+			<span class="aNum">6.</span>
+			<input class="aRadio" id="radio5" type="radio" name="answers">
+			<label class="aLabel" id="label5" for="radio5"></label>
+		</div>
+
+	</div>
+
+	<div class="aObj">
+		<img class="aQuestImg" id="questImg">
+	</div>
+	<div class="aResForm" id="resForm" hidden="true">
+		<div class="aAllPercent">
+			<span>Результат:</span>
+			<span class="aPercent" id="percent"></span>
+		</div>
+		<div class="aMark" id="mark"></div>
+	</div>
+
+</body>
+</html>
