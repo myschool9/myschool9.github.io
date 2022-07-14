@@ -1,15 +1,11 @@
-.aCenter, .aLeft, .aRight {
-    border-bottom: 1px dotted #808080;
-    padding: 10px;
+.aRow {
+    display: table-row;
 }
-.aCenter {
-    text-align: center;
-    background-color: azure;
+.aCell, .aCellTest {
+    display: table-cell;
+    padding: 5px 10px;
+    border: 1px dotted var(--border-color);
 }
-.aLeft {
-    text-align: left;
-    background-color: ivory;    
-}
-.aRight {
-    text-align: right;
+.aCellTest {
+    background-color: var(--rose-color);
 }
