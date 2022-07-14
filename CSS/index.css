@@ -1,0 +1,15 @@
+.aCenter, .aLeft, .aRight {
+    border-bottom: 1px dotted var(--border-color);
+    padding: 10px;
+}
+.aCenter {
+    text-align: center;
+    background-color: var(--blue-color);
+}
+.aLeft {
+    text-align: left;
+    background-color: var(--rose-color);
+}
+.aRight {
+    text-align: right;
+}

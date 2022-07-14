@@ -1,0 +1,15 @@
+.aCenter, .aLeft, .aRight {
+    border-bottom: 1px dotted #808080;
+    padding: 10px;
+}
+.aCenter {
+    text-align: center;
+    background-color: azure;
+}
+.aLeft {
+    text-align: left;
+    background-color: ivory;    
+}
+.aRight {
+    text-align: right;
+}
