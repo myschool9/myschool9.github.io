@@ -277,6 +277,7 @@ function Check(num) {
 function Exit() {
 	document.getElementById('header').style.display = "none";
 	document.getElementById('form').style.display = "none";
+	document.getElementById('questImg').hidden = true;
 
 	document.getElementById('resForm').hidden = false;
 
