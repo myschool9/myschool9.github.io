@@ -1,11 +1,13 @@
 .aRow {
-    display: table-row;
+  display: table-row;
 }
+
 .aCell, .aCellTest {
-    display: table-cell;
-    padding: 5px 10px;
-    border: 1px dotted var(--border-color);
+  display: table-cell;
+  padding: 5px 10px;
+  border: 1px dotted var(--border-color);
 }
+
 .aCellTest {
-    background-color: var(--blue-color);
+  background-color: var(--blue-color);
 }

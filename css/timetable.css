@@ -1,77 +1,93 @@
 .aButton {
-    font-size: 1em;
-    background: -webkit-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
-    background: -moz-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
-    background: -ms-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
-    background: -o-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
-    border-radius: 5px;
-    border: 1px solid var(--border-color);
-    width: 35px;
-    margin: 0 2px;
-    padding: 2px 4px;
-    overflow: hidden;
-    display: table-cell;
-    cursor: pointer;
+  font-size: 1em;
+  background: -webkit-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
+  background: -moz-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
+  background: -ms-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
+  background: -o-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  width: 35px;
+  margin: 0 2px;
+  padding: 2px 4px;
+  overflow: hidden;
+  display: table-cell;
+  cursor: pointer;
 }
+
 .aSelect {
-    font-size: 1em;
-    background: -webkit-linear-gradient(top, #ffffff 0%, #b0c4de 50%, #ffffff 100%);
-    background: -moz-linear-gradient(top, #ffffff 0%, #b0c4de 50%, #ffffff 100%);
-    background: -ms-linear-gradient(top, #ffffff 0%, #b0c4de 50%, #ffffff 100%);
-    background: -o-linear-gradient(top, #ffffff 0%, #b0c4de 50%, #ffffff 100%);
-    border-radius: 5px;
-    border: 2px outset var(--border-color);
-    min-width: 120px;
-    padding: 2px;
-    display: table-cell;
+  font-size: 1em;
+  background: -webkit-linear-gradient(top, #ffffff 0%, #b0c4de 50%, #ffffff 100%);
+  background: -moz-linear-gradient(top, #ffffff 0%, #b0c4de 50%, #ffffff 100%);
+  background: -ms-linear-gradient(top, #ffffff 0%, #b0c4de 50%, #ffffff 100%);
+  background: -o-linear-gradient(top, #ffffff 0%, #b0c4de 50%, #ffffff 100%);
+  border-radius: 5px;
+  border: 2px outset var(--border-color);
+  min-width: 120px;
+  padding: 2px;
+  display: table-cell;
 }
-.block1 { /* непарні і парні дні */
-	display: table-row;
+
+  /* непарні і парні дні */
+.block1 {
+  display: table-row;
 }
+
 .block2 {
-    background-color: var(--blue-color);
-	display: table-row;
+  background-color: var(--blue-color);
+  display: table-row;
 }
-.day, .grp, .kab, .sub, .tch { /* перший (головний) рядок - в основному він є один */
-    border-top: dotted 1px var(--border-color);
-    padding: 4px 8px;
-	display: table-cell;
+
+  /* перший (головний) рядок - в основному він є один */
+.day, .grp, .kab, .sub, .tch {
+  border-top: dotted 1px var(--border-color);
+  padding: 4px 8px;
+  display: table-cell;
 }
-.day2, .grp2, .kab2, .sub2, .tch2 { /* другий і більше рядок (якщо кілька груп або класів в одному кабінеті */
-    border-top: none;
-    padding: 0 8px 4px 8px;
-	display: table-cell;
+  /* другий і більше рядок (якщо кілька груп або класів в одному кабінеті */
+.day2, .grp2, .kab2, .sub2, .tch2 {
+  border-top: none;
+  padding: 0 8px 4px 8px;
+  display: table-cell;
 }
+
 .day, .day2 {
-    text-align: center;
-    min-width: 35px;
-    padding-left: 2px;
+  text-align: center;
+  min-width: 35px;
+  padding-left: 2px;
 }
+
 .day a, .day2 a{
-    color: #8b008b;
+  color: #8b008b;
 }
+
 .grp, .grp2 {
-    text-align: center; 
-    min-width: 35px;
+  text-align: center; 
+  min-width: 35px;
 }
+
 .grp a, .grp2 a {
-    color: #992211;
+  color: #992211;
 }
+
 .kab, .kab2 {
-    text-align: center;
-    min-width: 30px;
+  text-align: center;
+  min-width: 30px;
 }
+
 .kab a, .kab2 a {
-    color: #008000;
+  color: #008000;
 }
+
 .tch, .tch2 {
-    max-width: 130px;
-    overflow: hidden;
+  max-width: 130px;
+  overflow: hidden;
 }
+
 .tch a, .tch2 a {
-    color: #808000;
+  color: #808000;
 }
+
 .sub, .sub2 {
-    max-width: 140px;
-    overflow: hidden;
+  max-width: 140px;
+  overflow: hidden;
 }
