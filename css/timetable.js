@@ -16,7 +16,7 @@ function Filtering(nItem, myTime, isTiming) {
   mySel.selectedIndex = nItem;
 
     /* замалювання поточного рядка або шапки, якщо день - поточний */
-  let n = new GetCurrentNum(myTime);
+  let n = GetCurrentNum(myTime);
   document.getElementById("header").style.backgroundColor = "var(--header-color)";
   if (!isTiming && n === nItem) {
     document.getElementById("header").style.backgroundColor = "var(--light-color)";

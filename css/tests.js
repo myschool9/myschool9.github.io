@@ -103,7 +103,7 @@ function GetPenaltyPoint() {
     numerator += statMinus;
     denominator += (test.Questions[i].Answers.length - CorrectCount(i)) * statMinus;
   }
-  if (denominator ==== 0) {
+  if (denominator === 0) {
     return 0;
   } else {
     return numerator / denominator;
@@ -150,7 +150,7 @@ function GetMark(markPercent) {
   let res = test.MinMark + mark;
   if (isMarkWithPlus) {
     res = test.MinMark + Math.floor(mark / 2);
-    if (mark % 2 ==== 1) {
+    if (mark % 2 === 1) {
       return String(res + "+");
     }
   }
@@ -159,7 +159,7 @@ function GetMark(markPercent) {
 
 /* ---------------------------------------*/
 /* ---------------------------------------*/
-function Start () {
+function Start() {
   document.getElementById("questCount").innerText = "(" + String(test.Questions.length) + " пит.)";
   A = GetMixArray(test.Questions.length, true);
   Next();
@@ -184,7 +184,7 @@ function Next() {
   document.getElementById("quest").innerText = test.Questions[gN].Text;
 
     /* Answers */
-  let c = new CorrectCount(gN);
+  let c = CorrectCount(gN);
   if (c > 1) {
     document.getElementById("correctCount").innerText = "(" + String(c) + " відповіді)";
     document.getElementById("radio0").type = "checkbox";
@@ -248,8 +248,8 @@ function Next() {
 
     /* Obj */
   document.getElementById("questImg").src = test.Questions[gN].Obj;
-  document.getElementById("questImg").hidden = test.Questions[gN].Obj ==== "";
-  if (test.Questions[gN].Obj ==== "") {
+  document.getElementById("questImg").hidden = test.Questions[gN].Obj === "";
+  if (test.Questions[gN].Obj === "") {
     document.getElementById("questImg").alt = "";
   } else {
     document.getElementById("questImg").alt = "Помилка зображення";
@@ -285,14 +285,14 @@ function Exit() {
     document.getElementById("percent").innerText = "немає :(";
     document.getElementById("mark").hidden = true;
   } else {
-    let p = new GetPointsPercent();
+    let p = GetPointsPercent();
     const colors = [
       "#F08080", "#FFA07F", "#FFB6C1", "#FFA07A", "#F0E68C", "#F5DEB3",
       "#9ACD32", "#90EE90", "#00FF7F", "#66CDAA", "#E0FFFF", "#ADD8E6"
     ];
     document.getElementById("percent").innerHTML = String(Math.round(p)) + " %";
     document.getElementById("mark").innerText = GetMark(p);
-    if (test.MaxMark ==== 12) {
+    if (test.MaxMark === 12) {
       document.getElementById("mark").style.backgroundColor = colors[Number(GetMark(p)) - 1];
     }
   }
