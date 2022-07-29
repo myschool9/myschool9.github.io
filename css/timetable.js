@@ -6,7 +6,7 @@ function Filtering(nItem, myTime, isTiming) {
   if (nItem >= mySel.length) {
     nItem = mySel.length - 1;
   }
-  for (let i = 0; i < mySel.length; i++) {
+  for (let i = 0; i < mySel.length; i += 1) {
     if (i === nItem) {
       document.getElementById("m" + String(i)).style.display = "table";
     } else {
