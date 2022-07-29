@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/groups.css">
+  <title>Довідник JavaScript</title>
+  <style>
+    .func {
+      color: #0000ff;
+      font-weight: 700;
+    }
+    .gray {
+       color: rgb(128,128,128);font-size:
+    }
+    .numb {
+      color: rgb(128,0,255);
+    }
+    .number {
+      color: rgb(255,128,0);
+    }
+    .brown {
+      color: rgb(128,64,0);
+    }
+    .fig {
+      color: rgb(0,0,128);
+      font-weight: 700;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="aHeader" id="header" style="max-width: none;">Приклад JavaScript</div>
+    <div class="aTable" style="max-width: none; padding: 5px">
+
+      <div><span class="func">function</span> change<span class="fig">() {</span></div>
+      <div>&nbsp;&nbsp;header.style.fontSize <span class="fig">=</span> <span class="gray">'20px'</span><span class="fig">;</span></div>
+      <div>&nbsp;&nbsp;login.style.backgroundColor <span class="fig">=</span> <span class="gray">'green'</span><span class="fig">;</span></div>
+      <div>&nbsp;&nbsp;but1.style.width <span class="fig">=</span> <span class="gray">"140px"</span><span class="fig">;</span></div>
+      <div>&nbsp;&nbsp;but1.style.visibility <span class="fig">=</span> <span class="gray">"hidden"</span><span class="fig">;</span></div>
+
+      <div style="margin-top: 15px">&nbsp;&nbsp;input1.disabled <span class="fig">=</span> <span class="func">true</span><span class="fig">;</span></div>
+      <div>&nbsp;&nbsp;input2.value <span class="fig">=</span> <span class="number">45</span><span class="fig">;</span></div>
+      <div>&nbsp;&nbsp;myspan.innerText <span class="fig">=</span> <span class="gray">''</span><span class="fig">;</span></div>
+
+      <div style="margin-top: 15px">&nbsp;&nbsp;<span class="brown">document</span>.body.style.backgroundColor <span class="fig">=</span> <span class="gray">"black"</span><span class="fig">;</span></div>
+      <div>&nbsp;&nbsp;<span class="brown">document</span>.title <span class="fig">=</span> <span class="gray">"Мій сайт"</span><span class="fig">;</span></div>
+
+      <div style="margin-top: 15px">&nbsp;&nbsp;<span class="brown">alert</span><span class="fig">(</span><span class="gray">'Дякую за користування!'</span><span class="fig">);</span></div>
+      <div>&nbsp;&nbsp;<span class="brown">confirm</span><span class="fig">(</span><span class="gray">'Ви дійсно хочете вийти?'</span><span class="fig">);</span></div>
+      <div><span class="fig">}</span></div>
+
+      <div style="margin-top: 20px"><span class="func">function</span> action1<span class="fig">() {</span></div>
+      <div>&nbsp;&nbsp;<span class="func">let</span> group9A <span class="fig">=</span> <span class="number">Number</span><span class="fig">(</span>input1.value<span class="fig">);</span>
+      <div>&nbsp;&nbsp;<span class="func">let</span> group9B <span class="fig">=</span> <span class="number">Number</span><span class="fig">(</span>input2.value<span class="fig">);</span>
+
+      <div style="margin-top: 15px">&nbsp;&nbsp;<span class="func">let</span> average <span class="fig">=</span> (group9A <span class="fig">+</span> group9B<span class="fig">) /</span> <span class="number">2</span><span class="fig">;</span>
+
+      <div style="margin-top: 15px">&nbsp;&nbsp;span2.innerText <span class="fig">=</span> average.toFixed<span class="fig">(</span><span class="number">1</span><span class="fig">);</span>
+      <div><span class="fig">}</span></div>
+
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
