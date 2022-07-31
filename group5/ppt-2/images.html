@@ -1,11 +1,12 @@
 <script>
-  let sm;
-  let meter;
-  let inch = Number(prompt());
+  let diameter = Number(prompt('Який діаметр основи бочки?'));
+  let height = Number(prompt('Яка висота бочки?'));  
+  let radius;
+  let volume;
 
-  sm = inch * 2.54;
-  meter = sm / 100;
-
-  alert(sm.toFixed(2));
-  alert(meter.toFixed(4));
+  radius = diameter / 2;
+  volume = 3.14 * radius * radius * height / 1000; 
+  
+  alert('Радіус основи бочки = ' + String(radius.toFixed(1)));
+  alert('Бочка вмістить = ' + String(volume.toFixed(0)) + ' літрів');
 </script>
