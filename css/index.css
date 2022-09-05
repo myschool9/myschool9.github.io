@@ -1,17 +1,9 @@
-.aRow1 {
+.aRow {
   display: table-row;
-  border-bottom: 1px dotted var(--border-color);
-  background-color: var(--blue-color);
-}
-
-.aRow2 {
-  display: table-row;
-  border-bottom: 1px dotted var(--border-color);
-  background-color: var(--rose-color);
 }
 
 .aCell {
   display: table-cell;
   padding: 5px 10px;
-  border-bottom: 1px dotted var(--border-color);
+  border: 1px dotted var(--border-color);
 }
