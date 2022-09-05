@@ -21,9 +21,3 @@
   text-align: right;
   padding: 5px 10px;
 }
-
-.aCellCenter {
-  display: table-cell;
-  text-align: center;
-  padding: 5px 10px;
-}
