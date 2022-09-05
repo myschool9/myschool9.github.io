@@ -1,18 +1,29 @@
-.aCenter, .aLeft, .aRight {
+.aRow1 {
+  display: table-row;
   border-bottom: 1px dotted var(--border-color);
-  padding: 10px;
-}
-
-.aCenter {
-  text-align: center;
   background-color: var(--blue-color);
 }
 
-.aLeft {
-  text-align: left;
+.aRow2 {
+  display: table-row;
+  border-bottom: 1px dotted var(--border-color);
   background-color: var(--rose-color);
 }
 
-.aRight {
+.aCellLeft {
+  display: table-cell;
+  text-align: left;
+  padding: 5px 10px;
+}
+
+.aCellRight {
+  display: table-cell;
   text-align: right;
+  padding: 5px 10px;
+}
+
+.aCellCenter {
+  display: table-cell;
+  text-align: center;
+  padding: 5px 10px;
 }
