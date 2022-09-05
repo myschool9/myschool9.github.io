@@ -10,14 +10,8 @@
   background-color: var(--rose-color);
 }
 
-.aCellLeft {
+.aCell {
   display: table-cell;
-  text-align: left;
   padding: 5px 10px;
-}
-
-.aCellRight {
-  display: table-cell;
-  text-align: right;
-  padding: 5px 10px;
+  border-bottom: 1px dotted var(--border-color);
 }
