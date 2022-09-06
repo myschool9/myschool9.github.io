@@ -2,12 +2,8 @@
   display: table-row;
 }
 
-.aCell, .aCellTest {
+.aCell {
   display: table-cell;
   padding: 5px 10px;
   border: 1px dotted var(--border-color);
-}
-
-.aCellTest {
-  background-color: var(--blue-color);
 }
