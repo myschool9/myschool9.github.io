@@ -3,7 +3,7 @@
 }
 
 .aImg {
-  margin: auto;
+  margin: 10px auto;
   padding: 5px;
   max-width: 320px;
   border: 1px dotted var(--border-color);
