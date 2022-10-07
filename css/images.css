@@ -1,11 +1,13 @@
 .aTable {
   margin-top: 2px;
+  background-color: var(--body-color);
 }
 
 .aImg {
   margin: 10px auto;
   padding: 5px;
   max-width: 320px;
+  background-color: var(--table-color);
   border: 1px dotted var(--border-color);
   display: block;
 }
