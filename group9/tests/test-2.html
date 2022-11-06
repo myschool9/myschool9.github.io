@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="/css/tests.css">
+	<title>Excel</title>
+	<script>
+		var test={MinMark:2,MaxMark:12,IsPenalty:true,Questions:[{Text:"Скільки клітинок містить діапазон «B4:C5»?",RndAnswers:false,Obj:"",Answers:[{Text:"2",cr:false,Select:false},{Text:"4",cr:true,Select:false},{Text:"6",cr:false,Select:false},{Text:"8",cr:false,Select:false},{Text:"9",cr:false,Select:false},]},{Text:"Як називається адреса клітинки зі символами «$», \nнаприклад, «$F$4»?",RndAnswers:true,Obj:"",Answers:[{Text:"абсолютна",cr:true,Select:false},{Text:"заблокована",cr:false,Select:false},{Text:"універсальна",cr:false,Select:false},{Text:"постійна",cr:false,Select:false},]},{Text:"Яка з формул найбільш правильно обчислює суму чисел у перших п\'яти клітинках стовпця «B»?",RndAnswers:true,Obj:"",Answers:[{Text:"=B1+B2+B3+B4+B5",cr:false,Select:false},{Text:"=SUM(B1+B2+B3+B4+B5)",cr:false,Select:false},{Text:"=SUM(B1:B5)",cr:true,Select:false},{Text:"=SUM(B1)+SUM(B5)",cr:false,Select:false},]},{Text:"Якої з математичних функцій  ’немає’  в Excel?",RndAnswers:true,Obj:"",Answers:[{Text:"SQRT",cr:false,Select:false},{Text:"COR",cr:true,Select:false},{Text:"ABS",cr:false,Select:false},{Text:"PI",cr:false,Select:false},]},{Text:"Чи можна на діаграмі, що складається зі стовпців червоного кольору, один стовпець перефарбувати на зелений?",RndAnswers:false,Obj:"",Answers:[{Text:"так, можна",cr:true,Select:false},{Text:"ні, можна лише усі стовпці разом",cr:false,Select:false},]},{Text:"Як називається інструмент пошуку даних, який залишає лише ті дані, які задовольняють певним умовам?",RndAnswers:true,Obj:"",Answers:[{Text:"перевірка значень",cr:false,Select:false},{Text:"фільтр",cr:true,Select:false},{Text:"зведена таблиця",cr:false,Select:false},{Text:"вирівнювання",cr:false,Select:false},]},{Text:"Як називається об\'єкт діаграми на фото, що замальований зеленим кольором?",RndAnswers:true,Obj:"images/Excel-1.jpg",Answers:[{Text:"легенда",cr:true,Select:false},{Text:"вісь Y",cr:false,Select:false},{Text:"стінка",cr:false,Select:false},{Text:"підпис даних",cr:false,Select:false},]},{Text:"Яка з перерахованих команд є в Excel, але її немає у Word?",RndAnswers:true,Obj:"",Answers:[{Text:"Рецензування / Правопис",cr:false,Select:false},{Text:"Дані / Фільтр",cr:true,Select:false},{Text:"Основне / Шрифт",cr:false,Select:false},{Text:"Вигляд / Масштаб",cr:false,Select:false},]},{Text:"Який інструмент дозволяє зображати дані у вигляді як на фото?",RndAnswers:true,Obj:"images/Excel-2.jpg",Answers:[{Text:"умовне форматування",cr:true,Select:false},{Text:"діаграма з областями",cr:false,Select:false},{Text:"автофільтр",cr:false,Select:false},{Text:"SmartArt",cr:false,Select:false},]},{Text:"Який тип діаграми зображений на фото?",RndAnswers:true,Obj:"images/Excel-3.jpg",Answers:[{Text:"точкова",cr:false,Select:false},{Text:"графік",cr:false,Select:false},{Text:"гістограма",cr:true,Select:false},{Text:"поверхнева",cr:false,Select:false},]},{Text:"Якого типу діаграму доцільно будувати, щоб наочно побачити відсоткову частку певного продукту?",RndAnswers:true,Obj:"",Answers:[{Text:"секторну",cr:true,Select:false},{Text:"стовпчасту",cr:false,Select:false},{Text:"точкову",cr:false,Select:false},{Text:"лінійчату",cr:false,Select:false},]},{Text:"Функція NOW виводить поточний час. Виберіть правильний запис цієї функції у клітинці.",RndAnswers:true,Obj:"",Answers:[{Text:"NOW=",cr:false,Select:false},{Text:"=NOW()",cr:true,Select:false},{Text:"$NOW$",cr:false,Select:false},{Text:"[NOW]",cr:false,Select:false},]},{Text:"Яку команду виконують значки на фото?",RndAnswers:true,Obj:"images/Excel-4.jpg",Answers:[{Text:"умовне форматування",cr:false,Select:false},{Text:"сортування даних",cr:true,Select:false},{Text:"вставлення функції",cr:false,Select:false},{Text:"знайти і виділити",cr:false,Select:false},]},{Text:"Виберіть правильно записану функцію.",RndAnswers:true,Obj:"",Answers:[{Text:"=IF(25; \"A4=3\"; F1:F3)",cr:false,Select:false},{Text:"=IF(D1; 2)",cr:false,Select:false},{Text:"=IF(C5<4; \"так\"; \" \")",cr:true,Select:false},{Text:"=IF(B6=100)",cr:false,Select:false},]},{Text:"До якої категорії функцій відноситься функція «IF»?",RndAnswers:true,Obj:"",Answers:[{Text:"текстові функції",cr:false,Select:false},{Text:"математичні функції",cr:false,Select:false},{Text:"логічні функції",cr:true,Select:false},{Text:"функції дати й часу",cr:false,Select:false},]},]}
+	</script>
+	<script src="/css/tests.js"></script>
+</head>
+
+<body onload="Start()">
+	<div class="aHeader" id="header">
+		<div class="aButtonExit" onclick="Exit()">x</div>
+		<div>№
+			<span class="aQuestNum" id="questNum"></span>
+			<span class="aQuestCount" id="questCount"></span>
+		</div>
+		<div class="aButtonNext" onclick="Next()">&#9658;&#9658;</div>
+	</div>
+
+	<div class="aTable" id="form">
+		<div class="aQuest" id="quest"></div>
+		<div class="aCorrectCount" id="correctCount"></div>
+
+		<div class="aAnswer" id="answer0" onclick="Check(0)">
+			<span class="aNum">1.</span>
+			<input class="aRadio" id="radio0" type="radio" name="answers">
+			<label class="aLabel" id="label0"></label>
+		</div>
+		<div class="aAnswer" id="answer1" onclick="Check(1)">
+			<span class="aNum">2.</span>
+			<input class="aRadio" id="radio1" type="radio" name="answers">
+			<label class="aLabel" id="label1" for="radio1"></label>
+		</div>
+		<div class="aAnswer" id="answer2" onclick="Check(2)">
+			<span class="aNum">3.</span>
+			<input class="aRadio" id="radio2" type="radio" name="answers">
+			<label class="aLabel" id="label2" for="radio2"></label>
+		</div>
+		<div class="aAnswer" id="answer3" onclick="Check(3)">
+			<span class="aNum">4.</span>
+			<input class="aRadio" id="radio3" type="radio" name="answers">
+			<label class="aLabel" id="label3" for="radio3"></label>
+		</div>
+		<div class="aAnswer" id="answer4" onclick="Check(4)">
+			<span class="aNum">5.</span>
+			<input class="aRadio" id="radio4" type="radio" name="answers">
+			<label class="aLabel" id="label4" for="radio4"></label>
+		</div>
+		<div class="aAnswer" id="answer5" onclick="Check(5)">
+			<span class="aNum">6.</span>
+			<input class="aRadio" id="radio5" type="radio" name="answers">
+			<label class="aLabel" id="label5" for="radio5"></label>
+		</div>
+	</div>
+
+	<div class="aObj">
+		<img class="aQuestImg" id="questImg">
+	</div>
+	<div class="aResForm" id="resForm" hidden="true">
+		<div class="aAllPercent">
+			<span>Результат:</span>
+			<span class="aPercent" id="percent"></span>
+		</div>
+		<div class="aMark" id="mark"></div>
+	</div>
+
+</body>
+</html>
