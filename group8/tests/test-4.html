@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="/css/tests.css">
+	<title>Документи</title>
+	<script>
+		var test={MinMark:2,MaxMark:12,IsPenalty:true,Questions:[{Text:"Виберіть  \'не текстовий\'  формат.",RndAnswers:true,Obj:"",Answers:[{Text:"SVG",cr:true,Select:false},{Text:"DOCX",cr:false,Select:false},{Text:"HTML",cr:false,Select:false},{Text:"RTF",cr:false,Select:false},]},{Text:"Виберіть декоративний текст.",RndAnswers:true,Obj:"",Answers:[{Text:"Normal",cr:false,Select:false},{Text:"Equation",cr:false,Select:false},{Text:"Verdana",cr:false,Select:false},{Text:"WordArt",cr:true,Select:false},]},{Text:"Виберіть зайве.",RndAnswers:true,Obj:"",Answers:[{Text:"Arial",cr:false,Select:false},{Text:"Times New Roman",cr:false,Select:false},{Text:"Courier New",cr:false,Select:false},{Text:"WordPad",cr:true,Select:false},{Text:"Calibri",cr:false,Select:false},]},{Text:"Вимоги до створення наукових робіт, листів, статей, презентацій – це ...",RndAnswers:true,Obj:"",Answers:[{Text:"публікування документа",cr:false,Select:false},{Text:"стильове оформлення",cr:true,Select:false},{Text:"державний стандарт",cr:false,Select:false},{Text:"властивості документа",cr:false,Select:false},]},{Text:"Набір значень властивостей об’єктів, який має ім’я – це ...",RndAnswers:true,Obj:"",Answers:[{Text:"розмітка",cr:false,Select:false},{Text:"макет",cr:false,Select:false},{Text:"нотатка",cr:false,Select:false},{Text:"стиль",cr:true,Select:false},]},{Text:"Порожній форматований документ з підказками, як його заповнювати – це ...",RndAnswers:true,Obj:"",Answers:[{Text:"модель",cr:false,Select:false},{Text:"шаблон",cr:true,Select:false},{Text:"інструкція",cr:false,Select:false},{Text:"зміст",cr:false,Select:false},]},{Text:"Списки бувають нумеровані, марковані і ...",RndAnswers:true,Obj:"images/Документи-1.jpg",Answers:[{Text:"структурні",cr:false,Select:false},{Text:"графічні",cr:false,Select:false},{Text:"мішані",cr:false,Select:false},{Text:"багаторівневі",cr:true,Select:false},]},{Text:"У текстовий документ можна вставити розрив...",RndAnswers:true,Obj:"",Answers:[{Text:"зображення",cr:false,Select:false},{Text:"рядка",cr:true,Select:false},{Text:"таблиці",cr:false,Select:false},{Text:"сторінки",cr:true,Select:false},{Text:"абзацу",cr:false,Select:false},]},{Text:"У текстових документах кілька сторінок можуть об’єднуватись у ...",RndAnswers:true,Obj:"",Answers:[{Text:"книгу",cr:false,Select:false},{Text:"розділ",cr:true,Select:false},{Text:"колонку",cr:false,Select:false},{Text:"тему",cr:false,Select:false},]},{Text:"У текстових документах це – структура. А у звичайних книжках?",RndAnswers:true,Obj:"",Answers:[{Text:"тираж",cr:false,Select:false},{Text:"опис",cr:false,Select:false},{Text:"зміст",cr:true,Select:false},{Text:"видавництво",cr:false,Select:false},]},{Text:"Частина документа, яка розміщується на полях і може містити номер сторінки, автора, назву – це ...",RndAnswers:true,Obj:"",Answers:[{Text:"прапорець",cr:false,Select:false},{Text:"колонтитул",cr:true,Select:false},{Text:"макрос",cr:false,Select:false},{Text:"табуляція",cr:false,Select:false},]},{Text:"Яка група символів у редакторі формул закрита на фото?",RndAnswers:true,Obj:"images/Документи-2.jpg",Answers:[{Text:"індекс",cr:true,Select:false},{Text:"шрифт",cr:false,Select:false},{Text:"система",cr:false,Select:false},{Text:"функція",cr:false,Select:false},]},{Text:"Який символ форматування зображений на фото?",RndAnswers:true,Obj:"images/Документи-3.jpg",Answers:[{Text:"кінець рядка",cr:false,Select:false},{Text:"початок розділу",cr:false,Select:false},{Text:"пропуск",cr:false,Select:false},{Text:"абзац",cr:true,Select:false},]},]}
+	</script>
+	<script src="/css/tests.js"></script>
+</head>
+
+<body onload="Start()">
+	<div class="aHeader" id="header">
+		<div class="aButtonExit" onclick="Exit()">x</div>
+		<div>№
+			<span class="aQuestNum" id="questNum"></span>
+			<span class="aQuestCount" id="questCount"></span>
+		</div>
+		<div class="aButtonNext" onclick="Next()">&#9658;&#9658;</div>
+	</div>
+
+	<div class="aTable" id="form">
+		<div class="aQuest" id="quest"></div>
+		<div class="aCorrectCount" id="correctCount"></div>
+
+		<div class="aAnswer" id="answer0" onclick="Check(0)">
+			<span class="aNum">1.</span>
+			<input class="aRadio" id="radio0" type="radio" name="answers">
+			<label class="aLabel" id="label0"></label>
+		</div>
+		<div class="aAnswer" id="answer1" onclick="Check(1)">
+			<span class="aNum">2.</span>
+			<input class="aRadio" id="radio1" type="radio" name="answers">
+			<label class="aLabel" id="label1" for="radio1"></label>
+		</div>
+		<div class="aAnswer" id="answer2" onclick="Check(2)">
+			<span class="aNum">3.</span>
+			<input class="aRadio" id="radio2" type="radio" name="answers">
+			<label class="aLabel" id="label2" for="radio2"></label>
+		</div>
+		<div class="aAnswer" id="answer3" onclick="Check(3)">
+			<span class="aNum">4.</span>
+			<input class="aRadio" id="radio3" type="radio" name="answers">
+			<label class="aLabel" id="label3" for="radio3"></label>
+		</div>
+		<div class="aAnswer" id="answer4" onclick="Check(4)">
+			<span class="aNum">5.</span>
+			<input class="aRadio" id="radio4" type="radio" name="answers">
+			<label class="aLabel" id="label4" for="radio4"></label>
+		</div>
+		<div class="aAnswer" id="answer5" onclick="Check(5)">
+			<span class="aNum">6.</span>
+			<input class="aRadio" id="radio5" type="radio" name="answers">
+			<label class="aLabel" id="label5" for="radio5"></label>
+		</div>
+	</div>
+
+	<div class="aObj">
+		<img class="aQuestImg" id="questImg">
+	</div>
+	<div class="aResForm" id="resForm" hidden="true">
+		<div class="aAllPercent">
+			<span>Результат:</span>
+			<span class="aPercent" id="percent"></span>
+		</div>
+		<div class="aMark" id="mark"></div>
+	</div>
+
+</body>
+</html>
