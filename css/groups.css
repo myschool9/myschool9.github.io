@@ -1,9 +1,10 @@
 .aRow {
-  display: table-row;
+	display: table-row;
 }
 
 .aCell {
-  display: table-cell;
-  padding: 5px 10px;
-  border: 1px dotted var(--border-color);
+	display: table-cell;
+	padding: 5px 10px;
+	border: 1px dotted var(--border-color);
+	width: 50%;
 }
