@@ -49,17 +49,17 @@ a.aSpecial {
 	background-color: var(--header-color);
 }
 
-.aTable, .aTable-WithHeader, .aTable-BodyColor {
+.aTable, .aTable-Header, .aTable-BodyColor {
 	display: table;
 	width: 96%;
 	max-width: 500px;
-	margin: 2px 0 10px 6px;
+	margin: 40px 0 10px 6px;
 	background-color: var(--table-color);
 }
-.aTable-WithHeader {
-	margin: 40px 0 10px 6px;
+.aTable-Header, .aTable-Header-BodyColor {
+	margin: 2px 0 10px 6px;
 }
-.aTable-BodyColor{
+.aTable-Header-BodyColor{
 	background-color: var(--body-color);
 }
 
