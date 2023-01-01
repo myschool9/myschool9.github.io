@@ -273,7 +273,7 @@ function Check(num) {
 	}
 	document.getElementById("radio" + String(num)).checked = !document.getElementById("radio" + String(num)).checked;
 	if (document.getElementById("radio" + String(num)).checked) {
-		document.getElementById("answer" + String(num)).style.backgroundColor = "var(--rose-color)";
+		document.getElementById("answer" + String(num)).style.backgroundColor = "var(--color-2)";
 	} else {
 		document.getElementById("answer" + String(num)).style.backgroundColor = "var(--table-color)";
 	}

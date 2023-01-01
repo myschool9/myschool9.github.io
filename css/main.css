@@ -94,4 +94,35 @@ a.aSpecial {
 	display: block;
 	max-width: 320px;
 	margin: 5px auto 15px;
+	border: 1px dotted var(--border-color);
+}
+
+/*------------------------------------------------*/
+.aButton {
+	overflow: hidden;
+	display: table-cell;
+	width: 35px;
+	margin: 0 2px;
+	padding: 2px 4px;
+	font-size: 1em;
+	background: -webkit-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
+	background: -moz-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
+	background: -ms-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
+	background: -o-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
+	border-radius: 5px;
+	border: 1px solid var(--border-color);
+	cursor: pointer;
+}
+
+.aSelect {
+	display: table-cell;
+	min-width: 120px;
+	padding: 2px;
+	font-size: 1em;
+	background: -webkit-linear-gradient(top, #ffffff 0%, #b0c4de 50%, #ffffff 100%);
+	background: -moz-linear-gradient(top, #ffffff 0%, #b0c4de 50%, #ffffff 100%);
+	background: -ms-linear-gradient(top, #ffffff 0%, #b0c4de 50%, #ffffff 100%);
+	background: -o-linear-gradient(top, #ffffff 0%, #b0c4de 50%, #ffffff 100%);
+	border-radius: 5px;
+	border: 2px outset var(--border-color);
 }
