@@ -1,11 +1,11 @@
-﻿var gOrderN = -1;   // order number task in User window: 1, 2, 3...
-var gN = -1;        // real number in test
-var A = [];         // mix questions
-var B = [];         // mix answers
-var pause = false;  // pause beetween select answer
+﻿var gOrderN = -1; 		// order number task in User window: 1, 2, 3...
+var gN = -1;			// real number in test
+var A = [];				// mix questions
+var B = [];				// mix answers
+var pause = false;		// pause beetween select answer
 
-/* ---------------------------------------*/
-/* ---------------------------------------*/
+/*---------------------------------------*/
+/*---------------------------------------*/
 function GetMixArray(size, mix) {
 	let rndNum = 0;
 	let nums = [];
@@ -21,7 +21,7 @@ function GetMixArray(size, mix) {
 	return nums;
 }
 
-/* ---------------------------------------*/
+/*---------------------------------------*/
 function CorrectCount(questNum) {
 	let count = 0;
 	for (let i = 0; i < test.Questions[questNum].Answers.length; i += 1) {
@@ -32,7 +32,7 @@ function CorrectCount(questNum) {
 	return count;
 }
 
-/* ---------------------------------------*/
+/*---------------------------------------*/
 function SelectCount(questNum) {
 	let count = 0;
 	for (let i = 0; i < test.Questions[questNum].Answers.length; i += 1) {
@@ -43,7 +43,7 @@ function SelectCount(questNum) {
 	return count;
 }
 
-/* ---------------------------------------*/
+/*---------------------------------------*/
 function CorrectSelectCount(questNum) {
 	let count = 0;
 	for (let i = 0; i < test.Questions[questNum].Answers.length; i += 1) {
@@ -54,7 +54,7 @@ function CorrectSelectCount(questNum) {
 	return count;
 }
 
-/* ---------------------------------------*/
+/*---------------------------------------*/
 function WrongSelectCount(questNum) {
 	let count = 0;
 	for (let i = 0; i < test.Questions[questNum].Answers.length; i += 1) {
@@ -64,7 +64,7 @@ function WrongSelectCount(questNum) {
 	}
 	return count;
 }
-/* ---------------------------------------*/
+/*---------------------------------------*/
 function ChoiceCount() {
 	let count = 0;
 	for (let i = 0; i < test.Questions.length; i += 1) {
@@ -74,7 +74,7 @@ function ChoiceCount() {
 	}
 	return count;
 }
-/* ---------------------------------------*/
+/*---------------------------------------*/
 function MFromN(M, N) {
 	if (M < 0 || N <= 0 || M > N) {
 		return 0;
@@ -93,7 +93,7 @@ function MFromN(M, N) {
 	}
 	return x / (y * z);
 }
-/* ---------------------------------------*/
+/*---------------------------------------*/
 function GetPenaltyPoint() {
 	let numerator = 0;
 	let denominator = 0;
@@ -109,7 +109,7 @@ function GetPenaltyPoint() {
 		return numerator / denominator;
 	}
 }
-/* ---------------------------------------*/
+/*---------------------------------------*/
 function GetPointsPercent() {
 	let pointSum = 0;
 	let wrongAnswersCount = 0;
@@ -125,7 +125,7 @@ function GetPointsPercent() {
 	}
 	return 100 * pointSum / test.Questions.length;
 }
-/* ---------------------------------------*/
+/*---------------------------------------*/
 function GetMark(markPercent) {
 	if (markPercent < 0) {
 		markPercent = 0;
@@ -154,28 +154,28 @@ function GetMark(markPercent) {
 			return String(res) + "+";
 		}
 	}
-	
+
 	if (test.MinMark === 2 && test.MaxMark === 12) {
 		if (res === 2 || res === 4 || res === 6 || res === 8 || res === 10) {
 			return String(res) + "+";
 		}
 		if (res === 3 || res === 5 || res === 7 || res === 9 || res === 11) {
 			return String(res - 1) + "+";
-		}		
+		}
 	}
-	
+
 	return String(res);
 }
 
-/* ---------------------------------------*/
-/* ---------------------------------------*/
+/*---------------------------------------*/
+/*---------------------------------------*/
 function Start() {
 	document.getElementById("questCount").innerText = "(" + String(test.Questions.length) + " пит.)";
 	A = GetMixArray(test.Questions.length, true);
 	Next();
 }
 
-/* ---------------------------------------*/
+/*---------------------------------------*/
 function Next() {
 	if (gOrderN >= test.Questions.length - 1) {
 		Exit();
@@ -265,7 +265,8 @@ function Next() {
 		document.getElementById("questImg").alt = "Помилка зображення";
 	}
 }
-	/* ---------------------------------------*/
+
+/*---------------------------------------*/
 function Check(num) {
 	if (pause) {
 		return;
@@ -283,7 +284,7 @@ function Check(num) {
 	}
 }
 
-  /* ---------------------------------------*/
+/*---------------------------------------*/
 function Exit() {
 	document.getElementById("header").style.display = "none";
 	document.getElementById("form").style.display = "none";
@@ -303,7 +304,7 @@ function Exit() {
 		document.getElementById("percent").innerHTML = String(Math.round(p)) + " %";
 		document.getElementById("mark").innerText = GetMark(p);
 		if (test.MaxMark === 12) {
-		document.getElementById("mark").style.backgroundColor = colors[Number(GetMark(p)) - 1];
+			document.getElementById("mark").style.backgroundColor = colors[Number(GetMark(p)) - 1];
 		}
 	}
 }
