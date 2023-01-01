@@ -297,14 +297,26 @@ function Exit() {
 		document.getElementById("mark").hidden = true;
 	} else {
 		let p = GetPointsPercent();
-		const colors = [
-			"#F08080", "#FFA07F", "#FFB6C1", "#FFA07A", "#F0E68C", "#F5DEB3",
-			"#9ACD32", "#90EE90", "#00FF7F", "#66CDAA", "#E0FFFF", "#ADD8E6"
-		];
 		document.getElementById("percent").innerHTML = String(Math.round(p)) + " %";
-		document.getElementById("mark").innerText = GetMark(p);
-		if (test.MaxMark === 12) {
-			document.getElementById("mark").style.backgroundColor = colors[Number(GetMark(p)) - 1];
+		let m = GetMark(p);
+		document.getElementById("mark").innerText = m;
+		if (m === "2+") {
+			document.getElementById("mark").style.backgroundColor = "#ff88ff";
+		}
+		if (m === "4+") {
+			document.getElementById("mark").style.backgroundColor = "#ff8888";
+		}
+		if (m === "6+") {
+			document.getElementById("mark").style.backgroundColor = "#ffff88";
+		}
+		if (m === "8+") {
+			document.getElementById("mark").style.backgroundColor = "#88ff88";
+		}
+		if (m === "10+") {
+			document.getElementById("mark").style.backgroundColor = "#88ffff";
+		}
+		if (m === "12") {
+			document.getElementById("mark").style.backgroundColor = "#8888ff";
 		}
 	}
 }
