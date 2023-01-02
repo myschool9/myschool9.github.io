@@ -38,7 +38,7 @@ a.aSpecial {
 .aHeader {
 	position: fixed;
 	top: 2px;
-	left: 7px;
+	left: 8px;
 	display: table;
 	padding: 2px;
 	width: 94%;
@@ -53,11 +53,11 @@ a.aSpecial {
 	display: table;
 	width: 96%;
 	max-width: 500px;
-	margin: 40px 0 10px 6px;
+	margin: 40px auto 10px;
 	background-color: var(--table-color);
 }
 .aTable-Header, .aTable-Header-BodyColor {
-	margin: 2px 0 10px 6px;
+	margin: 2px auto 10px;
 }
 .aTable-Header-BodyColor{
 	background-color: var(--body-color);
@@ -93,7 +93,7 @@ a.aSpecial {
 .aImg {
 	display: block;
 	max-width: 320px;
-	margin: 5px auto 15px;
+	margin: 10px auto 20px;
 	border: 1px dotted var(--border-color);
 }
 
