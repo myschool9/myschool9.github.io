@@ -301,22 +301,22 @@ function Exit() {
 		let m = GetMark(p);
 		document.getElementById("mark").innerText = m;
 		if (m === "2+") {
-			document.getElementById("mark").style.backgroundColor = "#ff88ff";
+			document.getElementById("mark").style.backgroundColor = "#ff69b4";
 		}
 		if (m === "4+") {
-			document.getElementById("mark").style.backgroundColor = "#ff8888";
+			document.getElementById("mark").style.backgroundColor = "#ffa07a";
 		}
 		if (m === "6+") {
-			document.getElementById("mark").style.backgroundColor = "#ffff88";
+			document.getElementById("mark").style.backgroundColor = "#ffd700";
 		}
 		if (m === "8+") {
-			document.getElementById("mark").style.backgroundColor = "#88ff88";
+			document.getElementById("mark").style.backgroundColor = "#7fffd4";
 		}
 		if (m === "10+") {
-			document.getElementById("mark").style.backgroundColor = "#88ffff";
+			document.getElementById("mark").style.backgroundColor = "#00ff7f";
 		}
 		if (m === "12") {
-			document.getElementById("mark").style.backgroundColor = "#8888ff";
+			document.getElementById("mark").style.backgroundColor = "#00ff00";
 		}
 	}
 }
