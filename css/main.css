@@ -43,6 +43,7 @@ a.aSpecial {
 	padding: 2px;
 	width: 94%;
 	max-width: 500px;
+	max-height: 32px;
 	font-size: 1.2em;
 	text-align: center;
 	border-radius: 5px;
@@ -104,7 +105,7 @@ a.aSpecial {
 	width: 35px;
 	margin: 0 2px;
 	padding: 2px 4px;
-	font-size: 1em;
+	font-size: 0.8em;
 	background: -webkit-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
 	background: -moz-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
 	background: -ms-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
