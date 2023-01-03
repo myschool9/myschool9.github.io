@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="/css/tests.css">
+	<title>Ел. таблиці</title>
+	<script>
+		var test={MinMark:2,MaxMark:12,IsPenalty:true,Questions:[{Text:"Для чого призначений табличний процесор?",RndAnswers:true,Obj:"",Answers:[{Text:"для захисту даних",cr:false,Select:false},{Text:"для проведення обчислень",cr:true,Select:false},{Text:"для пошуку інформації",cr:false,Select:false},{Text:"для створення таблиць",cr:true,Select:false},{Text:"для опрацювання відео",cr:false,Select:false},]},{Text:"З чим працює програма Excel?",RndAnswers:true,Obj:"",Answers:[{Text:"з таблицями",cr:true,Select:false},{Text:"зі сайтами",cr:false,Select:false},{Text:"зі списками",cr:false,Select:false},{Text:"з малюнками",cr:false,Select:false},]},{Text:"Коли в Excel з’являється вікно, що зображене на фото?",RndAnswers:true,Obj:"images/Ел. таблиці-1.jpg",Answers:[{Text:"При вирівнюванні клітинок",cr:false,Select:false},{Text:"При копіюванні клітинок",cr:false,Select:false},{Text:"При видаленні клітинок",cr:true,Select:false},{Text:"При фарбуванні клітинок",cr:false,Select:false},]},{Text:"Найменший об’єкт текстового документа – це символ. А електронних таблиць?",RndAnswers:true,Obj:"",Answers:[{Text:"полотно",cr:false,Select:false},{Text:"аркуш",cr:false,Select:false},{Text:"крапка",cr:false,Select:false},{Text:"клітинка",cr:true,Select:false},]},{Text:"Чи можна в одну клітинку ввести текст різними шрифтами, як на фото?",RndAnswers:false,Obj:"images/Ел. таблиці-2.jpg",Answers:[{Text:"так",cr:true,Select:false},{Text:"так, якщо об’єднати декілька клітинок",cr:false,Select:false},{Text:"ні",cr:false,Select:false},]},{Text:"Як називається властивість клітинки, яка дозволяє зробити текст похилим, як на фото?",RndAnswers:true,Obj:"images/Ел. таблиці-3.jpg",Answers:[{Text:"орієнтація",cr:true,Select:false},{Text:"перенесення",cr:false,Select:false},{Text:"відображення",cr:false,Select:false},{Text:"автодобір",cr:false,Select:false},]},{Text:"Як називається внесення змін у дані таблиці?",RndAnswers:true,Obj:"",Answers:[{Text:"автозаповнення",cr:false,Select:false},{Text:"друкування",cr:false,Select:false},{Text:"перевірка на помилки",cr:false,Select:false},{Text:"редагування",cr:true,Select:false},]},{Text:"Як називається приведення таблиці до красивого вигляду?",RndAnswers:true,Obj:"",Answers:[{Text:"групування",cr:false,Select:false},{Text:"форматування",cr:true,Select:false},{Text:"публікація",cr:false,Select:false},{Text:"інсталяція",cr:false,Select:false},]},{Text:"Як називається процес, зображений на фото (перетягування маркера у куті клітинки)?",RndAnswers:true,Obj:"images/Ел. таблиці-4.jpg",Answers:[{Text:"масштабування",cr:false,Select:false},{Text:"автообчислення",cr:false,Select:false},{Text:"рецензування",cr:false,Select:false},{Text:"автозаповнення",cr:true,Select:false},]},{Text:"Як називається частина середовища Excel, позначена стрілкою на фото?",RndAnswers:true,Obj:"images/Ел. таблиці-5.jpg",Answers:[{Text:"рядок формул",cr:true,Select:false},{Text:"панель інструментів",cr:false,Select:false},{Text:"стрічка",cr:false,Select:false},{Text:"вкладки з аркушами",cr:false,Select:false},]},{Text:"Як називаються декілька виділених клітинок?",RndAnswers:true,Obj:"",Answers:[{Text:"область клітинок",cr:false,Select:false},{Text:"масив клітинок",cr:false,Select:false},{Text:"група клітинок",cr:false,Select:false},{Text:"діапазон клітинок",cr:true,Select:false},]},{Text:"Які типи даних можна ввести у клітинки Excel?",RndAnswers:true,Obj:"",Answers:[{Text:"діаграма",cr:false,Select:false},{Text:"форма",cr:false,Select:false},{Text:"формула",cr:true,Select:false},{Text:"абзац",cr:false,Select:false},{Text:"текст",cr:true,Select:false},]},{Text:"Яка з кнопок на фото об’єднує декілька клітинок в одну?",RndAnswers:false,Obj:"images/Ел. таблиці-6.jpg",Answers:[{Text:"1",cr:false,Select:false},{Text:"2",cr:true,Select:false},{Text:"3",cr:false,Select:false},{Text:"4",cr:false,Select:false},]},{Text:"Що означають знаки «########» у клітинці ел.таблиць?",RndAnswers:true,Obj:"",Answers:[{Text:"неправильні адреси у формулі",cr:false,Select:false},{Text:"ділення числа на нуль",cr:false,Select:false},{Text:"дані не поміщаються у клітинці",cr:true,Select:false},{Text:"обчислення «зависли»",cr:false,Select:false},]},{Text:"Виберіть правильно записану адресу клітинки.",RndAnswers:true,Obj:"",Answers:[{Text:"S-9",cr:false,Select:false},{Text:"1S:3D",cr:false,Select:false},{Text:"4B7C",cr:false,Select:false},{Text:"F12",cr:true,Select:false},]},{Text:"З якого символу вводяться формули в Excel?",RndAnswers:true,Obj:"",Answers:[{Text:":",cr:false,Select:false},{Text:"!",cr:false,Select:false},{Text:"=",cr:true,Select:false},{Text:"%",cr:false,Select:false},]},{Text:"Що означають значки на фото знизу?",RndAnswers:true,Obj:"images/Ел. таблиці-7.jpg",Answers:[{Text:"змінюють кількість знаків після коми",cr:true,Select:false},{Text:"вирівнюють числа до лівої чи правої межі",cr:false,Select:false},{Text:"копіюють формули у сусідні клітинки",cr:false,Select:false},{Text:"переводять число у гроші",cr:false,Select:false},]},{Text:"Виберіть символ «ділення» у формулах Excel.",RndAnswers:true,Obj:"",Answers:[{Text:"@",cr:false,Select:false},{Text:"/",cr:true,Select:false},{Text:":",cr:false,Select:false},{Text:"&",cr:false,Select:false},]},{Text:"клітинка  == >  стовпець  == >  аркуш  == > ...",RndAnswers:true,Obj:"",Answers:[{Text:"книга",cr:true,Select:false},{Text:"каталог",cr:false,Select:false},{Text:"база",cr:false,Select:false},{Text:"журнал",cr:false,Select:false},]},]}
+	</script>
+	<script src="/css/tests.js"></script>
+</head>
+
+<body onload="Start()">
+	<div class="aHeader" id="header">
+		<div class="aButtonExit" onclick="Exit()">x</div>
+		<div>№
+			<span class="aQuestNum" id="questNum"></span>
+			<span class="aQuestCount" id="questCount"></span>
+		</div>
+		<div class="aButtonNext" onclick="Next()">&#9658;&#9658;</div>
+	</div>
+	<div class="aHiddenHeader-1"></div>
+
+	<div class="aTable" id="form">
+		<div class="aQuest" id="quest"></div>
+		<div class="aCorrectCount" id="correctCount"></div>
+
+		<div class="aAnswer" id="answer0" onclick="Check(0)">
+			<span class="aNum">1.</span>
+			<input class="aRadio" id="radio0" type="radio" name="answers">
+			<label class="aLabel" id="label0"></label>
+		</div>
+		<div class="aAnswer" id="answer1" onclick="Check(1)">
+			<span class="aNum">2.</span>
+			<input class="aRadio" id="radio1" type="radio" name="answers">
+			<label class="aLabel" id="label1" for="radio1"></label>
+		</div>
+		<div class="aAnswer" id="answer2" onclick="Check(2)">
+			<span class="aNum">3.</span>
+			<input class="aRadio" id="radio2" type="radio" name="answers">
+			<label class="aLabel" id="label2" for="radio2"></label>
+		</div>
+		<div class="aAnswer" id="answer3" onclick="Check(3)">
+			<span class="aNum">4.</span>
+			<input class="aRadio" id="radio3" type="radio" name="answers">
+			<label class="aLabel" id="label3" for="radio3"></label>
+		</div>
+		<div class="aAnswer" id="answer4" onclick="Check(4)">
+			<span class="aNum">5.</span>
+			<input class="aRadio" id="radio4" type="radio" name="answers">
+			<label class="aLabel" id="label4" for="radio4"></label>
+		</div>
+		<div class="aAnswer" id="answer5" onclick="Check(5)">
+			<span class="aNum">6.</span>
+			<input class="aRadio" id="radio5" type="radio" name="answers">
+			<label class="aLabel" id="label5" for="radio5"></label>
+		</div>
+	</div>
+
+	<div class="aObj">
+		<img class="aQuestImg" id="questImg">
+	</div>
+	<div class="aResForm" id="resForm" hidden="true">
+		<div class="aAllPercent">
+			<span>Результат:</span>
+			<span class="aPercent" id="percent"></span>
+		</div>
+		<div class="aMark" id="mark"></div>
+	</div>
+
+</body>
+</html>

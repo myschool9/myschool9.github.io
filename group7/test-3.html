@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="/css/tests.css">
+	<title>Типи моделей</title>
+	<script>
+		var test={MinMark:2,MaxMark:12,IsPenalty:true,Questions:[{Text:"Єгипетські піраміди – це:",RndAnswers:false,Obj:"",Answers:[{Text:"матеріальна модель",cr:true,Select:false},{Text:"інформаційна модель",cr:false,Select:false},]},{Text:"Адронний колайдер – це:",RndAnswers:false,Obj:"",Answers:[{Text:"матеріальна модель",cr:true,Select:false},{Text:"інформаційна модель",cr:false,Select:false},]},{Text:"Графік коливання курсу гривні – це:",RndAnswers:false,Obj:"",Answers:[{Text:"статична модель",cr:false,Select:false},{Text:"динамічна модель",cr:true,Select:false},]},{Text:"Дитяча машинка – це:",RndAnswers:false,Obj:"",Answers:[{Text:"матеріальна модель",cr:true,Select:false},{Text:"інформаційна модель",cr:false,Select:false},]},{Text:"Карта руху у навігаторі машини – це:",RndAnswers:false,Obj:"",Answers:[{Text:"словесна модель",cr:false,Select:false},{Text:"графічна модель",cr:true,Select:false},{Text:"математична модель",cr:false,Select:false},]},{Text:"Картина художника – це:",RndAnswers:false,Obj:"",Answers:[{Text:"словесна модель",cr:false,Select:false},{Text:"графічна модель",cr:true,Select:false},{Text:"математична модель",cr:false,Select:false},]},{Text:"Комп’ютерна модель ядерного вибуху – це:",RndAnswers:false,Obj:"",Answers:[{Text:"статична модель",cr:false,Select:false},{Text:"динамічна модель",cr:true,Select:false},]},{Text:"Модель одягу на показі мод – це:",RndAnswers:false,Obj:"",Answers:[{Text:"матеріальна модель",cr:true,Select:false},{Text:"інформаційна модель",cr:false,Select:false},]},{Text:"Нотний запис музичного твору – це:",RndAnswers:false,Obj:"",Answers:[{Text:"матеріальна модель",cr:false,Select:false},{Text:"інформаційна модель",cr:true,Select:false},]},{Text:"Пам’ятник – це:",RndAnswers:false,Obj:"",Answers:[{Text:"статична модель",cr:true,Select:false},{Text:"динамічна модель",cr:false,Select:false},]},{Text:"Письмовий опис нового сорту рослин – це:",RndAnswers:false,Obj:"",Answers:[{Text:"статична модель",cr:true,Select:false},{Text:"динамічна модель",cr:false,Select:false},]},{Text:"План евакуації з будівлі – це:",RndAnswers:false,Obj:"",Answers:[{Text:"словесна модель",cr:false,Select:false},{Text:"графічна модель",cr:true,Select:false},{Text:"математична модель",cr:false,Select:false},]},{Text:"План розвитку міста – це:",RndAnswers:false,Obj:"",Answers:[{Text:"матеріальна модель",cr:false,Select:false},{Text:"інформаційна модель",cr:true,Select:false},]},{Text:"Порядок поділу кута на рівні частини лінійкою і циркулем – це:",RndAnswers:false,Obj:"",Answers:[{Text:"матеріальна модель",cr:false,Select:false},{Text:"інформаційна модель",cr:true,Select:false},]},{Text:"Правила техніки безпеки у кабінеті – це:",RndAnswers:false,Obj:"",Answers:[{Text:"словесна модель",cr:true,Select:false},{Text:"графічна модель",cr:false,Select:false},{Text:"математична модель",cr:false,Select:false},]},{Text:"Прогноз погоди – це:",RndAnswers:false,Obj:"",Answers:[{Text:"статична модель",cr:false,Select:false},{Text:"динамічна модель",cr:true,Select:false},]},{Text:"Результати соціологічного опитування – це:",RndAnswers:false,Obj:"",Answers:[{Text:"матеріальна модель",cr:false,Select:false},{Text:"інформаційна модель",cr:true,Select:false},]},{Text:"Рингтон телефону – це:",RndAnswers:false,Obj:"",Answers:[{Text:"матеріальна модель",cr:false,Select:false},{Text:"інформаційна модель",cr:true,Select:false},]},{Text:"Робот – це:",RndAnswers:false,Obj:"",Answers:[{Text:"матеріальна модель",cr:true,Select:false},{Text:"інформаційна модель",cr:false,Select:false},]},{Text:"Система рівнянь, що описує прямолінійний рівноприскорений рух – це:",RndAnswers:false,Obj:"",Answers:[{Text:"словесна модель",cr:false,Select:false},{Text:"графічна модель",cr:false,Select:false},{Text:"математична модель",cr:true,Select:false},]},{Text:"Спосіб розв’язку рівняння – це:",RndAnswers:false,Obj:"",Answers:[{Text:"словесна модель",cr:false,Select:false},{Text:"графічна модель",cr:false,Select:false},{Text:"математична модель",cr:true,Select:false},]},{Text:"Статуї богів у Стародавній Греції – це:",RndAnswers:false,Obj:"",Answers:[{Text:"матеріальна модель",cr:true,Select:false},{Text:"інформаційна модель",cr:false,Select:false},]},{Text:"Формули руху планет навколо Сонця – це:",RndAnswers:false,Obj:"",Answers:[{Text:"статична модель",cr:false,Select:false},{Text:"динамічна модель",cr:true,Select:false},]},{Text:"Хімічний дослід – це:",RndAnswers:false,Obj:"",Answers:[{Text:"матеріальна модель",cr:true,Select:false},{Text:"інформаційна модель",cr:false,Select:false},]},{Text:"Характеристика на учня – це:",RndAnswers:false,Obj:"",Answers:[{Text:"словесна модель",cr:true,Select:false},{Text:"графічна модель",cr:false,Select:false},{Text:"математична модель",cr:false,Select:false},]},]}
+	</script>
+	<script src="/css/tests.js"></script>
+</head>
+
+<body onload="Start()">
+	<div class="aHeader" id="header">
+		<div class="aButtonExit" onclick="Exit()">x</div>
+		<div>№
+			<span class="aQuestNum" id="questNum"></span>
+			<span class="aQuestCount" id="questCount"></span>
+		</div>
+		<div class="aButtonNext" onclick="Next()">&#9658;&#9658;</div>
+	</div>
+	<div class="aHiddenHeader-1"></div>
+
+	<div class="aTable" id="form">
+		<div class="aQuest" id="quest"></div>
+		<div class="aCorrectCount" id="correctCount"></div>
+
+		<div class="aAnswer" id="answer0" onclick="Check(0)">
+			<span class="aNum">1.</span>
+			<input class="aRadio" id="radio0" type="radio" name="answers">
+			<label class="aLabel" id="label0"></label>
+		</div>
+		<div class="aAnswer" id="answer1" onclick="Check(1)">
+			<span class="aNum">2.</span>
+			<input class="aRadio" id="radio1" type="radio" name="answers">
+			<label class="aLabel" id="label1" for="radio1"></label>
+		</div>
+		<div class="aAnswer" id="answer2" onclick="Check(2)">
+			<span class="aNum">3.</span>
+			<input class="aRadio" id="radio2" type="radio" name="answers">
+			<label class="aLabel" id="label2" for="radio2"></label>
+		</div>
+		<div class="aAnswer" id="answer3" onclick="Check(3)">
+			<span class="aNum">4.</span>
+			<input class="aRadio" id="radio3" type="radio" name="answers">
+			<label class="aLabel" id="label3" for="radio3"></label>
+		</div>
+		<div class="aAnswer" id="answer4" onclick="Check(4)">
+			<span class="aNum">5.</span>
+			<input class="aRadio" id="radio4" type="radio" name="answers">
+			<label class="aLabel" id="label4" for="radio4"></label>
+		</div>
+		<div class="aAnswer" id="answer5" onclick="Check(5)">
+			<span class="aNum">6.</span>
+			<input class="aRadio" id="radio5" type="radio" name="answers">
+			<label class="aLabel" id="label5" for="radio5"></label>
+		</div>
+	</div>
+
+	<div class="aObj">
+		<img class="aQuestImg" id="questImg">
+	</div>
+	<div class="aResForm" id="resForm" hidden="true">
+		<div class="aAllPercent">
+			<span>Результат:</span>
+			<span class="aPercent" id="percent"></span>
+		</div>
+		<div class="aMark" id="mark"></div>
+	</div>
+
+</body>
+</html>
