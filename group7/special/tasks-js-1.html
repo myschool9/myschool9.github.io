@@ -37,7 +37,8 @@
 		<div class="aButton" onclick="Filtering(select.selectedIndex - 1)">&#9668;</div>
 		<select class="aSelect" id="select" size="1" onchange="Filtering(this.selectedIndex)">
 			<option>Усі</option>
-			<option>1</option><option>2</option><option>3</option><option>4</option>
+			<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+			<option>6</option><option>7</option>
 		</select>
 		<div class="aButton" onclick="Filtering(select.selectedIndex + 1)">&#9658;</div>
 	</div>
@@ -45,7 +46,7 @@
 
 	<div class="aTable" id="m1">
 		<div class="aRow"><div class="aCell">
-		<span class="number">1. </span><div class="task">На складі меблевої фабрики зберігається декілька столиків та стільців. Скільки всього предметів зберігається на складі?</div>
+		<span class="number">1. </span><div class="task">На&nbsp;складі меблевої фабрики зберігається декілька столиків та стільців. Скільки всього предметів зберігається на&nbsp;складі?</div>
 		</div></div>
 		<div class="aRow"><div class="aCell">
 			<div class="dano-res"><span class="dano">Дано:</span><br>1) кількість столиків<br>2) кількість стільців</div>
@@ -54,7 +55,7 @@
 		<div class="aRow"><div class="aCell"><div class="tests">
 			<table>
 				<tr><td>17</td><td>6</td><td>==></td><td>23</td></tr>
-				<tr><td>1</td><td>134</td><td>==><td>135</td></tr>
+				<tr><td>1</td><td>134</td><td>==></td><td>135</td></tr>
 				<tr><td>41</td><td>41</td><td>==></td><td>82</td></tr>
 			</table>
 		</div></div></div>
@@ -62,51 +63,102 @@
 
 	<div class="aTable" id="m2">
 		<div class="aRow"><div class="aCell">
-		<span class="number">2. </span><div class="task">На складі меблевої фабрики зберігається декілька столиків та стільців. Скільки всього предметів зберігається на складі?</div>
+		<span class="number">2. </span><div class="task">«Ідеальна» вага людини в кілограмах&nbsp;– це її ріст у&nbsp;сантиметрах мінус&nbsp;110. Складіть програму обчислення «ідеальної» ваги.</div>
 		</div></div>
 		<div class="aRow"><div class="aCell">
-			<div class="dano-res"><span class="dano">Дано:</span><br>1) кількість столиків; 2) кількість стільців.</div>
-			<div class="dano-res"><span class="res">Результат:</span><br>всього предметів</div>
+			<div class="dano-res"><span class="dano">Дано:</span><br>ріст людини (см)</div>
+			<div class="dano-res"><span class="res">Результат:</span><br>вага людини (кг)</div>
 		</div></div>
 		<div class="aRow"><div class="aCell"><div class="tests">
 			<table>
-				<tr><td>17</td><td>6</td><td>==></td><td>23</td></tr>
-				<tr><td>1</td><td>134</td><td>==><td>135</td></tr>
-				<tr><td>41</td><td>41</td><td>==></td><td>82</td></tr>
+				<tr><td>217</td><td>==></td><td>107</td></tr>
+				<tr><td>174</td><td>==></td><td>64</td></tr>
+				<tr><td>2356</td><td>==></td><td>2246</td></tr>
 			</table>
 		</div></div></div>
 	</div>
 
 	<div class="aTable" id="m3">
 		<div class="aRow"><div class="aCell">
-		<span class="number">3. </span><div class="task">На складі меблевої фабрики зберігається декілька столиків та стільців. Скільки всього предметів зберігається на складі?</div>
+		<span class="number">3. </span><div class="task">Іван купив декілька однакових подарункових коробок з&nbsp;цукерками. Скільки всього купив цукерок Іван, якщо відома кількість цукерок в&nbsp;одній коробці?</div>
 		</div></div>
 		<div class="aRow"><div class="aCell">
-			<div class="dano-res"><span class="dano">Дано:</span><br>1) кількість столиків; 2) кількість стільців.</div>
-			<div class="dano-res"><span class="res">Результат:</span><br>всього предметів</div>
+			<div class="dano-res"><span class="dano">Дано:</span><br>1) кількість коробок;<br>2) кількість цукерок в&nbsp;одній коробці.</div>
+			<div class="dano-res"><span class="res">Результат:</span><br>уся кількість цукерок</div>
 		</div></div>
 		<div class="aRow"><div class="aCell"><div class="tests">
 			<table>
-				<tr><td>17</td><td>6</td><td>==></td><td>23</td></tr>
-				<tr><td>1</td><td>134</td><td>==><td>135</td></tr>
-				<tr><td>41</td><td>41</td><td>==></td><td>82</td></tr>
+				<tr><td>1</td><td>6</td><td>==></td><td>6</td></tr>
+				<tr><td>15</td><td>4</td><td>==></td><td>60</td></tr>
+				<tr><td>98</td><td>0</td><td>==></td><td>0</td></tr>
 			</table>
 		</div></div></div>
 	</div>
 
 	<div class="aTable" id="m4">
 		<div class="aRow"><div class="aCell">
-		<span class="number">4. </span><div class="task">На складі меблевої фабрики зберігається декілька столиків та стільців. Скільки всього предметів зберігається на складі?</div>
+		<span class="number">4. </span><div class="task">Діагоналі телевізорів та моніторів вимірюють у&nbsp;дюймах. А&nbsp;скільки це сантиметрів? А&nbsp;метрів?<br>(підказка: 1&nbsp;дюйм&nbsp;= 2,54&nbsp;см)</div>
 		</div></div>
 		<div class="aRow"><div class="aCell">
-			<div class="dano-res"><span class="dano">Дано:</span><br>1) кількість столиків; 2) кількість стільців.</div>
-			<div class="dano-res"><span class="res">Результат:</span><br>всього предметів</div>
+			<div class="dano-res"><span class="dano">Дано:</span><br>довжина діагоналі у&nbsp;дюймах</div>
+			<div class="dano-res"><span class="res">Результат:</span><br>1) довжина у&nbsp;см;<br>2) довжина у&nbsp;метрах.</div>
 		</div></div>
 		<div class="aRow"><div class="aCell"><div class="tests">
 			<table>
-				<tr><td>17</td><td>6</td><td>==></td><td>23</td></tr>
-				<tr><td>1</td><td>134</td><td>==><td>135</td></tr>
-				<tr><td>41</td><td>41</td><td>==></td><td>82</td></tr>
+				<tr><td>43</td><td>==></td><td>106.68</td><td>1.0668</td></tr>
+				<tr><td>10.3</td><td>==></td><td>26.16</td><td>0.2616</td></tr>
+				<tr><td>123.5</td><td>==></td><td>313.69</td><td>3.1369</td></tr>
+			</table>
+		</div></div></div>
+	</div>
+
+	<div class="aTable" id="m5">
+		<div class="aRow"><div class="aCell">
+		<span class="number">5. </span><div class="task">Відомо, скільки днів минуло між двома подіями. А&nbsp;скільки це років?</div>
+		</div></div>
+		<div class="aRow"><div class="aCell">
+			<div class="dano-res"><span class="dano">Дано:</span><br>кількість днів</div>
+			<div class="dano-res"><span class="res">Результат:</span><br>кількість років</div>
+		</div></div>
+		<div class="aRow"><div class="aCell"><div class="tests">
+			<table>
+				<tr><td>1000</td><td>==></td><td>2.739</td></tr>
+				<tr><td>56</td><td>==></td><td>0.153</td></tr>
+				<tr><td>12356</td><td>==></td><td>33.852</td></tr>
+			</table>
+		</div></div></div>
+	</div>
+
+	<div class="aTable" id="m6">
+		<div class="aRow"><div class="aCell">
+		<span class="number">6. </span><div class="task">Відома кількість ігор, які провела футбольна команда та кількість її перемог і нічиїх. Скільки поразок має команда? А&nbsp;скільки очок?<br>(підказка: перемога&nbsp;– 3&nbsp;очки, нічия&nbsp;– 1&nbsp;очко, поразка&nbsp;– 0&nbsp;очок) </div>
+		</div></div>
+		<div class="aRow"><div class="aCell">
+			<div class="dano-res"><span class="dano">Дано:</span><br>1) кількість ігор;<br>2) кількість перемог;<br>3) кількість нічиїх.</div>
+			<div class="dano-res"><span class="res">Результат:</span><br>1) кількість поразок;<br>2) кількість очок.</div>
+		</div></div>
+		<div class="aRow"><div class="aCell"><div class="tests">
+			<table>
+				<tr><td>14</td><td>6</td><td>2</td><td>==></td><td>6</td><td>20</td></tr>
+				<tr><td>24</td><td>11</td><td>13</td><td>==></td><td>0</td><td>46</td></tr>
+				<tr><td>17</td><td>0</td><td>1</td><td>==></td><td>16</td><td>1</td></tr>
+			</table>
+		</div></div></div>
+	</div>
+
+		<div class="aTable" id="m7">
+		<div class="aRow"><div class="aCell">
+		<span class="number">7. </span><div class="task">Згідно статистики одна викурена сигарета в&nbsp;середньому вкорочує життя людини на 4&nbsp;хв. Скільки днів за своє життя «втратив» курець від сигарет, якщо відомо, скільки він їх викурює за&nbsp;день?</div>
+		</div></div>
+		<div class="aRow"><div class="aCell">
+			<div class="dano-res"><span class="dano">Дано:</span><br>1) вік курця;<br>2) кількість сигарет, що викурюються за&nbsp;день.</div>
+			<div class="dano-res"><span class="res">Результат:</span><br>кількість днів життя, які «втратив» курець</div>
+		</div></div>
+		<div class="aRow"><div class="aCell"><div class="tests">
+			<table>
+				<tr><td>42</td><td>5</td><td>==></td><td>212.9</td></tr>
+				<tr><td>120</td><td>1</td><td>==></td><td>123.7</td></tr>
+				<tr><td>17</td><td>16</td><td>==></td><td>275.8</td></tr>
 			</table>
 		</div></div></div>
 	</div>
