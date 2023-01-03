@@ -7,6 +7,7 @@
 	<script src="/css/tasks-js-1.js"></script>
 </head>
 
+<!--==================================================-->
 <style>
 	.aTable {
 		line-height: 1.5;
@@ -16,24 +17,20 @@
 		display: block;
 		padding-left: 20px;
 	}
-	.dano-res {
+	.dano-res, .tests {
 		padding: 10px 0;
+		font-size: 0.9em;
 	}
 	.dano, .res {
-		padding-left: 20px;
+		padding-left: 25px;
 		font-style: italic;
 		font-weight: bold;
-		font-size: 0.8em;
-	}
-	.tests {
-		padding: 10px 0;
-		font-family: monospace;
-		font-size: 1.2em;
 	}
 	td {
-		min-width: 30px;
+		min-width: 35px;
 	}
 </style>
+<!--==================================================-->
 
 <body>
 	<div class="aHeader" id="header">
@@ -44,14 +41,14 @@
 		</select>
 		<div class="aButton" onclick="Filtering(select.selectedIndex + 1)">&#9658;</div>
 	</div>
-
+	<div style="height: 45px;"></div>
 
 	<div class="aTable" id="m1">
 		<div class="aRow"><div class="aCell">
 		<span class="number">1. </span><div class="task">На складі меблевої фабрики зберігається декілька столиків та стільців. Скільки всього предметів зберігається на складі?</div>
 		</div></div>
 		<div class="aRow"><div class="aCell">
-			<div class="dano-res"><span class="dano">Дано:</span><br>1) кількість столиків; 2) кількість стільців.</div>
+			<div class="dano-res"><span class="dano">Дано:</span><br>1) кількість столиків<br>2) кількість стільців</div>
 			<div class="dano-res"><span class="res">Результат:</span><br>всього предметів</div>
 		</div></div>
 		<div class="aRow"><div class="aCell"><div class="tests">
