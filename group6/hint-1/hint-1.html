@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/main.css">
+	<title>Задачі Scratch</title>
+	<script src="/css/filter.js"></script>
+</head>
+
+<body>
+	<div class="aHeader" id="header">
+		<div class="aButton" onclick="Filtering(select.selectedIndex - 1)">&#9668;</div>
+		<select class="aSelect" id="select" size="1" onchange="Filtering(this.selectedIndex)">
+			<option>Усі</option>
+			<option>1</option><option>2</option><option>3</option><option>4</option>
+		</select>
+		<div class="aButton" onclick="Filtering(select.selectedIndex + 1)">&#9658;</div>
+	</div>
+	<div class="aHiddenHeader-2"></div>
+
+	<div class="aTable" id="m1">
+		<video class="aImg" controls><source src="0.mp4" type="video/mp4">Не можна відобразити відео :(</video>
+	</div>
+	<div class="aTable-Header-BodyColor" id="m2">
+		<video class="aImg" controls><source src="1.mp4" type="video/mp4">Не можна відобразити відео :(</video>
+	</div>
+	<div class="aTable-Header-BodyColor" id="m3">
+		<video class="aImg" controls><source src="2.mp4" type="video/mp4">Не можна відобразити відео :(</video>
+	</div>
+	<div class="aTable-Header-BodyColor" id="m4">
+		<video class="aImg" controls><source src="3.mp4" type="video/mp4">Не можна відобразити відео :(</video>
+	</div>
+
+</body>
+</html>
