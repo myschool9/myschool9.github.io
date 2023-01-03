@@ -57,8 +57,16 @@ a.aSpecial {
 	margin: 2px 0 15px 6px;
 	background-color: var(--table-color);
 }
-.aTable-Header-BodyColor{
+.aTable-Header-BodyColor {
 	background-color: var(--body-color);
+}
+
+/* порожній div під Header, -1 звичайний, -2 для 3d кнопок*/
+.aHiddenHeader-1 {
+	height: 40px;
+}
+.aHiddenHeader-2 {
+	height: 45px;
 }
 
 /*------------------------------------------------*/
