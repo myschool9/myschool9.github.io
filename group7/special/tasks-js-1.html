@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Лінійні задачі</title>
+	<link rel="stylesheet" href="/css/main.css">
+	<script src="/css/tasks-js-1.js"></script>
+</head>
+
+<style>
+	.aTable {
+		line-height: 1.5;
+	}
+	.number {
+		font-weight: bold;
+		display: block;
+		padding-left: 20px;
+	}
+	.dano-res {
+		padding: 10px 0;
+	}
+	.dano, .res {
+		padding-left: 20px;
+		font-style: italic;
+		font-weight: bold;
+		font-size: 0.8em;
+	}
+	.tests {
+		padding: 10px 0;
+		font-family: monospace;
+		font-size: 1.2em;
+	}
+	td {
+		min-width: 30px;
+	}
+</style>
+
+<body>
+	<div class="aHeader" id="header">
+		<div class="aButton" onclick="Filtering(select.selectedIndex - 1)">&#9668;</div>
+		<select class="aSelect" id="select" size="1" onchange="Filtering(this.selectedIndex)">
+			<option>Усі</option>
+			<option>1</option><option>2</option><option>3</option><option>4</option>
+		</select>
+		<div class="aButton" onclick="Filtering(select.selectedIndex + 1)">&#9658;</div>
+	</div>
+
+
+	<div class="aTable" id="m1">
+		<div class="aRow"><div class="aCell">
+		<span class="number">1. </span><div class="task">На складі меблевої фабрики зберігається декілька столиків та стільців. Скільки всього предметів зберігається на складі?</div>
+		</div></div>
+		<div class="aRow"><div class="aCell">
+			<div class="dano-res"><span class="dano">Дано:</span><br>1) кількість столиків; 2) кількість стільців.</div>
+			<div class="dano-res"><span class="res">Результат:</span><br>всього предметів</div>
+		</div></div>
+		<div class="aRow"><div class="aCell"><div class="tests">
+			<table>
+				<tr><td>17</td><td>6</td><td>==></td><td>23</td></tr>
+				<tr><td>1</td><td>134</td><td>==><td>135</td></tr>
+				<tr><td>41</td><td>41</td><td>==></td><td>82</td></tr>
+			</table>
+		</div></div></div>
+	</div>
+
+	<div class="aTable" id="m2">
+		<div class="aRow"><div class="aCell">
+		<span class="number">2. </span><div class="task">На складі меблевої фабрики зберігається декілька столиків та стільців. Скільки всього предметів зберігається на складі?</div>
+		</div></div>
+		<div class="aRow"><div class="aCell">
+			<div class="dano-res"><span class="dano">Дано:</span><br>1) кількість столиків; 2) кількість стільців.</div>
+			<div class="dano-res"><span class="res">Результат:</span><br>всього предметів</div>
+		</div></div>
+		<div class="aRow"><div class="aCell"><div class="tests">
+			<table>
+				<tr><td>17</td><td>6</td><td>==></td><td>23</td></tr>
+				<tr><td>1</td><td>134</td><td>==><td>135</td></tr>
+				<tr><td>41</td><td>41</td><td>==></td><td>82</td></tr>
+			</table>
+		</div></div></div>
+	</div>
+
+	<div class="aTable" id="m3">
+		<div class="aRow"><div class="aCell">
+		<span class="number">3. </span><div class="task">На складі меблевої фабрики зберігається декілька столиків та стільців. Скільки всього предметів зберігається на складі?</div>
+		</div></div>
+		<div class="aRow"><div class="aCell">
+			<div class="dano-res"><span class="dano">Дано:</span><br>1) кількість столиків; 2) кількість стільців.</div>
+			<div class="dano-res"><span class="res">Результат:</span><br>всього предметів</div>
+		</div></div>
+		<div class="aRow"><div class="aCell"><div class="tests">
+			<table>
+				<tr><td>17</td><td>6</td><td>==></td><td>23</td></tr>
+				<tr><td>1</td><td>134</td><td>==><td>135</td></tr>
+				<tr><td>41</td><td>41</td><td>==></td><td>82</td></tr>
+			</table>
+		</div></div></div>
+	</div>
+
+	<div class="aTable" id="m4">
+		<div class="aRow"><div class="aCell">
+		<span class="number">4. </span><div class="task">На складі меблевої фабрики зберігається декілька столиків та стільців. Скільки всього предметів зберігається на складі?</div>
+		</div></div>
+		<div class="aRow"><div class="aCell">
+			<div class="dano-res"><span class="dano">Дано:</span><br>1) кількість столиків; 2) кількість стільців.</div>
+			<div class="dano-res"><span class="res">Результат:</span><br>всього предметів</div>
+		</div></div>
+		<div class="aRow"><div class="aCell"><div class="tests">
+			<table>
+				<tr><td>17</td><td>6</td><td>==></td><td>23</td></tr>
+				<tr><td>1</td><td>134</td><td>==><td>135</td></tr>
+				<tr><td>41</td><td>41</td><td>==></td><td>82</td></tr>
+			</table>
+		</div></div></div>
+	</div>
+
+</body>
+</html>
