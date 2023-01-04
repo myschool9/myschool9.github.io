@@ -7,29 +7,76 @@
 	<script src="/css/filter.js"></script>
 </head>
 
+<!--==================================================-->
+<style>
+	.aTable {
+		line-height: 1.5;
+	}
+	.aTitle {
+		text-align: center;
+		padding: 5px 5px 0;
+	}
+	.aNumber {
+		padding: 0 5px;
+		font-weight: bold;
+	}
+	.aComment {
+		padding: 0 5px;
+		font-size: 0.9em;
+	}
+</style>
+<!--==================================================-->
+
 <body>
 	<div class="aHeader" id="header">
 		<div class="aButton" onclick="Filtering(select.selectedIndex - 1)">&#9668;</div>
 		<select class="aSelect" id="select" size="1" onchange="Filtering(this.selectedIndex)">
 			<option>Усі</option>
-			<option>1</option><option>2</option><option>3</option><option>4</option>
+			<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+			<option>6</option>
 		</select>
 		<div class="aButton" onclick="Filtering(select.selectedIndex + 1)">&#9658;</div>
 	</div>
 	<div class="aHiddenHeader-2"></div>
 
-	<div class="aTable-Header-BodyColor" id="m1">
-		<video class="aImg" controls><source src="0.mp4" type="video/mp4">Не можна відобразити відео :(</video>
-	</div>
-	<div class="aTable-Header-BodyColor" id="m2">
+<!----------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------->
+	<div class="aTable" id="m1">
+		<div class="aTitle"><span class="aNumber">1. </span><span class="aName">Екскурсія</span></div>
 		<video class="aImg" controls><source src="1.mp4" type="video/mp4">Не можна відобразити відео :(</video>
-	</div>
-	<div class="aTable-Header-BodyColor" id="m3">
-		<video class="aImg" controls><source src="2.mp4" type="video/mp4">Не можна відобразити відео :(</video>
-	</div>
-	<div class="aTable-Header-BodyColor" id="m4">
-		<video class="aImg" controls><source src="3.mp4" type="video/mp4">Не можна відобразити відео :(</video>
+		<div class="aComment"></div>
 	</div>
 
+	<div class="aTable" id="m2">
+		<div class="aTitle"><span class="aNumber">2. </span><span class="aName">Екскурсія</span></div>
+		<video class="aImg" controls><source src="2.mp4" type="video/mp4">Не можна відобразити відео :(</video>
+		<div class="aComment"></div>
+	</div>
+
+	<div class="aTable" id="m3">
+		<div class="aTitle"><span class="aNumber">3. </span><span class="aName">Екскурсія</span></div>
+		<video class="aImg" controls><source src="3.mp4" type="video/mp4">Не можна відобразити відео :(</video>
+		<div class="aComment"></div>
+	</div>
+
+	<div class="aTable" id="m4">
+		<div class="aTitle"><span class="aNumber">4. </span><span class="aName">Екскурсія</span></div>
+		<video class="aImg" controls><source src="4.mp4" type="video/mp4">Не можна відобразити відео :(</video>
+		<div class="aComment"></div>
+	</div>
+
+	<div class="aTable" id="m5">
+		<div class="aTitle"><span class="aNumber">5. </span><span class="aName">Екскурсія</span></div>
+		<video class="aImg" controls><source src="5.mp4" type="video/mp4">Не можна відобразити відео :(</video>
+		<div class="aComment"></div>
+	</div>
+
+	<div class="aTable" id="m5">
+		<div class="aTitle"><span class="aNumber">6. </span><span class="aName">Екскурсія</span></div>
+		<video class="aImg" controls><source src="6.mp4" type="video/mp4">Не можна відобразити відео :(</video>
+		<div class="aComment"></div>
+	</div>
+
+<!----------------------------------------------------------------------------------->
 </body>
 </html>
