@@ -31,6 +31,8 @@
 	}
 	td {
 		min-width: 35px;
+		padding: 0 5px;
+		font-size: 0.9em;
 	}
 </style>
 <!--==================================================-->
@@ -43,7 +45,8 @@
 			<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
 			<option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
 			<option>11</option><option>12</option><option>13</option><option>14</option><option>15</option>
-			<option>16</option><option>17</option><option>18</option>
+			<option>16</option><option>17</option><option>18</option><option>19</option><option>20</option>
+			<option>21</option><option>22</option><option>23</option><option>24</option>
 		</select>
 		<div class="aButton" onclick="Filtering(select.selectedIndex + 1)">&#9658;</div>
 	</div>
@@ -215,7 +218,7 @@
 		<div class="aRow"><div class="aCell"><div class="tests">
 			<table>
 				<tr><td>254</td><td>==></td><td>13.368</td><td>93.6</td></tr>
-				<tr><td>78</td><<td>==></td><td>4.105</td><td>28.7</td></tr>
+				<tr><td>78</td><td>==></td><td>4.105</td><td>28.7</td></tr>
 				<tr><td>11</td><td>==></td><td>0.579</td><td>4.1</td></tr>
 			</table>
 		</div></div></div>
@@ -357,6 +360,107 @@
 		</div></div></div>
 	</div>
 
+	<div class="aTable" id="m19">
+		<div class="aRow"><div class="aCell">
+		<span class="number">19. </span><div class="task">Іван хоче наповнити бочку водою. Він виміряв діаметр основи та висоту бочки. Який радіус основи бочки? А&nbsp;скільки літрів води вмістить така бочка?</div>
+		</div></div>
+		<div class="aRow"><div class="aCell">
+			<div class="dano-res"><span class="dano">Дано:</span><br>1) діаметр основи бочки&nbsp;(см);<br>2) висота бочки&nbsp;(см).</div>
+			<div class="dano-res"><span class="res">Результат:</span><br>1) радіус основи;<br>2) кількість літрів води, яку вмістить бочка.</div>
+		</div></div>
+		<div class="aRow"><div class="aCell"><div class="tests">
+			<table>
+				<tr><td>55</td><td>80</td><td>==></td><td>27.5</td><td>27.5</td></tr>
+				<tr><td>112</td><td>580</td><td>==></td><td>56.0</td><td>5711</td></tr>
+				<tr><td>67</td><td>24</td><td>==></td><td>33.5</td><td>85</td></tr>
+			</table>
+		</div></div></div>
+	</div>
+
+	<div class="aTable" id="m20">
+		<div class="aRow"><div class="aCell">
+		<span class="number">20. </span><div class="task">Відомо, скільки жителів області протягом місяця народилося і скільки померло. На&nbsp;скільки змінилась кількість жителів області?</div>
+		</div></div>
+		<div class="aRow"><div class="aCell">
+			<div class="dano-res"><span class="dano">Дано:</span><br>1) кількість народжених;<br>2) кількість померлих.</div>
+			<div class="dano-res"><span class="res">Результат:</span><br>на&nbsp;скільки змінилась кількість жителів області</div>
+		</div></div>
+		<div class="aRow"><div class="aCell"><div class="tests">
+			<table>
+				<tr><td>22000</td><td>24500</td><td>==></td><td>-2500</td></tr>
+				<tr><td>75</td><td>34</td><td>==></td><td>41</td></tr>
+				<tr><td>1256</td><td>1256</td><td>==></td><td>0</td></tr>
+			</table>
+		</div></div></div>
+	</div>
+
+	<div class="aTable" id="m21">
+		<div class="aRow"><div class="aCell">
+		<span class="number">21. </span><div class="task">Іван отримав премію 20% від&nbsp;зарплати. А&nbsp;скільки це гривень?</div>
+		</div></div>
+		<div class="aRow"><div class="aCell">
+			<div class="dano-res"><span class="dano">Дано:</span><br>зарплата Івана</div>
+			<div class="dano-res"><span class="res">Результат:</span><br>премія Івана (в&nbsp;гривнях)</div>
+		</div></div>
+		<div class="aRow"><div class="aCell"><div class="tests">
+			<table>
+				<tr><td>4254.57</td><td>==></td><td>850.91</td></tr>
+				<tr><td>12356.13</td><td>==></td><td>2471.23</td></tr>
+				<tr><td>110</td><td>==></td><td>22.00</td></tr>
+			</table>
+		</div></div></div>
+	</div>
+
+	<div class="aTable" id="m22">
+		<div class="aRow"><div class="aCell">
+		<span class="number">22. </span><div class="task">Іван щомісяця платить за користування Інтернетом. Скільки він заплатив за&nbsp;останні півроку Інтернет-провайдеру?</div>
+		</div></div>
+		<div class="aRow"><div class="aCell">
+			<div class="dano-res"><span class="dano">Дано:</span><br>щомісячна плата за&nbsp;Інтернет</div>
+			<div class="dano-res"><span class="res">Результат:</span><br>плата за&nbsp;півроку</div>
+		</div></div>
+		<div class="aRow"><div class="aCell"><div class="tests">
+			<table>
+				<tr><td>123</td><td>==></td><td>738</td></tr>
+				<tr><td>55</td><td>==></td><td>330</td></tr>
+				<tr><td>400</td><td>==></td><td>2400</td></tr>
+			</table>
+		</div></div></div>
+	</div>
+
+	<div class="aTable" id="m23">
+		<div class="aRow"><div class="aCell">
+		<span class="number">18. </span><div class="task">Відомо, скільки балів отримали 2&nbsp;призери олімпіади з&nbsp;інформатики. А&nbsp;скільки це в&nbsp;середньому?</div>
+		</div></div>
+		<div class="aRow"><div class="aCell">
+			<div class="dano-res"><span class="dano">Дано:</span><br>1) бали переможця;<br>2) бали другого призера.</div>
+			<div class="dano-res"><span class="res">Результат:</span><br>середній бал двох призерів</div>
+		</div></div>
+		<div class="aRow"><div class="aCell"><div class="tests">
+			<table>
+				<tr><td>32</td><td>20</td><td>==></td><td>26.0</td></tr>
+				<tr><td>54</td><td>31</td><td>==></td><td>42.5</td></tr>
+				<tr><td>12</td><td>7</td><td>==></td><td>9.5</td></tr>
+			</table>
+		</div></div></div>
+	</div>
+
+	<div class="aTable" id="m24">
+		<div class="aRow"><div class="aCell">
+		<span class="number">24. </span><div class="task">Найповільніша тварина у&nbsp;світі равлик намагається «здолати» город Івана. Відомо, скільки сантиметрів за&nbsp;хвилину проповзає в&nbsp;середньому равлик. За&nbsp;скільки годин равлик проповзе через город Івана?</div>
+		</div></div>
+		<div class="aRow"><div class="aCell">
+			<div class="dano-res"><span class="dano">Дано:</span><br>1) довжина городу (у&nbsp;метрах);<br>2) швидкість равлика (см&nbsp;за&nbsp;хвилину).</div>
+			<div class="dano-res"><span class="res">Результат:</span><br>кількість годин, яку «витратить» равлик</div>
+		</div></div>
+		<div class="aRow"><div class="aCell"><div class="tests">
+			<table>
+				<tr><td>25</td><td>9</td><td>==></td><td>4.6</td></tr>
+				<tr><td>125</td><td>86</td><td>==></td><td>2.4</td></tr>
+				<tr><td>350</td><td>115</td><td>==></td><td>5.1</td></tr>
+			</table>
+		</div></div></div>
+	</div>
 
 <!----------------------------------------------------------------------------------->
 </body>
