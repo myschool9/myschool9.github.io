@@ -37,6 +37,28 @@
 	.myImg {
 		text-align: center;
 	}
+
+	<!-----Розвязки задач, стилі поч. на «х»----------->
+	.x-title {
+		text-align: center;
+		font-style: italic;
+		font-weight: bold;
+	}
+	.x-tag {
+		font-weight: bold;
+		color: #008000;
+	}
+	.x-keyword {
+		font-weight: bold;
+		font-style: italic;
+		color: #000080;
+	}
+	.x-number {
+		color: #ff0000;
+	}
+	.x-string {
+		color: #808080;
+	}
 </style>
 <!--==================================================-->
 
@@ -48,7 +70,7 @@
 			<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
 			<option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
 			<option>11</option><option>12</option><option>13</option><option>14</option><option>15</option>
-			<option>16</option><option>17</option><option>18</option><option>19</option><option>20</option>
+			<option>16</option><option>17</option><option>18</option><option>19+</option><option>20</option>
 			<option>21</option><option>22</option><option>23</option><option>24</option><option>25</option>
 			<option>26</option><option>27</option><option>28</option><option>29</option><option>30</option>
 			<option>31</option><option>32</option><option>33</option>
@@ -380,6 +402,22 @@
 				<tr><td>67</td><td>24</td><td>==></td><td>33.5</td><td>85</td></tr>
 			</table>
 		</div></div></div>
+			<!--++++++++++++++++++++++++++++++++-->
+		<div class="aRow"><div class="aCell">
+			<div class="x-title">Розв’язок</div>
+			<div style="font-family: monospace;">
+				<div class="x-tag">&LT;script&GT;</div><p></p>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> area;</div>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> oDiam;</div>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> oRad = Number(prompt(<span class="x-string">"Який радіус кола?"</span>));</div><p></p>
+				<div>&nbsp;&nbsp;oDiam = <span class="x-number">2</span> * oRad;</div>
+				<div>&nbsp;&nbsp;area = <span class="x-number">3.14</span> * oDiam * oDiam / <span class="x-number">4</span>;</div><p></p>
+				<div>&nbsp;&nbsp;alert(<span class="x-string">"Діаметр="</span> + oDiam + <span class="x-string">"cм"</span>);</div>
+				<div>&nbsp;&nbsp;alert(<span class="x-string">"Площа="</span> + area.toFixed(<span class="x-number">1</span>) + <span class="x-string">"кв.cм"</span>);</div><p></p>
+				<div class="x-tag">&LT;/script&GT;</div>
+			</div>
+		</div></div>
+			<!--++++++++++++++++++++++++++++++++-->
 	</div>
 
 	<div class="aTable" id="m20">
