@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Задачі з розгалуженням</title>
+	<link rel="stylesheet" href="/css/main.css">
+	<script src="/css/filter.js"></script>
+</head>
+
+<!--==================================================-->
+<style>
+	.aTable {
+		line-height: 1.5;
+	}
+	.number {
+		font-weight: bold;
+		display: block;
+		padding-left: 20px;
+	}
+	.dano-res {
+		padding: 10px 0;
+		font-size: 0.9em;
+	}
+	.tests {
+		padding: 10px 0;
+	}
+	.dano, .res, .x-title {
+		padding-left: 25px;
+		font-style: italic;
+		font-weight: bold;
+	}
+	td {
+		min-width: 35px;
+		padding: 0 5px;
+		font-size: 0.9em;
+	}
+	.myImg {
+		text-align: center;
+	}
+	.x-title {
+		text-align: center;
+		font-style: italic;
+		font-weight: bold;
+		font-size: 0.9em;
+	}
+	.x-body {
+		font-family: monospace;
+	}
+	.x-tag {
+		font-weight: bold;
+		color: #008000;
+	}
+	.x-keyword {
+		font-weight: bold;
+		font-style: italic;
+		color: #000080;
+	}
+	.x-number {
+		color: #ff0000;
+	}
+	.x-string {
+		color: #808080;
+	}
+</style>
+<!--==================================================-->
+
+<body>
+	<div class="aHeader" id="header">
+		<div class="aButton" onclick="Filtering(select.selectedIndex - 1)">&#9668;</div>
+		<select class="aSelect" id="select" size="1" onchange="Filtering(this.selectedIndex)">
+			<option>Усі</option>
+			<option>1&deg;</option><option>2</option><option>3</option>
+		</select>
+		<div class="aButton" onclick="Filtering(select.selectedIndex + 1)">&#9658;</div>
+	</div>
+	<div class="aHiddenHeader-2"></div>
+
+<!----------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------->
+	<div class="aTable" id="m1">
+		<div class="aRow"><div class="aCell">
+		<span class="number">1. </span><div class="task">В&nbsp;Україні максимально дозволена швидкість у населених пунктах 50&nbsp;км/год. Відомо, з&nbsp;якою швидкістю рухається автомобіль Івана.<br>Чи&nbsp;порушує він правила?</div>
+		</div></div>
+		<div class="aRow"><div class="aCell">
+			<div class="dano-res"><span class="dano">Дано:</span><br>швидкість автомобіля Івана</div>
+			<div class="dano-res"><span class="res">Результат:</span><br>чи&nbsp;є порушення правил дорожнього&nbsp;руху</div>
+		</div></div>
+		<div class="aRow"><div class="aCell"><div class="tests">
+			<table>
+				<tr><td>45</td><td>==></td><td>Не&nbsp;порушує правила</td></tr>
+				<tr><td>92</td><td>==></td><td>Порушує правила</td></tr>
+				<tr><td>50</td><td>==></td><td>Не&nbsp;порушує правила</td></tr>
+			</table>
+		</div></div></div>
+			<!--++++++++++++++++++++++++++++++++-->
+		<div class="aRow"><div class="aCell">
+			<div class="x-title">Розв’язок (спосіб 1)</div>
+			<div class="x-body">
+				<div class="x-tag">&LT;script&GT;</div>
+				<p></p>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> speed = Number(prompt(<span class="x-string">"Яка швидкість авто?"</span>));</div>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> violation;</div>
+				<p></p>
+				<div>&nbsp;&nbsp;<span class="x-keyword">if</span> (speed > <span class="x-number">50</span>)</div>
+				<div>&nbsp;&nbsp;&nbsp;&nbsp;violation = <span class="x-string">"Порушує правила"</span>;</div>
+				<div>&nbsp;&nbsp;<span class="x-keyword">else</span></div>
+				<div>&nbsp;&nbsp;&nbsp;&nbsp;violation = <span class="x-string">"Не порушує правила"</span>;</div>
+				<p></p>
+				<div>&nbsp;&nbsp;alert(violation);</div>
+				<p></p>
+				<div class="x-tag">&LT;/script&GT;</div>
+			</div>
+		</div></div>
+			<!--++++++++++++++++++++++++++++++++-->
+			<!--++++++++++++++++++++++++++++++++-->
+		<div class="aRow"><div class="aCell">
+			<div class="x-title">Розв’язок (спосіб 2)</div>
+			<div class="x-body">
+				<div class="x-tag">&LT;script&GT;</div>
+				<p></p>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> speed = Number(prompt(<span class="x-string">"Яка швидкість авто?"</span>));</div>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> violation;</div>
+				<p></p>
+				<div>&nbsp;&nbsp;<span class="x-keyword">if</span> (speed > <span class="x-number">50</span>)</div>
+				<div>&nbsp;&nbsp;&nbsp;&nbsp;violation = <span class="x-string">"Порушує правила"</span>;</div>
+				<div>&nbsp;&nbsp;<span class="x-keyword">if</span> (speed <= <span class="x-number">50</span>)</div>
+				<div>&nbsp;&nbsp;&nbsp;&nbsp;violation = <span class="x-string">"Не порушує правила"</span>;</div>
+				<p></p>
+				<div>&nbsp;&nbsp;alert(violation);</div>
+				<p></p>
+				<div class="x-tag">&LT;/script&GT;</div>
+			</div>
+		</div></div>
+			<!--++++++++++++++++++++++++++++++++-->
+	</div>
+
+	<div class="aTable" id="m2">
+		<div class="aRow"><div class="aCell">
+		<span class="number">2. </span><div class="task">Іван купив на&nbsp;ринку кавун і гарбуз. Відома їхня вага.<br>Що з&nbsp;них важче?</div>
+		</div></div>
+		<div class="aRow"><div class="aCell">
+			<div class="dano-res"><span class="dano">Дано:</span><br>1) вага кавуна;<br>2) вага гарбуза.</div>
+			<div class="dano-res"><span class="res">Результат:</span><br>назва важчої ягоди</div>
+		</div></div>
+		<div class="aRow"><div class="aCell"><div class="tests">
+			<table>
+				<tr><td>5</td><td>7.7</td><td>==></td><td>Гарбуз важчий</td></tr>
+				<tr><td>9.5</td><td>2</td><td>==></td><td>Кавун важчий</td></tr>
+				<tr><td>11</td><td>11</td><td>==></td><td>Ягоди однакові</td></tr>
+			</table>
+		</div></div></div>
+	</div>
+
+	<div class="aTable" id="m3">
+		<div class="aRow"><div class="aCell">
+		<span class="number">3. </span><div class="task">Паролем до шкільного Wi-Fi є «w56tt7». Іван пробує «зламати» шкільний Wi-Fi.<br>Чи&nbsp;вдалось це йому?</div>
+		</div></div>
+		<div class="aRow"><div class="aCell">
+			<div class="dano-res"><span class="dano">Дано:</span><br>пароль, який вводить Іван</div>
+			<div class="dano-res"><span class="res">Результат:</span><br>чи&nbsp;є доступ до&nbsp;Wi-Fi</div>
+		</div></div>
+		<div class="aRow"><div class="aCell"><div class="tests">
+			<table>
+				<tr><td>Озеро</td><td>==></td><td>Доступ заборонено</td></tr>
+				<tr><td>w56tt7</td><td>==></td><td>Ok. Є доступ</td></tr>
+				<tr><td>9DD934</td><td>==></td><td>Доступ заборонено</td></tr>
+			</table>
+		</div></div></div>
+	</div>
+
+<!----------------------------------------------------------------------------------->
+</body>
+</html>
