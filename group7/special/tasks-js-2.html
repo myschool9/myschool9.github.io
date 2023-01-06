@@ -69,7 +69,8 @@
 		<div class="aButton" onclick="Filtering(select.selectedIndex - 1)">&#9668;</div>
 		<select class="aSelect" id="select" size="1" onchange="Filtering(this.selectedIndex)">
 			<option>Усі</option>
-			<option>1&deg;</option><option>2</option><option>3</option>
+			<option>1&deg;</option><option>2</option><option>3</option><option>4&deg;</option><option>5</option>
+			<option>6</option>
 		</select>
 		<div class="aButton" onclick="Filtering(select.selectedIndex + 1)">&#9658;</div>
 	</div>
@@ -103,15 +104,14 @@
 				<p></p>
 				<div>&nbsp;&nbsp;<span class="x-keyword">if</span> (speed > <span class="x-number">50</span>)</div>
 				<div>&nbsp;&nbsp;&nbsp;&nbsp;violation = <span class="x-string">"Порушує правила"</span>;</div>
-				<div>&nbsp;&nbsp;<span class="x-keyword">else</span></div>
-				<div>&nbsp;&nbsp;&nbsp;&nbsp;violation = <span class="x-string">"Не порушує правила"</span>;</div>
+				<div style="background-color: #dddddd;">&nbsp;&nbsp;<span class="x-keyword">else</span></div>
+				<div style="background-color: #dddddd;">&nbsp;&nbsp;&nbsp;&nbsp;violation = <span class="x-string">"Не порушує правила"</span>;</div>
 				<p></p>
 				<div>&nbsp;&nbsp;alert(violation);</div>
 				<p></p>
 				<div class="x-tag">&LT;/script&GT;</div>
 			</div>
 		</div></div>
-			<!--++++++++++++++++++++++++++++++++-->
 			<!--++++++++++++++++++++++++++++++++-->
 		<div class="aRow"><div class="aCell">
 			<div class="x-title">Розв’язок (спосіб 2)</div>
@@ -123,8 +123,29 @@
 				<p></p>
 				<div>&nbsp;&nbsp;<span class="x-keyword">if</span> (speed > <span class="x-number">50</span>)</div>
 				<div>&nbsp;&nbsp;&nbsp;&nbsp;violation = <span class="x-string">"Порушує правила"</span>;</div>
-				<div>&nbsp;&nbsp;<span class="x-keyword">if</span> (speed <= <span class="x-number">50</span>)</div>
-				<div>&nbsp;&nbsp;&nbsp;&nbsp;violation = <span class="x-string">"Не порушує правила"</span>;</div>
+				<div style="background-color: #dddddd;">&nbsp;&nbsp;<span class="x-keyword">if</span> (speed <= <span class="x-number">50</span>)</div>
+				<div style="background-color: #dddddd;">&nbsp;&nbsp;&nbsp;&nbsp;violation = <span class="x-string">"Не порушує правила"</span>;</div>
+				<p></p>
+				<div>&nbsp;&nbsp;alert(violation);</div>
+				<p></p>
+				<div class="x-tag">&LT;/script&GT;</div>
+			</div>
+		</div></div>
+			<!--++++++++++++++++++++++++++++++++-->
+		<div class="aRow"><div class="aCell">
+			<div class="x-title">Розв’язок (спосіб 3)</div>
+			<div class="x-body">
+				<div class="x-tag">&LT;script&GT;</div>
+				<p></p>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> speed = Number(prompt(<span class="x-string">"Яка швидкість авто?"</span>));</div>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> violation;</div>
+				<p></p>
+				<div>&nbsp;&nbsp;<span class="x-keyword">if</span> (speed > <span class="x-number">50</span>)</div>
+				<div>&nbsp;&nbsp;&nbsp;&nbsp;violation = <span class="x-string">"Порушує правила"</span>;</div>
+				<div style="background-color: #dddddd;">&nbsp;&nbsp;<span class="x-keyword">if</span> (speed == <span class="x-number">50</span>)</div>
+				<div style="background-color: #dddddd;">&nbsp;&nbsp;&nbsp;&nbsp;violation = <span class="x-string">"Не порушує правила"</span>;</div>
+				<div style="background-color: #dddddd;">&nbsp;&nbsp;<span class="x-keyword">if</span> (speed < <span class="x-number">50</span>)</div>
+				<div style="background-color: #dddddd;">&nbsp;&nbsp;&nbsp;&nbsp;violation = <span class="x-string">"Не порушує правила"</span>;</div>
 				<p></p>
 				<div>&nbsp;&nbsp;alert(violation);</div>
 				<p></p>
@@ -164,6 +185,83 @@
 				<tr><td>Озеро</td><td>==></td><td>Доступ заборонено</td></tr>
 				<tr><td>w56tt7</td><td>==></td><td>Ok. Є доступ</td></tr>
 				<tr><td>9DD934</td><td>==></td><td>Доступ заборонено</td></tr>
+			</table>
+		</div></div></div>
+	</div>
+
+	<div class="aTable" id="m4">
+		<div class="aRow"><div class="aCell">
+		<span class="number">4. </span><div class="task">У&nbsp;деякій державі великий бізнес (понад&nbsp;1000000 доходу за&nbsp;рік) сплачує податок 10% (десята частина), а малий бізнес не&nbsp;платить податків.<br>До&nbsp;якого бізнесу відноситься фірма Івана і який податок вона сплачує, якщо відомий її&nbsp;дохід за&nbsp;рік?</div>
+		</div></div>
+		<div class="aRow"><div class="aCell">
+			<div class="dano-res"><span class="dano">Дано:</span><br>дохід за&nbsp;рік фірми Івана</div>
+			<div class="dano-res"><span class="res">Результат:</span><br>1) вид бізнесу;<br>2) податок, який сплачує фірма.</div>
+		</div></div>
+		<div class="aRow"><div class="aCell"><div class="tests">
+			<table>
+				<tr><td>450000</td><td>==></td><td>малий бізнес</td><td>0.00</td></tr>
+				<tr><td>1250344</td><td>==></td><td>великий бізнес</td><td>125034.40</td></tr>
+				<tr><td>2500000</td><td>==></td><td>великий бізнес</td><td>250000.00</td></tr>
+				<tr><td>3178</td><td>==></td><td>малий бізнес</td><td>0.00</td></tr>
+			</table>
+		</div></div></div>
+			<!--++++++++++++++++++++++++++++++++-->
+		<div class="aRow"><div class="aCell">
+			<div class="x-title">Розв’язок</div>
+			<div class="x-body">
+				<div class="x-tag">&LT;script&GT;</div>
+				<p></p>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> income = Number(prompt(<span class="x-string">"Який річний дохід фірми?"</span>));</div>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> business;</div>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> tax;</div>
+				<p></p>
+				<div>&nbsp;&nbsp;<span class="x-keyword">if</span> (income >= <span class="x-number">1000000</span>) {</div>
+				<div>&nbsp;&nbsp;&nbsp;&nbsp;business = <span class="x-string">"великий бізнес"</span>;</div>
+				<div>&nbsp;&nbsp;&nbsp;&nbsp;tax = income / <span class="x-number">10</span>;</div>
+				<div>&nbsp;&nbsp;} <span class="x-keyword">else</span> {</div>
+				<div>&nbsp;&nbsp;&nbsp;&nbsp;business = <span class="x-string">"малий бізнес"</span>;</div>
+				<div>&nbsp;&nbsp;&nbsp;&nbsp;tax = <span class="x-number">0</span>;</div>
+				<div>&nbsp;&nbsp;}</div>
+				<p></p>
+				<div>&nbsp;&nbsp;alert(business);</div>
+				<div>&nbsp;&nbsp;alert(<span class="x-string">"Податок до сплати = "</span> + tax.toFixed(<span class="x-number">2</span>));</div>
+				<p></p>
+				<div class="x-tag">&LT;/script&GT;</div>
+			</div>
+		</div></div>
+			<!--++++++++++++++++++++++++++++++++-->
+	</div>
+
+	<div class="aTable" id="m5">
+		<div class="aRow"><div class="aCell">
+		<span class="number">5. </span><div class="task">Якщо на овочевій фермі купувати більше 100&nbsp;мішків овочів, то надають знижку 50%&nbsp;(половина). Відомо, скільки мішків картоплі потрібно Івану.<br>А&nbsp;скільки вони коштуватимуть?</div>
+		</div></div>
+		<div class="aRow"><div class="aCell">
+			<div class="dano-res"><span class="dano">Дано:</span><br>1) ціна одного мішка;<br>2) кількість мішків, які купує Іван.</div>
+			<div class="dano-res"><span class="res">Результат:</span><br>сума грошей за&nbsp;усю картоплю</div>
+		</div></div>
+		<div class="aRow"><div class="aCell"><div class="tests">
+			<table>
+				<tr><td>12.75</td><td>7</td><td>==></td><td>89.25</td></tr>
+				<tr><td>21.5</td><td>210</td><td>==></td><td>2257.50</td></tr>
+				<tr><td>112</td><td>19</td><td>==></td><td>2128.00</td></tr>
+			</table>
+		</div></div></div>
+	</div>
+
+	<div class="aTable" id="m6">
+		<div class="aRow"><div class="aCell">
+		<span class="number">6. </span><div class="task">При заготівлі «закруток» на&nbsp;зиму Іван помітив, що в&nbsp;одну банку вміщується 14&nbsp;огірків. Відомо, скільки банок і огірків є в&nbsp;Івана.<br>А&nbsp;чи вистачить йому банок?</div>
+		</div></div>
+		<div class="aRow"><div class="aCell">
+			<div class="dano-res"><span class="dano">Дано:</span><br>1) кількість банок;<br>2) кількість огірків.</div>
+			<div class="dano-res"><span class="res">Результат:</span><br>чи&nbsp;треба ще банок</div>
+		</div></div>
+		<div class="aRow"><div class="aCell"><div class="tests">
+			<table>
+				<tr><td>10</td><td>115</td><td>==></td><td>Банок вистачить</td></tr>
+				<tr><td>96</td><td>3450</td><td>==></td><td>Так, треба ще банок</td></tr>
+				<tr><td>19</td><td>266</td><td>==></td><td>Банок вистачить</td></tr>
 			</table>
 		</div></div></div>
 	</div>
