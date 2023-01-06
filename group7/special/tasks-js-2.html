@@ -70,7 +70,8 @@
 		<select class="aSelect" id="select" size="1" onchange="Filtering(this.selectedIndex)">
 			<option>Усі</option>
 			<option>1&deg;</option><option>2</option><option>3</option><option>4&deg;</option><option>5</option>
-			<option>6</option>
+			<option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+			<option>11</option><option>12</option>
 		</select>
 		<div class="aButton" onclick="Filtering(select.selectedIndex + 1)">&#9658;</div>
 	</div>
@@ -262,6 +263,108 @@
 				<tr><td>10</td><td>115</td><td>==></td><td>Банок вистачить</td></tr>
 				<tr><td>96</td><td>3450</td><td>==></td><td>Так, треба ще банок</td></tr>
 				<tr><td>19</td><td>266</td><td>==></td><td>Банок вистачить</td></tr>
+			</table>
+		</div></div></div>
+	</div>
+
+	<div class="aTable" id="m7">
+		<div class="aRow"><div class="aCell">
+		<span class="number">7. </span><div class="task">Бабуся Івана зберігає на&nbsp;зиму в&nbsp;льосі буряк і моркву.<br>А&nbsp;якого з&nbsp;овочів є менше і у&nbsp;скільки разів?</div>
+		</div></div>
+		<div class="aRow"><div class="aCell">
+			<div class="dano-res"><span class="dano">Дано:</span><br>1) вага буряків в&nbsp;льосі;<br>2) вага моркви в&nbsp;льосі.</div>
+			<div class="dano-res"><span class="res">Результат:</span><br>1) назва овочів, яких менше;<br>2) у&nbsp;скільки разів менше.</div>
+		</div></div>
+		<div class="aRow"><div class="aCell"><div class="tests">
+			<table>
+				<tr><td>8</td><td>112</td><td>==></td><td>Буряків є менше</td><td>14.00</td></tr>
+				<tr><td>6</td><td>6</td><td>==></td><td>Овочів однаково</td><td>1.00</td></tr>
+				<tr><td>60</td><td>34</td><td>==></td><td>Моркви є менше</td><td>1.76</td></tr>
+			</table>
+		</div></div></div>
+	</div>
+
+	<div class="aTable" id="m8">
+		<div class="aRow"><div class="aCell">
+		<span class="number">8. </span><div class="task">Іван у&nbsp;понеділок і вівторок читав цікаву книжку.<br>В&nbsp;який день Іван прочитав більше сторінок і на&nbsp;скільки?</div>
+		</div></div>
+		<div class="aRow"><div class="aCell">
+			<div class="dano-res"><span class="dano">Дано:</span><br>1) кількість сторінок у&nbsp;понеділок;<br>2) кількість сторінок у&nbsp;вівторок.</div>
+			<div class="dano-res"><span class="res">Результат:</span><br>1) день, коли прочитано більше;<br>2) різниця кількості сторінок.</div>
+		</div></div>
+		<div class="aRow"><div class="aCell"><div class="tests">
+			<table>
+				<tr><td>18</td><td>12</td><td>==></td><td>У понеділок більше</td><td>6</td></tr>
+				<tr><td>150</td><td>150</td><td>==></td><td>В обидва дні однаково</td><td>0</td></tr>
+				<tr><td>2</td><td>22</td><td>==></td><td>У вівторок більше</td><td>20</td></tr>
+			</table>
+		</div></div></div>
+	</div>
+
+	<div class="aTable" id="m9">
+		<div class="aRow"><div class="aCell">
+		<span class="number">9. </span><div class="task">Іван знає вік свого діда.<br>Але чи&nbsp;може дід «йти&nbsp;на&nbsp;пенсію»?<span style="font-size: 0.9em">(підказка: у&nbsp;65&nbsp;років і&nbsp;більше)</span></div>
+		</div></div>
+		<div class="aRow"><div class="aCell">
+			<div class="dano-res"><span class="dano">Дано:</span><br>вік діда</div>
+			<div class="dano-res"><span class="res">Результат:</span><br>чи&nbsp;можна вийти на&nbsp;пенсію</div>
+		</div></div>
+		<div class="aRow"><div class="aCell"><div class="tests">
+			<table>
+				<tr><td>56</td><td>==></td><td>Треба ще працювати</td></tr>
+				<tr><td>92</td><td>==></td><td>Ура! На&nbsp;пенсію</td></tr>
+				<tr><td>65</td><td>==></td><td>Ура! На&nbsp;пенсію</td></tr>
+			</table>
+		</div></div></div>
+	</div>
+
+	<div class="aTable" id="m10">
+		<div class="aRow"><div class="aCell">
+		<span class="number">10. </span><div class="task">Іван знає, яка температура за&nbsp;вікном.<br>А&nbsp;чи замерзла вода на&nbsp;асфальті?<br><span style="font-size: 0.9em">(підказка: 0&nbsp;градусів і&nbsp;менше)</span></div>
+		</div></div>
+		<div class="aRow"><div class="aCell">
+			<div class="dano-res"><span class="dano">Дано:</span><br>температура на&nbsp;вулиці</div>
+			<div class="dano-res"><span class="res">Результат:</span><br>чи замерзла вода</div>
+		</div></div>
+		<div class="aRow"><div class="aCell"><div class="tests">
+			<table>
+				<tr><td>15</td><td>==></td><td>Вода не&nbsp;замерзла</td></tr>
+				<tr><td>-18</td><td>==></td><td>Лід</td></tr>
+				<tr><td>0</td><td>==></td><td>Лід</td></tr>
+			</table>
+		</div></div></div>
+	</div>
+
+	<div class="aTable" id="m11">
+		<div class="aRow"><div class="aCell">
+		<span class="number">11. </span><div class="task">У&nbsp;супермаркеті при купівлі більше 9&nbsp;пляшок води 1&nbsp;пляшку (десяту) дають безкоштовно. Іван купив у&nbsp;цьому магазині воду.<br>Скільки він заплатив?</div>
+		</div></div>
+		<div class="aRow"><div class="aCell">
+			<div class="dano-res"><span class="dano">Дано:</span><br>1) ціна 1 пляшки води;	<br>2) кількість пляшок, які купив Іван.</div>
+			<div class="dano-res"><span class="res">Результат:</span><br>сума грошей, яку заплатив Іван</div>
+		</div></div>
+		<div class="aRow"><div class="aCell"><div class="tests">
+			<table>
+				<tr><td>12.45</td><td>3</td><td>==></td><td>37.35</td></tr>
+				<tr><td>15.50</td><td>12</td><td>==></td><td>170.50</td></tr>
+				<tr><td>3.00</td><td>26</td><td>==></td><td>75.00</td></tr>
+			</table>
+		</div></div></div>
+	</div>
+
+	<div class="aTable" id="m12">
+		<div class="aRow"><div class="aCell">
+		<span class="number">12. </span><div class="task">У&nbsp;супермаркеті при купівлі більше&nbsp;20&nbsp;кг гречки надається знижка -5&nbsp;грн за&nbsp;кожен&nbsp;кг. Іван купив у&nbsp;цьому магазині гречку.<br>Скільки він заплатив?</div>
+		</div></div>
+		<div class="aRow"><div class="aCell">
+			<div class="dano-res"><span class="dano">Дано:</span><br>1) вага гречки в&nbsp;Івана;<br>2) ціна 1&nbsp;кг&nbsp;гречки (без&nbsp;знижки).</div>
+			<div class="dano-res"><span class="res">Результат:</span><br>сума грошей, яку заплатив Іван</div>
+		</div></div>
+		<div class="aRow"><div class="aCell"><div class="tests">
+			<table>
+				<tr><td>4</td><td>47.80</td><td>==></td><td>191.20</td></tr>
+				<tr><td>30</td><td>15.50</td><td>==></td><td>315.00</td></tr>
+				<tr><td>57</td><td>23.00</td><td>==></td><td>1026.00</td></tr>
 			</table>
 		</div></div></div>
 	</div>
