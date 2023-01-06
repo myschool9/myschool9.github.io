@@ -24,7 +24,7 @@
 	.tests {
 		padding: 10px 0;
 	}
-	.dano, .res {
+	.dano, .res, .x-title {
 		padding-left: 25px;
 		font-style: italic;
 		font-weight: bold;
@@ -37,12 +37,14 @@
 	.myImg {
 		text-align: center;
 	}
-
-	<!-----Розвязки задач, стилі поч. на «х»----------->
 	.x-title {
 		text-align: center;
 		font-style: italic;
 		font-weight: bold;
+		font-size: 0.9em;
+	}
+	.x-body {
+		font-family: monospace;
 	}
 	.x-tag {
 		font-weight: bold;
@@ -67,13 +69,13 @@
 		<div class="aButton" onclick="Filtering(select.selectedIndex - 1)">&#9668;</div>
 		<select class="aSelect" id="select" size="1" onchange="Filtering(this.selectedIndex)">
 			<option>Усі</option>
-			<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
-			<option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
-			<option>11</option><option>12</option><option>13</option><option>14</option><option>15</option>
-			<option>16</option><option>17</option><option>18</option><option>19+</option><option>20</option>
+			<option>1&deg;</option><option>2</option><option>3</option><option>4&deg;</option><option>5</option>
+			<option>6</option><option>7</option><option>8&deg;</option><option>9</option><option>10</option>
+			<option>11</option><option>12</option><option>13</option><option>14</option><option>15&deg;</option>
+			<option>16</option><option>17</option><option>18</option><option>19&deg;</option><option>20</option>
 			<option>21</option><option>22</option><option>23</option><option>24</option><option>25</option>
 			<option>26</option><option>27</option><option>28</option><option>29</option><option>30</option>
-			<option>31</option><option>32</option><option>33</option>
+			<option>31&deg;</option><option>32</option><option>33</option>
 		</select>
 		<div class="aButton" onclick="Filtering(select.selectedIndex + 1)">&#9658;</div>
 	</div>
@@ -96,6 +98,24 @@
 				<tr><td>41</td><td>41</td><td>==></td><td>82</td></tr>
 			</table>
 		</div></div></div>
+			<!--++++++++++++++++++++++++++++++++-->
+		<div class="aRow"><div class="aCell">
+			<div class="x-title">Розв’язок</div>
+			<div class="x-body">
+				<div class="x-tag">&LT;script&GT;</div>
+				<p></p>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> tables = Number(prompt());</div>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> chairs = Number(prompt());</div>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> total;</div>
+				<p></p>
+				<div>&nbsp;&nbsp;total = tables + chairs;</div>
+				<p></p>
+				<div>&nbsp;&nbsp;alert(total);</div>
+				<p></p>
+				<div class="x-tag">&LT;/script&GT;</div>
+			</div>
+		</div></div>
+			<!--++++++++++++++++++++++++++++++++-->
 	</div>
 
 	<div class="aTable" id="m2">
@@ -147,6 +167,26 @@
 				<tr><td>123.5</td><td>==></td><td>313.69</td><td>3.1369</td></tr>
 			</table>
 		</div></div></div>
+			<!--++++++++++++++++++++++++++++++++-->
+		<div class="aRow"><div class="aCell">
+			<div class="x-title">Розв’язок</div>
+			<div class="x-body">
+				<div class="x-tag">&LT;script&GT;</div>
+				<p></p>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> inch = Number(prompt());</div>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> sm;</div>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> meter;</div>
+				<p></p>
+				<div>&nbsp;&nbsp;sm = inch * <span class="x-number">2.54</span>;</div>
+				<div>&nbsp;&nbsp;meter = sm / <span class="x-number">100</span>;</div>
+				<p></p>
+				<div>&nbsp;&nbsp;alert(sm.toFixed(<span class="x-number">2</span>));</div>
+				<div>&nbsp;&nbsp;alert(meter.toFixed(<span class="x-number">4</span>));</div>
+				<p></p>
+				<div class="x-tag">&LT;/script&GT;</div>
+			</div>
+		</div></div>
+			<!--++++++++++++++++++++++++++++++++-->
 	</div>
 
 	<div class="aTable" id="m5">
@@ -215,6 +255,27 @@
 				<tr><td>15</td><td>0</td><td>==></td><td>15.00</td><td>0.00</td></tr>
 			</table>
 		</div></div></div>
+			<!--++++++++++++++++++++++++++++++++-->
+		<div class="aRow"><div class="aCell">
+			<div class="x-title">Розв’язок</div>
+			<div class="x-body">
+				<div class="x-tag">&LT;script&GT;</div>
+				<p></p>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> lastPrice = Number(prompt());</div>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> sale = Number(prompt());</div>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> newPrice;</div>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> discount;</div>
+				<p></p>
+				<div>&nbsp;&nbsp;discount = lastPrice * sale / <span class="x-number">100</span>;</div>
+				<div>&nbsp;&nbsp;newPrice = lastPrice - discount;</div>
+				<p></p>
+				<div>&nbsp;&nbsp;alert(newPrice.toFixed(<span class="x-number">2</span>));</div>
+				<div>&nbsp;&nbsp;alert(discount.toFixed(<span class="x-number">2</span>));</div>
+				<p></p>
+				<div class="x-tag">&LT;/script&GT;</div>
+			</div>
+		</div></div>
+			<!--++++++++++++++++++++++++++++++++-->
 	</div>
 
 	<div class="aTable" id="m9">
@@ -334,6 +395,26 @@
 				<tr><td>2.3</td><td>==></td><td>9.2</td><td>5.29</td></tr>
 			</table>
 		</div></div></div>
+			<!--++++++++++++++++++++++++++++++++-->
+		<div class="aRow"><div class="aCell">
+			<div class="x-title">Розв’язок</div>
+			<div class="x-body">
+				<div class="x-tag">&LT;script&GT;</div>
+				<p></p>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> perimeter;</div>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> area;</div>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> side = Number(prompt(<span class="x-string">"Яка довжина сторони квадрата?"</span>));</div>
+				<p></p>
+				<div>&nbsp;&nbsp;area = side ** <span class="x-number">2</span>;</div>
+				<div>&nbsp;&nbsp;perimeter = <span class="x-number">4</span> * side;</div>
+				<p></p>
+				<div>&nbsp;&nbsp;alert(<span class="x-string">"Довжина всього дроту = "</span> + perimeter.toFixed(<span class="x-number">1</span>) + <span class="x-string">"  см"</span>);</div>
+				<div>&nbsp;&nbsp;alert(<span class="x-string">"Площа квадрата = "</span> + area.toFixed(<span class="x-number">2</span>) + <span class="x-string">" кв.см"</span>);</div>
+				<p></p>
+				<div class="x-tag">&LT;/script&GT;</div>
+			</div>
+		</div></div>
+			<!--++++++++++++++++++++++++++++++++-->
 	</div>
 
 	<div class="aTable" id="m16">
@@ -405,15 +486,20 @@
 			<!--++++++++++++++++++++++++++++++++-->
 		<div class="aRow"><div class="aCell">
 			<div class="x-title">Розв’язок</div>
-			<div style="font-family: monospace;">
-				<div class="x-tag">&LT;script&GT;</div><p></p>
-				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> area;</div>
-				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> oDiam;</div>
-				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> oRad = Number(prompt(<span class="x-string">"Який радіус кола?"</span>));</div><p></p>
-				<div>&nbsp;&nbsp;oDiam = <span class="x-number">2</span> * oRad;</div>
-				<div>&nbsp;&nbsp;area = <span class="x-number">3.14</span> * oDiam * oDiam / <span class="x-number">4</span>;</div><p></p>
-				<div>&nbsp;&nbsp;alert(<span class="x-string">"Діаметр="</span> + oDiam + <span class="x-string">"cм"</span>);</div>
-				<div>&nbsp;&nbsp;alert(<span class="x-string">"Площа="</span> + area.toFixed(<span class="x-number">1</span>) + <span class="x-string">"кв.cм"</span>);</div><p></p>
+			<div class="x-body">
+				<div class="x-tag">&LT;script&GT;</div>
+				<p></p>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> diameter = Number(prompt(<span class="x-string">"Який діаметр основи бочки?"</span>));</div>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> height = Number(prompt(<span class="x-string">"Яка висота бочки?"</span>));</div>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> radius;</div>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> volume;</div>
+				<p></p>
+				<div>&nbsp;&nbsp;radius = diameter / <span class="x-number">2</span>;</div>
+				<div>&nbsp;&nbsp;volume = <span class="x-number">3.14</span> * (radius * radius) * height / <span class="x-number">1000</span>;</div>
+				<p></p>
+				<div>&nbsp;&nbsp;alert(<span class="x-string">"Радіус основи бочки = "</span> + radius.toFixed(<span class="x-number">1</span>));</div>
+				<div>&nbsp;&nbsp;alert(<span class="x-string">"Бочка вмістить "</span> + volume.toFixed(<span class="x-number">0</span>) + <span class="x-string">" літрів"</span>);</div>
+				<p></p>
 				<div class="x-tag">&LT;/script&GT;</div>
 			</div>
 		</div></div>
@@ -636,6 +722,24 @@
 				<tr><td>3.4</td><td>-6</td><td>==></td><td>-17.65</td></tr>
 			</table>
 		</div></div></div>
+			<!--++++++++++++++++++++++++++++++++-->
+		<div class="aRow"><div class="aCell">
+			<div class="x-title">Розв’язок</div>
+			<div class="x-body">
+				<div class="x-tag">&LT;script&GT;</div>
+				<p></p>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> a = Number(prompt(<span class="x-string">"a ="</span>));</div>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> b = Number(prompt(<span class="x-string">"b ="</span>));</div>
+				<div>&nbsp;&nbsp;<span class="x-keyword">let</span> r;</div>
+				<p></p>
+				<div>&nbsp;&nbsp;r = (<span class="x-number">1</span> + a ** 5) / (<span class="x-number">4.3</span> * b);</div>
+				<p></p>
+				<div>&nbsp;&nbsp;alert(r.toFixed(<span class="x-number">2</span>));</div>
+				<p></p>
+				<div class="x-tag">&LT;/script&GT;</div>
+			</div>
+		</div></div>
+			<!--++++++++++++++++++++++++++++++++-->
 	</div>
 
 	<div class="aTable" id="m32">
