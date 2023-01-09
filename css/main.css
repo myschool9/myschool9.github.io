@@ -31,7 +31,7 @@ a {
 }
 a.aSpecial {
 	text-align: center;
-	font-weight: bold;
+	color: var(--font-color);
 }
 
 /*------------------------------------------------*/
