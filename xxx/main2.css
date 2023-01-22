@@ -1,0 +1,175 @@
+:root {
+	--font-color: #333;				/* темно сірий */
+	--border-color: #696969;		/* DimGray*/
+	--link-color: #921;				/* темно червоний*/
+	--special-link-color: #333;		/* темно сірий */
+
+	--body-color: #f5f4e5;			/* блідо блакитний */
+	--header-color: #8fbc8f;		/* темно морський */
+	--table-color: #fff;			/* білий */
+
+	--odd-cell-color: #f8f8ff;		/* примарний білий */
+	--even-cell-color: #fffff0;		/* слонова кістка */
+	--color-3: #f0e68c;				/* світлий хакі */
+	--special-cell-color: #eee;		/* сірий */
+}
+
+/*------------------------------------------------*/
+/*------------------------------------------------*/
+body {
+	margin: 0;
+	padding: 5px;
+	font-family: sans-serif;
+	line-height: 2;
+	color: var(--font-color);
+	background-color: var(--body-color);
+}
+
+a {
+	text-decoration: none;
+	color: var(--link-color);
+}
+
+/*------------------------------------------------*/
+/*------------------------------------------------*/
+.c-header-table {
+	position: fixed;
+	top: 2px;
+	left: 8px;
+	padding: 2px;
+	width: 94%;
+	max-width: 500px;
+	max-height: 32px;
+	border-spacing: 0;
+	border-radius: 5px;
+	text-align: center;
+	background-color: var(--header-color);
+}
+
+/*------------------------------------------------*/
+.c-header-row {}
+
+/*------------------------------------------------*/
+.c-header-title {
+	font-size: 1.2em;
+}
+
+.c-header-btn {
+	overflow: hidden;
+	width: 35px;
+	margin: 0 2px;
+	padding: 2px 4px;
+	border: 1px solid var(--border-color);
+	border-radius: 5px;
+	background: -webkit-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
+	background: -moz-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
+	background: -ms-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
+	background: -o-linear-gradient(top, #D0ECF4 0%, #5BC9E1 50%, #D0ECF4 100%);
+	cursor: pointer;
+}
+
+.c-header-select {
+	min-width: 120px;
+	padding: 2px;
+	border: 2px outset var(--border-color);
+	border-radius: 5px;
+	background: -webkit-linear-gradient(top, #ffffff 0%, #b0c4de 50%, #ffffff 100%);
+	background: -moz-linear-gradient(top, #ffffff 0%, #b0c4de 50%, #ffffff 100%);
+	background: -ms-linear-gradient(top, #ffffff 0%, #b0c4de 50%, #ffffff 100%);
+	background: -o-linear-gradient(top, #ffffff 0%, #b0c4de 50%, #ffffff 100%);
+}
+
+/*------------------------------------------------*/
+/*------------------------------------------------*/
+.c-table {
+	width: 96%;
+	max-width: 500px;
+	margin: 2px 0 20px 6px;
+	border: 1px dotted var(--border-color);
+	border-spacing: 0;
+	background-color: var(--table-color);
+}
+
+.c-table__body-color {
+	background-color: var(--body-color);
+	border: none;
+}
+
+.c-table__margin-top {
+	margin-top: 45px;
+}
+
+/*------------------------------------------------*/
+.c-row {}
+
+/*------------------------------------------------*/
+.c-cell {
+	padding: 5px 10px;
+	text-align: center;
+}
+
+.c-cell__half {
+	width: 50%;
+	text-align: left;
+}
+
+.c-cell__odd {
+	background-color: var(--odd-cell-color);
+}
+
+.c-cell__even {
+	background-color: var(--even-cell-color);
+}
+
+.c-cell__special {
+	text-align: center;
+	background-color: var(--special-cell-color);
+}
+
+.c-cell__special a {
+	color: var(--special-link--color);
+}
+
+.c-cell__border-bottom {
+	border-bottom: 1px dotted var(--border-color);
+}
+
+/*------------------------------------------------*/
+.c-cell--img {
+	display: block;
+	max-width: 320px;
+	margin: 10px auto;
+	border: 1px dotted var(--border-color);
+}
+
+/*------------------------------------------------*/
+/*---оформлення підказок--c-hint------------------*/
+.c-cell__hint-left {
+	text-align: left;
+	line-height: 1.5;
+}
+
+.c-cell__hint-right {
+	max-width: 300px;
+	font-size: 0.8em;
+	text-align: right;
+	line-height: 0.6;
+}
+
+/*------------------------------------------------*/
+.c-tag {
+	font-weight: bold;
+	color: #008000;
+}
+
+.c-symbol {
+	font-style: italic;
+}
+
+.c-attribute {
+	color: #f00;
+}
+
+.c-string {
+	color: #00f;
+}
