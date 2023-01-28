@@ -15,13 +15,13 @@
 
 /*------------GROUP,ARTS-------------*/
 	--odd-color: var(--table-color);
-	--even-color: #fffff0;				/* слонова кістка */
+	--even-color: #f8f8ff;				/* слонова кістка */
 	--new-theme-color: #eee;			/* сірий */
 	--special-color: #eee;				/* сірий */
 
 /*------------GROUP,ARTS-------------*/
 	--color-0: var(--table-color);
-	--color-1: var(--odd-color);
+	--color-1: #fffff0;
 	--color-2: var(--even-color);
 
 /*------------TEST-------------------*/
