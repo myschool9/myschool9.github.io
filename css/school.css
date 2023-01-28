@@ -8,15 +8,21 @@
 	--header-color: #8fbc8f;		/* темно морський */
 	--table-color: #fff;			/* білий */
 
-	--odd-color: #f8f8ff;			/* примарний білий */
-	--even-color: #fffff0;			/* слонова кістка */
-	--new-theme-color: #eee;		/* сірий */
-	--special-color: #eee;			/* сірий */
-
 	--border-style: 1px dotted var(--border-color);
 
 	--body-max-width: 500px;
 	--obj-max-width: 320px;
+
+/*------------GROUP,ARTS-------------*/
+	--odd-color: var(--table-color);
+	--even-color: #fffff0;				/* слонова кістка */
+	--new-theme-color: #eee;			/* сірий */
+	--special-color: #eee;				/* сірий */
+
+/*------------GROUP,ARTS-------------*/
+	--color-0: var(--table-color);
+	--color-1: var(--odd-color);
+	--color-2: var(--even-color);
 
 /*------------TEST-------------------*/
 	--quest-color: #f8f8ff;				/* примарний білий */
@@ -55,6 +61,18 @@ a {
 
 /*------------CELL-------------------*/
 /*-----------------------------------*/
+.g-cell--color-0 {
+	background-color: var(--color-0);
+}
+
+.g-cell--color-1 {
+	background-color: var(--color-1);
+}
+
+.g-cell--color-2 {
+	background-color: var(--color-2);
+}
+
 .g-cell--odd-color {
 	background-color: var(--odd-color);
 }
