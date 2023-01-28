@@ -10,6 +10,7 @@
 
 	--odd-color: #f8f8ff;			/* примарний білий */
 	--even-color: #fffff0;			/* слонова кістка */
+	--new-theme-color: #eee;		/* сірий */
 	--special-color: #eee;			/* сірий */
 
 	--border-style: 1px dotted var(--border-color);
@@ -60,6 +61,10 @@ a {
 
 .g-cell--even-color {
 	background-color: var(--even-color);
+}
+
+.g-cell--new-theme-color {
+	background-color: var(--new-theme-color);
 }
 
 .g-cell--alt-color {
@@ -199,7 +204,7 @@ a {
 
 /*-----------INDEX-------------------*/
 .content__index {
-	padding: 5px 10px;
+	padding: 10px 10px;
 	text-align: center;
 }
 
