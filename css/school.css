@@ -297,16 +297,16 @@ a {
 
 /*------------TAGS-------------------*/
 .content__tags {
-	padding: 5px 10px 0 10px;
-	line-height: 1.5;
+	padding: 10px 10px 0 10px;
+	line-height: 1.2;
 }
 
 .content__tags-comment {
 	max-width: 300px;
-	padding: 0 10px 5px 10px;
+	padding: 5px 10px;
 	font-size: 0.8em;
 	text-align: right;
-	line-height: 0.6;
+	line-height: 1;
 }
 
 /*------------TIMETABLES-------------*/
