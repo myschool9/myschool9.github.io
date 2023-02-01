@@ -176,9 +176,10 @@ a {
 
 .title-header select {
 	min-width: 120px;
-	padding: 2px;
+	padding: 2px 5px;
 	border: 2px outset var(--border-color);
 	border-radius: 5px;
+	font-size: 1em;
 	background: -webkit-linear-gradient(top, #fff 0%, #b0c4de 50%, #fff 100%);
 	background: -moz-linear-gradient(top, #fff 0%, #b0c4de 50%, #fff 100%);
 	background: -ms-linear-gradient(top, #fff 0%, #b0c4de 50%, #fff 100%);
@@ -263,6 +264,19 @@ a {
 	max-width: var(--obj-max-width);
 	margin: 10px auto;
 	border: var(--border-style);
+}
+
+.content__videos-title {
+	padding: 20px 5px 0 5px;
+	line-height: 1;
+	text-align: center;
+}
+
+.content__videos-comment {
+	padding: 0 5px 15px 5px;
+	font-size: 0.8em;
+	line-height: 1.2;
+	text-align: center;
 }
 
 /*------------TEST-------------------*/
@@ -408,3 +422,14 @@ a {
 	font-weight: bold;
 	background-color: var(--table-color);
 }
+
+/*----------TITLE-VIDEOS--------------*/
+/*-----------------------------------*/
+.title-videos {}
+
+.title-videos__num {
+	padding: 0 7px;
+	font-weight: bold;
+}
+
+.title-videos__name {}
