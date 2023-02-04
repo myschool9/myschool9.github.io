@@ -59,6 +59,12 @@ a {
 	color: var(--link-color);
 }
 
+/*-----------------------------------*/
+/*-----------------------------------*/
+.tbody--visibility--collapse {
+	visibility: collapse;
+}
+
 /*------------CELL-------------------*/
 /*-----------------------------------*/
 .g-cell--color-0 {
@@ -335,7 +341,7 @@ a {
 
 .content__tasks-tests td {
 	min-width: 30px;
-	padding: 2px;
+	padding: 2px 3px;
 	line-height: 1.5;
 }
 
