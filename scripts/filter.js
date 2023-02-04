@@ -7,11 +7,16 @@ function Filtering(nItem, isFullList) {
 		nItem = items.length - 1;
 	}
 
-	for (let i = 1; i < items.length; i += 1) {
-		if (i === nItem || isFullList && nItem === 0) {
-			document.getElementById('m' + String(i)).style.visibility = 'visible';
+	let shiftIndex = 0;
+	if (!isFullList) {
+		shiftIndex = 1;
+	}
+
+	for (let i = 1 - shiftIndex; i < items.length; i += 1) {
+		if (i === nItem || nItem === -shiftIndex) {
+			document.getElementById('m' + String(i + shiftIndex)).style.visibility = 'visible';
 		} else {
-			document.getElementById('m' + String(i)).style.visibility = 'collapse';
+			document.getElementById('m' + String(i + shiftIndex)).style.visibility = 'collapse';
 		}
 	}
 
