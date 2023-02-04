@@ -19,7 +19,7 @@
 	--new-theme-color: #eee;			/* сірий */
 	--special-color: #eee;				/* сірий */
 
-/*------------GROUP,ARTS-------------*/
+/*------------INDEX,TAGS,TASKS-------*/
 	--color-0: var(--table-color);
 	--color-1: #fffff0;
 	--color-2: var(--even-color);
@@ -115,6 +115,14 @@ a {
 
 .g-code__attribute {
 	color: #f00;
+}
+
+.g-code__keyword {
+	color: #000080;
+}
+
+.g-code__number {
+	color: #ff4000;
 }
 
 .g-code__string {
@@ -278,6 +286,76 @@ a {
 	line-height: 1.2;
 	text-align: center;
 }
+
+/*------------TASKS------------------*/
+.content__tasks-num {
+	font-size: 0.9em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.content__tasks {
+	padding: 0 5px 5px 5px;
+	line-height: 1.5;
+}
+
+.content__tasks-in-title,
+.content__tasks-out-title {
+	padding: 5px 5px 5px 25px;
+	font-size: 0.9em;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.content__tasks-in,
+.content__tasks-out {
+	padding: 0 5px 5px 10px;
+	line-height: 1.5;
+	font-size: 0.9em;
+}
+
+.content__tasks-image {
+	padding: 5px;
+	line-height: 1;
+	text-align: center;
+}
+
+.content__tasks-image img {
+	border: var(--border-style);
+}
+
+.content__tasks-tests {
+	padding: 10px;
+	font-family: monospace;
+}
+
+.content__tasks-tests table {
+	border-spacing: 5px;
+}
+
+.content__tasks-tests td {
+	min-width: 30px;
+	padding: 2px;
+	line-height: 1.5;
+}
+
+.content__tasks-solve-title {
+	padding-top: 5px;
+	font-size: 0.9em;
+	text-align: center;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.content__tasks-solve {
+	padding: 0 5px 15px 5px;
+	font-family: monospace;
+	line-height: 1.5;
+}
+
+.content__tasks-solve div {}
+
+.content__tasks-solve p {}
 
 /*------------TEST-------------------*/
 .content__test-quest {
