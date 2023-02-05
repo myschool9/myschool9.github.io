@@ -170,7 +170,7 @@ function GetMark(markPercent) {
 /*---------------------------------------*/
 /*---------------------------------------*/
 function StartTest() {
-	document.getElementById('questCount').innerText = '(' + String(test.Questions.length) + ' пит.)';
+	document.getElementById('questCount').innerHTML = '(' + String(test.Questions.length) + ' пит.)';
 	A = GetMixArray(test.Questions.length, true);
 	NextQuestion();
 }
@@ -188,15 +188,15 @@ function NextQuestion() {
 	B = GetMixArray(test.Questions[gN].Answers.length, test.Questions[gN].RndAnswers);
 
 		/* Header */
-	document.getElementById('questNum').innerText = String(gOrderN + 1);
+	document.getElementById('questNum').innerHTML = String(gOrderN + 1);
 
 		/* Question */
-	document.getElementById('quest').innerText = test.Questions[gN].Text;
+	document.getElementById('quest').innerHTML = test.Questions[gN].Text;
 
 		/* Answers */
 	let c = CorrectCount(gN);
 	if (c > 1) {
-		document.getElementById('correctCount').innerText = '(' + String(c) + ' відповіді)';
+		document.getElementById('correctCount').innerHTML = '(' + String(c) + ' відповіді)';
 		document.getElementById('radio0').type = 'checkbox';
 		document.getElementById('radio1').type = 'checkbox';
 		document.getElementById('radio2').type = 'checkbox';
@@ -204,7 +204,7 @@ function NextQuestion() {
 		document.getElementById('radio4').type = 'checkbox';
 		document.getElementById('radio5').type = 'checkbox';
 	} else {
-		document.getElementById('correctCount').innerText = '.';
+		document.getElementById('correctCount').innerHTML = '.';
 		document.getElementById('radio0').type = 'radio';
 		document.getElementById('radio1').type = 'radio';
 		document.getElementById('radio2').type = 'radio';
@@ -225,34 +225,34 @@ function NextQuestion() {
 	document.getElementById('answer4').style.backgroundColor = 'var(--js-answer-color)';
 	document.getElementById('answer5').style.backgroundColor = 'var(--js-answer-color)';
 
-	document.getElementById('label0').innerText = test.Questions[gN].Answers[B[0]].Text;
-	document.getElementById('label1').innerText = test.Questions[gN].Answers[B[1]].Text;
+	document.getElementById('label0').innerHTML = test.Questions[gN].Answers[B[0]].Text;
+	document.getElementById('label1').innerHTML = test.Questions[gN].Answers[B[1]].Text;
 	if (test.Questions[gN].Answers.length <= 2) {
-		document.getElementById('label2').innerText = '';
+		document.getElementById('label2').innerHTML = '';
 		document.getElementById('answer2').hidden = true;
 	} else {
-		document.getElementById('label2').innerText = test.Questions[gN].Answers[B[2]].Text;
+		document.getElementById('label2').innerHTML = test.Questions[gN].Answers[B[2]].Text;
 		document.getElementById('answer2').hidden = false;
 	}
 	if (test.Questions[gN].Answers.length <= 3) {
-		document.getElementById('label3').innerText = '';
+		document.getElementById('label3').innerHTML = '';
 		document.getElementById('answer3').hidden = true;
 	} else {
-		document.getElementById('label3').innerText = test.Questions[gN].Answers[B[3]].Text;
+		document.getElementById('label3').innerHTML = test.Questions[gN].Answers[B[3]].Text;
 		document.getElementById('answer3').hidden = false;
 	}
 	if (test.Questions[gN].Answers.length <= 4) {
-		document.getElementById('label4').innerText = '';
+		document.getElementById('label4').innerHTML = '';
 		document.getElementById('answer4').hidden = true;
 	} else {
-		document.getElementById('label4').innerText = test.Questions[gN].Answers[B[4]].Text;
+		document.getElementById('label4').innerHTML = test.Questions[gN].Answers[B[4]].Text;
 		document.getElementById('answer4').hidden = false;
 	}
 	if (test.Questions[gN].Answers.length <= 5) {
-		document.getElementById('label5').innerText = '';
+		document.getElementById('label5').innerHTML = '';
 		document.getElementById('answer5').hidden = true;
 	} else {
-		document.getElementById('label5').innerText = test.Questions[gN].Answers[B[5]].Text;
+		document.getElementById('label5').innerHTML = test.Questions[gN].Answers[B[5]].Text;
 		document.getElementById('answer5').hidden = false;
 	}
 
@@ -293,13 +293,13 @@ function ExitTest() {
 	document.getElementById('resForm').hidden = false;
 
 	if (ChoiceCount() < 0.75 * test.Questions.length) {
-		document.getElementById('resPercent').innerText = 'немає&nbsp;:(';
+		document.getElementById('resPercent').innerHTML = 'немає&nbsp;:(';
 		document.getElementById('testMark').hidden = true;
 	} else {
 		let p = GetPointsPercent();
 		document.getElementById('resPercent').innerHTML = String(Math.round(p)) + '&nbsp;%';
 		let m = GetMark(p);
-		document.getElementById('testMark').innerText = m;
+		document.getElementById('testMark').innerHTML = m;
 		if (m === '2+') {
 			document.getElementById('testMark').style.backgroundColor = 'var(--js-mark-2-3)';
 		}
