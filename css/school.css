@@ -26,13 +26,14 @@
 
 /*------------TEST-------------------*/
 	--quest-color: #f8f8ff;				/* примарний білий */
-	--checked-answer-color: #fffff0;	/* слонова кістка */
-	--mark-2-3: #ff69b4;
-	--mark-4-5: #ffa07a;
-	--mark-6-7: #ffd700;
-	--mark-8-9: #7fffd4;
-	--mark-10-11: #00ff7f;
-	--mark-12: #0f0;
+	--js-checked-answer-color: #fffff0;	/* слонова кістка */
+	--js-answer-color: var(--table-color);
+	--js-mark-2-3: #ff69b4;
+	--js-mark-4-5: #ffa07a;
+	--js-mark-6-7: #ffd700;
+	--js-mark-8-9: #7fffd4;
+	--js-mark-10-11: #00ff7f;
+	--js-mark-12: #0f0;
 
 /*------------TIMETABLE--------------*/
 	--alt-color: #f8f8ff;			/* примарний білий */
@@ -379,6 +380,7 @@ a {
 .content__test-answer {
 	padding: 5px;
 	border-bottom: var(--border-style);
+	background-color: var(--js-answer-color);
 	cursor: pointer;
 }
 
@@ -480,13 +482,11 @@ a {
 /*-----------------------------------*/
 .result-test {
 	max-width: var(--body-max-width);
-	margin: 10px;
+	margin: 10px 5px;
 	text-align: center;
 }
 
-.result-test__sign-percent {
-	margin-bottom: 20px;
-}
+.result-test__sign-percent {}
 
 .result-test__percent {
 	padding-left: 20px;
@@ -497,11 +497,12 @@ a {
 .result-test__mark {
 	width: fit-content;
 	min-width: 120px;
-	margin: auto;
-	padding: 0 20px;
+	margin: 15px auto;
+	padding: 0 10px;
 	border: 2px outset var(--border-color);
 	font-size: 7em;
 	font-weight: bold;
+	line-height: 1.5;
 	background-color: var(--table-color);
 }
 
