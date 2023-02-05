@@ -1,73 +1,74 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="/css/main.css">
-	<link rel="stylesheet" href="/css/tests.css">
-	<title>Комп’ютери</title>
-	<script>
-		var test={MinMark:2,MaxMark:12,IsPenalty:true,Questions:[{Text:"В яких одиницях вимірюється тактова частота процесорів?",RndAnswers:true,Obj:"",Answers:[{Text:"Мегабіти за секунду",cr:false,Select:false},{Text:"Терабайти",cr:false,Select:false},{Text:"наносекунди",cr:false,Select:false},{Text:"Гігагерци",cr:true,Select:false},]},{Text:"До якого роз\'єму комп\'ютера під\'єднують багато різних пристроїв (телефон, фотокамера, сканер тощо)?",RndAnswers:true,Obj:"",Answers:[{Text:"COM",cr:false,Select:false},{Text:"PCI",cr:false,Select:false},{Text:"USB",cr:true,Select:false},{Text:"LPT",cr:false,Select:false},]},{Text:"Що таке «SSD»?",RndAnswers:true,Obj:"",Answers:[{Text:"фірма-виробник принтерів",cr:false,Select:false},{Text:"чорнило для картриджів",cr:false,Select:false},{Text:"перший ноутбук",cr:false,Select:false},{Text:"твердотілий диск",cr:true,Select:false},]},{Text:"Який обсяг оперативної пам\'яті у сучасних комп\'ютерах?",RndAnswers:false,Obj:"",Answers:[{Text:"8      ГБ",cr:true,Select:false},{Text:"80     ГБ",cr:false,Select:false},{Text:"800    ГБ",cr:false,Select:false},{Text:"8 000  ГБ",cr:false,Select:false},]},{Text:"Який пристрій є головним пристроєм опрацювання в комп\'ютері, тобто, «розумом» комп\'ютера?",RndAnswers:true,Obj:"",Answers:[{Text:"відеокарта",cr:false,Select:false},{Text:"блок живлення",cr:false,Select:false},{Text:"процесор",cr:true,Select:false},{Text:"системна плата",cr:false,Select:false},]},{Text:"Який пристрій може мати «декілька ядер»?",RndAnswers:true,Obj:"",Answers:[{Text:"процесор",cr:true,Select:false},{Text:"монітор",cr:false,Select:false},{Text:"лазерний принтер",cr:false,Select:false},{Text:"жорсткий диск",cr:false,Select:false},]},{Text:"Виберіть правильно записану роздільну здатність екрана монітора.",RndAnswers:true,Obj:"",Answers:[{Text:"70 Гц",cr:false,Select:false},{Text:"19\"",cr:false,Select:false},{Text:"1280 х 768",cr:true,Select:false},{Text:"5000:1",cr:false,Select:false},]},{Text:"Переважну більшість процесорів виробляють фірми AMD і ...",RndAnswers:true,Obj:"",Answers:[{Text:"Adobe",cr:false,Select:false},{Text:"Intel",cr:true,Select:false},{Text:"Google",cr:false,Select:false},{Text:"HP",cr:false,Select:false},]},{Text:"Виберіть нормальний розмір моніторів.",RndAnswers:false,Obj:"",Answers:[{Text:"21\"",cr:true,Select:false},{Text:"41\"",cr:false,Select:false},{Text:"81\"",cr:false,Select:false},{Text:"121\"",cr:false,Select:false},]},{Text:"Яке зі скорочень означає «оптичний диск»?",RndAnswers:true,Obj:"",Answers:[{Text:"CRT",cr:false,Select:false},{Text:"DVD",cr:true,Select:false},{Text:"LAN",cr:false,Select:false},{Text:"TFT",cr:false,Select:false},]},{Text:"Струменеві принтери використовують чорнила чорного кольору, пурпурного кольору та кольору морської хвилі. Який ще?",RndAnswers:true,Obj:"",Answers:[{Text:"жовтий",cr:true,Select:false},{Text:"зелений",cr:false,Select:false},{Text:"коричневий",cr:false,Select:false},{Text:"білий",cr:false,Select:false},]},{Text:"Чим друкують лазерні принтери?",RndAnswers:true,Obj:"",Answers:[{Text:"порошком",cr:true,Select:false},{Text:"плівкою",cr:false,Select:false},{Text:"чорнилом",cr:false,Select:false},{Text:"стрічкою",cr:false,Select:false},]},{Text:"Чому дорівнює 1 дюйм?",RndAnswers:false,Obj:"",Answers:[{Text:"1,28  см",cr:false,Select:false},{Text:"2,54  см",cr:true,Select:false},{Text:"8,2   см",cr:false,Select:false},{Text:"32,1  см",cr:false,Select:false},]},{Text:"Що зображено на фото?",RndAnswers:true,Obj:"images/Комп’ютери-1.jpg",Answers:[{Text:"картриджі до принтера",cr:true,Select:false},{Text:"блоки живлення",cr:false,Select:false},{Text:"ручні сканери",cr:false,Select:false},{Text:"відеокарти",cr:false,Select:false},]},{Text:"Яких принтерів ніколи   ’не існувало’ ?",RndAnswers:true,Obj:"",Answers:[{Text:"лазерних",cr:false,Select:false},{Text:"матричних",cr:false,Select:false},{Text:"перфораційних",cr:true,Select:false},{Text:"струменевих",cr:false,Select:false},{Text:"3D",cr:false,Select:false},]},{Text:"Якщо збільшити роздільну здатність (якість) друку принтера, то як зміниться швидкість друку?",RndAnswers:false,Obj:"",Answers:[{Text:"також збільшиться",cr:false,Select:false},{Text:"не зміниться",cr:false,Select:false},{Text:"навпаки зменшиться",cr:true,Select:false},]},{Text:"В якому році з\'явився один з перших персональних комп\'ютерів Apple I?",RndAnswers:false,Obj:"",Answers:[{Text:"1906 р.",cr:false,Select:false},{Text:"1936 р.",cr:false,Select:false},{Text:"1976 р.",cr:true,Select:false},{Text:"2006 р.",cr:false,Select:false},]},{Text:"Що з\'явилося у 1951 році?",RndAnswers:true,Obj:"",Answers:[{Text:"перший процесор",cr:false,Select:false},{Text:"перша мишка",cr:false,Select:false},{Text:"перший комп\'ютер в Україні",cr:true,Select:false},{Text:"перший монітор",cr:false,Select:false},]},{Text:"Виберіть найдревніший пристрій для обчислення (тисячі років тому!).",RndAnswers:true,Obj:"",Answers:[{Text:"табулятор",cr:false,Select:false},{Text:"арифмометр",cr:false,Select:false},{Text:"абак",cr:true,Select:false},{Text:"калькулятор",cr:false,Select:false},]},{Text:"Виберіть правильний термін зі словом «кеш» (cache).",RndAnswers:true,Obj:"",Answers:[{Text:"кешпам\'ять",cr:true,Select:false},{Text:"кешдиск",cr:false,Select:false},{Text:"кешбук",cr:false,Select:false},{Text:"кешдрук",cr:false,Select:false},]},{Text:"З якої пам\'яті зникають усі дані при вимкненні чи перезавантаженні комп\'ютера?",RndAnswers:true,Obj:"",Answers:[{Text:"постійної пам\'яті",cr:false,Select:false},{Text:"оперативної пам\'яті",cr:true,Select:false},{Text:"відеопам\'яті",cr:true,Select:false},{Text:"флешпам’яті",cr:false,Select:false},{Text:"жорсткого диска",cr:false,Select:false},]},{Text:"Виберіть пристрій уведення інформації в комп’ютер.",RndAnswers:true,Obj:"",Answers:[{Text:"монітор",cr:false,Select:false},{Text:"флешпам\'ять",cr:false,Select:false},{Text:"навушники",cr:false,Select:false},{Text:"вебкамера",cr:true,Select:false},]},{Text:"Виберіть пристрій виведення інформації з комп’ютера.",RndAnswers:true,Obj:"",Answers:[{Text:"сканер",cr:false,Select:false},{Text:"принтер",cr:true,Select:false},{Text:"мікрофон",cr:false,Select:false},{Text:"мишка",cr:false,Select:false},]},{Text:"Як називають пам’ять, яка допомагає процесору швидко опрацьовувати інформацію?",RndAnswers:true,Obj:"images/Комп’ютери-2.jpg",Answers:[{Text:"системна",cr:false,Select:false},{Text:"дискова",cr:false,Select:false},{Text:"інформаційна",cr:false,Select:false},{Text:"оперативна",cr:true,Select:false},]},]}
-	</script>
-	<script src="/css/tests.js"></script>
-</head>
+<html lang="uk">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../../css/school.css">
+<script src="../../scripts/tests.js"></script>
+<title>Комп’ютери</title>
+<script>
+	var test={MinMark:2,MaxMark:12,IsPenalty:true,Questions:[{Text:"В яких одиницях вимірюється тактова частота процесорів?",RndAnswers:true,Obj:"",Answers:[{Text:"Мегабіти за секунду",cr:false,Select:false},{Text:"Терабайти",cr:false,Select:false},{Text:"наносекунди",cr:false,Select:false},{Text:"Гігагерци",cr:true,Select:false},]},{Text:"До якого роз\'єму комп\'ютера під\'єднують багато різних пристроїв (телефон, фотокамера, сканер тощо)?",RndAnswers:true,Obj:"",Answers:[{Text:"COM",cr:false,Select:false},{Text:"PCI",cr:false,Select:false},{Text:"USB",cr:true,Select:false},{Text:"LPT",cr:false,Select:false},]},{Text:"Що таке «SSD»?",RndAnswers:true,Obj:"",Answers:[{Text:"фірма-виробник принтерів",cr:false,Select:false},{Text:"чорнило для картриджів",cr:false,Select:false},{Text:"перший ноутбук",cr:false,Select:false},{Text:"твердотілий диск",cr:true,Select:false},]},{Text:"Який обсяг оперативної пам\'яті у сучасних комп\'ютерах?",RndAnswers:false,Obj:"",Answers:[{Text:"8      ГБ",cr:true,Select:false},{Text:"80     ГБ",cr:false,Select:false},{Text:"800    ГБ",cr:false,Select:false},{Text:"8 000  ГБ",cr:false,Select:false},]},{Text:"Який пристрій є головним пристроєм опрацювання в комп\'ютері, тобто, «розумом» комп\'ютера?",RndAnswers:true,Obj:"",Answers:[{Text:"відеокарта",cr:false,Select:false},{Text:"блок живлення",cr:false,Select:false},{Text:"процесор",cr:true,Select:false},{Text:"системна плата",cr:false,Select:false},]},{Text:"Який пристрій може мати «декілька ядер»?",RndAnswers:true,Obj:"",Answers:[{Text:"процесор",cr:true,Select:false},{Text:"монітор",cr:false,Select:false},{Text:"лазерний принтер",cr:false,Select:false},{Text:"жорсткий диск",cr:false,Select:false},]},{Text:"Виберіть правильно записану роздільну здатність екрана монітора.",RndAnswers:true,Obj:"",Answers:[{Text:"70 Гц",cr:false,Select:false},{Text:"19\"",cr:false,Select:false},{Text:"1280 х 768",cr:true,Select:false},{Text:"5000:1",cr:false,Select:false},]},{Text:"Переважну більшість процесорів виробляють фірми AMD і ...",RndAnswers:true,Obj:"",Answers:[{Text:"Adobe",cr:false,Select:false},{Text:"Intel",cr:true,Select:false},{Text:"Google",cr:false,Select:false},{Text:"HP",cr:false,Select:false},]},{Text:"Виберіть нормальний розмір моніторів.",RndAnswers:false,Obj:"",Answers:[{Text:"21\"",cr:true,Select:false},{Text:"41\"",cr:false,Select:false},{Text:"81\"",cr:false,Select:false},{Text:"121\"",cr:false,Select:false},]},{Text:"Яке зі скорочень означає «оптичний диск»?",RndAnswers:true,Obj:"",Answers:[{Text:"CRT",cr:false,Select:false},{Text:"DVD",cr:true,Select:false},{Text:"LAN",cr:false,Select:false},{Text:"TFT",cr:false,Select:false},]},{Text:"Струменеві принтери використовують чорнила чорного кольору, пурпурного кольору та кольору морської хвилі. Який ще?",RndAnswers:true,Obj:"",Answers:[{Text:"жовтий",cr:true,Select:false},{Text:"зелений",cr:false,Select:false},{Text:"коричневий",cr:false,Select:false},{Text:"білий",cr:false,Select:false},]},{Text:"Чим друкують лазерні принтери?",RndAnswers:true,Obj:"",Answers:[{Text:"порошком",cr:true,Select:false},{Text:"плівкою",cr:false,Select:false},{Text:"чорнилом",cr:false,Select:false},{Text:"стрічкою",cr:false,Select:false},]},{Text:"Чому дорівнює 1 дюйм?",RndAnswers:false,Obj:"",Answers:[{Text:"1,28  см",cr:false,Select:false},{Text:"2,54  см",cr:true,Select:false},{Text:"8,2   см",cr:false,Select:false},{Text:"32,1  см",cr:false,Select:false},]},{Text:"Що зображено на фото?",RndAnswers:true,Obj:"images/Комп’ютери-1.jpg",Answers:[{Text:"картриджі до принтера",cr:true,Select:false},{Text:"блоки живлення",cr:false,Select:false},{Text:"ручні сканери",cr:false,Select:false},{Text:"відеокарти",cr:false,Select:false},]},{Text:"Яких принтерів ніколи   ’не існувало’ ?",RndAnswers:true,Obj:"",Answers:[{Text:"лазерних",cr:false,Select:false},{Text:"матричних",cr:false,Select:false},{Text:"перфораційних",cr:true,Select:false},{Text:"струменевих",cr:false,Select:false},{Text:"3D",cr:false,Select:false},]},{Text:"Якщо збільшити роздільну здатність (якість) друку принтера, то як зміниться швидкість друку?",RndAnswers:false,Obj:"",Answers:[{Text:"також збільшиться",cr:false,Select:false},{Text:"не зміниться",cr:false,Select:false},{Text:"навпаки зменшиться",cr:true,Select:false},]},{Text:"В якому році з\'явився один з перших персональних комп\'ютерів Apple I?",RndAnswers:false,Obj:"",Answers:[{Text:"1906 р.",cr:false,Select:false},{Text:"1936 р.",cr:false,Select:false},{Text:"1976 р.",cr:true,Select:false},{Text:"2006 р.",cr:false,Select:false},]},{Text:"Що з\'явилося у 1951 році?",RndAnswers:true,Obj:"",Answers:[{Text:"перший процесор",cr:false,Select:false},{Text:"перша мишка",cr:false,Select:false},{Text:"перший комп\'ютер в Україні",cr:true,Select:false},{Text:"перший монітор",cr:false,Select:false},]},{Text:"Виберіть найдревніший пристрій для обчислення (тисячі років тому!).",RndAnswers:true,Obj:"",Answers:[{Text:"табулятор",cr:false,Select:false},{Text:"арифмометр",cr:false,Select:false},{Text:"абак",cr:true,Select:false},{Text:"калькулятор",cr:false,Select:false},]},{Text:"Виберіть правильний термін зі словом «кеш» (cache).",RndAnswers:true,Obj:"",Answers:[{Text:"кешпам\'ять",cr:true,Select:false},{Text:"кешдиск",cr:false,Select:false},{Text:"кешбук",cr:false,Select:false},{Text:"кешдрук",cr:false,Select:false},]},{Text:"З якої пам\'яті зникають усі дані при вимкненні чи перезавантаженні комп\'ютера?",RndAnswers:true,Obj:"",Answers:[{Text:"постійної пам\'яті",cr:false,Select:false},{Text:"оперативної пам\'яті",cr:true,Select:false},{Text:"відеопам\'яті",cr:true,Select:false},{Text:"флешпам’яті",cr:false,Select:false},{Text:"жорсткого диска",cr:false,Select:false},]},{Text:"Виберіть пристрій уведення інформації в комп’ютер.",RndAnswers:true,Obj:"",Answers:[{Text:"монітор",cr:false,Select:false},{Text:"флешпам\'ять",cr:false,Select:false},{Text:"навушники",cr:false,Select:false},{Text:"вебкамера",cr:true,Select:false},]},{Text:"Виберіть пристрій виведення інформації з комп’ютера.",RndAnswers:true,Obj:"",Answers:[{Text:"сканер",cr:false,Select:false},{Text:"принтер",cr:true,Select:false},{Text:"мікрофон",cr:false,Select:false},{Text:"мишка",cr:false,Select:false},]},{Text:"Як називають пам’ять, яка допомагає процесору швидко опрацьовувати інформацію?",RndAnswers:true,Obj:"images/Комп’ютери-2.jpg",Answers:[{Text:"системна",cr:false,Select:false},{Text:"дискова",cr:false,Select:false},{Text:"інформаційна",cr:false,Select:false},{Text:"оперативна",cr:true,Select:false},]},]}
+</script>
 
-<body onload="Start()">
-	<div class="aHeader" id="header">
-		<div class="aButtonExit" onclick="Exit()">x</div>
-		<div>№
-			<span class="aQuestNum" id="questNum"></span>
-			<span class="aQuestCount" id="questCount"></span>
-		</div>
-		<div class="aButtonNext" onclick="Next()">&#9658;&#9658;</div>
-	</div>
-	<div class="aHiddenHeader-1"></div>
+<body onload="StartTest()">
 
-	<div class="aTable" id="form">
-		<div class="aQuest" id="quest"></div>
-		<div class="aCorrectCount" id="correctCount"></div>
+<table class="header" id="tests_header">
+	<tr>
+		<td class="header__btn header__btn--exit-test" onclick="ExitTest()">x</td>
+		<td class="header__title title-header">
+			<span class="title-header__sign-num">№</span>
+			<span class="title-header__quest-num" id="questNum"></span>
+			<span class="title-header__quest-count" id="questCount"></span>
+		</td>
+		<td class="header__btn header__btn--next-quest" onclick="NextQuestion()">&#9658;&#9658;</td>
+	</tr>
+</table>
 
-		<div class="aAnswer" id="answer0" onclick="Check(0)">
-			<span class="aNum">1.</span>
-			<input class="aRadio" id="radio0" type="radio" name="answers">
-			<label class="aLabel" id="label0"></label>
-		</div>
-		<div class="aAnswer" id="answer1" onclick="Check(1)">
-			<span class="aNum">2.</span>
-			<input class="aRadio" id="radio1" type="radio" name="answers">
-			<label class="aLabel" id="label1" for="radio1"></label>
-		</div>
-		<div class="aAnswer" id="answer2" onclick="Check(2)">
-			<span class="aNum">3.</span>
-			<input class="aRadio" id="radio2" type="radio" name="answers">
-			<label class="aLabel" id="label2" for="radio2"></label>
-		</div>
-		<div class="aAnswer" id="answer3" onclick="Check(3)">
-			<span class="aNum">4.</span>
-			<input class="aRadio" id="radio3" type="radio" name="answers">
-			<label class="aLabel" id="label3" for="radio3"></label>
-		</div>
-		<div class="aAnswer" id="answer4" onclick="Check(4)">
-			<span class="aNum">5.</span>
-			<input class="aRadio" id="radio4" type="radio" name="answers">
-			<label class="aLabel" id="label4" for="radio4"></label>
-		</div>
-		<div class="aAnswer" id="answer5" onclick="Check(5)">
-			<span class="aNum">6.</span>
-			<input class="aRadio" id="radio5" type="radio" name="answers">
-			<label class="aLabel" id="label5" for="radio5"></label>
-		</div>
-	</div>
+<table class="content content--margin-top content--border--none" id="testForm">
+	<tr><td class="content__test-quest" id="quest"></td></tr>
+	<tr><td class="content__test-correct-count g-cell--border-bottom" id="correctCount"></td></tr>
 
-	<div class="aObj">
-		<img class="aQuestImg" id="questImg">
+	<tr><td class="content__test-answer answer-test g-cell--border-bottom" id="answer0" onclick="CheckAnswer(0)">
+		<span class="answer-test__num">1.</span>
+		<input id="radio0" type="radio" name="answers">
+		<label id="label0"></label>
+	</td></tr>
+	<tr><td class="content__test-answer answer-test g-cell--border-bottom" id="answer1" onclick="CheckAnswer(1)">
+		<span class="answer-test__num">2.</span>
+		<input id="radio1" type="radio" name="answers">
+		<label id="label1" for="radio1"></label>
+	</td></tr>
+	<tr><td class="content__test-answer answer-test g-cell--border-bottom" id="answer2" onclick="CheckAnswer(2)">
+		<span class="answer-test__num">3.</span>
+		<input id="radio2" type="radio" name="answers">
+		<label id="label2" for="radio2"></label>
+	</td></tr>
+	<tr><td class="content__test-answer answer-test g-cell--border-bottom" id="answer3" onclick="CheckAnswer(3)">
+		<span class="answer-test__num">4.</span>
+		<input id="radio3" type="radio" name="answers">
+		<label id="label3" for="radio3"></label>
+	</td></tr>
+	<tr><td class="content__test-answer answer-test g-cell--border-bottom" id="answer4" onclick="CheckAnswer(4)">
+		<span class="answer-test__num">5.</span>
+		<input id="radio4" type="radio" name="answers">
+		<label id="label4" for="radio4"></label>
+	</td></tr>
+	<tr><td class="content__test-answer answer-test g-cell--border-bottom" id="answer5" onclick="CheckAnswer(5)">
+		<span class="answer-test__num">6.</span>
+		<input id="radio5" type="radio" name="answers">
+		<label id="label5" for="radio5"></label>
+	</td></tr>
+</table>
+
+<div class="content__test-obj">
+	<img id="questImg" src="" alt="">
+</div>
+
+<div class="result-test" id="resForm" hidden>
+	<div>
+		<span class="result-test__sign-percent">Результат:</span>
+		<span class="result-test__percent" id="resPercent"></span>
 	</div>
-	<div class="aResForm" id="resForm" hidden="true">
-		<div class="aAllPercent">
-			<span>Результат:</span>
-			<span class="aPercent" id="percent"></span>
-		</div>
-		<div class="aMark" id="mark"></div>
-	</div>
+	<div class="result-test__mark" id="testMark"></div>
+</div>
 
 </body>
-</html>
