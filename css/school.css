@@ -134,6 +134,15 @@ a {
 	color: #00f;
 }
 
+.g-code__class {
+	color: #808000;
+	font-weight: bold;
+}
+
+.g-code__css-attribute {
+	color: #800080;
+}
+
 /*-----------HEADER------------------*/
 /*-----------------------------------*/
 .header {
