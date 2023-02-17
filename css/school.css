@@ -107,6 +107,12 @@ a {
 	color: var(--special-link-color);
 }
 
+.g-cell__html-color {
+	text-align: center;
+	font-family: monospace;
+	font-size: 1.2em;
+}
+
 /*------------CODE-------------------*/
 /*-----------------------------------*/
 .g-code__tag {
