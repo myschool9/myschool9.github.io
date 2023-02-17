@@ -1,12 +1,12 @@
 :root {
-	--font-color: #333;				/* ГІГҐГ¬Г­Г® Г±ВіГ°ГЁГ© */
-	--border-color: #333;			/* ГІГҐГ¬Г­Г® Г±ВіГ°ГЁГ©*/
-	--link-color: #921;				/* ГІГҐГ¬Г­Г® Г·ГҐГ°ГўГ®Г­ГЁГ©*/
-	--special-link-color: #333;		/* ГІГҐГ¬Г­Г® Г±ВіГ°ГЁГ© */
+	--font-color: #333;				/* темно сірий */
+	--border-color: #333;			/* темно сірий*/
+	--link-color: #921;				/* темно червоний*/
+	--special-link-color: #333;		/* темно сірий */
 
-	--body-color: #f5f4e5;			/* ГЎГ«ВіГ¤Г® ГЎГ«Г ГЄГЁГІГ­ГЁГ© */
-	--js-header-color: #8fbc8f;		/* ГІГҐГ¬Г­Г® Г¬Г®Г°Г±ГјГЄГЁГ© */
-	--table-color: #fff;			/* ГЎВіГ«ГЁГ© */
+	--body-color: #f5f4e5;			/* блідо блакитний */
+	--js-header-color: #8fbc8f;		/* темно морський */
+	--table-color: #fff;			/* білий */
 
 	--border-style: 1px dotted var(--border-color);
 
@@ -15,9 +15,9 @@
 
 /*------------GROUP,ARTS-------------*/
 	--odd-color: var(--table-color);
-	--even-color: #f8f8ff;				/* Г±Г«Г®Г­Г®ГўГ  ГЄВіГ±ГІГЄГ  */
-	--new-theme-color: #eee;			/* Г±ВіГ°ГЁГ© */
-	--special-color: #eee;				/* Г±ВіГ°ГЁГ© */
+	--even-color: #f8f8ff;				/* слонова кістка */
+	--new-theme-color: #eee;			/* сірий */
+	--special-color: #eee;				/* сірий */
 
 /*------------INDEX,TAGS,TASKS-------*/
 	--color-0: var(--table-color);
@@ -25,8 +25,8 @@
 	--color-2: var(--even-color);
 
 /*------------TEST-------------------*/
-	--quest-color: #f8f8ff;				/* ГЇГ°ГЁГ¬Г Г°Г­ГЁГ© ГЎВіГ«ГЁГ© */
-	--js-checked-answer-color: #fffff0;	/* Г±Г«Г®Г­Г®ГўГ  ГЄВіГ±ГІГЄГ  */
+	--quest-color: #f8f8ff;				/* примарний білий */
+	--js-checked-answer-color: #fffff0;	/* слонова кістка */
 	--js-answer-color: var(--table-color);
 	--js-mark-2-3: #ff69b4;
 	--js-mark-4-5: #ffa07a;
@@ -36,10 +36,10 @@
 	--js-mark-12: #0f0;
 
 /*------------TIMETABLE--------------*/
-	--alt-color: #f8f8ff;			/* ГЇГ°ГЁГ¬Г Г°Г­ГЁГ© ГЎВіГ«ГЁГ© */
-	--js-current-time-color: #f0e68c;	/* Г±ГўВіГІГ«ГЁГ© ГµГ ГЄВі */
+	--alt-color: #f8f8ff;			/* примарний білий */
+	--js-current-time-color: #f0e68c;	/* світлий хакі */
 	--day-color: #8b008b;
-	--grp-color: #921;				/* ГІГҐГ¬Г­Г® Г·ГҐГ°ГўГ®Г­ГЁГ©*/
+	--grp-color: #921;				/* темно червоний*/
 	--kab-color: #008000;
 	--tch-color: #808000;
 	--sub-color: var(--font-color);
@@ -108,9 +108,9 @@ a {
 }
 
 .g-cell__html-color {
+	line-height: 1.5;
 	text-align: center;
 	font-family: monospace;
-	font-size: 1.15em;
 }
 
 /*------------CODE-------------------*/
