@@ -14,7 +14,7 @@
 	<tr>
 		<td class="header__btn header__btn--last-next" onclick="Filtering(listBox.selectedIndex - 1, false)">◄</td>
 		<td class="header__title title-header"><select id="listBox" size="1" onchange="Filtering(this.selectedIndex, false)">
-			<option>1°</option><option>2</option><option>3</option><option>4°</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
+			<option>1°</option><option>2</option><option>3</option><option>4°</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13°</option><option>14</option><option>15</option>
 		</select></td>
 		<td class="header__btn header__btn--last-next" onclick="Filtering(listBox.selectedIndex + 1, false)">►</td>
 	</tr>
@@ -240,6 +240,84 @@
 			<tr><td>4</td><td>47.80</td><td>==></td><td>191.20</td></tr>
 			<tr><td>30</td><td>15.50</td><td>==></td><td>315.00</td></tr>
 			<tr><td>57</td><td>23.00</td><td>==></td><td>1026.00</td></tr>
+		</table></td></tr>
+	</tbody>
+
+	<tbody id="m13">
+		<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;13</td></tr>
+		<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">Експерти ООН у&nbsp;власних розрахунках на&nbsp;основі працездатності виділяють п'ять вікових груп:<br>0-14&nbsp;років&nbsp;— діти;<br>15-24&nbsp;роки&nbsp;— ранній вік;<br>25-54&nbsp;років&nbsp;— основний вік;<br>55-64&nbsp;років&nbsp;— зрілий вік;<br>65&nbsp;років і&nbsp;старше&nbsp;— літні люди.<br>До&nbsp;якої вікової групи відноситься Іван?</td></tr>
+		<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
+		<tr><td class="content__tasks-in g-cell--color-1">вік Івана</td></tr>
+		<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
+		<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">вікова група</td></tr>
+		<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+			<tr><td>14</td><td>==></td><td>Діти</td></tr>
+			<tr><td>17</td><td>==></td><td>Ранній вік</td></tr>
+			<tr><td>25</td><td>==></td><td>Основний вік</td></tr>
+			<tr><td>49</td><td>==></td><td>Основний вік</td></tr>
+			<tr><td>55</td><td>==></td><td>Зрілий вік</td></tr>
+			<tr><td>64</td><td>==></td><td>Зрілий вік</td></tr>
+			<tr><td>88</td><td>==></td><td>Літні люди</td></tr>
+		</table></td></tr>
+
+		<tr><td class="content__tasks-solve-title">Розв’язок</td></tr>
+		<tr><td class="content__tasks-solve g-cell--border-bottom">
+			<div class="g-code__tag">&LT;script></div>
+			<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">let</span> age = Number(prompt(<span class="g-code__string">'Який вік Івана?'</span>));</div>
+			<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">let</span> workGroup;</div>
+			<p></p>
+			<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">if</span> (age <= <span class="g-code__number">14</span>) {</div>
+			<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;workGroup = <span class="g-code__string">'Дитина'</span>;</div>
+			<div>&nbsp;&nbsp;&nbsp;&nbsp;}
+			<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">if</span> (age > <span class="g-code__number">14</span> && age <= <span class="g-code__number">24</span>) {</div>
+			<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;workGroup = <span class="g-code__string">'Ранній вік'</span>;</div>
+			<div>&nbsp;&nbsp;&nbsp;&nbsp;}
+			<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">if</span> (age > <span class="g-code__number">24</span> && age <= <span class="g-code__number">54</span>) {</div>
+			<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;workGroup = <span class="g-code__string">'Основний вік'</span>;</div>
+			<div>&nbsp;&nbsp;&nbsp;&nbsp;}
+			<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">if</span> (age > <span class="g-code__number">54</span> && age <= <span class="g-code__number">64</span>) {</div>
+			<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;workGroup = <span class="g-code__string">'Зрілий вік'</span>;</div>
+			<div>&nbsp;&nbsp;&nbsp;&nbsp;}
+			<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">if</span> (age >= <span class="g-code__number">65</span>) {</div>
+			<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ageCategory = <span class="g-code__string">'Літня людина'</span>;</div>
+			<div>&nbsp;&nbsp;&nbsp;&nbsp;}
+			<p></p>
+			<div>&nbsp;&nbsp;&nbsp;&nbsp;alert(<span class="g-code__string">'Вікова група Івана '</span> + workGroup);</div>
+			<div class="g-code__tag">&LT;/script></div>
+		</td></tr>
+	</tbody>
+
+	<tbody id="m14">
+		<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;14</td></tr>
+		<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">Оператор у&nbsp;школі вводить у&nbsp;комп’ютер оцінки учнів. Створіть програму, яка перевіряє правильність уведення.</td></tr>
+		<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
+		<tr><td class="content__tasks-in g-cell--color-1">число, яке вводить оператор</td></tr>
+		<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
+		<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">правильність уведення</td></tr>
+		<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+			<tr><td>4</td><td>==></td><td>оцінка правильна</td></tr>
+			<tr><td>-9</td><td>==></td><td>помилка!</td></tr>
+			<tr><td>56</td><td>==></td><td>помилка!</td></tr>
+			<tr><td>1</td><td>==></td><td>оцінка правильна</td></tr>
+			<tr><td>12</td><td>==></td><td>оцінка правильна</td></tr>
+			<tr><td>0</td><td>==></td><td>помилка!</td></tr>
+		</table></td></tr>
+	</tbody>
+
+	<tbody id="m15">
+		<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;15</td></tr>
+		<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">В&nbsp;Україні максимально дозволена швидкість у населених пунктах 50&nbsp;км/год. Відомо, з&nbsp;якою швидкістю рухається автомобіль Івана.<br>Якщо Іван порушує правила, то яке покарання його очікує від дорожньої поліції?<br><span style="font-size: 0.9em">(до&nbsp;50&nbsp;км/год&nbsp;– не&nbsp;порушує правил;<br>від&nbsp;51 до&nbsp;70&nbsp;км/год&nbsp;– усне попередження;<br>від&nbsp;71 до&nbsp;100&nbsp;км/год&nbsp;– штраф 340&nbsp;грн;<br>більше 100&nbsp;км/год&nbsp;– штраф 1700&nbsp;грн)</td></tr>
+		<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
+		<tr><td class="content__tasks-in g-cell--color-1">швидкість автомобіля</td></tr>
+		<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
+		<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">покарання за порушення правил</td></tr>
+		<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+			<tr><td>85</td><td>==></td><td>штраф 340&nbsp;грн</td></tr>
+			<tr><td>55</td><td>==></td><td>усне попередження</td></tr>
+			<tr><td>20</td><td>==></td><td>не порушує правил</td></tr>
+			<tr><td>100</td><td>==></td><td>штраф 340&nbsp;грн</td></tr>
+			<tr><td>150</td><td>==></td><td>штраф 1700&nbsp;грн</td></tr>
+			<tr><td>70</td><td>==></td><td>усне попередження</td></tr>
 		</table></td></tr>
 	</tbody>
 
