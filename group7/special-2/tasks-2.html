@@ -14,7 +14,7 @@
 	<tr>
 		<td class="header__btn header__btn--last-next" onclick="Filtering(listBox.selectedIndex - 1, false)">◄</td>
 		<td class="header__title title-header"><select id="listBox" size="1" onchange="Filtering(this.selectedIndex, false)">
-			<option>1°</option><option>2</option><option>3</option><option>4°</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13°</option><option>14</option><option>15</option>
+			<option>1°</option><option>2</option><option>3</option><option>4°</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13°</option><option>14</option><option>15</option><option>16°</option><option>17</option><option>18</option><option>19</option>
 		</select></td>
 		<td class="header__btn header__btn--last-next" onclick="Filtering(listBox.selectedIndex + 1, false)">►</td>
 	</tr>
@@ -318,6 +318,95 @@
 			<tr><td>100</td><td>==></td><td>штраф 340&nbsp;грн</td></tr>
 			<tr><td>150</td><td>==></td><td>штраф 1700&nbsp;грн</td></tr>
 			<tr><td>70</td><td>==></td><td>усне попередження</td></tr>
+		</table></td></tr>
+	</tbody>
+
+	<tbody id="m16">
+		<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;16</td></tr>
+		<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">У&nbsp;комп’ютерній графіці усі&nbsp;кольори можна утворити змішуванням трьох&nbsp;базових кольорів: червоного, зеленого та&nbsp;синього.<br>Складіть програму, яка перевіряє, чи&nbsp;є заданий колір базовим.</td></tr>
+		<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
+		<tr><td class="content__tasks-in g-cell--color-1">назва кольору</td></tr>
+		<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
+		<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">чи є колір базовим</td></tr>
+		<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+			<tr><td>червоний</td><td>==></td><td>базовий</td></tr>
+			<tr><td>жовтий</td><td>==></td><td>не базовий</td></tr>
+			<tr><td>синій</td><td>==></td><td>базовий</td></tr>
+			<tr><td>коричневий</td><td>==></td><td>не базовий</td></tr>
+			<tr><td>зелений</td><td>==></td><td>не базовий</td></tr>
+		</table></td></tr>
+
+		<tr><td class="content__tasks-solve-title">Розв’язок</td></tr>
+		<tr><td class="content__tasks-solve g-cell--border-bottom">
+			<div class="g-code__tag">&LT;script></div>
+			<p></p>
+			<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">let</span> color = prompt(<span class="g-code__string">'Який колір?'</span>);</div>
+			<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">let</span> isBasic;</div>
+			<p></p>
+			<div style="background-color: #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">if</span> (color === <span class="g-code__string">'червоний'</span> || color === <span class="g-code__string">'зелений'</span> || color === <span class="g-code__string">'синій'</span>) {</div>
+			<div style="background-color: #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isBasic = <span class="g-code__string">'базовий'</span>;</div>
+			<div style="background-color: #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;} <span class="g-code__keyword">else</span> {</div>
+			<div style="background-color: #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isBasic = <span class="g-code__string">'не базовий'</span>;</div>
+			<div style="background-color: #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+			<p></p>
+			<div>&nbsp;&nbsp;&nbsp;&nbsp;alert(<span class="g-code__string">'Колір є '</span> + isBasic);</div>
+			<p></p>
+			<div class="g-code__tag">&LT;/script></div>
+		</td></tr>
+		<tr><td class="content__tasks-solve-title">Розв’язок (спосіб 2)</td></tr>
+		<tr><td class="content__tasks-solve g-cell--border-bottom ">
+			<div style="background-color: #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">if</span> (color !== <span class="g-code__string">'червоний'</span> && color !== <span class="g-code__string">'зелений'</span> && color !== <span class="g-code__string">'синій'</span>) {</div>
+			<div style="background-color: #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isBasic = <span class="g-code__string">'не базовий'</span>;</div>
+			<div style="background-color: #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;} <span class="g-code__keyword">else</span> {</div>
+			<div style="background-color: #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isBasic = <span class="g-code__string">'базовий'</span>;</div>
+			<div style="background-color: #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+		</td></tr>
+	</tbody>
+
+	<tbody id="m17">
+		<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;17</td></tr>
+		<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">Іван знає, якого місяця у&nbsp;нього відпустка. Допоможіть йому визначити чи&nbsp;це, бува, не&nbsp;зима.</td></tr>
+		<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
+		<tr><td class="content__tasks-in g-cell--color-1">номер місяця</td></tr>
+		<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
+		<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">чи є місяць зимовим</td></tr>
+		<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+			<tr><td>3</td><td>==></td><td>не зима</td></tr>
+			<tr><td>2</td><td>==></td><td>зима</td></tr>
+			<tr><td>12</td><td>==></td><td>зима</td></tr>
+			<tr><td>7</td><td>==></td><td>не зима</td></tr>
+			<tr><td>1</td><td>==></td><td>зима</td></tr>
+			<tr><td>7</td><td>==></td><td>не зима</td></tr>
+		</table></td></tr>
+	</tbody>
+
+	<tbody id="m18">
+		<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;18</td></tr>
+		<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">Нормальна температура тіла здорової людини повинна бути в&nbsp;межах 36,5&nbsp;–&nbsp;37&nbsp;градусів. Іван виміряв власну температуру тіла.<br>Чи&nbsp;потрібно йому звернутись до&nbsp;лікаря?</td></tr>
+		<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
+		<tr><td class="content__tasks-in g-cell--color-1">температура тіла</td></tr>
+		<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
+		<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">стан здоров’я</td></tr>
+		<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+			<tr><td>39.5</td><td>==></td><td>Ознака хвороби</td></tr>
+			<tr><td>34.1</td><td>==></td><td>Ознака хвороби</td></tr>
+			<tr><td>36.6</td><td>==></td><td>Все нормально</td></tr>
+			<tr><td>37</td><td>==></td><td>Все нормально</td></tr>
+		</table></td></tr>
+	</tbody>
+
+	<tbody id="m19">
+		<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;19</td></tr>
+		<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">Бабуся Івана живе у&nbsp;Бобровиці. До&nbsp;якого типу належить цей населений пункт, якщо відома кількість жителів у&nbsp;ньому?<br><span style="font-size: 0.9em">(до&nbsp;10&nbsp;000&nbsp;жителів&nbsp;– село;<br>від&nbsp;10&nbsp;000&nbsp; до&nbsp;1&nbsp;000&nbsp;000&nbsp;жителів&nbsp;– місто;<br>більше 1&nbsp;000&nbsp;000&nbsp;жителів&nbsp;– мегаполіс)</td></tr>
+		<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
+		<tr><td class="content__tasks-in g-cell--color-1">кількість жителів у Бобровиці</td></tr>
+		<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
+		<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">тип населеного пункту</td></tr>
+		<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+			<tr><td>8560</td><td>==></td><td>село</td></tr>
+			<tr><td>12000</td><td>==></td><td>місто</td></tr>
+			<tr><td>1234500</td><td>==></td><td>мегаполіс</td></tr>
+			<tr><td>850678</td><td>==></td><td>місто</td></tr>
 		</table></td></tr>
 	</tbody>
 
