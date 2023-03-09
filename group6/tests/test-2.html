@@ -9,75 +9,66 @@
 	var test={MinMark:2,MaxMark:12,IsPenalty:true,Questions:[{Text:"В який кут піде виконавець у Scratch, повернутий напрямку 50 градусів?",RndAnswers:false,Obj:"images/Scratch-2-1.jpg",Answers:[{Text:"верхній лівий",cr:false,Select:false},{Text:"верхній правий",cr:true,Select:false},{Text:"нижній лівий",cr:false,Select:false},{Text:"нижній правий",cr:false,Select:false},]},{Text:"Виберіть букви, якими позначається розташування виконавця на сцені у Scratch (координати).",RndAnswers:true,Obj:"",Answers:[{Text:" y",cr:true,Select:false},{Text:" x",cr:true,Select:false},{Text:" a",cr:false,Select:false},{Text:" z",cr:false,Select:false},{Text:" r",cr:false,Select:false},]},{Text:"Виберіть команду у Scratch, де часто числа записують десятковим дробом.",RndAnswers:true,Obj:"images/Scratch-2-2.jpg",Answers:[{Text:"чекати ... секунд",cr:true,Select:false},{Text:"переміститись на ... кроків",cr:false,Select:false},{Text:"повторити ...",cr:false,Select:false},{Text:"змінити ефект (колір) на ...",cr:false,Select:false},]},{Text:"Виберіть команду, яка зменшує розмір виконавця у 5 разів.",RndAnswers:false,Obj:"images/Scratch-2-3.jpg",Answers:[{Text:"задати розмір 5 %",cr:false,Select:false},{Text:"задати розмір 20 %",cr:true,Select:false},{Text:"задати розмір 50 %",cr:false,Select:false},{Text:"задати розмір 2000 %",cr:false,Select:false},]},{Text:"Виконавець у Scratch дійшов до правої межі сцени. Яке у цьому місці значення «х»?",RndAnswers:false,Obj:"images/Scratch-2-4.jpg",Answers:[{Text:"-360",cr:false,Select:false},{Text:"0",cr:false,Select:false},{Text:"240",cr:true,Select:false},{Text:"720",cr:false,Select:false},]},{Text:"До якої групи команд Scratch відносять усі події, наприклад:\n«коли натиснуто клавішу...»,\n«коли одержую...»,\n«коли натиснуто прапорець»?",RndAnswers:true,Obj:"",Answers:[{Text:"Олівець (зелений колір)",cr:false,Select:false},{Text:"Керувати (помаранчевий колір)",cr:true,Select:false},{Text:"Датчики (блакитний колір)",cr:false,Select:false},{Text:"Вигляд (фіолетовий колір)",cr:false,Select:false},]},{Text:"Клацання кнопок миші, натискання клавіш клавіатури, зупинка роботи – все це є приклади...",RndAnswers:true,Obj:"",Answers:[{Text:"команд",cr:false,Select:false},{Text:"програм",cr:false,Select:false},{Text:"подій",cr:true,Select:false},{Text:"помилок",cr:false,Select:false},]},{Text:"Поворот у протилежному напрямку – це поворот ...",RndAnswers:false,Obj:"",Answers:[{Text:"на 40 градусів",cr:false,Select:false},{Text:"на 90 градусів",cr:false,Select:false},{Text:"на 120 градусів",cr:false,Select:false},{Text:"на 180 градусів",cr:true,Select:false},]},{Text:"Що виконує у графічному редакторі Scratch кнопка з буквою «T»?",RndAnswers:true,Obj:"images/Scratch-2-5.jpg",Answers:[{Text:"зберігає малюнок",cr:false,Select:false},{Text:"визначає колір",cr:false,Select:false},{Text:"малює стрілки",cr:false,Select:false},{Text:"вводить букви",cr:true,Select:false},]},{Text:"Щоб виконавець у Scratch сам вибирав собі колір, місце, розмір, напрямок, треба виконати команду ...",RndAnswers:true,Obj:"images/Scratch-2-6.jpg",Answers:[{Text:"вибрати випадкове  від ... до ...",cr:true,Select:false},{Text:"вибрати наступне   від ... до ...",cr:false,Select:false},{Text:"вибрати відносне   від ... до ...",cr:false,Select:false},{Text:"вибрати послідовне від ... до ...",cr:false,Select:false},]},{Text:"Які імена Scratch сам надає виконавцям?",RndAnswers:true,Obj:"images/Scratch-2-7.jpg",Answers:[{Text:"Безімені1, Безімені2, ...",cr:false,Select:false},{Text:"Об\'єкт1, Об\'єкт2, ...",cr:true,Select:false},{Text:"Елемент1, Елемент2, ...",cr:false,Select:false},{Text:"Спрайт1, Спрайт2, ...",cr:true,Select:false},{Text:"Проект1, Проект2, ...",cr:false,Select:false},]},{Text:"Які номери кольорів можна використовувати у Scratch?",RndAnswers:false,Obj:"",Answers:[{Text:"від -24    до 24",cr:false,Select:false},{Text:"від 0      до 200",cr:true,Select:false},{Text:"від -16000 до 16000",cr:false,Select:false},{Text:"від 1      до 64500",cr:false,Select:false},]},{Text:"Яка висота сцени у Scratch?",RndAnswers:false,Obj:"images/Scratch-2-8.jpg",Answers:[{Text:"360",cr:true,Select:false},{Text:"580",cr:false,Select:false},{Text:"800",cr:false,Select:false},{Text:"1540",cr:false,Select:false},]},{Text:"Який колір має номер «0» у Scratch?",RndAnswers:true,Obj:"",Answers:[{Text:"жовтий",cr:false,Select:false},{Text:"фіолетовий",cr:false,Select:false},{Text:"чорний",cr:false,Select:false},{Text:"червоний",cr:true,Select:false},]},]}
 </script>
 
-<body onload="Start()">
+<body onload="StartTest()">
 
-<table class="header" id="header">
+<table class="header" id="tests_header">
 	<tr>
-		<td class="header__btn header__btn--exit-test" onclick="Exit()">x</td>
+		<td class="header__btn header__btn--exit-test" onclick="ExitTest()">x</td>
 		<td class="header__title title-header">
 			<span class="title-header__sign-num">№</span>
 			<span class="title-header__quest-num" id="questNum"></span>
 			<span class="title-header__quest-count" id="questCount"></span>
 		</td>
-		<td class="header__btn header__btn--next-quest" onclick="Next()">&#9658;&#9658;</td>
+		<td class="header__btn header__btn--next-quest" onclick="NextQuestion()">&#9658;&#9658;</td>
 	</tr>
 </table>
 
-<table class="content content--margin-top content--border--none" id="form">
+<table class="content content--margin-top content--border--none" id="testForm">
 	<tr><td class="content__test-quest" id="quest"></td></tr>
 	<tr><td class="content__test-correct-count g-cell--border-bottom" id="correctCount"></td></tr>
 
-	<tr>
-		<td class="content__test-answer answer-test g-cell--border-bottom" id="answer0" onclick="Check(0)">
-			<span class="answer-test__num">1.</span>
-			<input id="radio0" type="radio" name="answers">
-			<label id="label0"></label>
-		</td>
-	</tr>
-	<tr>
-		<td class="content__test-answer answer-test g-cell--border-bottom" id="answer1" onclick="Check(1)">
-			<span class="answer-test__num">2.</span>
-			<input id="radio1" type="radio" name="answers">
-			<label id="label1"></label>
-		</td>
-	</tr>
-	<tr>
-		<td class="content__test-answer answer-test g-cell--border-bottom" id="answer2" onclick="Check(2)">
-			<span class="answer-test__num">3.</span>
-			<input id="radio2" type="radio" name="answers">
-			<label id="label2"></label>
-		</td>
-	</tr>
-	<tr>
-		<td class="content__test-answer answer-test g-cell--border-bottom" id="answer3" onclick="Check(3)">
-			<span class="answer-test__num">4.</span>
-			<input id="radio3" type="radio" name="answers">
-			<label id="label3"></label>
-		</td>
-	</tr>
-	<tr>
-		<td class="content__test-answer answer-test g-cell--border-bottom" id="answer4" onclick="Check(4)">
-			<span class="answer-test__num">5.</span>
-			<input id="radio4" type="radio" name="answers">
-			<label id="label4"></label>
-		</td>
-	</tr>
-	<tr>
-		<td class="content__test-answer answer-test g-cell--border-bottom" id="answer5" onclick="Check(5)">
-			<span class="answer-test__num">6.</span>
-			<input id="radio5" type="radio" name="answers">
-			<label id="label5"></label>
-		</td>
-	</tr>
+	<tr><td class="content__test-answer answer-test g-cell--border-bottom" id="answer0" onclick="CheckAnswer(0)">
+		<span class="answer-test__num">1.</span>
+		<input id="radio0" type="radio" name="answers">
+		<label id="label0"></label>
+	</td></tr>
+	<tr><td class="content__test-answer answer-test g-cell--border-bottom" id="answer1" onclick="CheckAnswer(1)">
+		<span class="answer-test__num">2.</span>
+		<input id="radio1" type="radio" name="answers">
+		<label id="label1" for="radio1"></label>
+	</td></tr>
+	<tr><td class="content__test-answer answer-test g-cell--border-bottom" id="answer2" onclick="CheckAnswer(2)">
+		<span class="answer-test__num">3.</span>
+		<input id="radio2" type="radio" name="answers">
+		<label id="label2" for="radio2"></label>
+	</td></tr>
+	<tr><td class="content__test-answer answer-test g-cell--border-bottom" id="answer3" onclick="CheckAnswer(3)">
+		<span class="answer-test__num">4.</span>
+		<input id="radio3" type="radio" name="answers">
+		<label id="label3" for="radio3"></label>
+	</td></tr>
+	<tr><td class="content__test-answer answer-test g-cell--border-bottom" id="answer4" onclick="CheckAnswer(4)">
+		<span class="answer-test__num">5.</span>
+		<input id="radio4" type="radio" name="answers">
+		<label id="label4" for="radio4"></label>
+	</td></tr>
+	<tr><td class="content__test-answer answer-test g-cell--border-bottom" id="answer5" onclick="CheckAnswer(5)">
+		<span class="answer-test__num">6.</span>
+		<input id="radio5" type="radio" name="answers">
+		<label id="label5" for="radio5"></label>
+	</td></tr>
 </table>
 
-<div class="content__test-obj"><img id="questImg" src="" alt=""></div>
+<div class="content__test-obj">
+	<img id="questImg" src="" alt="">
+</div>
 
-<div class="test-result" id="resForm" hidden="true">
-	<div class="test-result__sign-percent"><span>Результат:</span><span class="test-result__sign-percent" id="percent"></span></div>
-	<div class="test-result__mark" id="mark"></div>
+<div class="result-test" id="resForm" hidden>
+	<div>
+		<span class="result-test__sign-percent">Результат:</span>
+		<span class="result-test__percent" id="resPercent"></span>
 	</div>
+	<div class="result-test__mark" id="testMark"></div>
+</div>
 
 </body>
-
-</html>
