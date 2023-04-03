@@ -78,25 +78,74 @@
 		<span class="g-code__tag">&LT;/iframe></span>
 	</td></tr>
 	<tr><td class="content__tags-comment g-cell--color-2 g-cell--border-bottom"><span>—&nbsp;фрейм (відео, карти, документи…)</span></td></tr>
-</table>
 
-<!--================================--><!--
+<!--================================-->
 	<tr><td class="content__tags"><span class="g-code__tag">&LT;body>…&LT;/body></span></td></tr>
 	<tr><td class="content__tags-comment"><span>—&nbsp;уся сторінка</span></td></tr>
 
-	<tr><td class="content__tags"><span class="g-code__tag">&LT;div>…&LT;/div></span></td></tr>
-	<tr><td class="content__tags-comment"><span>—&nbsp;блок контенту</span></td></tr>
+	<tr><td class="content__tags">
+		<span class="g-code__tag">&LT;div</span>
+		<span class="g-code__attribute">class</span>=<span class="g-code__string">"style-1"</span><span class="g-code__tag">></span> .......... <span class="g-code__tag">&LT;/div></span>
+	</td></tr>
+	<tr><td class="content__tags-comment"><span>—&nbsp;блочний елемент</span></td></tr>
 
-	<tr><td class="content__tags"><span class="g-code__tag">&LT;span>…&LT;/span></span></td></tr>
-	<tr><td class="content__tags-comment"><span>—&nbsp;символи, слова</span></td></tr>
--->
+	<tr><td class="content__tags">
+		<span class="g-code__tag">&LT;span</span>
+		<span class="g-code__attribute">class</span>=<span class="g-code__string">"style-1"</span><span class="g-code__tag">></span> .......... <span class="g-code__tag">&LT;/span></span>
+	</td></tr>
+	<tr><td class="content__tags-comment g-cell--border-bottom"><span>—&nbsp;лінійний елемент (символи,слова)</span></td></tr>
 
+<!--================================-->
+	<tr><td class="content__tags g-cell--color-1">
+		<span class="g-code__tag">&LT;button</span>
+		<span class="g-code__attribute">onclick</span>=<span class="g-code__string">"f1()"</span><span class="g-code__tag">></span> Очистити <span class="g-code__tag">&LT;/button></span>
+	</td></tr>
+	<tr><td class="content__tags-comment g-cell--color-1"><span>—&nbsp;кнопка</span></td></tr>
+
+	<tr><td class="content__tags g-cell--color-2">
+		<span class="g-code__tag">&LT;input</span>
+		<span class="g-code__attribute">id</span>=<span class="g-code__string">"in1"</span><span class="g-code__tag">></span>
+	</td></tr>
+	<tr><td class="content__tags-comment g-cell--color-2"><span>—&nbsp;текстове поле</span></td></tr>
+
+	<tr><td class="content__tags g-cell--color-2">
+		<span class="g-code__tag">&LT;input</span>
+		<span class="g-code__attribute">id</span>=<span class="g-code__string">"сh1"</span>
+		<span class="g-code__attribute">type</span>=<span class="g-code__string">"сheckbox"</span><span class="g-code__tag">></span>
+	</td></tr>
+	<tr><td class="content__tags-comment g-cell--color-2"><span>—&nbsp;прапорець</span></td></tr>
+
+	<tr><td class="content__tags g-cell--color-2">
+		<span class="g-code__tag">&LT;input</span>
+		<span class="g-code__attribute">id</span>=<span class="g-code__string">"ra1"</span>
+		<span class="g-code__attribute">type</span>=<span class="g-code__string">"radio"</span>
+		<span class="g-code__attribute">name</span>=<span class="g-code__string">"group1"</span><span class="g-code__tag">></span>
+	</td></tr>
+	<tr><td class="content__tags-comment g-cell--color-2"><span>—&nbsp;перемикач</span></td></tr>
+
+	<tr><td class="content__tags">
+		<span class="g-code__tag">&LT;input</span>
+		<span class="g-code__attribute">id</span>=<span class="g-code__string">"ra1"</span>
+		<span class="g-code__attribute">class</span>=<span class="g-code__string">"style-1"</span>
+		<span class="g-code__attribute">type</span>=<span class="g-code__string">"radio"</span>
+		<span class="g-code__attribute">name</span>=<span class="g-code__string">"group1"</span>
+		<span class="g-code__attribute">value</span>=<span class="g-code__string">"Учень"</span>
+		<span class="g-code__attribute">maxlength</span>=<span class="g-code__string">"20"</span>
+		<span class="g-code__attribute">placeholder</span>=<span class="g-code__string">"Ім’я"</span>
+		<span class="g-code__attribute">readonly</span>
+		<span class="g-code__attribute">checked</span>
+		<span class="g-code__attribute">disabled</span><span class="g-code__tag">></span>
+	</td></tr>
+	<tr><td class="content__tags-comment"><span>—&nbsp;атрибути поля введення</span></td></tr>
+</table>
+
+<!--================================-->
 <table class="content content--border--none content--bkcolor--body-color" style="margin-top:-10px;">
 	<tr><td class="content__tags-comment" style="text-align:left;"><b>Атрибути:</b></td></tr>
 	<tr><td class="content__tags-comment">
-	<span class="g-code__attribute" style="padding:0 7px;">width</span><span class="g-code__attribute" style="padding:0 7px;">height</span><span class="g-code__attribute" style="padding:0 7px;">src</span><span class="g-code__attribute" style="padding:0 7px;">href</span><span class="g-code__attribute" style="padding:0 7px;">target</span>allowfullscreen</td></tr>
+	<span class="g-code__attribute" style="padding:0 7px;">width</span><span class="g-code__attribute" style="padding:0 7px;">height</span><span class="g-code__attribute" style="padding:0 7px;">src</span><span class="g-code__attribute" style="padding:0 7px;">href</span><span class="g-code__attribute" style="padding:0 7px;">type</span><br><span class="g-code__attribute" style="padding:0 7px;">class</span><span class="g-code__attribute" style="padding:0 7px;">id</span><span class="g-code__attribute" style="padding:0 7px;">checked</span><span class="g-code__attribute" style="padding:0 7px;">value</span><span class="g-code__attribute" style="padding:0 7px;">maxlength</span></td></tr>
 
 	<tr><td class="content__tags-comment" style="text-align:left;"><b>Значення </b>атрибутів:</td></tr>
-	<tr><td class="content__tags-comment"><span class="g-code__string" style="padding:0 7px;">_blank</span><span class="g-code__string" style="padding:0 7px;">video.mp4</span><span class="g-code__string" style="padding:0 7px;">120</span><span class="g-code__string" style="padding:0 7px;">https://football.ua</span>
+	<tr><td class="content__tags-comment"><span class="g-code__string" style="padding:0 7px;">_blank</span><span class="g-code__string" style="padding:0 7px;">video.mp4</span><span class="g-code__string" style="padding:0 7px;">120</span><span class="g-code__string" style="padding:0 7px;">style-1</span><br><span class="g-code__string" style="padding:0 7px;">https://football.ua</span><span class="g-code__string" style="padding:0 7px;">Учень</span><span class="g-code__string" style="padding:0 7px;">checkbox</span>
 	</td></tr>
 </table>
