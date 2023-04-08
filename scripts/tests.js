@@ -120,9 +120,6 @@ function GetPointsPercent() {
 	if (test.IsPenalty) {
 		pointSum -= wrongAnswersCount * GetPenaltyPoint();
 	} 
-	if (pointSum < 0) {
-		pointSum = 0;
-	}
 	return 100 * pointSum / test.Questions.length;
 }
 /*---------------------------------------*/
