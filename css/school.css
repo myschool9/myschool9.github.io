@@ -28,6 +28,7 @@
 	--quest-color: #f8f8ff;				/* примарний білий */
 	--js-checked-answer-color: #fffff0;	/* слонова кістка */
 	--js-answer-color: var(--table-color);
+	--js-mark-1: #c0c0c0;
 	--js-mark-2-3: #ff69b4;
 	--js-mark-4-5: #ffa07a;
 	--js-mark-6-7: #ffd700;
