@@ -127,12 +127,24 @@ function GetPointsPercent() {
 }
 /*---------------------------------------*/
 function GetMark(markPercent) {
-	if (markPercent < 0) {
-		markPercent = 0;
-	}
 	if (markPercent > 100) {
 		markPercent = 100;
 	}
+
+	if (test.MinMark === 2 && test.MaxMark === 12) {
+		if (markPercent > 90) return '12';
+		if (markPercent > 70) return '10+';
+		if (markPercent > 50) return '8+';
+		if (markPercent > 30) return '6+';
+		if (markPercent > 10) return '4+';
+		if (markPercent > -10) return '2+';
+		return '1';
+	}
+
+	if (markPercent < 0) {
+		markPercent = 0;
+	}
+
 	if (test.MinMark < 0 || test.MaxMark < 0 || test.MinMark >= test.MaxMark) {
 		return -1;
 	}
@@ -152,15 +164,6 @@ function GetMark(markPercent) {
 		res = test.MinMark + Math.floor(mark / 2);
 		if (mark % 2 === 1) {
 			return String(res) + '+';
-		}
-	}
-
-	if (test.MinMark === 2 && test.MaxMark === 12) {
-		if (res === 2 || res === 4 || res === 6 || res === 8 || res === 10) {
-			return String(res) + '+';
-		}
-		if (res === 3 || res === 5 || res === 7 || res === 9 || res === 11) {
-			return String(res - 1) + '+';
 		}
 	}
 
@@ -300,6 +303,9 @@ function ExitTest() {
 		document.getElementById('resPercent').innerHTML = String(Math.round(p)) + '&nbsp;%';
 		let m = GetMark(p);
 		document.getElementById('testMark').innerHTML = m;
+		if (m === '1') {
+			document.getElementById('testMark').style.backgroundColor = 'var(--js-mark-1)';
+		}
 		if (m === '2+') {
 			document.getElementById('testMark').style.backgroundColor = 'var(--js-mark-2-3)';
 		}
