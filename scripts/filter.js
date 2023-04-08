@@ -1,18 +1,13 @@
 function Filtering(nItem, isFullList) {
 	let items = document.getElementById('listBox');
-	if (nItem < 0) {
-		nItem = 0;
-	}
-	if (nItem >= items.length) {
-		nItem = items.length - 1;
-	}
+
+	if (nItem < 0) nItem = 0;
+	if (nItem >= items.length) nItem = items.length - 1;
 
 	let shiftIndex = 0;
-	if (!isFullList) {
-		shiftIndex = 1;
-	}
+	if (!isFullList) shiftIndex = 1;
 
-	for (let i = 1 - shiftIndex; i < items.length; i += 1) {
+	for (let i = 1 - shiftIndex; i < items.length; i++) {
 		if (i === nItem || nItem === -shiftIndex) {
 			document.getElementById('m' + String(i + shiftIndex)).style.visibility = 'visible';
 		} else {
@@ -53,9 +48,8 @@ function GetCurrentNum(myTime) {
 	while (i < 7 && myTime[i] + 3 <= min) {
 		i += 1;
 	}
-	if (i === 7) {
-		i = 6;
-	}
+	if (i === 7) i = 6;
+
 	if (day === 0 || day === 6) {
 		day = 0;
 		i = 0;

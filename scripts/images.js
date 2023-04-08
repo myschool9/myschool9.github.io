@@ -4,20 +4,16 @@ function CreateImgArray(params) {
 	const rowEnd='.png" alt=""></td></tr>';
 
 	let pos = params.search(symb);
-	if (pos < 1) {
-		return;
-	}
+	if (pos < 1) return;
 
 	let folder = params.slice(1, pos);
 	folder = '../' + folder.replace('_', '/') + '/'
 
 	let lastNum = Number(params.slice(pos + 1));
-	if (isNaN(lastNum) || lastNum > 77) {
-		return;
-	}
+	if (isNaN(lastNum) || lastNum > 77) return;
 
 	document.getElementById('imgArray').innerHTML = '';
-	for (let i = 0; i <= Number(lastNum); i += 1) {
+	for (let i = 0; i <= Number(lastNum); i++) {
 		document.getElementById('imgArray').innerHTML += rowBegin + folder + String(i) + rowEnd;
 	}
 }
