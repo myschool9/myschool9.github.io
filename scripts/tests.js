@@ -130,7 +130,7 @@ function GetMark(markPercent) {
 	if (markPercent > 100) {
 		markPercent = 100;
 	}
-
+alert(markPercent);
 	if (test.MinMark === 2 && test.MaxMark === 12) {
 		if (markPercent > 90) return '12';
 		if (markPercent > 70) return '10+';
@@ -144,7 +144,7 @@ function GetMark(markPercent) {
 	if (markPercent < 0) {
 		markPercent = 0;
 	}
-
+alert('sdfsd');
 	if (test.MinMark < 0 || test.MaxMark < 0 || test.MinMark >= test.MaxMark) {
 		return -1;
 	}
