@@ -29,11 +29,11 @@
 	--js-checked-answer-color: #fffff0;	/* слонова кістка */
 	--js-answer-color: var(--table-color);
 	--js-mark-1: #c0c0c0;
-	--js-mark-2-3: #ff69b4;
-	--js-mark-4-5: #ffa07a;
-	--js-mark-6-7: #ffd700;
-	--js-mark-8-9: #7fffd4;
-	--js-mark-10-11: #00ff7f;
+	--js-mark-2: #ff69b4;
+	--js-mark-4: #ffa07a;
+	--js-mark-6: #ffd700;
+	--js-mark-8: #7fffd4;
+	--js-mark-10: #00ff7f;
 	--js-mark-12: #0f0;
 
 /*------------TIMETABLE--------------*/
