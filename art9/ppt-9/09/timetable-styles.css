@@ -25,10 +25,7 @@ body{padding:5px;line-height:1.4} @media screen and (min-width:450px){body{margi
 	flex-wrap: wrap;				/* nowrap */
 	justify-content: space-around;	/* flex-end  center  flex-start  space-beetween */
 	align-items: flex-start;		/* flex-end  center  stretch */
-flex-wrap: nowrap;
-justify-content: flex-end center flex-start space-beetween;
-align-items: flex-end  center  stretch;
-	
+
 }
 .item {
 	border-radius: 2px solid blue;
