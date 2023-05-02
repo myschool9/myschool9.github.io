@@ -1,13 +1,11 @@
 function f1() {
 	div1.style.color = 'red';
-	alert('Помилка!!!');
 }
 
 function f2() {
 	div2.style.color = 'ForestGreen';
 	div2.style.fontWeight = 'bold';
 	div2.style.border = '2px dotted';
-	alert('Правильно!!!');
 }
 
 function f3() {
@@ -17,7 +15,7 @@ function f3() {
 
 function f4() {
 	div4.style.backgroundColor = 'DeepPink';
-	alert('Помилка!!!');
+	div4.style.borderRadius = '5px';
 }
 
 function f5() {
