@@ -9,7 +9,7 @@ body {
 	text-align: center;
 	line-height: 1.4;
 }
-@media screen and (max-width:450px){body{margin:10px;color:green;}}
+@media screen and (max-width:450px){body{margin:5px 10px}}
 
 /*---------------------------------------------*/
 div {
