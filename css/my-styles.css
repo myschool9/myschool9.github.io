@@ -1,0 +1,129 @@
+body {
+	max-width: 40em;
+	padding: 5px;
+	margin: 10px 10%;
+	border: 1px dotted black;
+	border-radius: 10px;
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	text-align: center;
+	line-height: 1.4;
+}
+@media screen and (max-width:40em){body{margin:5px}}
+
+/*---------------------------------------------*/
+div {
+	margin: 5px;
+	padding: 5px;
+	text-align: center;
+}
+
+h1,
+h2,
+h3 {
+	padding: 0.3em;
+	margin: 0.3em auto 0.5em;
+}
+
+p {
+	text-align: left;
+}
+
+img {
+	margin: 5px;
+}
+
+span {
+	margin: 5px;
+	padding: 5px;
+}
+
+#out,
+#out1,
+#out2,
+#out3,
+#out4 {
+	display: inline-block;
+	min-width: 3em;
+	font-size: 90%;
+	background-color: LightCyan;
+	text-align: center;
+}
+
+.flexbox,
+.box {
+	display: flex;
+	margin: 5px;
+	padding: 5px;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: stretch;
+}
+
+/*---------------------------------------------*/
+button {
+	margin: 5px 20px;
+	padding: 10px;
+	border-radius: 10px;
+	font-family: inherit;
+	font-size: 100%;
+	line-height: 1.2;
+	border: 2px outset ButtonFace;
+}
+
+button:hover {
+	background-color: #d0d0d7;
+}
+
+button:active:hover {
+	border-style: inset;
+}
+
+button:disabled:active, 
+button:disabled {
+	border: 2px outset ButtonFace;
+	background-color: ButtonFace;
+	color: GrayText;
+}
+
+input {
+	margin: 7px;
+	padding: 2px 2px 2px 5px;
+	width: 75px;
+	font-size: 90%;
+	border: 2px inset ThreeDFace;
+
+}
+
+input:disabled {
+	color: GrayText;
+	background-color: ThreeDFace;
+	cursor: inherit;
+}
+  
+input[type="radio"] {
+	margin: 2px;
+	width: 30px;
+}
+
+input[type="checkbox"] {
+	margin: 2px;
+	width: 30px;
+}
+
+/*---------------------------------------------*/
+select {
+	margin: 10px;
+	padding: 5px 10px;
+	font-family: inherit;
+	font-size: 90%;
+	line-height: 1.2;
+}
+
+textarea {
+	resize: none;
+	border: inset 2px;
+	border-radius: 3px;
+	font-family: inherit;
+	font-size: 90%;
+}
