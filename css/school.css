@@ -108,6 +108,15 @@ a {
 	color: var(--special-link-color);
 }
 
+.g-cell__archive {
+	text-align: left;
+	background-color: var(--special-color);
+}
+
+.g-cell__archive a {
+	color: var(--special-link-color);
+}
+
 .g-cell__html-color {
 	line-height: 1.5;
 	text-align: center;
