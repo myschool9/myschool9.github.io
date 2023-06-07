@@ -10,10 +10,10 @@ function CreateImgArray(params) {
 	folder = '../' + folder.replace('_', '/') + '/'
 
 	let lastNum = Number(params.slice(pos + 1));
-	if (isNaN(lastNum) || lastNum > 77) return;
+	if (isNaN(lastNum) || lastNum > 99) return;
 
 	document.getElementById('imgArray').innerHTML = '';
-	for (let i = 0; i <= Number(lastNum); i++) {
+	for (let i = 1; i <= Number(lastNum); i++) {
 		document.getElementById('imgArray').innerHTML += rowBegin + folder + String(i) + rowEnd;
 	}
 }
