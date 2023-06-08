@@ -14,15 +14,14 @@
 	--obj-max-width: 320px;
 
 /*------------GROUP,ARTS-------------*/
-	--odd-color: var(--table-color);
-	--even-color: #f8f8ff;				/* слонова кістка */
-	--new-theme-color: #eee;			/* сірий */
+	--one-color: var(--table-color);
+	--two-color: #f8f8ff;				/* слонова кістка */
 	--special-color: #eee;				/* сірий */
 
 /*------------INDEX,TAGS,TASKS-------*/
 	--color-0: var(--table-color);
 	--color-1: #fffff0;
-	--color-2: var(--even-color);
+	--color-2: var(--two-color);
 
 /*------------TEST-------------------*/
 	--quest-color: #f8f8ff;				/* примарний білий */
@@ -75,16 +74,12 @@ a {
 	background-color: var(--color-2);
 }
 
-.g-cell--odd-color {
-	background-color: var(--odd-color);
+.g-cell--one-color {
+	background-color: var(--one-color);
 }
 
-.g-cell--even-color {
-	background-color: var(--even-color);
-}
-
-.g-cell--new-theme-color {
-	background-color: var(--new-theme-color);
+.g-cell--two-color {
+	background-color: var(--two-color);
 }
 
 .g-cell--alt-color {
