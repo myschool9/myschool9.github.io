@@ -1,0 +1,68 @@
+﻿body{padding:5px} @media screen and (min-width:450px){body{max-width:360px;margin:10px 10%}}
+
+
+		
+h2 {
+	color: Coral;
+	font-size: 200%;
+	text-align: center;
+	border: 3px solid MidnightBlue;
+	
+}
+		
+.all-news {
+	        border: 4px dotted SkyBlue;
+			padding: 10px;
+			background-color: Linen;
+			float: left;
+			
+}
+
+		
+h3 {
+	font-size: 120%;
+	color: MediumSlateBlue;
+	font-style: italik;
+	
+}
+
+		
+.news-time {
+	         border: 2px solid black;
+			 text-align: center;
+			 font-style: bold;
+			 font-size: 80%;
+			 margin: 13px 0px 0px 0px;
+}
+
+		
+.news-text {
+	         border: 3px double Cyan;
+			 margin: 0px 0px 10px 0px;
+}
+
+		
+.footer {
+	padding: 10px;
+}
+
+a {
+	text-decoration: none;
+	color: red;
+	font-style: bold;
+	font-size: 130%;
+}
+
+		
+.gud {
+	   color: OrangeRed;
+}
+	
+.hot-news {
+	padding: 0 20px 20px 20px;
+	line-height: 1.5;
+	text-align: center;
+	font-weight: bold;
+	font-style: italic;
+	color: Crimson;
+}
