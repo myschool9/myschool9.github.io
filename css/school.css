@@ -1,8 +1,7 @@
 :root {
-	--font-color: #333;				/* темно сірий */
+	--font-color: #333;				/* темно сірий * 111111111111*/
 	--border-color: #333;			/* темно сірий*/
-	--link-color: #921;				/* темно червоний*/
-	--special-link-color: #333;		/* темно сірий */
+	--link-color: #921;				/* темно червоний* 111111111111*/
 
 	--body-color: #f5f4e5;			/* блідо блакитний */
 	--js-header-color: #8fbc8f;		/* темно морський */
@@ -16,7 +15,6 @@
 /*------------GROUP,ARTS-------------*/
 	--one-color: var(--table-color);
 	--two-color: #f8f8ff;				/* слонова кістка */
-	--special-color: #eee;				/* сірий */
 
 /*------------INDEX,TAGS,TASKS-------*/
 	--color-0: var(--table-color);
@@ -96,20 +94,22 @@ a {
 
 .g-cell__special {
 	text-align: center;
-	background-color: var(--special-color);
+	background-color: #eee;
 }
 
 .g-cell__special a {
-	color: var(--special-link-color);
+	color: #333;
 }
 
 .g-cell__archive {
 	text-align: left;
-	background-color: var(--special-color);
+	background-color: #eee;
+	font-size: 90%;
 }
 
 .g-cell__archive a {
-	color: var(--special-link-color);
+	color: #333;
+	padding-left: 10px;
 }
 
 .g-cell__html-color {
