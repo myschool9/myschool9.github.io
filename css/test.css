@@ -32,13 +32,13 @@
 
 .test-correct-count {	/* --- TD --- */
 	font-size: 0.8em;
-	line-height: 1;
+	line-height: 1.5;
 	text-align: right;
 }
 
 .test-answer {			/* --- TD --- */
 	padding: 12px 0;
-	border-bottom: var(--border-style);
+	border-top: var(--border-style);
 	background-color: var(--js-answer-color);
 	cursor: pointer;
 }
