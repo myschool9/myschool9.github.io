@@ -64,7 +64,6 @@
 
 .task-solve-text {		/* ---------- TD --------- */
 	padding: 0 5px 15px 5px;
-	border: var(--border-style);
 	font-family: monospace;
 	line-height: 1.5;
 	background-color: #fff;
@@ -84,4 +83,8 @@
 
 .task--color-3 {
 	background-color: #f8f8ff;
+}
+
+.task--border-top {
+	border-top: var(--border-style);
 }
