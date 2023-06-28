@@ -2,7 +2,8 @@
 <html lang="uk">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../../css/school.css">
+<link rel="stylesheet" href="../../css/global.css">
+<link rel="stylesheet" href="../../css/videos.css">
 <script src="../../scripts/filter.js"></script>
 <title>Задачі Scratch</title>
 
@@ -10,233 +11,233 @@
 <body onload="Filtering(0, false)">
 
 <!--================================-->
-<table class="header">
+<table class="page-header">
 	<tr>
-		<td class="header__btn header__btn--last-next" onclick="Filtering(listBox.selectedIndex - 1, false)">◄</td>
-		<td class="header__title title-header"><select id="listBox" size="1" onchange="Filtering(this.selectedIndex, false)">
+		<td class="btn btn__scroll" onclick="Filtering(listBox.selectedIndex - 1, false)">◄</td>
+		<td class="page-title"><select id="listBox" size="1" onchange="Filtering(this.selectedIndex, false)">
 			<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option><option>32</option><option>33</option><option>34</option><option>35</option><option>36</option>
 		</select></td>
-		<td class="header__btn header__btn--last-next" onclick="Filtering(listBox.selectedIndex + 1, false)">►</td>
+		<td class="btn btn__scroll" onclick="Filtering(listBox.selectedIndex + 1, false)">►</td>
 	</tr>
 </table>
 
 <!--================================-->
-<table class="content content--margin-top">
+<table class="content content--border-around content--color">
 
 <tbody id="m1">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;1.</span><span class="title-videos__name">Екскурсія</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="1.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom"></td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;1.</span><span class="video-name">Екскурсія</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="1.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment"></td></tr>
 </tbody>
 
 <tbody id="m2">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;2.</span><span class="title-videos__name">Перехід дороги</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="2.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom">Світлофор (2&nbsp;образи) треба малювати!</td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;2.</span><span class="video-name">Перехід дороги</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="2.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment">Світлофор (2&nbsp;образи) треба малювати!</td></tr>
 </tbody>
 
 <tbody id="m3">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;3.</span><span class="title-videos__name">Ракета</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="3.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom">Ракету треба малювати!</td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;3.</span><span class="video-name">Ракета</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="3.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment">Ракету треба малювати!</td></tr>
 </tbody>
 
 <tbody id="m4">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;4.</span><span class="title-videos__name">Спритна мишка</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="4.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom"></td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;4.</span><span class="video-name">Спритна мишка</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="4.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment"></td></tr>
 </tbody>
 
 <tbody id="m5">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;5.</span><span class="title-videos__name">Перехід дороги</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="5.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom">Ялинки «виростають» різного розміру і «де&nbsp;захочуть».</td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;5.</span><span class="video-name">Перехід дороги</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="5.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment">Ялинки «виростають» різного розміру і «де&nbsp;захочуть».</td></tr>
 </tbody>
 
 <tbody id="m6">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;6.</span><span class="title-videos__name">Кубик</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="6.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom">Вкидання грального кубика:<br>через певний час випадає число від&nbsp;1 до&nbsp;6.</td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;6.</span><span class="video-name">Кубик</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="6.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment">Вкидання грального кубика:<br>через певний час випадає число від&nbsp;1 до&nbsp;6.</td></tr>
 </tbody>
 
 <tbody id="m7">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;7.</span><span class="title-videos__name">Зоряне небо</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="7.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom">Зірки різного розміру, кольору та напрямку.</td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;7.</span><span class="video-name">Зоряне небо</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="7.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment">Зірки різного розміру, кольору та напрямку.</td></tr>
 </tbody>
 
 <tbody id="m8">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;8.</span><span class="title-videos__name">Рулетка</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="8.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom">Рулетку треба малювати!</td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;8.</span><span class="video-name">Рулетка</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="8.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment">Рулетку треба малювати!</td></tr>
 </tbody>
 
 <tbody id="m9">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;9.</span><span class="title-videos__name">Заєць і капуста</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="9.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom">Капуста з’являється «де&nbsp;захоче».<br>Заєць намагається її піймати.</td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;9.</span><span class="video-name">Заєць і капуста</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="9.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment">Капуста з’являється «де&nbsp;захоче».<br>Заєць намагається її піймати.</td></tr>
 </tbody>
 
 <tbody id="m10">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;10.</span><span class="title-videos__name">Автомобілі</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="10.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom"></td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;10.</span><span class="video-name">Автомобілі</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="10.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment"></td></tr>
 </tbody>
 
 <tbody id="m11">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;11.</span><span class="title-videos__name">Серце</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="11.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom"></td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;11.</span><span class="video-name">Серце</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="11.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment"></td></tr>
 </tbody>
 
 <tbody id="m12">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;12.</span><span class="title-videos__name">Шлюз</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="12.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom">Шлюз відкривається, коли кораблик наблизиться на&nbsp;певну відстань.</td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;12.</span><span class="video-name">Шлюз</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="12.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment">Шлюз відкривається, коли кораблик наблизиться на&nbsp;певну відстань.</td></tr>
 </tbody>
 
 <tbody id="m13">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;13.</span><span class="title-videos__name">Мозаїка</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="13.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom">Фігури різного розміру, кольору та напрямку.</td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;13.</span><span class="video-name">Мозаїка</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="13.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment">Фігури різного розміру, кольору та напрямку.</td></tr>
 </tbody>
 
 <tbody id="m14">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;14.</span><span class="title-videos__name">Воротар</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="14.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom">Поле з&nbsp;воротами треба малювати!</td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;14.</span><span class="video-name">Воротар</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="14.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment">Поле з&nbsp;воротами треба малювати!</td></tr>
 </tbody>
 
 <tbody id="m15">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;15.</span><span class="title-videos__name">Дощ</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="15.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom"></td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;15.</span><span class="video-name">Дощ</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="15.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment"></td></tr>
 </tbody>
 
 <tbody id="m16">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;16.</span><span class="title-videos__name">Клони</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="16.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom"></td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;16.</span><span class="video-name">Клони</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="16.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment"></td></tr>
 </tbody>
 
 <tbody id="m17">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;17.</span><span class="title-videos__name">Намисто</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="17.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom">Зобразіть не шестикутник,<br>а квадрат або п’ятикутник.</td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;17.</span><span class="video-name">Намисто</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="17.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment">Зобразіть не шестикутник,<br>а квадрат або п’ятикутник.</td></tr>
 </tbody>
 
 <tbody id="m18">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;18.</span><span class="title-videos__name">Таймер</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="18.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom">Домалюйте кнопку, яка запускає таймер.</td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;18.</span><span class="video-name">Таймер</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="18.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment">Домалюйте кнопку, яка запускає таймер.</td></tr>
 </tbody>
 
 <tbody id="m19">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;19.</span><span class="title-videos__name">Шахівниця</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="19.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom"></td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;19.</span><span class="video-name">Шахівниця</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="19.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment"></td></tr>
 </tbody>
 
 <tbody id="m20">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;20.</span><span class="title-videos__name">Квіткове поле</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="20.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom">Квітки з’являються «де захочуть»,<br>різних кольорів та різного розміру.</td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;20.</span><span class="video-name">Квіткове поле</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="20.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment">Квітки з’являються «де захочуть»,<br>різних кольорів та різного розміру.</td></tr>
 </tbody>
 
 <tbody id="m21">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;21.</span><span class="title-videos__name">НЛО</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="21.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom"></td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;21.</span><span class="video-name">НЛО</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="21.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment"></td></tr>
 </tbody>
 
 <tbody id="m22">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;22.</span><span class="title-videos__name">Зустріч</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="22.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom"></td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;22.</span><span class="video-name">Зустріч</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="22.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment"></td></tr>
 </tbody>
 
 <tbody id="m23">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;23.</span><span class="title-videos__name">Більярд</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="23.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom"></td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;23.</span><span class="video-name">Більярд</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="23.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment"></td></tr>
 </tbody>
 
 <tbody id="m24">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;24.</span><span class="title-videos__name">Заповідник</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="24.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom"></td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;24.</span><span class="video-name">Заповідник</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="24.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment"></td></tr>
 </tbody>
 
 <tbody id="m25">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;25.</span><span class="title-videos__name">Дощ-2</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="25.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom"></td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;25.</span><span class="video-name">Дощ-2</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="25.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment"></td></tr>
 </tbody>
 
 <tbody id="m26">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;26.</span><span class="title-videos__name">Ліфт</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="26.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom"></td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;26.</span><span class="video-name">Ліфт</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="26.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment"></td></tr>
 </tbody>
 
 	<tbody id="m27">
-		<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;27.</span><span class="title-videos__name">Обійти!</span></td></tr>
-		<tr><td class="content__videos"><video controls><source src="27.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-		<tr><td class="content__videos-comment g-cell--border-bottom"></td></tr>
+		<tr><td class="video-title"><span class="video-number">№&nbsp;27.</span><span class="video-name">Обійти!</span></td></tr>
+		<tr><td class="video-container"><video controls><source src="27.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+		<tr><td class="video-comment"></td></tr>
 	</tbody>
 
 <tbody id="m28">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;28.</span><span class="title-videos__name">Пролізти!</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="28.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom"></td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;28.</span><span class="video-name">Пролізти!</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="28.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment"></td></tr>
 </tbody>
 
 <tbody id="m29">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;29.</span><span class="title-videos__name">Прокласти шлях!</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="29.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom"></td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;29.</span><span class="video-name">Прокласти шлях!</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="29.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment"></td></tr>
 </tbody>
 
 <tbody id="m30">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;30.</span><span class="title-videos__name">Відплисти!</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="30.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom"></td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;30.</span><span class="video-name">Відплисти!</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="30.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment"></td></tr>
 </tbody>
 
 <tbody id="m31">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;31.</span><span class="title-videos__name">Гармата</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="31.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom"></td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;31.</span><span class="video-name">Гармата</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="31.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment"></td></tr>
 </tbody>
 
 <tbody id="m32">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;32.</span><span class="title-videos__name">Сніжинка</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="32.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom"></td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;32.</span><span class="video-name">Сніжинка</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="32.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment"></td></tr>
 </tbody>
 
 <tbody id="m33">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;33.</span><span class="title-videos__name">Зірочка</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="33.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom"></td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;33.</span><span class="video-name">Зірочка</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="33.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment"></td></tr>
 </tbody>
 
 <tbody id="m34">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;34.</span><span class="title-videos__name">Фігура</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="34.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom"></td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;34.</span><span class="video-name">Фігура</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="34.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment"></td></tr>
 </tbody>
 
 <tbody id="m35">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;35.</span><span class="title-videos__name">Сходи</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="35.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom"></td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;35.</span><span class="video-name">Сходи</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="35.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment"></td></tr>
 </tbody>
 
 <tbody id="m36">
-	<tr><td class="content__videos-title title-videos"><span class="title-videos__num">№&nbsp;36.</span><span class="title-videos__name">«Зебра»</span></td></tr>
-	<tr><td class="content__videos"><video controls><source src="36.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
-	<tr><td class="content__videos-comment g-cell--border-bottom"></td></tr>
+	<tr><td class="video-title"><span class="video-number">№&nbsp;36.</span><span class="video-name">«Зебра»</span></td></tr>
+	<tr><td class="video-container"><video controls><source src="36.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr>
+	<tr><td class="video-comment"></td></tr>
 </tbody>
 
 </table>
