@@ -82,7 +82,7 @@ select {
 	background: -o-linear-gradient(top, #fff 0%, #b0c4de 50%, #fff 100%);
 }
 
-.content {	/* --- TABLE --- */
+.content {					/* --- TABLE --- */
 	width: 96%;
 	max-width: var(--body-max-width);
 	margin: 42px 0 20px 6px;
@@ -96,4 +96,8 @@ select {
 
 .content--border-around {
 	border: var(--border-style);
+}
+
+.content--color {
+	background-color: #fff;
 }
