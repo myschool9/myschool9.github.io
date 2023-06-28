@@ -2,7 +2,8 @@
 <html lang="uk">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../../css/school.css">
+<link rel="stylesheet" href="../../css/global.css">
+<link rel="stylesheet" href="../../css/test.css">
 <script src="../../scripts/tests.js"></script>
 <title>Scratch</title>
 <script>
@@ -11,62 +12,64 @@
 
 <body onload="StartTest()">
 
-<table class="header" id="tests_header">
+<table class="page-header" id="tests_header">
 	<tr>
-		<td class="header__btn header__btn--exit-test" onclick="ExitTest()">x</td>
-		<td class="header__title title-header">
-			<span class="title-header__sign-num">№</span>
-			<span class="title-header__quest-num" id="questNum"></span>
-			<span class="title-header__quest-count" id="questCount"></span>
+		<td class="btn btn__exit-test" onclick="ExitTest()">x</td>
+		<td class="page-title">
+			<span class="sign-quest-num">№</span>
+			<span class="quest-num" id="questNum"></span>
+			<span class="quest-count" id="questCount"></span>
 		</td>
-		<td class="header__btn header__btn--next-quest" onclick="NextQuestion()">&#9658;&#9658;</td>
+		<td class="btn btn__next-quest" onclick="NextQuestion()">&#9658;&#9658;</td>
 	</tr>
 </table>
 
-<table class="content content--margin-top content--border--none" id="testForm">
-	<tr><td class="content__test-quest" id="quest"></td></tr>
-	<tr><td class="content__test-correct-count g-cell--border-bottom" id="correctCount"></td></tr>
+<table class="content content--border-around" id="testForm">
+	<tr><td class="test-quest" id="quest"></td></tr>
+	<tr><td class="test-correct-count" id="correctCount"></td></tr>
 
-	<tr><td class="content__test-answer answer-test g-cell--border-bottom" id="answer0" onclick="CheckAnswer(0)">
-		<span class="answer-test__num">1.</span>
+	<tr><td class="test-answer" id="answer0" onclick="CheckAnswer(0)">
+		<span class="test-answer-num">1.</span>
 		<input id="radio0" type="radio" name="answers">
-		<label id="label0" for="radio0"></label>
+		<label id="label0"></label>
 	</td></tr>
-	<tr><td class="content__test-answer answer-test g-cell--border-bottom" id="answer1" onclick="CheckAnswer(1)">
-		<span class="answer-test__num">2.</span>
+	<tr><td class="test-answer" id="answer1" onclick="CheckAnswer(1)">
+		<span class="test-answer-num">2.</span>
 		<input id="radio1" type="radio" name="answers">
 		<label id="label1" for="radio1"></label>
 	</td></tr>
-	<tr><td class="content__test-answer answer-test g-cell--border-bottom" id="answer2" onclick="CheckAnswer(2)">
-		<span class="answer-test__num">3.</span>
+	<tr><td class="test-answer" id="answer2" onclick="CheckAnswer(2)">
+		<span class="test-answer-num">3.</span>
 		<input id="radio2" type="radio" name="answers">
 		<label id="label2" for="radio2"></label>
 	</td></tr>
-	<tr><td class="content__test-answer answer-test g-cell--border-bottom" id="answer3" onclick="CheckAnswer(3)">
-		<span class="answer-test__num">4.</span>
+	<tr><td class="test-answer" id="answer3" onclick="CheckAnswer(3)">
+		<span class="test-answer-num">4.</span>
 		<input id="radio3" type="radio" name="answers">
 		<label id="label3" for="radio3"></label>
 	</td></tr>
-	<tr><td class="content__test-answer answer-test g-cell--border-bottom" id="answer4" onclick="CheckAnswer(4)">
-		<span class="answer-test__num">5.</span>
+	<tr><td class="test-answer" id="answer4" onclick="CheckAnswer(4)">
+		<span class="test-answer-num">5.</span>
 		<input id="radio4" type="radio" name="answers">
 		<label id="label4" for="radio4"></label>
 	</td></tr>
-	<tr><td class="content__test-answer answer-test g-cell--border-bottom" id="answer5" onclick="CheckAnswer(5)">
-		<span class="answer-test__num">6.</span>
+	<tr><td class="test-answer" id="answer5" onclick="CheckAnswer(5)">
+		<span class="test-answer-num">6.</span>
 		<input id="radio5" type="radio" name="answers">
 		<label id="label5" for="radio5"></label>
 	</td></tr>
 </table>
 
-<div class="content__test-obj"><img id="questImg" src="" alt=""></div>
+<div class="test-obj">
+	<img id="questImg" src="" alt="">
+</div>
 
-<div class="result-test" id="resForm" hidden>
+<div class="test-result" id="resForm" hidden>
 	<div>
-		<span class="result-test__sign-percent">Результат:</span>
-		<span class="result-test__percent" id="resPercent"></span>
+		<span class="test-result-title">Результат:</span>
+		<span class="test-result-percent" id="resPercent"></span>
 	</div>
-	<div class="result-test__mark" id="testMark"></div>
+	<div class="test-result-mark" id="testMark"></div>
 </div>
 
 </body>
