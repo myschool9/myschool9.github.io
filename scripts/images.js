@@ -1,6 +1,6 @@
 function CreateImgArray(params) {
 	const symb = '&';
-	const rowBegin='<tr><td class="content__images"><img src="';
+	const rowBegin='<tr><td class="image-container"><img src="';
 	const rowEnd='.png" alt=""></td></tr>';
 
 	let pos = params.search(symb);
