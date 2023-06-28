@@ -2,7 +2,9 @@
 <html lang="uk">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../../css/school.css">
+<link rel="stylesheet" href="../../css/global.css">
+<link rel="stylesheet" href="../../css/task.css">
+<link rel="stylesheet" href="../../css/code.css">
 <script src="../../scripts/filter.js"></script>
 <title>Задачі з розгалуженням</title>
 
@@ -10,70 +12,70 @@
 <body onload="Filtering(0, false)">
 
 <!--================================-->
-<table class="header">
+<table class="page-header">
 	<tr>
-		<td class="header__btn header__btn--last-next" onclick="Filtering(listBox.selectedIndex - 1, false)">◄</td>
-		<td class="header__title title-header"><select id="listBox" size="1" onchange="Filtering(this.selectedIndex, false)">
+		<td class="btn btn__scroll" onclick="Filtering(listBox.selectedIndex - 1, false)">◄</td>
+		<td class="page-title"><select id="listBox" size="1" onchange="Filtering(this.selectedIndex, false)">
 			<option>1°</option><option>2</option><option>3</option><option>4°</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13°</option><option>14</option><option>15</option><option>16°</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option>
 		</select></td>
-		<td class="header__btn header__btn--last-next" onclick="Filtering(listBox.selectedIndex + 1, false)">►</td>
+		<td class="btn btn__scroll" onclick="Filtering(listBox.selectedIndex + 1, false)">►</td>
 	</tr>
 </table>
 
 <!--================================-->
-<table class="content content--margin-top">
+<table class="content">
 
 <tbody id="m1">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;1</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">В&nbsp;Україні максимально дозволена швидкість у населених пунктах&nbsp;50&nbsp;км/год. Відомо, з&nbsp;якою швидкістю рухається автомобіль Івана.<br>Чи&nbsp;порушує він правила?</td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">швидкість автомобіля Івана</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">чи&nbsp;є порушення правил дорожнього&nbsp;руху</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;1</td></tr>
+	<tr><td class="task-text task--color-1">В&nbsp;Україні максимально дозволена швидкість у населених пунктах&nbsp;50&nbsp;км/год. Відомо, з&nbsp;якою швидкістю рухається автомобіль Івана.<br>Чи&nbsp;порушує він правила?</td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">швидкість автомобіля Івана</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">чи&nbsp;є порушення правил дорожнього&nbsp;руху</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>45</td><td>==></td><td>Не&nbsp;порушує правила</td></tr>
 		<tr><td>92</td><td>==></td><td>Порушує правила</td></tr>
 		<tr><td>50</td><td>==></td><td>Не&nbsp;порушує правила</td></tr>
 	</table></td></tr>
 
-	<tr><td class="content__tasks-solve-title">Розв’язок</td></tr>
-	<tr><td class="content__tasks-solve g-cell--border-bottom ">
-		<div class="g-code__tag">&LT;script></div>
+	<tr><td class="task-solve-title">Розв’язок</td></tr>
+	<tr><td class="task-solve-text">
+		<div class="code-tag">&LT;script></div>
 		<p></p>
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">let</span> speed = Number(prompt(<span class="g-code__string">'Яка швидкість авто?'</span>));</div>
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">let</span> violation;</div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">let</span> speed = Number(prompt(<span class="code-string">'Яка швидкість авто?'</span>));</div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">let</span> violation;</div>
 		<p></p>
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">if</span> (speed > <span class="g-code__number">50</span>)</div>
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;violation = <span class="g-code__string">'Порушує правила'</span>;</div>
-		<div style="background-color: #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">else</span></div>
-		<div style="background-color: #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;violation = <span class="g-code__string">'Не порушує правила'</span>;</div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (speed > <span class="code-number">50</span>)</div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;violation = <span class="code-string">'Порушує правила'</span>;</div>
+		<div class="task-solve-alt-code">&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">else</span></div>
+		<div class="task-solve-alt-code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;violation = <span class="code-string">'Не порушує правила'</span>;</div>
 		<p></p>
 		<div>&nbsp;&nbsp;&nbsp;&nbsp;alert(violation);</div>
 		<p></p>
-		<div class="g-code__tag">&LT;/script></div>
+		<div class="code-tag">&LT;/script></div>
 	</td></tr>
-	<tr><td class="content__tasks-solve-title">Розв’язок (спосіб 2)</td></tr>
-	<tr><td class="content__tasks-solve g-cell--border-bottom ">
-		<div style="background-color: #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">if</span> (speed <= <span class="g-code__number">50</span>)</div>
-		<div style="background-color: #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;violation = <span class="g-code__string">'Не порушує правила'</span>;</div>
+	<tr><td class="task-solve-title">Розв’язок (спосіб 2)</td></tr>
+	<tr><td class="task-solve-text">
+		<div class="task-solve-alt-code">&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (speed <= <span class="code-number">50</span>)</div>
+		<div class="task-solve-alt-code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;violation = <span class="code-string">'Не порушує правила'</span>;</div>
 	</td></tr>
-	<tr><td class="content__tasks-solve-title">Розв’язок (спосіб 3)</td></tr>
-	<tr><td class="content__tasks-solve g-cell--border-bottom ">
-			<div style="background-color: #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">if</span> (speed === <span class="g-code__number">50</span>)</div>
-			<div style="background-color: #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;violation = <span class="g-code__string">'Не порушує правила'</span>;</div>
-			<div style="background-color: #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">if</span> (speed < <span class="g-code__number">50</span>)</div>
-			<div style="background-color: #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;violation = <span class="g-code__string">'Не порушує правила'</span>;</div>
+	<tr><td class="task-solve-title">Розв’язок (спосіб 3)</td></tr>
+	<tr><td class="task-solve-text">
+			<div class="task-solve-alt-code">&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (speed === <span class="code-number">50</span>)</div>
+			<div class="task-solve-alt-code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;violation = <span class="code-string">'Не порушує правила'</span>;</div>
+			<div class="task-solve-alt-code">&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (speed < <span class="code-number">50</span>)</div>
+			<div class="task-solve-alt-code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;violation = <span class="code-string">'Не порушує правила'</span>;</div>
 	</td></tr>
 </tbody>
 
 <tbody id="m2">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;2</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">Іван купив на&nbsp;ринку кавун і гарбуз. Відома їхня вага.<br>Що з&nbsp;них важче?</td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">1) вага кавуна;<br>2) вага гарбуза.</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">назва важчої ягоди</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;2</td></tr>
+	<tr><td class="task-text task--color-1">Іван купив на&nbsp;ринку кавун і гарбуз. Відома їхня вага.<br>Що з&nbsp;них важче?</td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">1) вага кавуна;<br>2) вага гарбуза.</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">назва важчої ягоди</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>5</td><td>7.7</td><td>==></td><td>Гарбуз важчий</td></tr>
 		<tr><td>9.5</td><td>2</td><td>==></td><td>Кавун важчий</td></tr>
 		<tr><td>11</td><td>11</td><td>==></td><td>Ягоди однакові</td></tr>
@@ -81,13 +83,13 @@
 </tbody>
 
 <tbody id="m3">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;3</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">Паролем до шкільного Wi-Fi є «w56tt7». Іван пробує «зламати» шкільний Wi-Fi.<br>Чи&nbsp;вдалось це йому?</td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">пароль, який вводить Іван</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">чи&nbsp;є доступ до&nbsp;Wi-Fi</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;3</td></tr>
+	<tr><td class="task-text task--color-1">Паролем до шкільного Wi-Fi є «w56tt7». Іван пробує «зламати» шкільний Wi-Fi.<br>Чи&nbsp;вдалось це йому?</td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">пароль, який вводить Іван</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">чи&nbsp;є доступ до&nbsp;Wi-Fi</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>Озеро</td><td>==></td><td>Доступ заборонено</td></tr>
 		<tr><td>w56tt7</td><td>==></td><td>Ok. Є доступ</td></tr>
 		<tr><td>9DD934</td><td>==></td><td>Доступ заборонено</td></tr>
@@ -95,50 +97,50 @@
 </tbody>
 
 <tbody id="m4">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;4</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">У&nbsp;деякій державі великий бізнес (понад&nbsp;1000000 доходу за&nbsp;рік) сплачує податок 10% (десята частина), а малий бізнес не&nbsp;платить податків.<br>До&nbsp;якого бізнесу відноситься фірма Івана і який податок вона сплачує, якщо відомий її&nbsp;дохід за&nbsp;рік?</td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">дохід за&nbsp;рік фірми Івана</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">1) вид бізнесу;<br>2) податок, який сплачує фірма.</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;4</td></tr>
+	<tr><td class="task-text task--color-1">У&nbsp;деякій державі великий бізнес (понад&nbsp;1000000 доходу за&nbsp;рік) сплачує податок 10% (десята частина), а малий бізнес не&nbsp;платить податків.<br>До&nbsp;якого бізнесу відноситься фірма Івана і який податок вона сплачує, якщо відомий її&nbsp;дохід за&nbsp;рік?</td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">дохід за&nbsp;рік фірми Івана</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">1) вид бізнесу;<br>2) податок, який сплачує фірма.</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>450000</td><td>==></td><td>малий бізнес</td><td>0.00</td></tr>
 		<tr><td>1250344</td><td>==></td><td>великий бізнес</td><td>125034.40</td></tr>
 		<tr><td>2500000</td><td>==></td><td>великий бізнес</td><td>250000.00</td></tr>
 		<tr><td>3178</td><td>==></td><td>малий бізнес</td><td>0.00</td></tr>
 	</table></td></tr>
 
-	<tr><td class="content__tasks-solve-title">Розв’язок</td></tr>
-	<tr><td class="content__tasks-solve g-cell--border-bottom">
-		<div class="g-code__tag">&LT;script></div>
+	<tr><td class="task-solve-title">Розв’язок</td></tr>
+	<tr><td class="task-solve-text">
+		<div class="code-tag">&LT;script></div>
 		<p></p>
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">let</span> income = Number(prompt(<span class="g-code__string">'Який річний дохід фірми?'</span>));</div>
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">let</span> business;</div>
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">let</span> tax;</div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">let</span> income = Number(prompt(<span class="code-string">'Який річний дохід фірми?'</span>));</div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">let</span> business;</div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">let</span> tax;</div>
 		<p></p>
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">if</span> (income >= <span class="g-code__number">1000000</span>) {</div>
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;business = <span class="g-code__string">'великий бізнес'</span>;</div>
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tax = income / <span class="g-code__number">10</span>;</div>
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;} <span class="g-code__keyword">else</span> {</div>
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;business = <span class="g-code__string">'малий бізнес'</span>;</div>
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tax = <span class="g-code__number">0</span>;</div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (income >= <span class="code-number">1000000</span>) {</div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;business = <span class="code-string">'великий бізнес'</span>;</div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tax = income / <span class="code-number">10</span>;</div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;} <span class="code-keyword">else</span> {</div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;business = <span class="code-string">'малий бізнес'</span>;</div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tax = <span class="code-number">0</span>;</div>
 		<div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
 		<p></p>
 		<div>&nbsp;&nbsp;&nbsp;&nbsp;alert(business);</div>
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;alert(<span class="g-code__string">'Податок до сплати = '</span> + tax.toFixed(<span class="g-code__number">2</span>));</div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;alert(<span class="code-string">'Податок до сплати = '</span> + tax.toFixed(<span class="code-number">2</span>));</div>
 		<p></p>
-		<div class="g-code__tag">&LT;/script></div>
+		<div class="code-tag">&LT;/script></div>
 	</td></tr>
 </tbody>
 
 <tbody id="m5">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;5</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">Якщо на овочевій фермі купувати більше 100&nbsp;мішків овочів, то надають знижку 50%&nbsp;(половина). Відомо, скільки мішків картоплі потрібно Івану.<br>А&nbsp;скільки вони коштуватимуть?</td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">1) ціна одного мішка;<br>2) кількість мішків, які купує Іван.</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">сума грошей за&nbsp;усю картоплю</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;5</td></tr>
+	<tr><td class="task-text task--color-1">Якщо на овочевій фермі купувати більше 100&nbsp;мішків овочів, то надають знижку 50%&nbsp;(половина). Відомо, скільки мішків картоплі потрібно Івану.<br>А&nbsp;скільки вони коштуватимуть?</td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">1) ціна одного мішка;<br>2) кількість мішків, які купує Іван.</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">сума грошей за&nbsp;усю картоплю</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>12.75</td><td>7</td><td>==></td><td>89.25</td></tr>
 		<tr><td>21.5</td><td>210</td><td>==></td><td>2257.50</td></tr>
 		<tr><td>112</td><td>19</td><td>==></td><td>2128.00</td></tr>
@@ -146,13 +148,13 @@
 </tbody>
 
 <tbody id="m6">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;6</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">При заготівлі «закруток» на&nbsp;зиму Іван помітив, що в&nbsp;одну банку вміщується 14&nbsp;огірків. Відомо, скільки банок і огірків є в&nbsp;Івана.<br>А&nbsp;чи вистачить йому банок?</td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">1) кількість банок;<br>2) кількість огірків.</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">чи&nbsp;треба ще банок</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;6</td></tr>
+	<tr><td class="task-text task--color-1">При заготівлі «закруток» на&nbsp;зиму Іван помітив, що в&nbsp;одну банку вміщується 14&nbsp;огірків. Відомо, скільки банок і огірків є в&nbsp;Івана.<br>А&nbsp;чи вистачить йому банок?</td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">1) кількість банок;<br>2) кількість огірків.</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">чи&nbsp;треба ще банок</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>10</td><td>115</td><td>==></td><td>Банок вистачить</td></tr>
 		<tr><td>96</td><td>3450</td><td>==></td><td>Треба ще банок</td></tr>
 		<tr><td>19</td><td>266</td><td>==></td><td>Банок вистачить</td></tr>
@@ -160,13 +162,13 @@
 </tbody>
 
 <tbody id="m7">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;7</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">Бабуся Івана зберігає на&nbsp;зиму в&nbsp;льосі буряк і моркву.<br>А&nbsp;якого з&nbsp;овочів є менше і у&nbsp;скільки разів?</td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">1) вага буряків в&nbsp;льосі;<br>2) вага моркви в&nbsp;льосі.</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">1) назва овочів, яких менше;<br>2) у&nbsp;скільки разів менше.</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;7</td></tr>
+	<tr><td class="task-text task--color-1">Бабуся Івана зберігає на&nbsp;зиму в&nbsp;льосі буряк і моркву.<br>А&nbsp;якого з&nbsp;овочів є менше і у&nbsp;скільки разів?</td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">1) вага буряків в&nbsp;льосі;<br>2) вага моркви в&nbsp;льосі.</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">1) назва овочів, яких менше;<br>2) у&nbsp;скільки разів менше.</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>8</td><td>112</td><td>==></td><td>Буряків є менше</td><td>14.0</td></tr>
 		<tr><td>6</td><td>6</td><td>==></td><td>Овочів однаково</td><td>1.0</td></tr>
 		<tr><td>60</td><td>34</td><td>==></td><td>Моркви є менше</td><td>1.8</td></tr>
@@ -174,13 +176,13 @@
 </tbody>
 
 <tbody id="m8">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;8</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">Іван у&nbsp;понеділок і вівторок читав цікаву книжку.<br>В&nbsp;який день Іван прочитав більше сторінок і на&nbsp;скільки?</td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">1) кількість сторінок у&nbsp;понеділок;<br>2) кількість сторінок у&nbsp;вівторок.</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">1) день, коли прочитано більше;<br>2) різниця кількості сторінок.</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;8</td></tr>
+	<tr><td class="task-text task--color-1">Іван у&nbsp;понеділок і вівторок читав цікаву книжку.<br>В&nbsp;який день Іван прочитав більше сторінок і на&nbsp;скільки?</td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">1) кількість сторінок у&nbsp;понеділок;<br>2) кількість сторінок у&nbsp;вівторок.</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">1) день, коли прочитано більше;<br>2) різниця кількості сторінок.</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>18</td><td>12</td><td>==></td><td>У понеділок більше</td><td>6</td></tr>
 		<tr><td>150</td><td>150</td><td>==></td><td>В обидва дні однаково</td><td>0</td></tr>
 		<tr><td>2</td><td>22</td><td>==></td><td>У вівторок більше</td><td>20</td></tr>
@@ -188,13 +190,13 @@
 </tbody>
 
 <tbody id="m9">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;9</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">Іван знає вік свого діда.<br>Але чи&nbsp;може дід «йти&nbsp;на&nbsp;пенсію»?<span style="font-size: 0.9em">(підказка: у&nbsp;65&nbsp;років і&nbsp;більше)</td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">вік діда</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">чи&nbsp;можна вийти на&nbsp;пенсію</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;9</td></tr>
+	<tr><td class="task-text task--color-1">Іван знає вік свого діда.<br>Але чи&nbsp;може дід «йти&nbsp;на&nbsp;пенсію»?<span class="task-hint">(підказка: у&nbsp;65&nbsp;років і&nbsp;більше)</td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">вік діда</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">чи&nbsp;можна вийти на&nbsp;пенсію</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>56</td><td>==></td><td>Треба ще працювати</td></tr>
 		<tr><td>92</td><td>==></td><td>Ура! На&nbsp;пенсію</td></tr>
 		<tr><td>65</td><td>==></td><td>Ура! На&nbsp;пенсію</td></tr>
@@ -202,13 +204,13 @@
 </tbody>
 
 <tbody id="m10">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;10</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">Іван знає, яка температура за&nbsp;вікном.<br>А&nbsp;чи замерзла вода на&nbsp;асфальті?<br><span style="font-size: 0.9em">(підказка: 0&nbsp;градусів і&nbsp;менше)</td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">температура на&nbsp;вулиці</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">чи замерзла вода</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;10</td></tr>
+	<tr><td class="task-text task--color-1">Іван знає, яка температура за&nbsp;вікном.<br>А&nbsp;чи замерзла вода на&nbsp;асфальті?<br><span class="task-hint">(підказка: 0&nbsp;градусів і&nbsp;менше)</td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">температура на&nbsp;вулиці</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">чи замерзла вода</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>15</td><td>==></td><td>Вода не&nbsp;замерзла</td></tr>
 		<tr><td>-18</td><td>==></td><td>Лід</td></tr>
 		<tr><td>0</td><td>==></td><td>Лід</td></tr>
@@ -216,13 +218,13 @@
 </tbody>
 
 <tbody id="m11">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;11</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">У&nbsp;супермаркеті при купівлі більше 10&nbsp;пляшок води 1&nbsp;пляшку («бонус») дають безкоштовно. Іван купив у&nbsp;цьому магазині воду.<br>Скільки він заплатив?</td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">1) ціна 1 пляшки води;	<br>2) кількість пляшок, які купив Іван.</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">сума грошей, яку заплатив Іван</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;11</td></tr>
+	<tr><td class="task-text task--color-1">У&nbsp;супермаркеті при купівлі більше 10&nbsp;пляшок води 1&nbsp;пляшку («бонус») дають безкоштовно. Іван купив у&nbsp;цьому магазині воду.<br>Скільки він заплатив?</td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">1) ціна 1 пляшки води;	<br>2) кількість пляшок, які купив Іван.</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">сума грошей, яку заплатив Іван</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>12.45</td><td>3</td><td>==></td><td>37.35</td></tr>
 		<tr><td>15.50</td><td>12</td><td>==></td><td>170.50</td></tr>
 		<tr><td>3.00</td><td>26</td><td>==></td><td>75.00</td></tr>
@@ -230,13 +232,13 @@
 </tbody>
 
 <tbody id="m12">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;12</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">У&nbsp;супермаркеті при купівлі більше&nbsp;20&nbsp;кг гречки надається знижка -5&nbsp;грн за&nbsp;кожен&nbsp;кг. Іван купив у&nbsp;цьому магазині гречку.<br>Скільки він заплатив?</td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">1) вага гречки в&nbsp;Івана;<br>2) ціна 1&nbsp;кг&nbsp;гречки (без&nbsp;знижки).</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">сума грошей, яку заплатив Іван</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;12</td></tr>
+	<tr><td class="task-text task--color-1">У&nbsp;супермаркеті при купівлі більше&nbsp;20&nbsp;кг гречки надається знижка -5&nbsp;грн за&nbsp;кожен&nbsp;кг. Іван купив у&nbsp;цьому магазині гречку.<br>Скільки він заплатив?</td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">1) вага гречки в&nbsp;Івана;<br>2) ціна 1&nbsp;кг&nbsp;гречки (без&nbsp;знижки).</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">сума грошей, яку заплатив Іван</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>4</td><td>47.80</td><td>==></td><td>191.20</td></tr>
 		<tr><td>30</td><td>15.50</td><td>==></td><td>315.00</td></tr>
 		<tr><td>57</td><td>23.00</td><td>==></td><td>1026.00</td></tr>
@@ -244,13 +246,13 @@
 </tbody>
 
 <tbody id="m13">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;13</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">Експерти ООН у&nbsp;власних розрахунках на&nbsp;основі працездатності виділяють п'ять вікових груп:<br>0-14&nbsp;років&nbsp;— діти;<br>15-24&nbsp;роки&nbsp;— ранній вік;<br>25-54&nbsp;років&nbsp;— основний вік;<br>55-64&nbsp;років&nbsp;— зрілий вік;<br>65&nbsp;років і&nbsp;старше&nbsp;— літні люди.<br>До&nbsp;якої вікової групи відноситься Іван?</td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">вік Івана</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">вікова група</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;13</td></tr>
+	<tr><td class="task-text task--color-1">Експерти ООН у&nbsp;власних розрахунках на&nbsp;основі працездатності виділяють п'ять вікових груп:<br>0-14&nbsp;років&nbsp;— діти;<br>15-24&nbsp;роки&nbsp;— ранній вік;<br>25-54&nbsp;років&nbsp;— основний вік;<br>55-64&nbsp;років&nbsp;— зрілий вік;<br>65&nbsp;років і&nbsp;старше&nbsp;— літні люди.<br>До&nbsp;якої вікової групи відноситься Іван?</td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">вік Івана</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">вікова група</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>14</td><td>==></td><td>Діти</td></tr>
 		<tr><td>17</td><td>==></td><td>Ранній вік</td></tr>
 		<tr><td>25</td><td>==></td><td>Основний вік</td></tr>
@@ -260,41 +262,41 @@
 		<tr><td>88</td><td>==></td><td>Літні люди</td></tr>
 	</table></td></tr>
 
-	<tr><td class="content__tasks-solve-title">Розв’язок</td></tr>
-	<tr><td class="content__tasks-solve g-cell--border-bottom">
-		<div class="g-code__tag">&LT;script></div>
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">let</span> age = Number(prompt(<span class="g-code__string">'Який вік Івана?'</span>));</div>
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">let</span> workGroup;</div>
+	<tr><td class="task-solve-title">Розв’язок</td></tr>
+	<tr><td class="task-solve-text">
+		<div class="code-tag">&LT;script></div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">let</span> age = Number(prompt(<span class="code-string">'Який вік Івана?'</span>));</div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">let</span> workGroup;</div>
 		<p></p>
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">if</span> (age <= <span class="g-code__number">14</span>) {</div>
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;workGroup = <span class="g-code__string">'Дитина'</span>;</div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (age <= <span class="code-number">14</span>) {</div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;workGroup = <span class="code-string">'Дитина'</span>;</div>
 		<div>&nbsp;&nbsp;&nbsp;&nbsp;}
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">if</span> (age > <span class="g-code__number">14</span> && age <= <span class="g-code__number">24</span>) {</div>
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;workGroup = <span class="g-code__string">'Ранній вік'</span>;</div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (age > <span class="code-number">14</span> && age <= <span class="code-number">24</span>) {</div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;workGroup = <span class="code-string">'Ранній вік'</span>;</div>
 		<div>&nbsp;&nbsp;&nbsp;&nbsp;}
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">if</span> (age > <span class="g-code__number">24</span> && age <= <span class="g-code__number">54</span>) {</div>
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;workGroup = <span class="g-code__string">'Основний вік'</span>;</div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (age > <span class="code-number">24</span> && age <= <span class="code-number">54</span>) {</div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;workGroup = <span class="code-string">'Основний вік'</span>;</div>
 		<div>&nbsp;&nbsp;&nbsp;&nbsp;}
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">if</span> (age > <span class="g-code__number">54</span> && age <= <span class="g-code__number">64</span>) {</div>
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;workGroup = <span class="g-code__string">'Зрілий вік'</span>;</div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (age > <span class="code-number">54</span> && age <= <span class="code-number">64</span>) {</div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;workGroup = <span class="code-string">'Зрілий вік'</span>;</div>
 		<div>&nbsp;&nbsp;&nbsp;&nbsp;}
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">if</span> (age >= <span class="g-code__number">65</span>) {</div>
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;workGroup = <span class="g-code__string">'Літня людина'</span>;</div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (age >= <span class="code-number">65</span>) {</div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;workGroup = <span class="code-string">'Літня людина'</span>;</div>
 		<div>&nbsp;&nbsp;&nbsp;&nbsp;}
 		<p></p>
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;alert(<span class="g-code__string">'Вікова група Івана '</span> + workGroup);</div>
-		<div class="g-code__tag">&LT;/script></div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;alert(<span class="code-string">'Вікова група Івана '</span> + workGroup);</div>
+		<div class="code-tag">&LT;/script></div>
 	</td></tr>
 </tbody>
 
 <tbody id="m14">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;14</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">Оператор у&nbsp;школі вводить у&nbsp;комп’ютер оцінки учнів. Створіть програму, яка перевіряє правильність уведення.</td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">число, яке вводить оператор</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">правильність уведення</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;14</td></tr>
+	<tr><td class="task-text task--color-1">Оператор у&nbsp;школі вводить у&nbsp;комп’ютер оцінки учнів. Створіть програму, яка перевіряє правильність уведення.</td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">число, яке вводить оператор</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">правильність уведення</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>4</td><td>==></td><td>оцінка правильна</td></tr>
 		<tr><td>-9</td><td>==></td><td>помилка!</td></tr>
 		<tr><td>56</td><td>==></td><td>помилка!</td></tr>
@@ -305,13 +307,13 @@
 </tbody>
 
 <tbody id="m15">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;15</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">В&nbsp;Україні максимально дозволена швидкість у населених пунктах 50&nbsp;км/год. Відомо, з&nbsp;якою швидкістю рухається автомобіль Івана.<br>Якщо Іван порушує правила, то яке покарання його очікує від дорожньої поліції?<br><span style="font-size: 0.9em">(до&nbsp;50&nbsp;км/год&nbsp;– не&nbsp;порушує правил;<br>від&nbsp;51 до&nbsp;70&nbsp;км/год&nbsp;– усне попередження;<br>від&nbsp;71 до&nbsp;100&nbsp;км/год&nbsp;– штраф 340&nbsp;грн;<br>більше 100&nbsp;км/год&nbsp;– штраф 1700&nbsp;грн)</span></td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">швидкість автомобіля</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">покарання за порушення правил</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;15</td></tr>
+	<tr><td class="task-text task--color-1">В&nbsp;Україні максимально дозволена швидкість у населених пунктах 50&nbsp;км/год. Відомо, з&nbsp;якою швидкістю рухається автомобіль Івана.<br>Якщо Іван порушує правила, то яке покарання його очікує від дорожньої поліції?<br><span class="task-hint">(до&nbsp;50&nbsp;км/год&nbsp;– не&nbsp;порушує правил;<br>від&nbsp;51 до&nbsp;70&nbsp;км/год&nbsp;– усне попередження;<br>від&nbsp;71 до&nbsp;100&nbsp;км/год&nbsp;– штраф 340&nbsp;грн;<br>більше 100&nbsp;км/год&nbsp;– штраф 1700&nbsp;грн)</span></td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">швидкість автомобіля</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">покарання за порушення правил</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>85</td><td>==></td><td>штраф 340&nbsp;грн</td></tr>
 		<tr><td>55</td><td>==></td><td>усне попередження</td></tr>
 		<tr><td>20</td><td>==></td><td>не порушує правил</td></tr>
@@ -322,13 +324,13 @@
 </tbody>
 
 <tbody id="m16">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;16</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">У&nbsp;комп’ютерній графіці усі&nbsp;кольори можна утворити змішуванням трьох&nbsp;базових кольорів: червоного, зеленого та&nbsp;синього.<br>Складіть програму, яка перевіряє, чи&nbsp;є заданий колір базовим.</td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">назва кольору</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">чи є колір базовим</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;16</td></tr>
+	<tr><td class="task-text task--color-1">У&nbsp;комп’ютерній графіці усі&nbsp;кольори можна утворити змішуванням трьох&nbsp;базових кольорів: червоного, зеленого та&nbsp;синього.<br>Складіть програму, яка перевіряє, чи&nbsp;є заданий колір базовим.</td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">назва кольору</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">чи є колір базовим</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>червоний</td><td>==></td><td>базовий</td></tr>
 		<tr><td>жовтий</td><td>==></td><td>не базовий</td></tr>
 		<tr><td>синій</td><td>==></td><td>базовий</td></tr>
@@ -336,41 +338,41 @@
 		<tr><td>зелений</td><td>==></td><td>не базовий</td></tr>
 	</table></td></tr>
 
-	<tr><td class="content__tasks-solve-title">Розв’язок</td></tr>
-	<tr><td class="content__tasks-solve g-cell--border-bottom">
-		<div class="g-code__tag">&LT;script></div>
+	<tr><td class="task-solve-title">Розв’язок</td></tr>
+	<tr><td class="task-solve-text">
+		<div class="code-tag">&LT;script></div>
 		<p></p>
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">let</span> color = prompt(<span class="g-code__string">'Який колір?'</span>);</div>
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">let</span> isBasic;</div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">let</span> color = prompt(<span class="code-string">'Який колір?'</span>);</div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">let</span> isBasic;</div>
 		<p></p>
-		<div style="background-color: #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">if</span> (color === <span class="g-code__string">'червоний'</span> || color === <span class="g-code__string">'зелений'</span> || color === <span class="g-code__string">'синій'</span>) {</div>
-		<div style="background-color: #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isBasic = <span class="g-code__string">'базовий'</span>;</div>
-		<div style="background-color: #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;} <span class="g-code__keyword">else</span> {</div>
-		<div style="background-color: #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isBasic = <span class="g-code__string">'не базовий'</span>;</div>
-		<div style="background-color: #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+		<div class="task-solve-alt-code">&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (color === <span class="code-string">'червоний'</span> || color === <span class="code-string">'зелений'</span> || color === <span class="code-string">'синій'</span>) {</div>
+		<div class="task-solve-alt-code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isBasic = <span class="code-string">'базовий'</span>;</div>
+		<div class="task-solve-alt-code">&nbsp;&nbsp;&nbsp;&nbsp;} <span class="code-keyword">else</span> {</div>
+		<div class="task-solve-alt-code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isBasic = <span class="code-string">'не базовий'</span>;</div>
+		<div class="task-solve-alt-code">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
 		<p></p>
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;alert(<span class="g-code__string">'Колір є '</span> + isBasic);</div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;alert(<span class="code-string">'Колір є '</span> + isBasic);</div>
 		<p></p>
-		<div class="g-code__tag">&LT;/script></div>
+		<div class="code-tag">&LT;/script></div>
 	</td></tr>
-	<tr><td class="content__tasks-solve-title">Розв’язок (спосіб 2)</td></tr>
-	<tr><td class="content__tasks-solve g-cell--border-bottom ">
-		<div style="background-color: #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;<span class="g-code__keyword">if</span> (color !== <span class="g-code__string">'червоний'</span> && color !== <span class="g-code__string">'зелений'</span> && color !== <span class="g-code__string">'синій'</span>) {</div>
-		<div style="background-color: #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isBasic = <span class="g-code__string">'не базовий'</span>;</div>
-		<div style="background-color: #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;} <span class="g-code__keyword">else</span> {</div>
-		<div style="background-color: #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isBasic = <span class="g-code__string">'базовий'</span>;</div>
-		<div style="background-color: #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+	<tr><td class="task-solve-title">Розв’язок (спосіб 2)</td></tr>
+	<tr><td class="task-solve-text">
+		<div class="task-solve-alt-code">&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (color !== <span class="code-string">'червоний'</span> && color !== <span class="code-string">'зелений'</span> && color !== <span class="code-string">'синій'</span>) {</div>
+		<div class="task-solve-alt-code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isBasic = <span class="code-string">'не базовий'</span>;</div>
+		<div class="task-solve-alt-code">&nbsp;&nbsp;&nbsp;&nbsp;} <span class="code-keyword">else</span> {</div>
+		<div class="task-solve-alt-code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isBasic = <span class="code-string">'базовий'</span>;</div>
+		<div class="task-solve-alt-code">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
 	</td></tr>
 </tbody>
 
 <tbody id="m17">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;17</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">Іван знає, якого місяця у&nbsp;нього відпустка. Допоможіть йому визначити чи&nbsp;це, бува, не&nbsp;зима.</td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">номер місяця</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">чи є місяць зимовим</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;17</td></tr>
+	<tr><td class="task-text task--color-1">Іван знає, якого місяця у&nbsp;нього відпустка. Допоможіть йому визначити чи&nbsp;це, бува, не&nbsp;зима.</td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">номер місяця</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">чи є місяць зимовим</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>3</td><td>==></td><td>не зима</td></tr>
 		<tr><td>2</td><td>==></td><td>зима</td></tr>
 		<tr><td>12</td><td>==></td><td>зима</td></tr>
@@ -381,13 +383,13 @@
 </tbody>
 
 <tbody id="m18">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;18</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">Нормальна температура тіла здорової людини повинна бути в&nbsp;межах 36,5&nbsp;–&nbsp;37&nbsp;градусів. Іван виміряв власну температуру тіла.<br>Чи&nbsp;потрібно йому звернутись до&nbsp;лікаря?</td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">температура тіла</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">стан здоров’я</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;18</td></tr>
+	<tr><td class="task-text task--color-1">Нормальна температура тіла здорової людини повинна бути в&nbsp;межах 36,5&nbsp;–&nbsp;37&nbsp;градусів. Іван виміряв власну температуру тіла.<br>Чи&nbsp;потрібно йому звернутись до&nbsp;лікаря?</td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">температура тіла</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">стан здоров’я</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>39.5</td><td>==></td><td>Ознака хвороби</td></tr>
 		<tr><td>34.1</td><td>==></td><td>Ознака хвороби</td></tr>
 		<tr><td>36.6</td><td>==></td><td>Все нормально</td></tr>
@@ -396,13 +398,13 @@
 </tbody>
 
 <tbody id="m19">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;19</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">Бабуся Івана живе у&nbsp;Бобровиці. До&nbsp;якого типу належить цей населений пункт, якщо відома кількість жителів у&nbsp;ньому?<br><span style="font-size: 0.9em">(до&nbsp;10&nbsp;000&nbsp;жителів&nbsp;– село;<br>від&nbsp;10&nbsp;000&nbsp; до&nbsp;1&nbsp;000&nbsp;000&nbsp;жителів&nbsp;– місто;<br>більше 1&nbsp;000&nbsp;000&nbsp;жителів&nbsp;– мегаполіс)</span></td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">кількість жителів у Бобровиці</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">тип населеного пункту</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;19</td></tr>
+	<tr><td class="task-text task--color-1">Бабуся Івана живе у&nbsp;Бобровиці. До&nbsp;якого типу належить цей населений пункт, якщо відома кількість жителів у&nbsp;ньому?<br><span class="task-hint">(до&nbsp;10&nbsp;000&nbsp;жителів&nbsp;– село;<br>від&nbsp;10&nbsp;000&nbsp; до&nbsp;1&nbsp;000&nbsp;000&nbsp;жителів&nbsp;– місто;<br>більше 1&nbsp;000&nbsp;000&nbsp;жителів&nbsp;– мегаполіс)</span></td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">кількість жителів у Бобровиці</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">тип населеного пункту</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>8560</td><td>==></td><td>село</td></tr>
 		<tr><td>12000</td><td>==></td><td>місто</td></tr>
 		<tr><td>1234500</td><td>==></td><td>мегаполіс</td></tr>
@@ -411,13 +413,13 @@
 </tbody>
 
 <tbody id="m20">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;20</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">Розмір допомоги по непрацездатності («лікарняні») нараховують в&nbsp;залежності від&nbsp;стажу роботи. Іван захворів. Скільки відсотків від&nbsp;зарплати йому нараховують?<br><span style="font-size: 0.9em">(до&nbsp;3&nbsp;років&nbsp;– 50&nbsp;%;<br>від&nbsp;3 до&nbsp;5&nbsp;років&nbsp;– 60&nbsp;%;<br>від&nbsp;5 до&nbsp;8&nbsp;років&nbsp;– 70&nbsp;%;<br>понад 8&nbsp;років&nbsp;– 100&nbsp;%)</span></td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">стаж роботи (тобто, скільки років працює Іван)</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">розмір допомоги, який нараховують Івану</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;20</td></tr>
+	<tr><td class="task-text task--color-1">Розмір допомоги по непрацездатності («лікарняні») нараховують в&nbsp;залежності від&nbsp;стажу роботи. Іван захворів. Скільки відсотків від&nbsp;зарплати йому нараховують?<br><span class="task-hint">(до&nbsp;3&nbsp;років&nbsp;– 50&nbsp;%;<br>від&nbsp;3 до&nbsp;5&nbsp;років&nbsp;– 60&nbsp;%;<br>від&nbsp;5 до&nbsp;8&nbsp;років&nbsp;– 70&nbsp;%;<br>понад 8&nbsp;років&nbsp;– 100&nbsp;%)</span></td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">стаж роботи (тобто, скільки років працює Іван)</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">розмір допомоги, який нараховують Івану</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>1.3</td><td>==></td><td>50 %</td></tr>
 		<tr><td>5</td><td>==></td><td>60 %</td></tr>
 		<tr><td>3</td><td>==></td><td>50 %</td></tr>
@@ -428,13 +430,13 @@
 </tbody>
 
 <tbody id="m21">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;21</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">До&nbsp;якої категорії належить автомобіль Івана, якщо відомий об’єм його двигуна?<br><span style="font-size: 0.9em">(до&nbsp;1,1&nbsp;літра&nbsp;– мікролітражка;<br>від&nbsp;1,2 до&nbsp;1,7&nbsp;літра&nbsp;– малолітражка;<br>від&nbsp;1,8 до&nbsp;3,3&nbsp;літра&nbsp;– середньолітражка;<br>понад 3,4&nbsp;літра&nbsp;– великолітражка)</span></td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">об’єм двигуна автомобіля</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">категорія автомобіля</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;21</td></tr>
+	<tr><td class="task-text task--color-1">До&nbsp;якої категорії належить автомобіль Івана, якщо відомий об’єм його двигуна?<br><span class="task-hint">(до&nbsp;1,1&nbsp;літра&nbsp;– мікролітражка;<br>від&nbsp;1,2 до&nbsp;1,7&nbsp;літра&nbsp;– малолітражка;<br>від&nbsp;1,8 до&nbsp;3,3&nbsp;літра&nbsp;– середньолітражка;<br>понад 3,4&nbsp;літра&nbsp;– великолітражка)</span></td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">об’єм двигуна автомобіля</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">категорія автомобіля</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>0.9</td><td>==></td><td>мікролітражка</td></tr>
 		<tr><td>1.7</td><td>==></td><td>малолітражка</td></tr>
 		<tr><td>3.3</td><td>==></td><td>середньолітражка</td></tr>
@@ -445,13 +447,13 @@
 </tbody>
 
 <tbody id="m22">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;22</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">Іван, граючи в&nbsp;рулетку, зробив ставку на&nbsp;числа  «14»  і  «26». Чи&nbsp;отримав Іван виграш?</td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">число, що&nbsp;випало в&nbsp;рулетці</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">чи&nbsp;заробив Іван гроші</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;22</td></tr>
+	<tr><td class="task-text task--color-1">Іван, граючи в&nbsp;рулетку, зробив ставку на&nbsp;числа  «14»  і  «26». Чи&nbsp;отримав Іван виграш?</td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">число, що&nbsp;випало в&nbsp;рулетці</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">чи&nbsp;заробив Іван гроші</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>12</td><td>==></td><td>ставка програна</td></tr>
 		<tr><td>14</td><td>==></td><td>виграш</td></tr>
 		<tr><td>31</td><td>==></td><td>ставка програна</td></tr>
@@ -461,13 +463,13 @@
 </tbody>
 
 <tbody id="m23">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;23</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">У&nbsp;родича Івана через&nbsp;тиждень день&nbsp;народження. Чи&nbsp;потрібно родичу робити додаткові фото для&nbsp;паспорту?<br><span style="font-size: 0.9em">(у&nbsp;25 і 45&nbsp;років)</td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">вік родича</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">потреба додавати фото у паспорт</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;23</td></tr>
+	<tr><td class="task-text task--color-1">У&nbsp;родича Івана через&nbsp;тиждень день&nbsp;народження. Чи&nbsp;потрібно родичу робити додаткові фото для&nbsp;паспорту?<br><span class="task-hint">(у&nbsp;25 і 45&nbsp;років)</td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">вік родича</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">потреба додавати фото у паспорт</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>45</td><td>==></td><td>нове фото</td></tr>
 		<tr><td>32</td><td>==></td><td>немає потреби</td></tr>
 		<tr><td>2</td><td>==></td><td>немає потреби</td></tr>
@@ -477,13 +479,13 @@
 </tbody>
 
 <tbody id="m24">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;24</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">Іван зустрів сусіда на&nbsp;вулиці. Як&nbsp;правильно йому слід привітатися в&nbsp;залежності від&nbsp;години&nbsp;дня?<br><span style="font-size: 0.9em">(до&nbsp;12&nbsp;години&nbsp;– ранок;<br>від&nbsp;12 до&nbsp;18&nbsp;години&nbsp;– день;<br>від 18&nbsp;години&nbsp;– вечір)</span></td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">година дня</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">правильне привітання</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;24</td></tr>
+	<tr><td class="task-text task--color-1">Іван зустрів сусіда на&nbsp;вулиці. Як&nbsp;правильно йому слід привітатися в&nbsp;залежності від&nbsp;години&nbsp;дня?<br><span class="task-hint">(до&nbsp;12&nbsp;години&nbsp;– ранок;<br>від&nbsp;12 до&nbsp;18&nbsp;години&nbsp;– день;<br>від 18&nbsp;години&nbsp;– вечір)</span></td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">година дня</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">правильне привітання</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>13</td><td>==></td><td>добрий день</td></tr>
 		<tr><td>21</td><td>==></td><td>добрий вечір</td></tr>
 		<tr><td>18</td><td>==></td><td>добрий вечір</td></tr>
@@ -494,13 +496,13 @@
 </tbody>
 
 <tbody id="m25">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;25</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">У&nbsp;лабораторії Іван нагрівав шматок свинцю. В&nbsp;якому агрегатному стані знаходиться свинець, якщо відома його температура?<br><span style="font-size: 0.9em">(до&nbsp;328&nbsp;градусів&nbsp;– твердий;<br>від&nbsp;328 до&nbsp;1745&nbsp;градусів&nbsp;– рідина;<br>понад 1745&nbsp;градусів&nbsp;– газ)</span></td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">температура свинцю</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">агрегатний стан свинцю</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;25</td></tr>
+	<tr><td class="task-text task--color-1">У&nbsp;лабораторії Іван нагрівав шматок свинцю. В&nbsp;якому агрегатному стані знаходиться свинець, якщо відома його температура?<br><span class="task-hint">(до&nbsp;328&nbsp;градусів&nbsp;– твердий;<br>від&nbsp;328 до&nbsp;1745&nbsp;градусів&nbsp;– рідина;<br>понад 1745&nbsp;градусів&nbsp;– газ)</span></td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">температура свинцю</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">агрегатний стан свинцю</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>113</td><td>==></td><td>твердий</td></tr>
 		<tr><td>560</td><td>==></td><td>рідина</td></tr>
 		<tr><td>-18</td><td>==></td><td>твердий</td></tr>
@@ -511,13 +513,13 @@
 </tbody>
 
 <tbody id="m26">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;26</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">Іван зі свого доходу віддає:<br>19,5&nbsp;%&nbsp;– податки і військовий збір;<br>500&nbsp;грн&nbsp;– на&nbsp;благодійність (але, якщо дохід більше 10 000&nbsp;грн);<br>1/4&nbsp;– своїй бабусі (з&nbsp;того, що&nbsp;залишилось).<br>Скільки грошей отримає бабуся? А&nbsp;скільки залишиться у&nbsp;самого Івана?</td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">дохід Івана</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">1) гроші, які отримає бабуся;<br>2) зарплата, що&nbsp;залишиться в&nbsp;Івана.</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;26</td></tr>
+	<tr><td class="task-text task--color-1">Іван зі свого доходу віддає:<br>19,5&nbsp;%&nbsp;– податки і військовий збір;<br>500&nbsp;грн&nbsp;– на&nbsp;благодійність (але, якщо дохід більше 10 000&nbsp;грн);<br>1/4&nbsp;– своїй бабусі (з&nbsp;того, що&nbsp;залишилось).<br>Скільки грошей отримає бабуся? А&nbsp;скільки залишиться у&nbsp;самого Івана?</td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">дохід Івана</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">1) гроші, які отримає бабуся;<br>2) зарплата, що&nbsp;залишиться в&nbsp;Івана.</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>23560.56</td><td>==></td><td>4617</td><td>13849.69</td></tr>
 		<tr><td>12400</td><td>==></td><td>2371</td><td>7111.50</td></tr>
 		<tr><td>5680.24</td><td>==></td><td>1143</td><td>3429.44</td></tr>
@@ -525,13 +527,13 @@
 </tbody>
 
 <tbody id="m27">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;27</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">Банківські кредити на період від&nbsp;12 до&nbsp;36&nbsp;місяців вважаються середньостроковими. Іван узяв кредит у&nbsp;банку.<br>Чи&nbsp;відноситься його кредит до середньострокового?</td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">кількість місяців, на&nbsp;які Іван узяв кредит</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">чи&nbsp;є кредит середньостроковим</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;27</td></tr>
+	<tr><td class="task-text task--color-1">Банківські кредити на період від&nbsp;12 до&nbsp;36&nbsp;місяців вважаються середньостроковими. Іван узяв кредит у&nbsp;банку.<br>Чи&nbsp;відноситься його кредит до середньострокового?</td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">кількість місяців, на&nbsp;які Іван узяв кредит</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">чи&nbsp;є кредит середньостроковим</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>13</td><td>==></td><td>Середньостроковий</td></tr>
 		<tr><td>7</td><td>==></td><td>Інший кредит</td></tr>
 		<tr><td>120</td><td>==></td><td>Інший кредит</td></tr>
@@ -542,13 +544,13 @@
 </tbody>
 
 <tbody id="m28">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;28</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">Нормальний пульс для людини віку Івана становить від&nbsp;58 до&nbsp;100&nbsp;ударів за&nbsp;хвилину. Іван виміряв свій пульс.<br>Чи&nbsp;є його пульс у&nbsp;допустимих межах?</td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">пульс Івана</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">чи&nbsp;є пульс у&nbsp;допустимих межах для здорової людини</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;28</td></tr>
+	<tr><td class="task-text task--color-1">Нормальний пульс для людини віку Івана становить від&nbsp;58 до&nbsp;100&nbsp;ударів за&nbsp;хвилину. Іван виміряв свій пульс.<br>Чи&nbsp;є його пульс у&nbsp;допустимих межах?</td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">пульс Івана</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">чи&nbsp;є пульс у&nbsp;допустимих межах для здорової людини</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>143</td><td>==></td><td>Пульс поза межами</td></tr>
 		<tr><td>99</td><td>==></td><td>Пульс у межах</td></tr>
 		<tr><td>67</td><td>==></td><td>Пульс у межах</td></tr>
@@ -559,13 +561,13 @@
 </tbody>
 
 <tbody id="m29">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;29</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">Відомо, скільки доларів коштує барель нафти (159&nbsp;л) марки&nbsp;WTI у&nbsp;світі. А&nbsp;скільки гривень коштує 1&nbsp;літр цієї нафти в&nbsp;Україні за&nbsp;курсом 40,2&nbsp;грн за&nbsp;долар?</td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">ціна 1&nbsp;бареля&nbsp;нафти у&nbsp;доларах</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">ціна 1&nbsp;літра&nbsp;нафти у&nbsp;гривнях</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;29</td></tr>
+	<tr><td class="task-text task--color-1">Відомо, скільки доларів коштує барель нафти (159&nbsp;л) марки&nbsp;WTI у&nbsp;світі. А&nbsp;скільки гривень коштує 1&nbsp;літр цієї нафти в&nbsp;Україні за&nbsp;курсом 40,2&nbsp;грн за&nbsp;долар?</td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">ціна 1&nbsp;бареля&nbsp;нафти у&nbsp;доларах</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">ціна 1&nbsp;літра&nbsp;нафти у&nbsp;гривнях</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>67.25</td><td>==></td><td>17.00</td></tr>
 		<tr><td>156.2</td><td>==></td><td>39.49</td></tr>
 		<tr><td>8.69</td><td>==></td><td>2.20</td></tr>
@@ -573,13 +575,13 @@
 </tbody>
 
 <tbody id="m30">
-	<tr><td class="content__tasks-num g-cell--color-0">№&nbsp;30</td></tr>
-	<tr><td class="content__tasks g-cell--border-bottom g-cell--color-0">Відома ціна 1&nbsp;г&nbsp;золота в&nbsp;Україні.<br>А&nbsp;скільки коштує 1&nbsp;унція&nbsp;золота (31,1&nbsp;г) у&nbsp;світі за&nbsp;курсом 38&nbsp;грн за&nbsp;долар?</td></tr>
-	<tr><td class="content__tasks-in-title g-cell--color-1">Дано:</td></tr>
-	<tr><td class="content__tasks-in g-cell--color-1">ціна 1&nbsp;г&nbsp;золота у&nbsp;гривнях</td></tr>
-	<tr><td class="content__tasks-out-title g-cell--color-1">Результат:</td></tr>
-	<tr><td class="content__tasks-out g-cell--border-bottom g-cell--color-1">ціна 1&nbsp;унції&nbsp;золота у&nbsp;доларах</td></tr>
-	<tr><td class="content__tasks-tests g-cell--border-bottom g-cell--color-2"><table>
+	<tr><td class="task-number task--color-1">№&nbsp;30</td></tr>
+	<tr><td class="task-text task--color-1">Відома ціна 1&nbsp;г&nbsp;золота в&nbsp;Україні.<br>А&nbsp;скільки коштує 1&nbsp;унція&nbsp;золота (31,1&nbsp;г) у&nbsp;світі за&nbsp;курсом 38&nbsp;грн за&nbsp;долар?</td></tr>
+	<tr><td class="task-in-title task--color-2">Дано:</td></tr>
+	<tr><td class="task-in task--color-2">ціна 1&nbsp;г&nbsp;золота у&nbsp;гривнях</td></tr>
+	<tr><td class="task-out-title task--color-2">Результат:</td></tr>
+	<tr><td class="task-out task--color-2">ціна 1&nbsp;унції&nbsp;золота у&nbsp;доларах</td></tr>
+	<tr><td class="task-tests task--color-3"><table>
 		<tr><td>1545.76</td><td>==></td><td>1265.08</td></tr>
 		<tr><td>13.6</td><td>==></td><td>11.13</td></tr>
 		<tr><td>12100</td><td>==></td><td>9902.89</td></tr>
