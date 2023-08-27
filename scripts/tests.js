@@ -116,11 +116,11 @@ function GetMark(markPercent) {
 
 	if (test.MinMark === 2 && test.MaxMark === 12) {
 		if (markPercent > 90) return '12';
-		if (markPercent > 70) return '10+';
-		if (markPercent > 50) return '8+';
-		if (markPercent > 30) return '6+';
-		if (markPercent > 10) return '4+';
-		if (markPercent > -10) return '2+';
+		if (markPercent > 70) return '10-11';
+		if (markPercent > 50) return '8-9';
+		if (markPercent > 30) return '6-7';
+		if (markPercent > 10) return '4-5';
+		if (markPercent > -10) return '2-3';
 		return '1';
 	}
 	if (markPercent < 0) markPercent = 0;
