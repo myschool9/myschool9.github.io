@@ -1,7 +1,7 @@
 body {
 	max-width: 40em;
 	padding: 5px;
-	margin: 5px 10%;
+	margin: 10px 10%;
 	border: 1px dotted black;
 	border-radius: 10px;
 	font-family: Arial, sans-serif;
@@ -9,7 +9,7 @@ body {
 	text-align: center;
 	line-height: 1.4;
 }
-@media screen and (max-width:450px){body{margin-left:10px}}
+@media screen and (max-width:450px){body{margin:5px 10px}}
 
 /*---------------------------------------------*/
 div {
