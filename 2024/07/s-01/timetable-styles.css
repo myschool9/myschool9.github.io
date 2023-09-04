@@ -1,4 +1,4 @@
-body{padding:5px;line-height:1.4} @media screen and (min-width:450px){body{margin:10px 5%}}
+body{padding:5px;margin:5px 10px} @media screen and (min-width:450px){body{line-height:1.4;font-size:18px;margin:10px 10%}}
 /*---------------------------------------------*/
 
 .header {
