@@ -1,0 +1,34 @@
+.index {				/* ---------- TD --------- */
+	padding: 10px;
+	text-align: center;
+}
+
+.index__grp-left {		/* ---------- TD --------- */
+	max-width: 60%;
+	text-align: left;
+	padding-bottom: 0;
+}
+
+.index__grp-right {		/* ---------- TD --------- */
+	padding-bottom: 0;
+}
+
+.index__grp-sub {		/* ---------- TD --------- */
+	padding-top: 0;
+}
+
+.index--color-1 {		/* ---------- TD --------- */
+	background-color: #fffff0;
+}
+
+.index--color-2 {		/* ---------- TD --------- */
+	background-color: #f8f8ff;
+}
+
+.index--color-3 {		/* ---------- TD --------- */
+	background-color: #fff;
+}
+
+.index--border-bottom {	/* ---------- TD --------- */
+	border-bottom: var(--border-style);
+}
