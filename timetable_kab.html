@@ -4,73 +4,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/global.css">
 <link rel="stylesheet" href="css/timetable.css">
-<title>Розклад - Кабінети</title>
-
-<script>
-var lessonsTime = [585, 645, 705, 765, 825, 885, 945];
-	
-function Filtering(nItem, isFullList) {
-	let items = document.getElementById('listBox');
-
-	if (nItem < 0) nItem = 0;
-	if (nItem >= items.length) nItem = items.length - 1;
-
-	let shiftIndex = 0;
-	if (!isFullList) shiftIndex = 1;
-
-	for (let i = 1 - shiftIndex; i < items.length; i++) {
-		if (i === nItem || nItem === -shiftIndex) {
-			document.getElementById('m' + String(i + shiftIndex)).style.visibility = 'visible';
-		} else {
-			document.getElementById('m' + String(i + shiftIndex)).style.visibility = 'collapse';
-		}
-	}
-
-	items.selectedIndex = nItem;
-}
-
-//------------------------------------
-function GetActiveRow(nItem, myTime, isTiming) {
-	/* замалювання поточного рядка або шапки, якщо день - поточний */
-	let n = GetCurrentNum(myTime);
-	if (!isTiming && n === nItem) {
-		document.getElementById('timetable_header').style.backgroundColor = 'var(--js-current-time-color)';
-	} else {
-		document.getElementById('timetable_header').style.backgroundColor = 'var(--js-header-color)';
-	}
-
-	if (isTiming) {
-		let arrTD = document.querySelectorAll('#m' + String(nItem + 1) + '_' + String(n) + '_0 > td');
-		for (let elem of arrTD) {
-			elem.style.backgroundColor = 'var(--js-current-time-color)';
-		}
-	}
-}
-
-/* визначення номера рядка, потрібно лише для замалювання поточного рядка! */
-function GetCurrentNum(myTime) {
-	let d = new Date();
-	let m = new Date();
-	let g = new Date();
-	let day = d.getUTCDay();
-	let min = 60 * g.getHours() + m.getMinutes();
-
-	let i = 0;
-	while (i < 7 && myTime[i] + 3 <= min) {
-		i += 1;
-	}
-	if (i === 7) i = 6;
-
-	if (day === 0 || day === 6) {
-		day = 0;
-		i = 0;
-	} else {
-		day -= 1;
-	}
-	return 7 * day + i;
-}
-
-</script>
+<script src="scripts/filter.js"></script>
+<title>Кабінети</title>
+<script>var lessonsTime = [585, 645, 705, 765, 825, 885, 945];</script>
 
 <body onload="Filtering(Number(location.search.slice(1)), false); GetActiveRow(Number(location.search.slice(1)), lessonsTime, true)">
 
@@ -151,7 +87,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?10">Вв-4</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">укр.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?16">9-А</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?4">Грушкевич&nbsp;С.З.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?4">Г.&nbsp;Світлана Зеновіївна</a></td>
 		</tr>
 		<tr id="m1_11_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?11">Вв-5</a></td>
@@ -577,7 +513,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?10">Вв-4</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">англ.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?10">7-В</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?6">Дікальчук&nbsp;А.І.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?6">Д-&nbsp;Андрій Іванович</a></td>
 		</tr>
 		<tr id="m3_11_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?11">Вв-5</a></td>
@@ -1399,13 +1335,13 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?5">Пн-6</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">осн.здор.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?14">8-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?5">Гумен&nbsp;Б.Б.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?5">Г.&nbsp;Богдан Богданович</a></td>
 		</tr>
 		<tr id="m7_6_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?6">Пн-7</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">осн.здор.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?9">7-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?5">Гумен&nbsp;Б.Б.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?5">Г.&nbsp;Богдан Богданович</a></td>
 		</tr>
 		<tr id="m7_7_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?7">Вв-1</a></td>
@@ -1513,25 +1449,25 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?24">Чт-4</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">ЗДБ</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?5">6-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?5">Гумен&nbsp;Б.Б.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?5">Г.&nbsp;Богдан Богданович</a></td>
 		</tr>
 		<tr id="m7_25_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?25">Чт-5</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">осн.здор.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?10">7-В</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?5">Гумен&nbsp;Б.Б.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?5">Г.&nbsp;Богдан Богданович</a></td>
 		</tr>
 		<tr id="m7_26_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?26">Чт-6</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">осн.здор.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?11">7-Г</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?5">Гумен&nbsp;Б.Б.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?5">Г.&nbsp;Богдан Богданович</a></td>
 		</tr>
 		<tr id="m7_27_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?27">Чт-7</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">ЗДБ</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?7">6-Г</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?5">Гумен&nbsp;Б.Б.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?5">Г.&nbsp;Богдан Богданович</a></td>
 		</tr>
 		<tr id="m7_28_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?28">Пт-1</a></td>
@@ -1561,19 +1497,19 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?32">Пт-5</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">ЗДБ</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?6">6-В</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?5">Гумен&nbsp;Б.Б.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?5">Г.&nbsp;Богдан Богданович</a></td>
 		</tr>
 		<tr id="m7_33_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?33">Пт-6</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">осн.здор.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?15">8-В</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?5">Гумен&nbsp;Б.Б.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?5">Г.&nbsp;Богдан Богданович</a></td>
 		</tr>
 		<tr id="m7_34_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?34">Пт-7</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">осн.здор.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?16">9-А</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?5">Гумен&nbsp;Б.Б.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?5">Г.&nbsp;Богдан Богданович</a></td>
 		</tr>
 	</tbody>
 
@@ -1582,7 +1518,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?0">Пн-1</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">укр.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?17">9-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?4">Грушкевич&nbsp;С.З.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?4">Г.&nbsp;Світлана Зеновіївна</a></td>
 		</tr>
 		<tr id="m8_1_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?1">Пн-2</a></td>
@@ -1684,7 +1620,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?17">Ср-4</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">укр.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?17">9-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?4">Грушкевич&nbsp;С.З.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?4">Г.&nbsp;Світлана Зеновіївна</a></td>
 		</tr>
 		<tr id="m8_18_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?18">Ср-5</a></td>
@@ -2275,7 +2211,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?5">Пн-6</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">англ.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?11">7-Г</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?6">Дікальчук&nbsp;А.І.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?6">Д-&nbsp;Андрій Іванович</a></td>
 		</tr>
 		<tr id="m11_6_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?6">Пн-7</a></td>
@@ -2431,7 +2367,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?31">Пт-4</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">англ.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?11">7-Г</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?6">Дікальчук&nbsp;А.І.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?6">Д-&nbsp;Андрій Іванович</a></td>
 		</tr>
 		<tr id="m11_32_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?32">Пт-5</a></td>
@@ -2632,13 +2568,13 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?26">Чт-6</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">англ.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?15">8-В</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?6">Дікальчук&nbsp;А.І.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?6">Д-&nbsp;Андрій Іванович</a></td>
 		</tr>
 		<tr id="m12_27_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?27">Чт-7</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">англ.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?14">8-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?6">Дікальчук&nbsp;А.І.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?6">Д-&nbsp;Андрій Іванович</a></td>
 		</tr>
 		<tr id="m12_28_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?28">Пт-1</a></td>
@@ -2707,7 +2643,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?3">Пн-4</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">англ.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?3">5-Г</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?6">Дікальчук&nbsp;А.І.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?6">Д-&nbsp;Андрій Іванович</a></td>
 		</tr>
 		<tr id="m13_4_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?4">Пн-5</a></td>
@@ -2755,19 +2691,19 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?11">Вв-5</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">англ.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?3">5-Г</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?6">Дікальчук&nbsp;А.І.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?6">Д-&nbsp;Андрій Іванович</a></td>
 		</tr>
 		<tr id="m13_12_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?12">Вв-6</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">англ.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?15">8-В</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?6">Дікальчук&nbsp;А.І.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?6">Д-&nbsp;Андрій Іванович</a></td>
 		</tr>
 		<tr id="m13_13_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?13">Вв-7</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">англ.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?14">8-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?6">Дікальчук&nbsp;А.І.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?6">Д-&nbsp;Андрій Іванович</a></td>
 		</tr>
 		<tr id="m13_14_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?14">Ср-1</a></td>
@@ -2821,7 +2757,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?22">Чт-2</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">англ.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?3">5-Г</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?6">Дікальчук&nbsp;А.І.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?6">Д-&nbsp;Андрій Іванович</a></td>
 		</tr>
 		<tr id="m13_23_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?23">Чт-3</a></td>
@@ -3094,7 +3030,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?32">Пт-5</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">англ.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?3">5-Г</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?6">Дікальчук&nbsp;А.І.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?6">Д-&nbsp;Андрій Іванович</a></td>
 		</tr>
 		<tr id="m14_33_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?33">Пт-6</a></td>
@@ -3358,7 +3294,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?3">Пн-4</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">укр.літ.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?19">9-Г</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?2">Боднарчук&nbsp;О.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?2">Б-Оксана&nbsp;Волод-на</a></td>
 		</tr>
 		<tr id="m16_4_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?4">Пн-5</a></td>
@@ -3559,19 +3495,19 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?0">Пн-1</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">інформат.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?4">6-А</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Білібін&nbsp;Р.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Б&nbsp;- Роман Васильович</a></td>
 		</tr>
 		<tr id="m17_1_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?1">Пн-2</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">інформат.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?5">6-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Білібін&nbsp;Р.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Б&nbsp;- Роман Васильович</a></td>
 		</tr>
 		<tr id="m17_2_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?2">Пн-3</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">інформат.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?6">6-В</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Білібін&nbsp;Р.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Б&nbsp;- Роман Васильович</a></td>
 		</tr>
 		<tr id="m17_3_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?3">Пн-4</a></td>
@@ -3583,55 +3519,55 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?4">Пн-5</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">інформат.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?8">7-А</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Білібін&nbsp;Р.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Б&nbsp;- Роман Васильович</a></td>
 		</tr>
 		<tr id="m17_5_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?5">Пн-6</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">інформат.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?16">9-А</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Білібін&nbsp;Р.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Б&nbsp;- Роман Васильович</a></td>
 		</tr>
 		<tr id="m17_6_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?6">Пн-7</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">інформат.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?17">9-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Білібін&nbsp;Р.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Б&nbsp;- Роман Васильович</a></td>
 		</tr>
 		<tr id="m17_7_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?7">Вв-1</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">інформат.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?10">7-В</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?1">Білібін&nbsp;Р.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?1">Б&nbsp;- Роман Васильович</a></td>
 		</tr>
 		<tr id="m17_8_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?8">Вв-2</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">інформат.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?14">8-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?1">Білібін&nbsp;Р.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?1">Б&nbsp;- Роман Васильович</a></td>
 		</tr>
 		<tr id="m17_9_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?9">Вв-3</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">інформат.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?9">7-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?1">Білібін&nbsp;Р.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?1">Б&nbsp;- Роман Васильович</a></td>
 		</tr>
 		<tr id="m17_10_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?10">Вв-4</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">інформат.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?11">7-Г</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?1">Білібін&nbsp;Р.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?1">Б&nbsp;- Роман Васильович</a></td>
 		</tr>
 		<tr id="m17_11_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?11">Вв-5</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">інформат.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?18">9-В</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?1">Білібін&nbsp;Р.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?1">Б&nbsp;- Роман Васильович</a></td>
 		</tr>
 		<tr id="m17_12_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?12">Вв-6</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">інформат.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?13">8-А</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?1">Білібін&nbsp;Р.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?1">Б&nbsp;- Роман Васильович</a></td>
 		</tr>
 		<tr id="m17_13_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?13">Вв-7</a></td>
@@ -3643,19 +3579,19 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?14">Ср-1</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">інформат.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?1">5-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Білібін&nbsp;Р.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Б&nbsp;- Роман Васильович</a></td>
 		</tr>
 		<tr id="m17_15_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?15">Ср-2</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">інформат.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?17">9-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Білібін&nbsp;Р.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Б&nbsp;- Роман Васильович</a></td>
 		</tr>
 		<tr id="m17_16_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?16">Ср-3</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">інформат.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?16">9-А</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Білібін&nbsp;Р.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Б&nbsp;- Роман Васильович</a></td>
 		</tr>
 		<tr id="m17_17_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?17">Ср-4</a></td>
@@ -3667,19 +3603,19 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?18">Ср-5</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">інформат.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?0">5-А</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Білібін&nbsp;Р.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Б&nbsp;- Роман Васильович</a></td>
 		</tr>
 		<tr id="m17_19_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?19">Ср-6</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">інформат.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?2">5-В</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Білібін&nbsp;Р.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Б&nbsp;- Роман Васильович</a></td>
 		</tr>
 		<tr id="m17_20_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?20">Ср-7</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">інформат.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?3">5-Г</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Білібін&nbsp;Р.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Б&nbsp;- Роман Васильович</a></td>
 		</tr>
 		<tr id="m17_21_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?21">Чт-1</a></td>
@@ -3691,7 +3627,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?22">Чт-2</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">інформат.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?18">9-В</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?1">Білібін&nbsp;Р.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?1">Б&nbsp;- Роман Васильович</a></td>
 		</tr>
 		<tr id="m17_23_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?23">Чт-3</a></td>
@@ -3703,61 +3639,61 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?24">Чт-4</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">інформат.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?12">7-Д</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?1">Білібін&nbsp;Р.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?1">Б&nbsp;- Роман Васильович</a></td>
 		</tr>
 		<tr id="m17_25_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?25">Чт-5</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">інформат.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?13">8-А</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?1">Білібін&nbsp;Р.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?1">Б&nbsp;- Роман Васильович</a></td>
 		</tr>
 		<tr id="m17_26_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?26">Чт-6</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">інформат.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?7">6-Г</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?1">Білібін&nbsp;Р.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?1">Б&nbsp;- Роман Васильович</a></td>
 		</tr>
 		<tr id="m17_27_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?27">Чт-7</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">інформат.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?15">8-В</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?1">Білібін&nbsp;Р.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?1">Б&nbsp;- Роман Васильович</a></td>
 		</tr>
 		<tr id="m17_28_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?28">Пт-1</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">інформат.&nbsp;*</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?3">5-Г</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Білібін&nbsp;Р.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Б&nbsp;- Роман Васильович</a></td>
 		</tr>
 		<tr id="m17_29_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?29">Пт-2</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">інформат.&nbsp;*</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?2">5-В</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Білібін&nbsp;Р.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Б&nbsp;- Роман Васильович</a></td>
 		</tr>
 		<tr id="m17_30_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?30">Пт-3</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">інформат.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?14">8-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Білібін&nbsp;Р.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Б&nbsp;- Роман Васильович</a></td>
 		</tr>
 		<tr id="m17_31_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?31">Пт-4</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">інформат.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?15">8-В</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Білібін&nbsp;Р.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Б&nbsp;- Роман Васильович</a></td>
 		</tr>
 		<tr id="m17_32_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?32">Пт-5</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">*&nbsp;інформат.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?7">6-Г</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Білібін&nbsp;Р.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Б&nbsp;- Роман Васильович</a></td>
 		</tr>
 		<tr id="m17_33_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?33">Пт-6</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">*&nbsp;інформат.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?6">6-В</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Білібін&nbsp;Р.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?1">Б&nbsp;- Роман Васильович</a></td>
 		</tr>
 		<tr id="m17_34_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?34">Пт-7</a></td>
@@ -3991,13 +3927,13 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?1">Пн-2</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">укр.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?12">7-Д</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?4">Грушкевич&nbsp;С.З.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?4">Г.&nbsp;Світлана Зеновіївна</a></td>
 		</tr>
 		<tr id="m19_2_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?2">Пн-3</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">укр.літ.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?16">9-А</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?4">Грушкевич&nbsp;С.З.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?4">Г.&nbsp;Світлана Зеновіївна</a></td>
 		</tr>
 		<tr id="m19_3_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?3">Пн-4</a></td>
@@ -4033,7 +3969,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?8">Вв-2</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">укр.літ.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?12">7-Д</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?4">Грушкевич&nbsp;С.З.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?4">Г.&nbsp;Світлана Зеновіївна</a></td>
 		</tr>
 		<tr id="m19_9_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?9">Вв-3</a></td>
@@ -4075,7 +4011,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?15">Ср-2</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">укр.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?12">7-Д</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?4">Грушкевич&nbsp;С.З.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?4">Г.&nbsp;Світлана Зеновіївна</a></td>
 		</tr>
 		<tr id="m19_16_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?16">Ср-3</a></td>
@@ -4123,13 +4059,13 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?23">Чт-3</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">укр.літ.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?12">7-Д</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?4">Грушкевич&nbsp;С.З.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?4">Г.&nbsp;Світлана Зеновіївна</a></td>
 		</tr>
 		<tr id="m19_24_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?24">Чт-4</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">укр.літ.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?16">9-А</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?4">Грушкевич&nbsp;С.З.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?4">Г.&nbsp;Світлана Зеновіївна</a></td>
 		</tr>
 		<tr id="m19_25_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?25">Чт-5</a></td>
@@ -4204,13 +4140,13 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?0">Пн-1</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">укр.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?7">6-Г</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?7">Денисюк&nbsp;Л.К.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?7">Д&nbsp;- Любов Кіндратівна</a></td>
 		</tr>
 		<tr id="m20_1_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?1">Пн-2</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">укр.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?6">6-В</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?7">Денисюк&nbsp;Л.К.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?7">Д&nbsp;- Любов Кіндратівна</a></td>
 		</tr>
 		<tr id="m20_2_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?2">Пн-3</a></td>
@@ -4246,13 +4182,13 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?7">Вв-1</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">укр.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?7">6-Г</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?7">Денисюк&nbsp;Л.К.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?7">Д&nbsp;- Любов Кіндратівна</a></td>
 		</tr>
 		<tr id="m20_8_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?8">Вв-2</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">укр.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?6">6-В</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?7">Денисюк&nbsp;Л.К.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?7">Д&nbsp;- Любов Кіндратівна</a></td>
 		</tr>
 		<tr id="m20_9_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?9">Вв-3</a></td>
@@ -4288,7 +4224,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?14">Ср-1</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">укр.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?7">6-Г</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?7">Денисюк&nbsp;Л.К.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?7">Д&nbsp;- Любов Кіндратівна</a></td>
 		</tr>
 		<tr id="m20_15_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?15">Ср-2</a></td>
@@ -4378,7 +4314,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?29">Пт-2</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">укр.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?7">6-Г</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?7">Денисюк&nbsp;Л.К.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?7">Д&nbsp;- Любов Кіндратівна</a></td>
 		</tr>
 		<tr id="m20_30_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?30">Пт-3</a></td>
@@ -4429,7 +4365,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?2">Пн-3</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">англ.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?1">5-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?6">Дікальчук&nbsp;А.І.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?6">Д-&nbsp;Андрій Іванович</a></td>
 		</tr>
 		<tr id="m21_3_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?3">Пн-4</a></td>
@@ -4441,13 +4377,13 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?4">Пн-5</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">укр.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?1">5-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?4">Грушкевич&nbsp;С.З.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?4">Г.&nbsp;Світлана Зеновіївна</a></td>
 		</tr>
 		<tr id="m21_5_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?5">Пн-6</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">укр.літ.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?1">5-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?4">Грушкевич&nbsp;С.З.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?4">Г.&nbsp;Світлана Зеновіївна</a></td>
 		</tr>
 		<tr id="m21_6_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?6">Пн-7</a></td>
@@ -4471,7 +4407,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?9">Вв-3</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">англ.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?1">5-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?6">Дікальчук&nbsp;А.І.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?6">Д-&nbsp;Андрій Іванович</a></td>
 		</tr>
 		<tr id="m21_10_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?10">Вв-4</a></td>
@@ -4501,7 +4437,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?14">Ср-1</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">укр.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?16">9-А</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?4">Грушкевич&nbsp;С.З.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?4">Г.&nbsp;Світлана Зеновіївна</a></td>
 		</tr>
 		<tr id="m21_15_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?15">Ср-2</a></td>
@@ -4513,7 +4449,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?16">Ср-3</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">укр.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?1">5-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?4">Грушкевич&nbsp;С.З.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?4">Г.&nbsp;Світлана Зеновіївна</a></td>
 		</tr>
 		<tr id="m21_17_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?17">Ср-4</a></td>
@@ -4537,7 +4473,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?19">Ср-6</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">англ.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?1">5-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?6">Дікальчук&nbsp;А.І.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?6">Д-&nbsp;Андрій Іванович</a></td>
 		</tr>
 		<tr id="m21_20_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?20">Ср-7</a></td>
@@ -4549,19 +4485,19 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?21">Чт-1</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">укр.літ.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?1">5-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?4">Грушкевич&nbsp;С.З.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?4">Г.&nbsp;Світлана Зеновіївна</a></td>
 		</tr>
 		<tr id="m21_22_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?22">Чт-2</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">укр.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?1">5-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?4">Грушкевич&nbsp;С.З.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?4">Г.&nbsp;Світлана Зеновіївна</a></td>
 		</tr>
 		<tr id="m21_23_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?23">Чт-3</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">англ.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?1">5-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?6">Дікальчук&nbsp;А.І.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?6">Д-&nbsp;Андрій Іванович</a></td>
 		</tr>
 		<tr id="m21_24_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?24">Чт-4</a></td>
@@ -4573,7 +4509,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?25">Чт-5</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">навч.разом</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?1">5-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?4">Грушкевич&nbsp;С.З.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?4">Г.&nbsp;Світлана Зеновіївна</a></td>
 		</tr>
 		<tr id="m21_26_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?26">Чт-6</a></td>
@@ -4603,7 +4539,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?30">Пт-3</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">укр.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?1">5-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?4">Грушкевич&nbsp;С.З.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?4">Г.&nbsp;Світлана Зеновіївна</a></td>
 		</tr>
 		<tr id="m21_31_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?31">Пт-4</a></td>
@@ -4621,7 +4557,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?32">Пт-5</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">укр.мова&nbsp;*</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?12">7-Д</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?4">Грушкевич&nbsp;С.З.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?4">Г.&nbsp;Світлана Зеновіївна</a></td>
 		</tr>
 		<tr id="m21_32_1">
 			<td class="timetable-day timetable--color-1">&nbsp;</td>
@@ -4633,7 +4569,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?33">Пт-6</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">англ.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?1">5-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?6">Дікальчук&nbsp;А.І.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?6">Д-&nbsp;Андрій Іванович</a></td>
 		</tr>
 		<tr id="m21_34_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?34">Пт-7</a></td>
@@ -5053,7 +4989,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?31">Пт-4</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">укр.літ.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?17">9-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?4">Грушкевич&nbsp;С.З.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?4">Г.&nbsp;Світлана Зеновіївна</a></td>
 		</tr>
 		<tr id="m23_32_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?32">Пт-5</a></td>
@@ -5170,7 +5106,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?15">Ср-2</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">укр.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?6">6-В</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?7">Денисюк&nbsp;Л.К.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?7">Д&nbsp;- Любов Кіндратівна</a></td>
 		</tr>
 		<tr id="m24_16_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?16">Ср-3</a></td>
@@ -5224,7 +5160,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?24">Чт-4</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">англ.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?10">7-В</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?6">Дікальчук&nbsp;А.І.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?6">Д-&nbsp;Андрій Іванович</a></td>
 		</tr>
 		<tr id="m24_25_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?25">Чт-5</a></td>
@@ -5248,7 +5184,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?28">Пт-1</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">укр.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?6">6-В</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?7">Денисюк&nbsp;Л.К.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?7">Д&nbsp;- Любов Кіндратівна</a></td>
 		</tr>
 		<tr id="m24_29_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?29">Пт-2</a></td>
@@ -5512,7 +5448,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?1">Пн-2</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">укр.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?18">9-В</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?2">Боднарчук&nbsp;О.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?2">Б-Оксана&nbsp;Волод-на</a></td>
 		</tr>
 		<tr id="m26_2_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?2">Пн-3</a></td>
@@ -5548,19 +5484,19 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?7">Вв-1</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">укр.літ.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?9">7-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?2">Боднарчук&nbsp;О.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?2">Б-Оксана&nbsp;Волод-на</a></td>
 		</tr>
 		<tr id="m26_8_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?8">Вв-2</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">укр.літ.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?18">9-В</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?2">Боднарчук&nbsp;О.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?2">Б-Оксана&nbsp;Волод-на</a></td>
 		</tr>
 		<tr id="m26_9_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?9">Вв-3</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">укр.літ.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?17">9-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?4">Грушкевич&nbsp;С.З.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?4">Г.&nbsp;Світлана Зеновіївна</a></td>
 		</tr>
 		<tr id="m26_10_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?10">Вв-4</a></td>
@@ -5590,7 +5526,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?14">Ср-1</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">укр.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?10">7-В</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?2">Боднарчук&nbsp;О.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?2">Б-Оксана&nbsp;Волод-на</a></td>
 		</tr>
 		<tr id="m26_15_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?15">Ср-2</a></td>
@@ -5602,19 +5538,19 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?16">Ср-3</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">укр.літ.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?19">9-Г</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?2">Боднарчук&nbsp;О.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?2">Б-Оксана&nbsp;Волод-на</a></td>
 		</tr>
 		<tr id="m26_17_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?17">Ср-4</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">укр.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?18">9-В</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?2">Боднарчук&nbsp;О.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?2">Б-Оксана&nbsp;Волод-на</a></td>
 		</tr>
 		<tr id="m26_18_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?18">Ср-5</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">укр.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?9">7-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?2">Боднарчук&nbsp;О.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?2">Б-Оксана&nbsp;Волод-на</a></td>
 		</tr>
 		<tr id="m26_19_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?19">Ср-6</a></td>
@@ -5632,19 +5568,19 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?21">Чт-1</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">укр.літ.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?11">7-Г</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?2">Боднарчук&nbsp;О.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?2">Б-Оксана&nbsp;Волод-на</a></td>
 		</tr>
 		<tr id="m26_22_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?22">Чт-2</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">укр.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?9">7-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?2">Боднарчук&nbsp;О.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?2">Б-Оксана&nbsp;Волод-на</a></td>
 		</tr>
 		<tr id="m26_23_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?23">Чт-3</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-2">укр.літ.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-2"><a href="timetable_grp.html?9">7-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?2">Боднарчук&nbsp;О.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-2"><a href="timetable_tch.html?2">Б-Оксана&nbsp;Волод-на</a></td>
 		</tr>
 		<tr id="m26_24_0">
 			<td class="timetable-day timetable--border-top timetable--color-2"><a href="timetable_day.html?24">Чт-4</a></td>
@@ -5680,19 +5616,19 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?29">Пт-2</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">укр.літ.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?11">7-Г</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?2">Боднарчук&nbsp;О.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?2">Б-Оксана&nbsp;Волод-на</a></td>
 		</tr>
 		<tr id="m26_30_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?30">Пт-3</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">укр.літ.</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?18">9-В</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?2">Боднарчук&nbsp;О.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?2">Б-Оксана&nbsp;Волод-на</a></td>
 		</tr>
 		<tr id="m26_31_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?31">Пт-4</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">укр.мова&nbsp;*</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?9">7-Б</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?2">Боднарчук&nbsp;О.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?2">Б-Оксана&nbsp;Волод-на</a></td>
 		</tr>
 		<tr id="m26_31_1">
 			<td class="timetable-day timetable--color-1">&nbsp;</td>
@@ -5704,7 +5640,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?32">Пт-5</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">укр.мова&nbsp;*</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?10">7-В</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?2">Боднарчук&nbsp;О.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?2">Б-Оксана&nbsp;Волод-на</a></td>
 		</tr>
 		<tr id="m26_33_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?33">Пт-6</a></td>
@@ -5950,7 +5886,7 @@ function GetCurrentNum(myTime) {
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?2">Пн-3</a></td>
 			<td class="timetable-sub timetable--border-top timetable--color-1">укр.мова</td>
 			<td class="timetable-grp timetable--border-top timetable--color-1"><a href="timetable_grp.html?10">7-В</a></td>
-			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?2">Боднарчук&nbsp;О.В.</a></td>
+			<td class="timetable-tch timetable--border-top timetable--color-1"><a href="timetable_tch.html?2">Б-Оксана&nbsp;Волод-на</a></td>
 		</tr>
 		<tr id="m28_3_0">
 			<td class="timetable-day timetable--border-top timetable--color-1"><a href="timetable_day.html?3">Пн-4</a></td>
