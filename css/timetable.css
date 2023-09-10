@@ -36,6 +36,7 @@
 	overflow: hidden;
 	max-width: 130px;
 	padding: 4px 5px;
+	line-height: 1.5;
 }
 
 .timetable-tch a {
