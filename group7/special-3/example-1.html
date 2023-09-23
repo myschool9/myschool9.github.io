@@ -1,19 +1,26 @@
-<!DOCTYPE html>
-<html lang="uk">
-<meta charset="utf-8">
+<!DOCTYPE html><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Приклад розв. задачі</title>
+<link rel="stylesheet" href="/D:/Data/form.css"><title>   Приклад розв. задачі   </title>
+<!--================================-->
+Вага огірків          <input id="in1">			кг   <br>
+Вага помідорів        <input id="in2">			кг   <br>
+Вага кабачків         <input id="in3">          кг   <br><br>
+Всього овочі важать   <span id="out1"></span>   кг   <br>
+Середня вага =        <span id="out2"></span>   кг   <br><br>
+                   <button onclick="toDo()">   Обчислити   </button>
+<!--================================-->
+<script> function toDo() {
 
-<script>
+let b1;
+let b2;
+let a1 = Number(in1.value);
+let a2 = Number(in1.value);
+let a3 = Number(in1.value);
 
-	let area;
-	let perimeter;
-	let side = Number(prompt('Яка довжина сторони квадрата?'));
+b1 = a1 + a2 + a3;
+b2 = b1 / 3;
 
-	area = side * side;
-	perimeter = 4 * side;
+out1.innerText = b1;
+out2.innerText = b2.toFixed(3);
 
-	alert('Довжина всього дроту = ' + perimeter.toFixed(1) + ' см');
-	alert('Площа квадрата = ' + area.toFixed(2) + ' кв.см');
-
-</script>
+} </script>
