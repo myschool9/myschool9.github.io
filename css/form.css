@@ -9,11 +9,7 @@ body {
 	text-align: center;
 	line-height: 1.4;
 }
-@media screen and (max-width: 450px) {
-	body {
-		margin: 5px 10px;
-	}
-}
+@media screen and (max-width:450px){body{margin:5px 10px}}
 
 /*---------------------------------------------*/
 div {
@@ -49,9 +45,11 @@ span {
 #out4 {
 	display: inline-block;
 	min-width: 3em;
+	min-height: 1.4em;
 	font-size: 90%;
 	background-color: LightCyan;
 	text-align: center;
+	vertical-align: middle;
 }
 
 .flexbox,
@@ -68,11 +66,13 @@ span {
 button {
 	margin: 5px 20px;
 	padding: 10px;
-	border-radius: 10px;
+	border: 2px outset ButtonFace;
+	min-width: 4em;
+	min-height: 2.5em;
 	font-family: inherit;
 	font-size: 100%;
 	line-height: 1.2;
-	border: 2px outset ButtonFace;
+	border-radius: 10px;
 }
 
 button:hover {
