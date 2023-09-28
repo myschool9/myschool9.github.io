@@ -40,17 +40,16 @@
 
 	<tr><td class="task-solve-title task--border-top">Розв’язок</td></tr>
 	<tr><td class="task-solve-text">
-		<div class="code-tag">&LT;script></div>
+		<div> <span class="code-keyword">function</span> f1() {</div>
 		<p></p>
-		<div>&nbsp;&nbsp;<span class="code-keyword">let</span> tables = Number(prompt());</div>
-		<div>&nbsp;&nbsp;<span class="code-keyword">let</span> chairs = Number(prompt());</div>
-		<div>&nbsp;&nbsp;<span class="code-keyword">let</span> total;</div>
+		<div>&nbsp;&nbsp;<span class="code-keyword">let</span> tables = Number(input1.value);</div>
+		<div>&nbsp;&nbsp;<span class="code-keyword">let</span> chairs = Number(input2.value);</div>
 		<p></p>
-		<div>&nbsp;&nbsp;total = tables + chairs;</div>
+		<div>&nbsp;&nbsp;<span class="code-keyword">let</span> total = tables + chairs;</div>
 		<p></p>
-		<div>&nbsp;&nbsp;alert(total);</div>
+		<div>&nbsp;&nbsp;span1.innnerText = total;</div>
 		<p></p>
-		<div class="code-tag">&LT;/script></div>
+		<div>}</div>
 	</td></tr>
 </tbody>
 
@@ -97,19 +96,17 @@
 
 	<tr><td class="task-solve-title task--border-top">Розв’язок</td></tr>
 	<tr><td class="task-solve-text">
-		<div class="code-tag">&LT;script></div>
+		<div> <span class="code-keyword">function</span> f1() {</div>
 		<p></p>
-		<div>&nbsp;&nbsp;<span class="code-keyword">let</span> inch = Number(prompt());</div>
-		<div>&nbsp;&nbsp;<span class="code-keyword">let</span> sm;</div>
-		<div>&nbsp;&nbsp;<span class="code-keyword">let</span> meter;</div>
+		<div>&nbsp;&nbsp;<span class="code-keyword">let</span> inch = Number(input1.value);</div>
 		<p></p>
-		<div>&nbsp;&nbsp;sm = inch * <span class="code-number">2.54</span>;</div>
-		<div>&nbsp;&nbsp;meter = sm / <span class="code-number">100</span>;</div>
+		<div>&nbsp;&nbsp;<span class="code-keyword">let</span> sm = inch * <span class="code-number">2.54</span>;</div>
+		<div>&nbsp;&nbsp;<span class="code-keyword">let</span> meter = sm / <span class="code-number">100</span>;</div>
 		<p></p>
-		<div>&nbsp;&nbsp;alert(sm.toFixed(<span class="code-number">2</span>));</div>
-		<div>&nbsp;&nbsp;alert(meter.toFixed(<span class="code-number">4</span>));</div>
+		<div>&nbsp;&nbsp;span1.innnerText = sm.toFixed(<span class="code-number">2</span>);</div>
+		<div>&nbsp;&nbsp;span2.innnerText = meter.toFixed(<span class="code-number">4</span>);</div>
 		<p></p>
-		<div class="code-tag">&LT;/script></div>
+		<div>}</div>
 	</td></tr>
 </tbody>
 
@@ -170,20 +167,18 @@
 
 	<tr><td class="task-solve-title task--border-top">Розв’язок</td></tr>
 	<tr><td class="task-solve-text">
-		<div class="code-tag">&LT;script></div>
+		<div> <span class="code-keyword">function</span> f1() {</div>
 		<p></p>
-		<div>&nbsp;&nbsp;<span class="code-keyword">let</span> lastPrice = Number(prompt());<div>
-		<div>&nbsp;&nbsp;<span class="code-keyword">let</span> sale = Number(prompt());</div>
-		<div>&nbsp;&nbsp;<span class="code-keyword">let</span> newPrice;</div>
-		<div>&nbsp;&nbsp;<span class="code-keyword">let</span> discount;</div>
+		<div>&nbsp;&nbsp;<span class="code-keyword">let</span> lastPrice = Number(input1.value);<div>
+		<div>&nbsp;&nbsp;<span class="code-keyword">let</span> sale = Number(input2.value);</div>
 		<p></p>
-		<div>&nbsp;&nbsp;discount = lastPrice * sale / <span class="code-number">100</span>;</div>
-		<div>&nbsp;&nbsp;newPrice = lastPrice - discount;</div>
+		<div>&nbsp;&nbsp;<span class="code-keyword">let</span> discount = lastPrice * sale / <span class="code-number">100</span>;</div>
+		<div>&nbsp;&nbsp;<span class="code-keyword">let</span> newPrice = lastPrice - discount;</div>
 		<p></p>
-		<div>&nbsp;&nbsp;alert(newPrice.toFixed(<span class="code-number">2</span>));</div>
-		<div>&nbsp;&nbsp;alert(discount.toFixed(<span class="code-number">2</span>));</div>
+		<div>&nbsp;&nbsp;span1.innnerText = newPrice.toFixed(<span class="code-number">2</span>);</div>
+		<div>&nbsp;&nbsp;span2.innnerText = discount.toFixed(<span class="code-number">2</span>);</div>
 		<p></p>
-		<div class="code-tag">&LT;/script></div>
+		<div>}</div>
 	</td></tr>
 </tbody>
 
