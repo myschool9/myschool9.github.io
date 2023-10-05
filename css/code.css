@@ -1,0 +1,74 @@
+.code-text {			/* ---------- TD --------- */
+	padding: 10px 10px 0 10px;
+	line-height: 1.2;
+}
+
+.code-comment {			/* ---------- TD --------- */
+	max-width: 300px;
+	padding: 5px 10px;
+	line-height: 1;
+	font-size: 0.8em;
+	text-align: right;
+}
+
+.code-tag {
+	font-weight: bold;
+	color: #008000;
+}
+
+.code-symbol {
+	font-style: italic;
+}
+
+.code-html-attribute {
+	color: #f00;
+}
+
+.code-keyword {
+	color: #000080;
+}
+
+.code-number {
+	color: #ff4000;
+}
+
+.code-string {
+	color: #00f;
+}
+
+.code-css-attribute {
+	color: #800080;
+}
+
+.code--color-1 {		/* ---------- TD --------- */
+	background-color: #fffff0;
+}
+
+.code--color-2 {		/* ---------- TD --------- */
+	background-color: #f8f8ff;
+}
+
+.code--color-3 {		/* ---------- TD --------- */
+	background-color: #fff;
+}
+
+.css-color {			/* ---------- TD --------- */
+	width: 50%;
+	padding: 5px 10px;
+	border: var(--border-style);
+	line-height: 1.5;
+	text-align: center;
+	font-family: monospace;
+}
+
+.css-color--black {		/* ---------- TD --------- */
+	color: #000;
+}
+
+.css-color--white {		/* ---------- TD --------- */
+	color: #fff;
+}
+
+.color-number {			/* входить у color-css */
+	font-size: 1.2em;
+}

@@ -1,0 +1,90 @@
+.task-number {			/* ---------- TD --------- */
+	font-size: 0.9em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.task-text {			/* ---------- TD --------- */
+	padding: 0 5px 5px 5px;
+	line-height: 1.5;
+}
+
+.task-in-title,
+.task-out-title {		/* ---------- TD --------- */
+	padding: 5px 5px 5px 25px;
+	font-size: 0.9em;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.task-in,
+.task-out {				/* ---------- TD --------- */
+	padding: 0 5px 5px 10px;
+	line-height: 1.5;
+	font-size: 0.9em;
+}
+
+.task-image {			/* ---------- TD --------- */
+	padding: 5px;
+	line-height: 1;
+	text-align: center;
+}
+
+.task-image img {
+	border: var(--border-style);
+}
+
+.task-tests {			/* ---------- TD --------- */
+	padding: 10px;
+	font-family: monospace;
+}
+
+.task-tests table {
+	border-spacing: 5px;
+}
+
+.task-tests td {
+	min-width: 30px;
+	padding: 2px 3px;
+	line-height: 1.5;
+}
+
+.task-hint {
+	font-size: 0.9em;
+}
+
+.task-solve-title {		/* ---------- TD --------- */
+	padding-top: 5px;
+	font-size: 0.9em;
+	text-align: center;
+	font-style: italic;
+	font-weight: bold;
+	background-color: #fff;
+}
+
+.task-solve-text {		/* ---------- TD --------- */
+	padding: 0 5px 15px 5px;
+	font-family: monospace;
+	line-height: 1.5;
+	background-color: #fff;
+}
+
+.task-solve-alt-code {
+	background-color: #ddd;
+}
+
+.task--color-1 {
+	background-color: #fff;
+}
+
+.task--color-2 {
+	background-color: #fffff0;
+}
+
+.task--color-3 {
+	background-color: #f8f8ff;
+}
+
+.task--border-top {
+	border-top: var(--border-style);
+}
