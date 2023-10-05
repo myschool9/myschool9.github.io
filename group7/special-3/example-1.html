@@ -1,0 +1,27 @@
+<!DOCTYPE html><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../../css/form.css">
+<title>   Приклад розв. задачі   </title>
+<!--================================-->
+Вага огірків          <input id="in1">			кг   <br>
+Вага помідорів        <input id="in2">			кг   <br>
+Вага кабачків         <input id="in3">          кг   <br><br>
+Всього овочі важать   <span id="out1"></span>   кг   <br>
+Середня вага =        <span id="out2"></span>   кг   <br><br>
+                   <button onclick="toDo()">   Обчислити   </button>
+<!--================================-->
+<script> function toDo() {
+
+let b1;
+let b2;
+let a1 = Number(in1.value);
+let a2 = Number(in2.value);
+let a3 = Number(in3.value);
+
+b1 = a1 + a2 + a3;
+b2 = b1 / 3;
+
+out1.innerText = b1;
+out2.innerText = b2.toFixed(3);
+
+} </script>
