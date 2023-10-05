@@ -1,0 +1,40 @@
+body{padding:5px;line-height:1.4} @media screen and (min-width:450px){body{margin:10px 5%}}
+/*---------------------------------------------*/
+
+.header {
+	margin: 5px;
+	padding: 5px;
+	text-align: center;
+	
+}
+
+.footer {
+	margin: 5px;
+	padding: 5px;
+	text-align: right;
+	
+}
+
+.box {
+	margin: 5px;
+	padding: 5px;
+
+	display: flex;
+	flex-wrap: wrap;				/* nowrap */
+	justify-content: space-around;	/* flex-end  center  flex-start  space-beetween */
+	align-items: flex-start;		/* flex-end  center  stretch */
+
+	border: 5px solid Maroon;
+	border-radius: 3px
+}
+
+.day  { 
+     margin: 5px;
+	padding: 5px;
+	text-align: center
+}
+
+.king{
+	background-color: Maroon;
+	color: White;
+}
