@@ -35,6 +35,7 @@ a {
 	text-align: center;
 	background-color: var(--js-header-color);
 }
+@media screen and (min-width:600px){.page-header{top:10px;left:10%}}
 
 .btn {			/* --- TD --- */
 	overflow: hidden;
@@ -89,10 +90,12 @@ select {
 	border-spacing: 0;
 	background-color: var(--body-color);
 }
+@media screen and (min-width:600px){.content{margin:50px 0 20px 10%}}
 
 .content__without-header {	/* --- TABLE --- */
 	margin-top: 2px;
 }
+@media screen and (min-width:600px){.content__without-header{margin-top:10px}}
 
 .content--border-around {
 	border: var(--border-style);
