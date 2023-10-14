@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="../css/videos.css">
+<title>Задачі Scratch</title>
+<!--================================-->
+<script>
+var folder = '';
+var videos = [
+	{file:'1',		name:'Переправа',			comment:''},
+	{file:'2',		name:'Хижаки',				comment:''},
+	{file:'3',		name:'У воді',				comment:''},
+	{file:'4',		name:'Футбол',				comment:''},
+	{file:'5',		name:'Світ тварин',			comment:''},
+	{file:'6',		name:'Перехід дороги',		comment:''},
+	{file:'7',		name:'Гімнастика',			comment:''},
+	{file:'8',		name:'Вартовий',			comment:''},
+	{file:'9',		name:'Капуста',				comment:'Кількість капустин 5-7!'},
+	{file:'10',		name:'Квітка',				comment:'Кількість пелюстків довільна!'},
+	{file:'11',		name:'Світлофор',			comment:''},
+	{file:'12',		name:'Кіт-футболіст',		comment:''},
+	{file:'13',		name:'Вітряки',				comment:'Вітряки треба малювати!'},
+	{file:'14',		name:'Зоряне небо',			comment:''},
+	{file:'15',		name:'Відліт кажана',		comment:''},
+	{file:'16',		name:'Зустріч',				comment:''},
+	{file:'17',		name:'Дощ',					comment:'Кіт перемішується стрілками вліво-вправо!'},
+	{file:'18',		name:'Годинник',			comment:'Годинник треба малювати!'},
+	{file:'19',		name:'Туди-сюди',			comment:''},
+	{file:'20',		name:'Більярд',				comment:''},
+	{file:'21',		name:'Серце',				comment:''},
+]
+
+//-------------------------------------
+function CreateList(txt) {
+	folder = txt.slice(1, txt.length);
+	folder = '../' + folder.replace('_', '/') + '/';
+
+	let txtSel = '';
+	for (let i = 1; i <= videos.length; i++) {
+		txtSel += '<option>' + String(i) + '</option>';
+	}
+	document.getElementById('listBox').innerHTML = txtSel;
+}
+
+//-------------------------------------
+function ShowItem(nItem) {
+	if (nItem < 0 || nItem >= videos.length) return;
+
+	document.getElementById('mainTable').innerHTML = '<tr><td class="video-title"><span class="video-number">№&nbsp;' + String(nItem+1) + '.</span><span class="video-name">' + videos[nItem].name + '</span></td></tr><tr><td class="video-container"><video controls><source src="' + folder + videos[nItem].file + '.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr><tr><td class="video-comment">' + videos[nItem].comment + '</td></tr>';
+
+	document.getElementById('listBox').selectedIndex = nItem;
+}
+
+</script>
+
+<!--================================-->
+<body onload="CreateList(location.search); ShowItem(0)">
+
+<table class="page-header"><tr>
+	<td class="btn btn__scroll" onclick="ShowItem(listBox.selectedIndex - 1)">◄</td>
+	<td class="page-title"><select id="listBox" size="1" onchange="ShowItem(this.selectedIndex)"></select></td>
+	<td class="btn btn__scroll" onclick="ShowItem(listBox.selectedIndex + 1)">►</td>
+</tr></table>
+
+<table id="mainTable" class="content content--border-around content--color"></table>
+
+</body>
