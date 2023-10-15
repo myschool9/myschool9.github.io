@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="uk">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="js-task.css">
+<link rel="stylesheet" href="../css/code.css">	<!-- for solve --> 
+<title>Лінійні задачі</title>
+
+<!--================================-->
+<script>
+var taskList = [
+
+	{txt: 'На&nbsp;складі меблевої фабрики зберігається декілька столиків та стільців. Скільки&nbsp;всього предметів зберігається на&nbsp;складі?',
+	inTitle: ['кількість столиків', 'кількість стільців'],
+	outTitle: ['всього предметів'],
+	inTests: [['17', '6'], ['1', '134'], ['41', '41']],
+	outTests: [['23'], ['135'], ['82']],
+	solve: '<div>&nbsp;&nbsp;<span class="code-keyword">let</span> tables = Number(input1.value);</div><div>&nbsp;&nbsp;<span class="code-keyword">let</span> chairs = Number(input2.value);</div>'},
+
+
+	{txt: '«Ідеальна» вага людини в кілограмах&nbsp;– це її ріст у&nbsp;сантиметрах мінус&nbsp;110.<br>Складіть програму обчислення «ідеальної» ваги.',
+	inTitle: ['ріст людини (см)'],
+	outTitle: ['вага людини (кг)'],
+	inTests: [['217'], ['174'], ['2356']],
+	outTests: [['107'], ['64'], ['2246']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+
+	{txt: '',
+	inTitle: ['', ''],
+	outTitle: [''],
+	inTests: [['', ''], ['', ''], ['', '']],
+	outTests: [[''], [''], ['']],
+	solve: ''},
+
+]
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+function CreateList() {
+	let txtSel = '';
+	for (let i = 1; i <= taskList.length; i++) {
+		txtSel += '<option>' + String(i);
+		if (taskList[i - 1].solve !== '') txtSel += '°';
+		txtSel += '</option>';
+	}
+	document.getElementById('listBox').innerHTML = txtSel;
+}
+
+//-------------------------------------
+function CreateData(mas) {
+	let n = mas.length;
+	let res = '';
+	if (n === 0) return res;
+	if (n === 1) {
+		res += mas[0];
+	} else {
+		for (let i = 0; i < n; i++) {
+			res += String(i + 1) + ') ' + mas[i];
+			if (i < n - 1) {
+				res += ';<br>';
+			} else {
+				res += '.';
+			}
+		}
+	}
+	return res;
+}
+
+//-------------------------------------
+function ShowItem(nItem) {
+	if (nItem < 0 || nItem >= taskList.length) return;
+
+	let txtTask = '<tr><td class="task-number task--color-1">№ ' + String(nItem+1) + '</td></tr><tr><td class="task-text task--color-1">' + taskList[nItem].txt + '</td></tr><tr><td class="task-in-title task--color-2 task--border-top">Дано:</td></tr><tr><td class="task-in task--color-2">';
+	txtTask += CreateData(taskList[nItem].inTitle);
+	txtTask += '</td></tr><tr><td class="task-out-title task--color-2">Результат:</td></tr><tr><td class="task-out task--color-2">';
+	txtTask += CreateData(taskList[nItem].outTitle);
+	txtTask += '</td></tr>';
+
+		// tests ------------
+	txtTask += '<tr><td class="task-tests task--color-3 task--border-top"><table>';
+	for (let i = 0; i < taskList[nItem].inTests.length; i++) {
+		txtTask += '<tr>';
+		for (let j = 0; j < taskList[nItem].inTests[i].length; j++) 
+			txtTask += '<td>' + taskList[nItem].inTests[i][j] + '</td>';
+		txtTask += '<td>==></td>';
+		for (let j = 0; j < taskList[nItem].outTests[i].length; j++) 
+			txtTask += '<td>' + taskList[nItem].outTests[i][j] + '</td>';
+		txtTask += '</tr>';
+	}
+	txtTask += '</table></td></tr>';
+		// ------------------
+
+	document.getElementById('mainTable').innerHTML = txtTask;
+	document.getElementById('listBox').selectedIndex = nItem;
+}
+
+//-------------------------------------
+</script>
+
+<!--================================-->
+<body onload="CreateList(); ShowItem(0)">
+
+<table class="page-header"><tr>
+	<td class="btn btn__scroll" onclick="ShowItem(listBox.selectedIndex - 1)">◄</td>
+	<td class="page-title"><select id="listBox" size="1" onchange="ShowItem(this.selectedIndex)"></select></td>
+	<td class="btn btn__scroll" onclick="ShowItem(listBox.selectedIndex + 1)">►</td>
+</tr></table>
+
+<table id="mainTable" class="content content--border-around"></table>
+
+</body>
