@@ -58,7 +58,8 @@
 }
 
 .test-obj {
-	margin: 20px 5px 5px 15px;
+	margin: 20px 5px 5px 5px;
+	text-align: center;
 }
 
 .test-obj img {
