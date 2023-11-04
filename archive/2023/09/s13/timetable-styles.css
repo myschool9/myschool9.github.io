@@ -1,0 +1,46 @@
+body{padding:5px;line-height:1.4} @media screen and (min-width:450px){body{margin:10px 5%}}
+/*---------------------------------------------*/
+
+.header {
+	margin: 5px;
+	padding: 5px;
+	text-align: center;
+	background-color: LightCyan;
+	font-size:29px;
+}
+
+.footer {
+	margin: 5px;
+	padding: 5px;
+	text-align: right;
+	background-color:Linen;
+}
+
+.box {
+	margin: 5px;
+	padding: 5px;
+
+	display: flex;
+	flex-wrap: wrap;				/* nowrap */
+	justify-content: space-around;	/* flex-end  center  flex-start  space-beetween */
+	align-items: flex-start;		/* flex-end  center  stretch */
+
+	border: 2px solid white;
+	background-color:Violet;
+}
+.den
+{
+	color:white;
+	border:blue;
+	font-size:20px;
+	
+}
+.day
+{
+	font-size:25px;
+	font-weight:bold;
+	
+	}
+.roma{
+	font-weight:bold;
+}

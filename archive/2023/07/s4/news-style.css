@@ -1,0 +1,68 @@
+﻿body{padding:5px} @media screen and (min-width:450px){body{max-width:360px;margin:10px 10%}}
+/*--- верхній рядок не змінюйте! --------------*/
+
+		/*  «Стрічка новин»  */
+h2 {
+	
+}
+
+		/*  «Усі новини» - можна додати межі або заливку і поля  */
+.all-news {
+	border: 1px solid #228B22;
+	margin: 3px;
+	border-radius: 10px;
+	padding: 5px;
+	background-color: #FFFFFF;
+	
+
+}
+
+		/*  «Дата усіх новин»  */
+h3 {
+	color
+}
+
+		/*  «Час новини» - можна додати межу чи відступ зверху, зменшити розмір шрифту  */
+.news-time {
+	color: #DC143C ;
+	font-style: italic;
+}
+
+		/*  «Текст новини» - можна додати межу чи відступ знизу  */
+.news-text {
+	border: 1px solid #8B0000;
+	margin: 10px;
+	border-radius: 11px;
+	padding: 5px;
+	line-height: 1.5;
+	background-color: #F0FFF0;
+	
+}
+
+		/*  «Підвал» - найнижчий блок, знаходиться ПІД «Усіма новинами»  */
+.footer {
+	padding: 10px;
+}
+
+		/*  посилання для перегляду усіх новин: знаходиться у «підвалі» і не працює :)  */
+a {
+	text-decoration: none;
+}
+
+		/*  «Слово-рубрика» - слово коло часу новини: ДУМКА, Екслюзив, Школа  */
+.exclusive {
+	color: #808000;
+	padding: 5px;
+	font-weight: bold;
+	
+}
+
+		/*  «Гаряча новина» - можете змінити, якщо хочете  */
+.hot-news {
+	padding: 0 20px 20px 20px;
+	line-height: 1.5;
+	text-align: center;
+	font-weight: bold;
+	font-style: italic;
+	color: Crimson;
+}
