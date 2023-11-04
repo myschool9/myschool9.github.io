@@ -58,9 +58,9 @@
 }
 
 .test-obj {
-	margin: 20px 5px 5px 5px;
-	text-align: center;
+	margin: 20px 6px 5px 6px;
 }
+@media screen and (min-width:600px){.test-obj{margin-left:10%}}
 
 .test-obj img {
 	max-width: var(--obj-max-width);

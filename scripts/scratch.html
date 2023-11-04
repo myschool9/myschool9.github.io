@@ -2,14 +2,15 @@
 <html lang="uk">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../css/global.css">
-<link rel="stylesheet" href="../css/videos.css">
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/css/videos.css">
 <title>Задачі Scratch</title>
 <!--================================-->
 <script>
 var group = 0;		// 5 клас
 var folder = '';
 var videos = [
+
 [	// -------------- 5 клас! ---------
 	{file:'1', name:'Переправа', comment:''},
 	{file:'2', name:'Хижаки', comment:''},
@@ -33,6 +34,7 @@ var videos = [
 	{file:'20', name:'Більярд', comment:''},
 	{file:'21', name:'Серце', comment:''},
 ],
+
 [	// -------------- 6 клас! ---------
 	{file:'a1', name:'Сонце і Земля', comment:''},
 	{file:'a2', name:'Жабка', comment:''},
@@ -75,9 +77,12 @@ var videos = [
 	{file:'35', name:'Сходи', comment:''},
 	{file:'36', name:'«Зебра»', comment:''},
 ]
+
 ]
 
-//-------------------------------------
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 function CreateList(txt) {
 	const symb = '&';
 	const par = decodeURI(txt).split(symb);
@@ -103,6 +108,7 @@ function ShowItem(nItem) {
 	document.getElementById('listBox').selectedIndex = nItem;
 }
 
+//-------------------------------------
 </script>
 
 <!--================================--->
