@@ -5,7 +5,7 @@ function CreateArray(txt) {
 	if (par.length < 2) return;
 
 	let folder = par[0].slice(1, par[0].length);
-	folder = '../' + folder.replace('_', '/') + '/';
+	folder = '/' + folder.replace('_', '/') + '/';
 
 	if (par[1] === 'i') CreateImagesArray(folder, par[2]);
 	if (par[1] === 's') CreateSitesArray(folder, par[2], par[3], par[4]);
