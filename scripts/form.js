@@ -5,17 +5,8 @@ const butN = but.length;
 
 //-------------------------------------
 function setFocus(n) {
-	if (n < 0) n = 0;
-	if (n > inpN) n = inpN;
-	if (n === inpN) {
-		if (butN > 0) {
-			but[0].focus();
-		} else {
-			inp[0].focus();
-		}
-	} else {
-		inp[n].focus();
-	}
+	if (n < 0 || n >= inpN) n = 0;
+	if (inpN > 0) inp[n].focus();
 }
 
 //-------------------------------------
@@ -43,11 +34,14 @@ addEventListener('keydown', function(event) {
 });
 
 for (let i = 0; i < inpN ; i++) {
-	inp[i].addEventListener('keydown', function(event) {if (event.keyCode === 13) setFocus(i + 1)});
+	inp[i].addEventListener('keydown', function(event) {
+		if (event.keyCode === 13 && butN > 0) {but[0].click(); setFocus(i + 1);}
+	});
 }
 if (butN > 0) {
-	but[0].addEventListener('click', function() {f1(); setFocus(0);});
-	but[0].addEventListener('keydown', function(event) {if (event.keyCode === 13) {f1(); setFocus(0);};});
+	but[0].addEventListener('keydown', function(event) {
+		if (event.keyCode === 13) {but[0].click(); setFocus(0);}
+	});
 }
 
 document.title = splitFileName(decodeURI(document.URL));
