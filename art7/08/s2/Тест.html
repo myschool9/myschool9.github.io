@@ -1,0 +1,53 @@
+<!DOCTYPE html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/scripts/form.css"><script src="/scripts/form.js" defer></script><div class="my-form">
+<!--===============================-->
+
+Скільки буде 2+2?           <br><br>
+    1.5<br>
+    2.4<br>
+    3.22  <br>	
+    4.Я ні знаю мне нужна мама<br>
+	
+	<input id="input1">   <br>
+	
+Відповідь      <span id="span1"></span>     <br>
+
+<button onclick="f1()">   Обчислити   </button>
+<!--===============================--><script>
+function f1() {
+
+
+
+let hz = Number(input1.value)
+let res = 'ДАЙ НОРМАЛЬНУ ВІДПОВІДЬ МПАНЛШМАММЕ'
+
+if (hz === 1) 
+    res = 'Молодець тепер ти найрозумніший в світі'
+
+	
+if (hz === 2)
+    res = 'ЧЕ САМИЙ РОЗУМНИЙ'
+	
+	
+if (hz === 3)
+    res = 'В тебе -5 iq'
+	
+	
+if (hz === 4)
+    res = 'Мужик тобі вже 40 яка мама?'
+	
+span1.innerText = res
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+<!--===============================--></script></div>

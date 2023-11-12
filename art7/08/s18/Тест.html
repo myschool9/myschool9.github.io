@@ -1,0 +1,49 @@
+<!DOCTYPE html><meta charset="utf-8"><link rel="stylesheet" href="/D:/Data/form.css"><div class="my-form">
+<!--===============================-->
+
+Car from Germany   <br><br>
+
+1. Mersedes   <br>
+2. Kia   <br>
+3. Ferrari   <br>
+4. Ford   <br><br>
+
+
+      <input id="input1">     <br>
+
+      <span id="span1"></span>     <br>
+
+<button>   ??????   </button>
+<!--===============================--><script>
+function f1() {
+
+let avto = Number(input1.value);
+
+let rules = 'Please write';
+
+if (avto === 1)
+    rules = 'Yes is car from Germany';
+	
+
+   if (avto === 2)
+    rules = 'Nooo is car from Korea';
+	if (avto === 3)
+    rules = 'Nooo is car from Itally';
+	if (avto === 4)
+    rules = 'Nooo is car from USA';
+
+span1.innerText = rules;
+
+
+
+
+
+
+
+
+
+
+
+}
+<!--===============================--></script>
+<script src="/D:/Data/form.js"></script></div>

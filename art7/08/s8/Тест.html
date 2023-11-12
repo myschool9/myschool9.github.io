@@ -1,0 +1,34 @@
+<!DOCTYPE html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/scripts/form.css"><script src="/scripts/form.js" defer></script><div class="my-form">
+<!--==============================-->
+Під яким номером грає Неймар?
+
+1.7<br>
+2.9<br>
+3.10 <br>
+4.1<br>
+
+     <input id="input1">     <br>
+
+      <span id="span1"></span>     <br>
+
+<button onclick="f1()">      </button>
+<!--===============================--><script>
+function f1() {
+
+let nomer = Number(input1.value);
+
+let rules = '';
+
+ if (nomer===3)
+
+  rules = 'правильно';
+
+else
+
+rules = 'не правильно';
+
+span1.innerText = rules;
+
+
+}
+<!--===============================--></script></div>

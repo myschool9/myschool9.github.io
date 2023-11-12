@@ -1,0 +1,47 @@
+<!DOCTYPE html><meta charset="utf-8"><link rel="stylesheet" href="/D:/Data/form.css"><div class="my-form">
+<!--===============================-->
+ яка в мене порода собаки?  <br><br>
+1.доберман      <br>
+2.шпіц          <br>
+3.лайка         <br>
+4.чау чау       <br><br>
+
+
+
+
+
+     <input id="input1">     <br>
+
+     <span id="span1"></span>     <br>
+
+<button>   перевірити  </button>
+<!--===============================--><script>
+function f1() {
+
+let speed = Number (input1.value)
+let rules = '';
+
+if (speed ===1 )
+   rules = 'це дуже велика собака '
+if (speed ===2 )
+   rules = 'правильна відповідь '
+if (speed ===3 )
+   rules = 'дуже багато шерсті '
+if (speed ===4 )
+   rules = 'в неї синій язик '
+
+ span1.innerText = rules 
+
+
+
+
+
+
+
+
+
+
+
+}
+<!--===============================--></script>
+<script src="/D:/Data/form.js"></script></div>

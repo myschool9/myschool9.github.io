@@ -1,0 +1,43 @@
+<!DOCTYPE html><meta charset="utf-8"><link rel="stylesheet" href="/D:/Data/form.css"><div class="my-form">
+<!--===============================-->
+Скільки очей у людини?   <br><br>
+1. 8   <br>
+2. 2   <br>
+3. 1  <br>
+4. 0  <br><br>
+
+
+Виберіть відповідь      <input id="input1">     <br>
+
+Відповідь     <span id="span1"></span>     <br>
+
+<button>   Відповідь   </button>
+<!--===============================--><script>
+function f1() {
+
+  let eyes = Number(input1.value);
+  let rules = '3';
+
+  if (eyes === 2)
+       rules = 'харош'
+  if (eyes === 1)
+       rules = 'тільки в павуків'
+  if (eyes === 3)
+       rules = 'ти шо дебіл'
+  
+  span1.innerText = rules;
+
+
+
+
+
+
+
+
+
+
+
+
+}
+<!--===============================--></script>
+<script src="/D:/Data/form.js"></script></div>

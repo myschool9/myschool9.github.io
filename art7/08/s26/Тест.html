@@ -1,0 +1,40 @@
+<!DOCTYPE html><meta charset="utf-8"><link rel="stylesheet" href="/D:/Data/form.css"><div class="my-form">
+<!--===============================-->
+Хто буде покровителем 2024 року?<br>
+
+ 1. земляний бик<br>
+ 2. металевий бик<br>
+ 3. тигр<br>
+ 4. дерев'яний дракон<br>
+
+
+
+     <input id="input1">     <br>
+
+     <span id="span1"></span>     <br>
+
+<button onclick="f1()">     зарахувати відповідь </button>
+<!--===============================--><script>
+function f1() {
+
+let num = Number (input1.value)
+let number = ' виберіть число від 1 до 4'
+
+if (num === 1)
+    number = 'далеко'
+if (num === 2)
+    number = 'майже'
+if (num === 3)
+    number = 'близько'
+if (num === 4)
+    number = 'правильна відповідь'
+ span1.innerText = number
+
+
+
+
+
+
+}
+<!--===============================--></script></div>
+<script src="/D:/Data/form.js"></script>
