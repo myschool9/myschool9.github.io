@@ -1,19 +1,22 @@
-function CreateArray(txt) {
+function CreateArray(parametrs) {
 	const symb = '&';
-	const par = decodeURI(txt).split(symb);
+	const par = decodeURI(parametrs).split(symb);
 
 	if (par.length < 2) return;
 
 	let folder = par[0].slice(1, par[0].length);
 	folder = '/' + folder.replace('_', '/') + '/';
 
-	if (par[1] === 'i') CreateImagesArray(folder, par[2]);
-	if (par[1] === 's') CreateSitesArray(folder, par[2], par[3], par[4]);
-	if (par[1] === 'v') CreateVideosArray(folder, par[2], par[3]);
+	let par2 = (par.length > 2) ? par[2] : '';
+	let par3 = (par.length > 3) ? par[3] : '';
+	let par4 = (par.length > 4) ? par[4] : '';
+	if (par[1] === 'i') CreateImagesArray(folder, par2, par3);	// par3 for homework!
+	if (par[1] === 's') CreateSitesArray(folder, par2, par3, par4);
+	if (par[1] === 'v') CreateVideosArray(folder, par2, par3);
 }
 
 /*---------------------------------------*/
-function CreateImagesArray(folder, countImg) {
+function CreateImagesArray(folder, countImg, isHomework) {
 
 	countImg = Number(countImg);
 	if (isNaN(countImg) || countImg > 99 || countImg <= 0) return;
@@ -21,6 +24,10 @@ function CreateImagesArray(folder, countImg) {
 	let txt = '<table class="content content__without-header">';
 	for (let i = 1; i <= countImg; i++) {
 		txt += '<tr><td class="image-container"><img src="' + folder + String(i) + '.png" alt=""></td></tr>';
+	}
+
+	if (isHomework !== '') {
+		txt += '<tr><td class="image-container"><a href="' + folder + 'homework.zip"><img src="' + folder + 'homework.png" alt="Домашнє завдання"></a></td></tr>';
 	}
 	txt += '</table>';
 
@@ -35,7 +42,7 @@ function CreateSitesArray(folder, count, startHTML, groupTitle) {
 	if (isNaN(count) || count > 99 || count <= 0) return;
 	if (startHTML === '') startHTML = 'index';
 
-	txt = '<table class="page-header"><tr><td class="page-title">' + groupTitle + '</td></tr></table>';
+	let txt = '<table class="page-header"><tr><td class="page-title">' + groupTitle + '</td></tr></table>';
 	txt += '<table class="content"><tr>';
 	for (let i = 1; i <= count; i++) {
 		if (i % 2 === 1) txt += '<tr>';
