@@ -27,7 +27,8 @@ function CreateImagesArray(folder, countImg, isHomework) {
 	}
 
 	if (isHomework !== '') {
-		txt += '<tr><td class="image-container"><a href="' + folder + 'homework.zip"><img src="' + folder + 'homework.png" alt="Домашнє завдання"></a></td></tr>';
+		txt += '<tr><td class="image-container"><img src="' + folder + 'homework.png" alt="Домашнє завдання">';
+		txt += '<a href="' + folder + 'homework.zip">Завантажити файл-архів завдання</a></td></tr>';
 	}
 	txt += '</table>';
 
