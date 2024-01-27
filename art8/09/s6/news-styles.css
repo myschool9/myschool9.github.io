@@ -1,0 +1,67 @@
+﻿		/*  не змінюйте!  */
+body {
+	margin: 10px 10% 10px 10%;
+	max-width: 360px;
+	font-size: 18px;
+}
+
+		/*  Головний заголовок  */
+h2 {
+	border: 1px solid DarkBlue ;
+	color: DarkBlue ;
+    text-align: center ;
+	}
+
+		/*  «Усі новини» - можна додати межі або заливку і поля  */
+.all-news {
+	
+	color: Black ;
+	
+	text-align: center ;
+	}
+
+		/*  «Дата усіх новин»  */
+h3 {
+	color: DarkRed ;
+	text-decoration: underline ;
+}
+
+		/*  «Час новини» - можна додати межу чи відступ зверху, зменшити розмір шрифту  */
+.news-time {
+	color: DarkRed ;
+	text-decoration: underline ;
+	
+	margin: 10px auto ;
+	width:24% ;
+	text-align: center ;
+}
+
+		/*  «Текст новини» - можна додати межу чи відступ знизу  */
+.news-text {
+	font-style: italic ;
+}
+
+		/*  «Нижній колонтитул»: знаходиться ПІД «Усіма новинами»  */
+.footer {
+	padding: 10px;
+}
+
+		/*  посилання для перегляду усіх новин: знаходиться у «нижньому колонтитулі» і не працює :)  */
+a {
+	text-decoration: none;
+}
+
+		/*  «Гаряча новина» - застосуйте до якої-небудь новини  */
+.hot-news {
+	padding: 0 20px 20px 20px;
+	line-height: 1.5;
+	text-align: center;
+	font-weight: bold;
+	font-style: italic;
+	color: Crimson;
+	background-color: Black ;
+}
+
+		/*  «Слово-рубрика» - слово коло часу новини: ДУМКА, Екслюзив, Школа  */
+.????? {}
+
