@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/form-styles.css">
+<script src="/scripts/form-scripts.js" defer></script>
+<div class="my-form">
+<!--===============================-->
+
+Car from Germany   <br><br>
+
+1. Mersedes   <br>
+2. Kia   <br>
+3. Ferrari   <br>
+4. Ford   <br><br>
+
+
+      <input id="input1">     <br>
+
+      <span id="span1"></span>     <br>
+
+<button onclick="f1()">   ??????   </button>
+<!--===============================--><script>
+function f1() {
+
+let avto = Number(input1.value);
+
+let rules = 'Please write';
+
+if (avto === 1)
+    rules = 'Yes is car from Germany';
+	
+
+   if (avto === 2)
+    rules = 'Nooo is car from Korea';
+	if (avto === 3)
+    rules = 'Nooo is car from Itally';
+	if (avto === 4)
+    rules = 'Nooo is car from USA';
+
+span1.innerText = rules;
+
+
+
+
+
+
+
+
+
+
+
+}
+<!--===============================--></script></div>

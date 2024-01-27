@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="uk">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/form-styles.css">
+<script src="/scripts/form-scripts.js" defer></script>
+<div class="my-form">
+<!--===============================-->
+   Дата мого народження <br><br>
+   1.2010.10.02  <br>
+   2.2011.09.03  <br>
+   3.2010.09.02  <br>
+   4.2010.03.16  <br>
+   
+             <input id="input1">     <br>
+              <span id="span1"></span>     <br>
+
+<button onclick="f1()">   Обчислити   </button>
+<!--===============================--><script>
+function f1() {
+let number = Number(input1.value);
+let victory = 'Виберіть номер відповіді';
+
+if (number === 3)
+
+  victory = 'Молодець ви вгадали';
+
+if (number === 4)
+
+  victory = 'Воно в Вересні';
+
+if (number === 2)
+
+victory = 'Воно в 2010 році';
+
+if (number === 1) 
+
+victory = 'День і рік вгадали';
+
+
+span1.innerText = victory;
+
+
+
+
+
+
+}
+<!--===============================--></script></div>

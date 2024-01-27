@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/form-styles.css">
+<script src="/scripts/form-scripts.js" defer></script>
+<div class="my-form">
+<!--===============================-->
+
+місто Червоноград яка область?
+1. Київська область <br>
+2. Херсоньська область  <br>
+
+3. Львівська область  <br>
+
+4. Волинська область  <br>
+
+     <input id="input1">     <br>
+
+
+      <span id="span1"></span>     <br>
+
+<button onclick="f1()">   ??????   </button>
+<!--===============================--><script>
+function f1() {
+ let speed = Number (input1.value);
+   let res = '';
+
+   if ( speed ===3)
+res = "молодець";
+ else 
+res = "відьповідь не правельна " ;
+
+span1.innerText = res ;
+
+
+
+}
+<!--===============================--></script></div>

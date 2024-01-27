@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/form-styles.css">
+<script src="/scripts/form-scripts.js" defer></script>
+<div class="my-form">
+<!--===============================-->
+
+яка в мене домашня тварина? <br><br>
+
+1. Собака   <br>
+2. Кіт  <br>
+3. Папугай  <br>
+4. хом'як <br><br>
+
+відповідь     <input id="input1">     <br>
+
+а?   <span id="span1"></span>     <br>
+
+<button onclick="f1()">  ? </button>
+<!--===============================--><script>
+function f1() {
+let speed= Number(input1.value);
+let rules = "";
+
+if (speed===1)
+   rules='відповідь правильна'
+if (speed===2)
+   rules='відповідь неправильна'
+
+if (speed===3)
+   rules='відповідь неправильна'
+  if (speed===4)
+   rules='відповідь неправильна'
+
+ span1.innerText = rules;
+
+
+
+
+
+
+
+
+
+
+
+}
+<!--===============================--></script></div>
