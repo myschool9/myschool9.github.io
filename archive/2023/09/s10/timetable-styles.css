@@ -1,0 +1,43 @@
+body{
+	margin: 10px;
+	font-size: 18px;
+	line-height: 1.4;
+}
+/*---------------------------------------------*/
+
+.header {
+	margin: 5px;
+	padding: 5px;
+	text-align: center;
+	background-color: LightCyan;
+	font-size: 25px;
+}
+
+.footer {
+	margin: 5px;
+	padding: 5px;
+	text-align: right;
+	background-color: Cornsilk;
+}
+
+.flexbox {
+	margin: 5px;
+	padding: 5px;
+
+	display: flex;
+	flex-wrap: wrap;				/* nowrap */
+	justify-content: space-around;	/* flex-end  center  flex-start  space-beetween */
+	align-items: flex-start;		/* flex-end  center  stretch */
+	border: 2px solid #5F9EA0;
+	border-radius: 20px;
+}
+.day {
+	background-color: #48D1CC;
+	border-radius: 10px;
+	padding: 5px;
+	text-align: center;
+	margin: 10px;
+}
+.vr {
+	font-size: 25px;
+}

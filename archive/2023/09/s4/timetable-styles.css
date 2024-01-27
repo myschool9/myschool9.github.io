@@ -1,0 +1,45 @@
+body{
+	margin: 10px;
+	font-size: 18px;
+	line-height: 1.4;
+}
+/*---------------------------------------------*/
+
+.header {
+	margin: 5px;
+	padding: 5px;
+	text-align: center;
+	background-color: LightCyan;
+}
+
+.footer {
+	margin: 5px;
+	padding: 5px;
+	text-align: right;
+	background-color: Cornsilk;
+}
+
+.flexbox {
+	margin: 5px;
+	padding: 5px;
+
+	display: flex;
+	flex-wrap: wrap;				/* nowrap */
+	justify-content: space-around;	/* flex-end  center  flex-start  space-beetween */
+	align-items: flex-start;		/* flex-end  center  stretch */
+
+	border: 1px solid blue;
+}
+.item {
+      background-color: PaleTurquoise;
+	  font-size: 20px;
+	  margin: 2px;
+	  padding: 5px;
+	  text-align: center; 
+	  border-top: 3px dotted Black;
+}
+.day {
+    margin: 5px;
+
+	background-color: SkyBlue;
+}
