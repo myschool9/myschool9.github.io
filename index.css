@@ -1,3 +1,9 @@
+.project {
+	background-color: #f8f8ff;
+	border-radius: 5px;
+	padding: 5px 10px;
+}
+
 .index {				/* ---------- TD --------- */
 	padding: 10px;
 	text-align: center;
