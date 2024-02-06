@@ -1,0 +1,51 @@
+body{
+	margin: 10px;
+	font-size: 18px;
+	line-height: 1.4;
+}
+/*---------------------------------------------*/
+
+.header {
+	margin: 0px;
+	padding: 5px;
+	text-align: center;
+	background-color: LightGreen;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.footer {
+	margin: 0px;
+	padding: 5px;
+	text-align: right;
+	background-color: Orchid;
+	text-align: center;
+	font-style: italic;
+	text-decoration: underline;
+}
+
+.flexbox {
+	margin: 0px;
+	padding: 5px;
+
+	display: flex;
+	flex-wrap: wrap;				/* nowrap */
+	justify-content: space-around;	/* flex-end  center  flex-start  space-beetween */
+	align-items: flex-start;		/* flex-end  center  stretch */
+
+	border: 2px solid black;
+	background-color: Sienna;
+}
+
+.day {
+	border: 3px dotted purple;
+	margin: 5px;
+	padding: 5px;
+	background-color: NavajoWhite; 
+}
+.day-title {
+	font-weight: bold;
+	font-size: 25px;
+}
+
+
