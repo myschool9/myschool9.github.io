@@ -1,0 +1,59 @@
+body{
+	margin: 10px;
+	font-size: 18px;
+	line-height: 1.4;
+}
+/*---------------------------------------------*/
+
+.header {
+	margin: 5px;
+	padding: 5px;
+	text-align: center;
+	background-color: LightCyan;
+}
+
+.footer {
+	margin: 5px;
+	padding: 5px;
+	text-align: right;
+	background-color: Cornsilk;
+}
+
+.flexbox {
+	margin: 5px;
+	padding: 5px;
+	border: 1px solid blue;
+	
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+    background-color: snow ;
+	/* center   space-beetween */
+									/*align-items: flex-start;   (flex-end) */
+}
+.day1 {
+	border: 1px solid black ;
+	background-color: LavenderBlush ;
+}
+.day2{
+	border: 1px solid black ;
+	background-color: MistyRose ;
+}
+.day3 {
+	border: 1px solid black ;
+	background-color:AntiqueWhite ;
+}
+.day4 {
+	border: 1px solid black ;
+	background-color:SeaShell ;
+}
+.day5 {
+	border: 1px solid black ;
+	background-color:HoneyDew ;
+}
+.tytil {
+	font-size: 130%;
+	color: DarkSlateGray ;
+	text-decoration: underline ;
+	font-family: Arial ;
+}
