@@ -1,15 +1,14 @@
 body {
 	max-width: 35em;
-	margin: 20px 10%;
 	padding: 5px;
 	font-family: Arial, sans-serif;
+	margin: 10px 10%;
 	font-size: 18px;
 	line-height: 1.4;
 }
 
 @media screen and (max-width:450px) {
 	body{
-		max-width: 40em;
 		margin: 15px 10px;
 		font-size: 16px;
 		line-height: 1.2;
@@ -105,7 +104,7 @@ button:disabled {
 
 input {
 	margin: 7px;
-	padding: 2px 2px 2px 5px;
+	padding: 2px 5px 2px 5px;
 	width: 75px;
 	font-size: 90%;
 	border: 2px inset ThreeDFace;
@@ -121,14 +120,18 @@ input:disabled {
 	cursor: inherit;
 }
 
-input[type="radio"] {
-	margin: 2px;
-	width: 30px;
+input[type="checkbox"] {
+	width: 20px;
+	height: 20px;
+    vertical-align: middle;
+	cursor: pointer;
 }
 
-input[type="checkbox"] {
-	margin: 2px;
-	width: 30px;
+input[type="radio"] {
+	width: 20px;
+	height: 20px;
+    vertical-align: middle;
+	cursor: pointer;
 }
 
 /*---------------------------------------------*/
