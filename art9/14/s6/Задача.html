@@ -5,31 +5,29 @@
 <link rel="stylesheet" href="/css/form-styles.css">
 <script src="/scripts/form-scripts.js" defer></script>
 <!--============= HTML =================================-->
-<div style="border:1px dotted black; border-radius:10px; font-size:16px; background-color:;">
+<div style="border:1px dotted black; border-radius:10px; font-size:16px; background-color:#f0f0f0;">
+
+<div><img style = "border-radius: 15px;" src="fruits.jpg" width="150"><h2> "Exotic fruits" </h2></div>
+
+<div> Вага <input style = "background-color:#D8BFD8;" id="input1">  кг </div>
+
+<div style = "border: 1px solid black;background-color:#FAEBD7;"> 
+<div> <img style = "border-radius: 15px;" src="Laim.jpg" width="75"> <input type="radio" id="radio1" name="group1"> лайм з америки (300 грн/кг) </div>
 
 
+<div> <img style = "border-radius: 15px;" src="Dragon.jpg" width="75"> <input type="radio" id="radio2" name="group1"> драконячий фрукт (15000 грн/кг) </div>
 
-<b> "Інтернет магазин АТБ" </b>
-
-<div>  Кількість  <input id="input1"> шт.  </div>
-
-<div style="border:1px dotted black;border-radius:10px;">
-
-
-<div>  <img src="1.jpg" height="100"> 
- <input type="radio" id="radio1" name="group1"> Ковбаса салямі (918 грн)  </div>
- 
-<div> <img src="2.jpg" height="100"> 
-  <input type="radio" id="radio2" name="group1"> Сир моцарела (75 грн)</div>
-
-<div> <img src="3.jpg" height="100"> 
-  <input type="radio" id="radio3" name="group1">  Ікра чорна осетра (7 000 грн) </div>
+<div> <img style = "border-radius: 15px;" src="snake.jpg" width="75"><input type="radio" id="radio3" name="group1"> зміїний фрукт(3000 грн/кг)
 </div>
-<div> <input type="checkbox" id="checkbox1"> доставка +20 грн </div>
-<div> До оплати   <span id="span1"></span>  грн </div>
+
+</div>
+
+<div> <input type="checkbox" id="checkbox1"> Чи є картка знижки -50%? </div>
+
+<div> До оплати <span id="span1"></span> грн  </div>
 
 
-<div><button onclick="f1()">Обчислити</button></div>
+<div><button style = "background-color: #98FB98;"onclick="f1()">Обчислити</button></div>
 
 
 
@@ -39,22 +37,17 @@
 <script>
 
 function f1() {
+let Masa = Number(input1.value);
 
- let kil = Number(input1.value);
- let point ;
- 
- if (radio1.checked) point = 918;
- if (radio2.checked) point = 75;
- if (radio3.checked) point = 7000;
+if(radio1.checked) Op =  Masa * 300;
 
- let money = kil * point;
+if(radio2.checked) Op =  Masa * 15000;
 
+if(radio3.checked) Op = Masa * 3000;
 
+if(checkbox1.checked) Op = Op * 0.5;
 
-
-
-
- span1.innerText = money;
+span1.innerText = Op.toFixed(1);
 
 
 }

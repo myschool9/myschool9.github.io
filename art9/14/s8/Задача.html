@@ -5,28 +5,17 @@
 <link rel="stylesheet" href="/css/form-styles.css">
 <script src="/scripts/form-scripts.js" defer></script>
 <!--============= HTML =================================-->
-<div style="border:1px dotted black; border-radius:10px; font-size:16px; background-color:;">
+<div style="border:1px dotted black; border-radius:10px; font-size:16px; background-color:#f0f0f0;">
 
+<h1>FEY</h1>	
 
+<div> Кількість  <input id="input1">   </div>
 
-<b> "Інтернет магазин АТБ" </b>
+<div> <img src="images.jpg" width="70">  <input  <input type="radio" id="radio1" name="group1"> Йогурт "Агуня" (17,49)  </div>
+<div> <img src="images (1).jpg" width="70">  <input  <input type="radio" id="radio2" name="group2"> Сік "Агуня" (16,00)  </div>
+<div> <img src="h.jpg" width="70">  <input  <input type="radio" id="radio3" name="group3">  Сирок "Агуня" (14,90)  </div>
 
-<div>  Кількість  <input id="input1"> шт.  </div>
-
-<div style="border:1px dotted black;border-radius:10px;">
-
-
-<div>  <img src="1.jpg" height="100"> 
- <input type="radio" id="radio1" name="group1"> Ковбаса салямі (918 грн)  </div>
- 
-<div> <img src="2.jpg" height="100"> 
-  <input type="radio" id="radio2" name="group1"> Сир моцарела (75 грн)</div>
-
-<div> <img src="3.jpg" height="100"> 
-  <input type="radio" id="radio3" name="group1">  Ікра чорна осетра (7 000 грн) </div>
-</div>
-<div> <input type="checkbox" id="checkbox1"> доставка +20 грн </div>
-<div> До оплати   <span id="span1"></span>  грн </div>
+<div> До оплати:   <span id="span1"></span> грн   </div>
 
 
 <div><button onclick="f1()">Обчислити</button></div>
@@ -39,22 +28,17 @@
 <script>
 
 function f1() {
-
- let kil = Number(input1.value);
- let point ;
+ let kilkist = Number(input1.value);
  
- if (radio1.checked) point = 918;
- if (radio2.checked) point = 75;
- if (radio3.checked) point = 7000;
-
- let money = kil * point;
-
-
-
-
-
-
- span1.innerText = money;
+ let zina;
+ if (radio1.checked) zina = 17.49;
+ if (radio2.checked) zina = 16.00; 
+ if (radio3.checked) zina = 14.90;
+ 
+ let suma= zina * kilkist;
+ 
+ 
+ span1.innerText = suma.toFixed(2) ;
 
 
 }

@@ -5,28 +5,22 @@
 <link rel="stylesheet" href="/css/form-styles.css">
 <script src="/scripts/form-scripts.js" defer></script>
 <!--============= HTML =================================-->
-<div style="border:1px dotted black; border-radius:10px; font-size:16px; background-color:;">
+<div style="border:1px dotted black; border-radius:10px; font-size:16px; background-color:#f0f0f0;">
+
+<div style = "background-color: RoyalBlue; " > <h1> Автосалон "Елітний" </h1> </div>
 
 
+<div>  Кількість  <input id="input1">   </div>
 
-<b> "Інтернет магазин АТБ" </b>
+<div> <img src="buggati.jpg" width="100">  <input type="radio" id="radio1" name="group1"> Buggati sheyron (2 000 000 $)
 
-<div>  Кількість  <input id="input1"> шт.  </div>
+<div > <img src="BMW M8.jpg" width="100">   <input type="radio" id="radio2" name="group1"> BMW M8 (1 000 000 $)
 
-<div style="border:1px dotted black;border-radius:10px;">
+<div > <img src="Mersedes amg.jpg" width="100">   <input type="radio" id="radio3" name="group1"> Mersedes amg (500 000 $)
 
+<div> <input type="checkbox" id="checkbox1"> з податками (+50%) </div>
 
-<div>  <img src="1.jpg" height="100"> 
- <input type="radio" id="radio1" name="group1"> Ковбаса салямі (918 грн)  </div>
- 
-<div> <img src="2.jpg" height="100"> 
-  <input type="radio" id="radio2" name="group1"> Сир моцарела (75 грн)</div>
-
-<div> <img src="3.jpg" height="100"> 
-  <input type="radio" id="radio3" name="group1">  Ікра чорна осетра (7 000 грн) </div>
-</div>
-<div> <input type="checkbox" id="checkbox1"> доставка +20 грн </div>
-<div> До оплати   <span id="span1"></span>  грн </div>
+<div style = "background-color: green ; ">  До оплати  <span id="span1"></span> $  </div>
 
 
 <div><button onclick="f1()">Обчислити</button></div>
@@ -40,23 +34,15 @@
 
 function f1() {
 
- let kil = Number(input1.value);
- let point ;
- 
- if (radio1.checked) point = 918;
- if (radio2.checked) point = 75;
- if (radio3.checked) point = 7000;
+let kilkisty =  Number(input1.value);
 
- let money = kil * point;
+if (radio1.checked) kilkisty = kilkisty * 2000000 ; 
+if (radio2.checked) kilkisty = kilkisty * 1000000 ; 
+if (radio3.checked) kilkisty = kilkisty * 500000 ; 
 
-
-
-
-
-
- span1.innerText = money;
-
-
+if (checkbox1.checked) kilkisty = kilkisty * 0.5 ;
+  
+ span1.innerText = kilkisty.toFixed(1) ;
 }
 
 </script>

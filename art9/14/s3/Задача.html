@@ -5,28 +5,33 @@
 <link rel="stylesheet" href="/css/form-styles.css">
 <script src="/scripts/form-scripts.js" defer></script>
 <!--============= HTML =================================-->
-<div style="border:1px dotted black; border-radius:10px; font-size:16px; background-color:;">
+<div style="border:1px dotted black; border-radius:10px; font-size:16px; background-color:#f0f0f0;">
+
+<h2> шукачі істини </h2>
 
 
 
-<b> "Інтернет магазин АТБ" </b>
 
-<div>  Кількість  <input id="input1"> шт.  </div>
+<div>  вага  <input id="input1"> кг  </div>
 
-<div style="border:1px dotted black;border-radius:10px;">
+<div>
+<img src="images.jpg" width="110">
+<input type="radio" id="radio1" name="group1"> ОНІГІРІ (350 ГРН)
+ </div>
 
+<div>
+<img src="images (1).jpg" width="110">
+<input type="radio" id="radio2" name="group1"> СУШІ (560 ГРН)
+ </div>
 
-<div>  <img src="1.jpg" height="100"> 
- <input type="radio" id="radio1" name="group1"> Ковбаса салямі (918 грн)  </div>
- 
-<div> <img src="2.jpg" height="100"> 
-  <input type="radio" id="radio2" name="group1"> Сир моцарела (75 грн)</div>
+<div>
+<img src="images (2).jpg" width="120">
+<input type="radio" id="radio3" name="group1"> ГОЛУБЦІ (125 ГРН)
+ </div>
 
-<div> <img src="3.jpg" height="100"> 
-  <input type="radio" id="radio3" name="group1">  Ікра чорна осетра (7 000 грн) </div>
-</div>
-<div> <input type="checkbox" id="checkbox1"> доставка +20 грн </div>
-<div> До оплати   <span id="span1"></span>  грн </div>
+<input type="checkbox" id="checkbox1"> знижка -9%
+
+<div> До сплати  <span id="span1"></span> грн  </div>
 
 
 <div><button onclick="f1()">Обчислити</button></div>
@@ -40,22 +45,19 @@
 
 function f1() {
 
- let kil = Number(input1.value);
- let point ;
- 
- if (radio1.checked) point = 918;
- if (radio2.checked) point = 75;
- if (radio3.checked) point = 7000;
+let weight = Number(input1.value);
 
- let money = kil * point;
+let price;
 
+if (radio1.checked) price = 350;
+if (radio2.checked) price = 560;
+if (radio3.checked) price = 125;
 
+let s = weight*price
 
+if (checkbox1.checked) s = s * 1.09;
 
-
-
- span1.innerText = money;
-
+span1.innerText = s.toFixed(1);
 
 }
 

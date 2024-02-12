@@ -5,31 +5,19 @@
 <link rel="stylesheet" href="/css/form-styles.css">
 <script src="/scripts/form-scripts.js" defer></script>
 <!--============= HTML =================================-->
-<div style="border:1px dotted black; border-radius:10px; font-size:16px; background-color:;">
+<div style="border:1px dotted black; border-radius:10px; font-size:16px; background-color:pink;">
+
+<h1>Магазин "Веселка"</h1> <img src="веселка.jpg" width="100"> 
+<div><b>Кількість</b>    <input id="input1">одиниці    </div>
+<div><img src="мармелад.jpg" width="80"><input type="radio" id="radio1" name="group1">Мармелад (32 грн)</div>
+<div><img src="шоколад.jpg" width="80"><input type="radio" id="radio2" name="group2">Шоколад (56 грн)</div>
+<div><img src="торт.jpg" width="100"><input type="radio" id="radio3" name="group3">Торт (156 грн)</div>
+
+<div><input type="checkbox" id="checkbox1">Доставка (+10%)</div>
+<div><b> До оплати:</b>  <span id="span1"></span> грн  </div>
 
 
-
-<b> "Інтернет магазин АТБ" </b>
-
-<div>  Кількість  <input id="input1"> шт.  </div>
-
-<div style="border:1px dotted black;border-radius:10px;">
-
-
-<div>  <img src="1.jpg" height="100"> 
- <input type="radio" id="radio1" name="group1"> Ковбаса салямі (918 грн)  </div>
- 
-<div> <img src="2.jpg" height="100"> 
-  <input type="radio" id="radio2" name="group1"> Сир моцарела (75 грн)</div>
-
-<div> <img src="3.jpg" height="100"> 
-  <input type="radio" id="radio3" name="group1">  Ікра чорна осетра (7 000 грн) </div>
-</div>
-<div> <input type="checkbox" id="checkbox1"> доставка +20 грн </div>
-<div> До оплати   <span id="span1"></span>  грн </div>
-
-
-<div><button onclick="f1()">Обчислити</button></div>
+<div><button onclick="f1()">Обчислити</button> </div>
 
 
 
@@ -39,22 +27,17 @@
 <script>
 
 function f1() {
+let nambe= Number(input1.value);
+let price;
+if(radio1.checked) price = 32;
+if(radio2.checked) price = 56;
+if(radio3.checked) price = 156;
 
- let kil = Number(input1.value);
- let point ;
- 
- if (radio1.checked) point = 918;
- if (radio2.checked) point = 75;
- if (radio3.checked) point = 7000;
+let sum = nambe*price;
+if(checkbox1.checked) sum= sum*1.10;
 
- let money = kil * point;
+span1.innerText =sum.toFixed(2);
 
-
-
-
-
-
- span1.innerText = money;
 
 
 }
