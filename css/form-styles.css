@@ -8,7 +8,7 @@ body {
 }
 
 @media screen and (max-width:450px) {
-	body{
+	body {
 		margin: 15px 10px;
 		font-size: 16px;
 		line-height: 1.2;
@@ -40,6 +40,8 @@ p {
 
 img {
 	margin: 5px;
+	border-radius: 5px;
+	vertical-align: middle;
 }
 
 span {
