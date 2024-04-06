@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/scripts/tests.css">
+<script src="/scripts/tests.js"></script>
+<title>2</title>
+<script>
+	var test={MinMark:2,MaxMark:12,IsPenalty:true,Questions:[{Text:"Іван франко був...",RndAnswers:true,Obj:"",Answers:[{Text:"письменником",cr:true,Select:false},{Text:"президентом",cr:false,Select:false},{Text:"актором",cr:false,Select:false},]},{Text:"Місто на фото.",RndAnswers:true,Obj:"2-1.jpg",Answers:[{Text:"Червоногад",cr:false,Select:false},{Text:"Львів ",cr:true,Select:false},{Text:"Тернопіль",cr:false,Select:false},]},{Text:"На фото.",RndAnswers:true,Obj:"2-2.jpg",Answers:[{Text:"Німеччина",cr:false,Select:false},{Text:"Афганістан",cr:false,Select:false},{Text:"Великобрітанія",cr:true,Select:false},{Text:"Франція",cr:false,Select:false},]},{Text:"В Червонограді більше населення чим в м.Львів?",RndAnswers:false,Obj:"",Answers:[{Text:"так",cr:false,Select:false},{Text:"ні",cr:true,Select:false},]},{Text:"Саме населене місто в світі Токіо?",RndAnswers:false,Obj:"",Answers:[{Text:"так",cr:true,Select:false},{Text:"ні",cr:false,Select:false},]},{Text:"Як називають кота, який може літати?",RndAnswers:true,Obj:"",Answers:[{Text:"кіт-супермен",cr:false,Select:false},{Text:"адольфік",cr:false,Select:false},{Text:"кітхавен",cr:true,Select:false},]},{Text:"Як називають птахів, які вміють програмувати?",RndAnswers:true,Obj:"",Answers:[{Text:"ІТ-півень",cr:false,Select:false},{Text:"Джава-Джайло",cr:true,Select:false},{Text:"ІТ-Сова",cr:false,Select:false},]},{Text:"Як називають винахідливий спосіб дотримання дієти?",RndAnswers:true,Obj:"",Answers:[{Text:"олодні солодощі",cr:true,Select:false},{Text:"морозивна дієта",cr:false,Select:false},{Text:"ігри по шоколадному",cr:false,Select:false},]},{Text:"Що означає бонжур по французьки?",RndAnswers:true,Obj:"",Answers:[{Text:"Добрий день",cr:true,Select:false},{Text:"Яка сьогодні погода?",cr:false,Select:false},{Text:"Як справи?",cr:false,Select:false},{Text:"Привіт",cr:true,Select:false},{Text:"Дай покурити",cr:false,Select:false},]},{Text:"Які є кольори в прапорі Італії?",RndAnswers:true,Obj:"",Answers:[{Text:"Синій",cr:false,Select:false},{Text:"Чорний",cr:false,Select:false},{Text:"Білий",cr:true,Select:false},{Text:"Червоний",cr:true,Select:false},{Text:"Зелений",cr:true,Select:false},]},{Text:"Які країни є засновники ЄС?",RndAnswers:true,Obj:"",Answers:[{Text:"Італія",cr:true,Select:false},{Text:"Корея",cr:false,Select:false},{Text:"Нігерія",cr:false,Select:false},{Text:"Франція",cr:true,Select:false},{Text:"Німеччина",cr:true,Select:false},]},]}
+</script>
+
+<body onload="StartTest()">
+
+<table class="page-header" id="tests_header">
+	<tr>
+		<td class="btn btn__exit-test" onclick="ExitTest()">x</td>
+		<td class="page-title">
+			<span class="sign-quest-num">№</span>
+			<span class="quest-num" id="questNum"></span>
+			<span class="quest-count" id="questCount"></span>
+		</td>
+		<td class="btn btn__next-quest" onclick="NextQuestion()">&#9658;&#9658;</td>
+	</tr>
+</table>
+
+<table class="content content--border-around" id="testForm">
+	<tr><td class="test-quest" id="quest"></td></tr>
+	<tr><td class="test-correct-count" id="correctCount"></td></tr>
+
+	<tr><td class="test-answer" id="answer0" onclick="CheckAnswer(0)">
+		<span class="test-answer-num">1.</span>
+		<input id="radio0" type="radio" name="answers">
+		<label id="label0" for="radio0"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer1" onclick="CheckAnswer(1)">
+		<span class="test-answer-num">2.</span>
+		<input id="radio1" type="radio" name="answers">
+		<label id="label1" for="radio1"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer2" onclick="CheckAnswer(2)">
+		<span class="test-answer-num">3.</span>
+		<input id="radio2" type="radio" name="answers">
+		<label id="label2" for="radio2"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer3" onclick="CheckAnswer(3)">
+		<span class="test-answer-num">4.</span>
+		<input id="radio3" type="radio" name="answers">
+		<label id="label3" for="radio3"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer4" onclick="CheckAnswer(4)">
+		<span class="test-answer-num">5.</span>
+		<input id="radio4" type="radio" name="answers">
+		<label id="label4" for="radio4"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer5" onclick="CheckAnswer(5)">
+		<span class="test-answer-num">6.</span>
+		<input id="radio5" type="radio" name="answers">
+		<label id="label5" for="radio5"></label>
+	</td></tr>
+</table>
+
+<div class="test-obj"><img id="questImg" src="" alt=""></div>
+
+<div class="test-result" id="resForm" hidden>
+	<div>
+		<span class="test-result-title">Результат:</span>
+		<span class="test-result-percent" id="resPercent"></span>
+	</div>
+	<div class="test-result-mark" id="testMark"></div>
+</div>
+
+</body>
