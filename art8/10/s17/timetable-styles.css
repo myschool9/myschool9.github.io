@@ -1,0 +1,47 @@
+body{
+	margin: 10px;
+	font-size: 18px;
+	line-height: 1.4;
+}
+/*---------------------------------------------*/
+
+.header {
+	margin: 5px;
+	padding: 5px;
+	text-align: center;
+	background-color: LightCyan;
+}
+
+.footer {
+	margin: 5px;
+	padding: 5px;
+	text-align: right;
+	background-color: #006400;
+}
+
+.flexbox {
+	margin: 5px;
+	padding: 5px;
+	border: 1px solid blue;
+	background-color: #B8860B;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;	/* center   space-beetween */
+									/*align-items: flex-start;   (flex-end) */
+}
+
+.day {
+	background-color: #DAA520; 
+	text-decoration: underline;
+	border: 3px solid black;
+	
+	
+	
+	
+}
+.day-title {
+	background-color:#D2691E;
+	border: 3xp solid black;
+	
+	
+}
