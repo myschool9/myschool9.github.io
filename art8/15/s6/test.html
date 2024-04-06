@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/scripts/tests.css">
+<script src="/scripts/tests.js"></script>
+<title>1</title>
+<script>
+	var test={MinMark:2,MaxMark:12,IsPenalty:true,Questions:[{Text:"Де збирають кристали?",RndAnswers:true,Obj:"",Answers:[{Text:"Пабг",cr:false,Select:false},{Text:"Фрі Фаєр",cr:false,Select:false},{Text:"Фіфа",cr:false,Select:false},{Text:"Бравл Старс ",cr:true,Select:false},]},{Text:"20 х 20?",RndAnswers:true,Obj:"",Answers:[{Text:"300",cr:false,Select:false},{Text:"4000",cr:false,Select:false},{Text:"400 ",cr:true,Select:false},{Text:"2000",cr:false,Select:false},]},{Text:"Україна получила Незалежність в 1990 році?",RndAnswers:false,Obj:"",Answers:[{Text:"Так",cr:false,Select:false},{Text:"Ні ",cr:true,Select:false},]},{Text:"Огірок має зелений колір?",RndAnswers:false,Obj:"",Answers:[{Text:"Так ",cr:true,Select:false},{Text:"Ні",cr:false,Select:false},]},{Text:"Суші це національна страва Китаю?",RndAnswers:false,Obj:"",Answers:[{Text:"Так",cr:false,Select:false},{Text:"Ні ",cr:true,Select:false},]},{Text:"Коли почалась 2 Світова Війна?",RndAnswers:false,Obj:"",Answers:[{Text:"1919",cr:false,Select:false},{Text:"1925",cr:false,Select:false},{Text:"1939 ",cr:true,Select:false},{Text:"1943",cr:false,Select:false},]},{Text:"Коли почалась 1 Світова Війна?",RndAnswers:false,Obj:"",Answers:[{Text:"1895",cr:false,Select:false},{Text:"1901",cr:false,Select:false},{Text:"1910",cr:false,Select:false},{Text:"1914 ",cr:true,Select:false},]},{Text:"В якому році помер Тарас Шевченко?",RndAnswers:false,Obj:"",Answers:[{Text:"1859",cr:false,Select:false},{Text:"1861 ",cr:true,Select:false},{Text:"1875",cr:false,Select:false},{Text:"1889",cr:false,Select:false},]},{Text:"Хто наслідник Римської Імперії?",RndAnswers:true,Obj:"",Answers:[{Text:"Італія ",cr:true,Select:false},{Text:"Піца",cr:false,Select:false},{Text:"Суші",cr:false,Select:false},{Text:"Гарбуз",cr:false,Select:false},]},{Text:"Яке покриття має стадіон для футболу?",RndAnswers:true,Obj:"",Answers:[{Text:"Трава ",cr:true,Select:false},{Text:"Цегла",cr:false,Select:false},{Text:"Асфальт",cr:false,Select:false},{Text:"Плитка",cr:false,Select:false},]},{Text:"Як перекладається слово “home”?",RndAnswers:true,Obj:"",Answers:[{Text:"Комп’ютер",cr:false,Select:false},{Text:"Вчитель",cr:false,Select:false},{Text:"Шерсть",cr:false,Select:false},{Text:"Дім ",cr:true,Select:false},]},{Text:"Які команди з українського чемпіонату?",RndAnswers:true,Obj:"",Answers:[{Text:"Зоря ",cr:true,Select:false},{Text:"Брентфорд",cr:false,Select:false},{Text:"Ворскла ",cr:true,Select:false},{Text:"Барселона",cr:false,Select:false},{Text:"Манчестер Юнайтед",cr:false,Select:false},]},{Text:"Які міста з України?",RndAnswers:true,Obj:"",Answers:[{Text:"Жирона",cr:false,Select:false},{Text:"Мілан",cr:false,Select:false},{Text:"Лондон",cr:false,Select:false},{Text:"Житомир ",cr:true,Select:false},{Text:"Суми ",cr:true,Select:false},]},{Text:"Що з цього є фрукти?",RndAnswers:true,Obj:"",Answers:[{Text:"Кавун",cr:false,Select:false},{Text:"Огірок",cr:false,Select:false},{Text:"Банан ",cr:true,Select:false},{Text:"Полуниця",cr:false,Select:false},{Text:"Мандарин ",cr:true,Select:false},]},{Text:"Яке речення є довше?",RndAnswers:true,Obj:"",Answers:[{Text:"Раз в тиждень як мінімум треба мити повністю тіло.",cr:true,Select:false},{Text:"Футбол – є найпопулярнішим видом спорту.",cr:false,Select:false},{Text:"Демос – з латинської означає народ.",cr:false,Select:false},{Text:"Вчитель вчить дітей у школі.",cr:false,Select:false},]},{Text:"В якому списку перелічуються продукти?",RndAnswers:true,Obj:"",Answers:[{Text:"Київ, Львів, Донецьк, Херсон.",cr:false,Select:false},{Text:"Помідор, Молоко, Ковбаса, Яблуко. ",cr:true,Select:false},{Text:"Заєць, Змія, Корова, Вовк.",cr:false,Select:false},{Text:"Телефон, Комп’ютер, Планшет, Телевізор.",cr:false,Select:false},]},{Text:"В якому списку перелічуються різні види спорту?",RndAnswers:true,Obj:"",Answers:[{Text:"Машина, Квадро цикл, Міні купер, Джип.",cr:false,Select:false},{Text:"Лінійка, Пенал, Олівець, Ручка.",cr:false,Select:false},{Text:"Маша, Остап, Назар, Настя.",cr:false,Select:false},{Text:"Гандбол, вишибали, баскетбол, футбол. ",cr:true,Select:false},]},]}
+</script>
+
+<body onload="StartTest()">
+
+<table class="page-header" id="tests_header">
+	<tr>
+		<td class="btn btn__exit-test" onclick="ExitTest()">x</td>
+		<td class="page-title">
+			<span class="sign-quest-num">№</span>
+			<span class="quest-num" id="questNum"></span>
+			<span class="quest-count" id="questCount"></span>
+		</td>
+		<td class="btn btn__next-quest" onclick="NextQuestion()">&#9658;&#9658;</td>
+	</tr>
+</table>
+
+<table class="content content--border-around" id="testForm">
+	<tr><td class="test-quest" id="quest"></td></tr>
+	<tr><td class="test-correct-count" id="correctCount"></td></tr>
+
+	<tr><td class="test-answer" id="answer0" onclick="CheckAnswer(0)">
+		<span class="test-answer-num">1.</span>
+		<input id="radio0" type="radio" name="answers">
+		<label id="label0" for="radio0"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer1" onclick="CheckAnswer(1)">
+		<span class="test-answer-num">2.</span>
+		<input id="radio1" type="radio" name="answers">
+		<label id="label1" for="radio1"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer2" onclick="CheckAnswer(2)">
+		<span class="test-answer-num">3.</span>
+		<input id="radio2" type="radio" name="answers">
+		<label id="label2" for="radio2"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer3" onclick="CheckAnswer(3)">
+		<span class="test-answer-num">4.</span>
+		<input id="radio3" type="radio" name="answers">
+		<label id="label3" for="radio3"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer4" onclick="CheckAnswer(4)">
+		<span class="test-answer-num">5.</span>
+		<input id="radio4" type="radio" name="answers">
+		<label id="label4" for="radio4"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer5" onclick="CheckAnswer(5)">
+		<span class="test-answer-num">6.</span>
+		<input id="radio5" type="radio" name="answers">
+		<label id="label5" for="radio5"></label>
+	</td></tr>
+</table>
+
+<div class="test-obj"><img id="questImg" src="" alt=""></div>
+
+<div class="test-result" id="resForm" hidden>
+	<div>
+		<span class="test-result-title">Результат:</span>
+		<span class="test-result-percent" id="resPercent"></span>
+	</div>
+	<div class="test-result-mark" id="testMark"></div>
+</div>
+
+</body>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/scripts/tests.css">
+<script src="/scripts/tests.js"></script>
+<title>3</title>
+<script>
+	var test={MinMark:2,MaxMark:12,IsPenalty:true,Questions:[{Text:"Чим зазвичай заправляють салат?",RndAnswers:true,Obj:"3-1.jpg",Answers:[{Text:"бензином                                          ",cr:false,Select:false},{Text:"майонезом",cr:true,Select:false},{Text:"мінералкою",cr:false,Select:false},{Text:"метанолом",cr:false,Select:false},]},{Text:"Коли настає ніч?",RndAnswers:true,Obj:"3-2.jpg",Answers:[{Text:"Нічкою ",cr:true,Select:false},{Text:"Коли раки цейво",cr:false,Select:false},{Text:"Тоді",cr:false,Select:false},{Text:"Взимку",cr:false,Select:false},]},{Text:"Чи кліпає людина?",RndAnswers:false,Obj:"",Answers:[{Text:"Так",cr:true,Select:false},{Text:"Ні ",cr:false,Select:false},]},{Text:"Чи існують Метьки?",RndAnswers:false,Obj:"",Answers:[{Text:"Так ",cr:true,Select:false},{Text:"Ні",cr:false,Select:false},]},{Text:"Чи їдять риби китів?",RndAnswers:true,Obj:"",Answers:[{Text:"Так",cr:false,Select:false},{Text:"Ні ",cr:true,Select:false},]},{Text:"Скільки людей на землі?",RndAnswers:false,Obj:"",Answers:[{Text:"8",cr:false,Select:false},{Text:"13",cr:false,Select:false},{Text:"8000000000 ",cr:true,Select:false},{Text:"100000000000000000000",cr:false,Select:false},]},{Text:"Скільки см = 3 дм",RndAnswers:false,Obj:"",Answers:[{Text:"0.345245414374148936741686376736841376734317613476",cr:false,Select:false},{Text:"30",cr:true,Select:false},{Text:"67",cr:false,Select:false},{Text:"100000000",cr:false,Select:false},]},{Text:"Скільки копійок в 1-ій гривні",RndAnswers:false,Obj:"",Answers:[{Text:"1",cr:false,Select:false},{Text:"100 ",cr:true,Select:false},{Text:"110",cr:false,Select:false},{Text:"29358398585787",cr:false,Select:false},]},{Text:"Хто такий баран?",RndAnswers:true,Obj:"",Answers:[{Text:"той",cr:false,Select:false},{Text:"реждондафаждонгардик",cr:false,Select:false},{Text:"баранчик шон ",cr:true,Select:false},{Text:"бахур ",cr:false,Select:false},]},{Text:"Якого кольору білий колір",RndAnswers:true,Obj:"",Answers:[{Text:"восьмого",cr:false,Select:false},{Text:"сіро-буро",cr:false,Select:false},{Text:"молочного ",cr:true,Select:false},{Text:"б",cr:false,Select:false},]},]}
+</script>
+
+<body onload="StartTest()">
+
+<table class="page-header" id="tests_header">
+	<tr>
+		<td class="btn btn__exit-test" onclick="ExitTest()">x</td>
+		<td class="page-title">
+			<span class="sign-quest-num">№</span>
+			<span class="quest-num" id="questNum"></span>
+			<span class="quest-count" id="questCount"></span>
+		</td>
+		<td class="btn btn__next-quest" onclick="NextQuestion()">&#9658;&#9658;</td>
+	</tr>
+</table>
+
+<table class="content content--border-around" id="testForm">
+	<tr><td class="test-quest" id="quest"></td></tr>
+	<tr><td class="test-correct-count" id="correctCount"></td></tr>
+
+	<tr><td class="test-answer" id="answer0" onclick="CheckAnswer(0)">
+		<span class="test-answer-num">1.</span>
+		<input id="radio0" type="radio" name="answers">
+		<label id="label0" for="radio0"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer1" onclick="CheckAnswer(1)">
+		<span class="test-answer-num">2.</span>
+		<input id="radio1" type="radio" name="answers">
+		<label id="label1" for="radio1"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer2" onclick="CheckAnswer(2)">
+		<span class="test-answer-num">3.</span>
+		<input id="radio2" type="radio" name="answers">
+		<label id="label2" for="radio2"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer3" onclick="CheckAnswer(3)">
+		<span class="test-answer-num">4.</span>
+		<input id="radio3" type="radio" name="answers">
+		<label id="label3" for="radio3"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer4" onclick="CheckAnswer(4)">
+		<span class="test-answer-num">5.</span>
+		<input id="radio4" type="radio" name="answers">
+		<label id="label4" for="radio4"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer5" onclick="CheckAnswer(5)">
+		<span class="test-answer-num">6.</span>
+		<input id="radio5" type="radio" name="answers">
+		<label id="label5" for="radio5"></label>
+	</td></tr>
+</table>
+
+<div class="test-obj"><img id="questImg" src="" alt=""></div>
+
+<div class="test-result" id="resForm" hidden>
+	<div>
+		<span class="test-result-title">Результат:</span>
+		<span class="test-result-percent" id="resPercent"></span>
+	</div>
+	<div class="test-result-mark" id="testMark"></div>
+</div>
+
+</body>

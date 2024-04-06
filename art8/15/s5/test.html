@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/scripts/tests.css">
+<script src="/scripts/tests.js"></script>
+<title>5</title>
+<script>
+	var test={MinMark:2,MaxMark:12,IsPenalty:true,Questions:[{Text:"Найвищий гірський хребет.",RndAnswers:true,Obj:"",Answers:[{Text:"Гімалаї",cr:true,Select:false},{Text:"Альпи",cr:false,Select:false},{Text:"Карпати",cr:false,Select:false},{Text:"Анди",cr:false,Select:false},]},{Text:"Рекорд кількості людей на вершині Евересту.",RndAnswers:true,Obj:"",Answers:[{Text:"101 ",cr:false,Select:false},{Text:"200",cr:true,Select:false},{Text:"89",cr:false,Select:false},{Text:"352",cr:false,Select:false},]},{Text:"Коли вперше був підкорений Еверест?  ",RndAnswers:false,Obj:"5-1.jpg",Answers:[{Text:"1957",cr:false,Select:false},{Text:"1953",cr:true,Select:false},{Text:"1940",cr:false,Select:false},{Text:"1945",cr:false,Select:false},]},{Text:"Коли вперше була заснована альпінійська школа?  ",RndAnswers:false,Obj:"5-2.jpg",Answers:[{Text:"1820",cr:true,Select:false},{Text:"853",cr:false,Select:false},{Text:"1951",cr:false,Select:false},{Text:"2001",cr:false,Select:false},]},{Text:"Перша спроба підкорення Евереста.",RndAnswers:false,Obj:"5-3.jpg",Answers:[{Text:"1921",cr:true,Select:false},{Text:"1883",cr:false,Select:false},{Text:"1488",cr:false,Select:false},{Text:"2005",cr:false,Select:false},]},{Text:"Чи є Київ столицею України?",RndAnswers:false,Obj:"",Answers:[{Text:"так",cr:true,Select:false},{Text:"ні",cr:false,Select:false},]},{Text:"Чи є Сонце планетою? ",RndAnswers:false,Obj:"",Answers:[{Text:"так",cr:false,Select:false},{Text:"ні",cr:true,Select:false},]},{Text:"Чи є кити ссавцями?",RndAnswers:false,Obj:"",Answers:[{Text:"так",cr:true,Select:false},{Text:"ні",cr:false,Select:false},]},{Text:"Коли народився Степан Бандера?",RndAnswers:true,Obj:"",Answers:[{Text:"1909",cr:true,Select:false},{Text:"1911",cr:false,Select:false},{Text:"1903",cr:false,Select:false},{Text:"1907",cr:false,Select:false},]},{Text:"Коли розпався СРСР?",RndAnswers:true,Obj:"",Answers:[{Text:"1989",cr:false,Select:false},{Text:"1991",cr:true,Select:false},{Text:"1990",cr:false,Select:false},{Text:"1889",cr:false,Select:false},]},{Text:"Коли було засноване місто Червоноград?",RndAnswers:true,Obj:"",Answers:[{Text:"1951",cr:true,Select:false},{Text:"1851",cr:false,Select:false},{Text:"1941",cr:false,Select:false},{Text:"1900",cr:false,Select:false},]},{Text:"Коли помер сталін?",RndAnswers:true,Obj:"",Answers:[{Text:"1488",cr:false,Select:false},{Text:"1960",cr:false,Select:false},{Text:"1955",cr:false,Select:false},{Text:"1953",cr:true,Select:false},]},{Text:"Коли було засноване місто Львів?",RndAnswers:true,Obj:"",Answers:[{Text:"1256",cr:true,Select:false},{Text:"1545",cr:false,Select:false},{Text:"1000",cr:false,Select:false},{Text:"-1543",cr:false,Select:false},]},{Text:"Коли вибухнув реактор на ЧАЕС?",RndAnswers:true,Obj:"",Answers:[{Text:"1991",cr:false,Select:false},{Text:"1986",cr:true,Select:false},{Text:"1886",cr:false,Select:false},{Text:"1793",cr:false,Select:false},]},{Text:"В який проміжок часу існував СРСР (3 правильні відповіді)?",RndAnswers:true,Obj:"",Answers:[{Text:"993",cr:false,Select:false},{Text:"1923",cr:true,Select:false},{Text:"2025",cr:false,Select:false},{Text:"1921",cr:false,Select:false},{Text:"1922",cr:true,Select:false},{Text:"1955",cr:true,Select:false},]},{Text:"Які з цих тварин є ссавцями?",RndAnswers:true,Obj:"",Answers:[{Text:"Тигр",cr:true,Select:false},{Text:"Хамелеон",cr:false,Select:false},{Text:"Бегемот",cr:false,Select:false},{Text:"Ведмідь",cr:true,Select:false},{Text:"Змія",cr:false,Select:false},{Text:"Їжак",cr:true,Select:false},]},]}
+</script>
+
+<body onload="StartTest()">
+
+<table class="page-header" id="tests_header">
+	<tr>
+		<td class="btn btn__exit-test" onclick="ExitTest()">x</td>
+		<td class="page-title">
+			<span class="sign-quest-num">№</span>
+			<span class="quest-num" id="questNum"></span>
+			<span class="quest-count" id="questCount"></span>
+		</td>
+		<td class="btn btn__next-quest" onclick="NextQuestion()">&#9658;&#9658;</td>
+	</tr>
+</table>
+
+<table class="content content--border-around" id="testForm">
+	<tr><td class="test-quest" id="quest"></td></tr>
+	<tr><td class="test-correct-count" id="correctCount"></td></tr>
+
+	<tr><td class="test-answer" id="answer0" onclick="CheckAnswer(0)">
+		<span class="test-answer-num">1.</span>
+		<input id="radio0" type="radio" name="answers">
+		<label id="label0" for="radio0"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer1" onclick="CheckAnswer(1)">
+		<span class="test-answer-num">2.</span>
+		<input id="radio1" type="radio" name="answers">
+		<label id="label1" for="radio1"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer2" onclick="CheckAnswer(2)">
+		<span class="test-answer-num">3.</span>
+		<input id="radio2" type="radio" name="answers">
+		<label id="label2" for="radio2"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer3" onclick="CheckAnswer(3)">
+		<span class="test-answer-num">4.</span>
+		<input id="radio3" type="radio" name="answers">
+		<label id="label3" for="radio3"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer4" onclick="CheckAnswer(4)">
+		<span class="test-answer-num">5.</span>
+		<input id="radio4" type="radio" name="answers">
+		<label id="label4" for="radio4"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer5" onclick="CheckAnswer(5)">
+		<span class="test-answer-num">6.</span>
+		<input id="radio5" type="radio" name="answers">
+		<label id="label5" for="radio5"></label>
+	</td></tr>
+</table>
+
+<div class="test-obj"><img id="questImg" src="" alt=""></div>
+
+<div class="test-result" id="resForm" hidden>
+	<div>
+		<span class="test-result-title">Результат:</span>
+		<span class="test-result-percent" id="resPercent"></span>
+	</div>
+	<div class="test-result-mark" id="testMark"></div>
+</div>
+
+</body>
