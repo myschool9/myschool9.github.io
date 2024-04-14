@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/scripts/tests.css">
+<script src="/scripts/tests.js"></script>
+<title>6</title>
+<script>
+	var test={MinMark:2,MaxMark:12,IsPenalty:true,Questions:[{Text:"На якій купюрі зображений Тарас Шевченко?",RndAnswers:true,Obj:"",Answers:[{Text:"500грн",cr:false,Select:false},{Text:"100грн ",cr:true,Select:false},{Text:"200грн",cr:false,Select:false},]},{Text:"Де знаходиться гімназія Імені Родини Луговських?",RndAnswers:true,Obj:"6-1.jpg",Answers:[{Text:"Донецьк",cr:false,Select:false},{Text:"Київ",cr:false,Select:false},{Text:"Червоноград ",cr:true,Select:false},]},{Text:"Де знаходиться гора Парашка?",RndAnswers:true,Obj:"6-2.jpg",Answers:[{Text:"Карпати ",cr:true,Select:false},{Text:"Славське",cr:false,Select:false},{Text:"Сколе",cr:false,Select:false},]},{Text:"Як звати Вінника?",RndAnswers:true,Obj:"6-3.jpg",Answers:[{Text:"Валєра",cr:false,Select:false},{Text:"Сергій",cr:false,Select:false},{Text:"Олєг",cr:true,Select:false},]},{Text:"Чи є в комп’ютері батарейка?",RndAnswers:false,Obj:"",Answers:[{Text:"так",cr:true,Select:false},{Text:"ні",cr:false,Select:false},]},{Text:"Чи є в моніторі свічка?",RndAnswers:false,Obj:"",Answers:[{Text:"так",cr:false,Select:false},{Text:"ні",cr:true,Select:false},]},{Text:"Чи втікав Янукович з країни?",RndAnswers:false,Obj:"",Answers:[{Text:"так",cr:false,Select:false},{Text:"ні",cr:true,Select:false},]},{Text:"Кого тримав Янукович?",RndAnswers:true,Obj:"",Answers:[{Text:"Страусів",cr:true,Select:false},{Text:"Пацьєток",cr:false,Select:false},{Text:"Тигрів",cr:false,Select:false},]},{Text:"З чого роблять стіл?",RndAnswers:true,Obj:"",Answers:[{Text:"Пінопласт",cr:false,Select:false},{Text:"Глина",cr:false,Select:false},{Text:"Фанера",cr:true,Select:false},]},{Text:"Чим заправляють машину?",RndAnswers:true,Obj:"",Answers:[{Text:"Самогонка",cr:false,Select:false},{Text:"Кампот",cr:false,Select:false},{Text:"Бензин",cr:true,Select:false},]},{Text:"Де можна відправляти повідомлення?",RndAnswers:true,Obj:"",Answers:[{Text:"Ютуб",cr:false,Select:false},{Text:"Гугл Хром",cr:false,Select:false},{Text:"Вайбер",cr:true,Select:false},{Text:"Інстаграм",cr:true,Select:false},]},{Text:"В чому вимірюють вагу?",RndAnswers:true,Obj:"",Answers:[{Text:"грами",cr:true,Select:false},{Text:"ампери",cr:false,Select:false},{Text:"кілограми",cr:false,Select:false},{Text:"вольти",cr:false,Select:false},]},{Text:"Що не знаходиться в середині комп’ютера?",RndAnswers:true,Obj:"",Answers:[{Text:"відео карта",cr:false,Select:false},{Text:"оперативна пам\'ять",cr:false,Select:false},{Text:"лічильник",cr:true,Select:false},{Text:"USB",cr:false,Select:false},]},]}
+</script>
+
+<body onload="StartTest()">
+
+<table class="page-header" id="tests_header">
+	<tr>
+		<td class="btn btn__exit-test" onclick="ExitTest()">x</td>
+		<td class="page-title">
+			<span class="sign-quest-num">№</span>
+			<span class="quest-num" id="questNum"></span>
+			<span class="quest-count" id="questCount"></span>
+		</td>
+		<td class="btn btn__next-quest" onclick="NextQuestion()">&#9658;&#9658;</td>
+	</tr>
+</table>
+
+<table class="content content--border-around" id="testForm">
+	<tr><td class="test-quest" id="quest"></td></tr>
+	<tr><td class="test-correct-count" id="correctCount"></td></tr>
+
+	<tr><td class="test-answer" id="answer0" onclick="CheckAnswer(0)">
+		<span class="test-answer-num">1.</span>
+		<input id="radio0" type="radio" name="answers">
+		<label id="label0" for="radio0"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer1" onclick="CheckAnswer(1)">
+		<span class="test-answer-num">2.</span>
+		<input id="radio1" type="radio" name="answers">
+		<label id="label1" for="radio1"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer2" onclick="CheckAnswer(2)">
+		<span class="test-answer-num">3.</span>
+		<input id="radio2" type="radio" name="answers">
+		<label id="label2" for="radio2"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer3" onclick="CheckAnswer(3)">
+		<span class="test-answer-num">4.</span>
+		<input id="radio3" type="radio" name="answers">
+		<label id="label3" for="radio3"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer4" onclick="CheckAnswer(4)">
+		<span class="test-answer-num">5.</span>
+		<input id="radio4" type="radio" name="answers">
+		<label id="label4" for="radio4"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer5" onclick="CheckAnswer(5)">
+		<span class="test-answer-num">6.</span>
+		<input id="radio5" type="radio" name="answers">
+		<label id="label5" for="radio5"></label>
+	</td></tr>
+</table>
+
+<div class="test-obj"><img id="questImg" src="" alt=""></div>
+
+<div class="test-result" id="resForm" hidden>
+	<div>
+		<span class="test-result-title">Результат:</span>
+		<span class="test-result-percent" id="resPercent"></span>
+	</div>
+	<div class="test-result-mark" id="testMark"></div>
+</div>
+
+</body>
