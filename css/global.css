@@ -26,7 +26,7 @@ a {
 .page-header {		/* --- TABLE --- */
 	position: fixed;
 	top: 2px;
-	left: 8px;
+	left: 10px;
 	width: 94%;
 	max-width: var(--body-max-width);
 	padding: 2px;
