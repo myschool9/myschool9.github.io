@@ -33,3 +33,9 @@
 .theme--color-2 {		/* ---------- TD --------- */
 	background-color: #f8f8ff;
 }
+
+.small-link {
+	margin: -8px 0;
+	padding: 0 15px;
+	font-size: 50%;
+}
