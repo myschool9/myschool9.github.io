@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uk">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/form-styles.css">
+<script src="/scripts/form-scripts.js" defer></script>
+<!--============= HTML =================================-->
+<div style="border:1px dotted black; border-radius:10px; font-size:16px; background-color:#f0f0f0;">
+
+<h2> Питання №1 </h2>
+<div> Який обласний центр Кіровоградської області? </div>
+<div id="div1"><input type="radio" id="radio1"onclick="f1()" name="group1"> Кіровоград </div>
+<div id="div2" ><input type="radio" id="radio2"onclick="f1()" name="group1">Луцьк</div>
+<div id="div3"> <input type="radio" id="radio3"onclick="f1()" name="group1">Кропивницький</div>
+
+
+<div>   <input id="input1">   </div>
+
+
+<div>   <span id="span1"></span>   </div>
+
+
+<div><button onclick="f1()">Обчислити</button></div>
+
+
+
+
+</div>
+<!--========= Java Script ==============================-->
+
+<script>
+
+function f1() {
+if (radio1.checked) div1.style = 'background-color:red;'
+if (radio2.checked) div2.style = 'background-color:red;'
+if (radio3.checked) div3.style = 'background-color:green;'
+
+
+}
+
+</script>
+<!--============= HTML ====================================
+2.   <h1>…</h1>					заголовок 1 рівня (h1,h2,h3)
+5.   <b>…</b>					потовщений текст
+10.  <img>						зображення		<img src="fotka.jpg" width="300">  //  height="200"
+16a. <input type="checkbox">	прапорець		<input type="checkbox" id="checkbox1">
+16б. <input type="radio">		перемикач		<input type="radio" id="radio1" name="group1">
+
+<!--============== CSS ====================================
+2.  font-size: 14px;           (120%)						розмір  (пікселі / відсотки)
+3.  font-weight: bold;         								насиченість
+6.  color: red;                (#80fde0)					колір  (назва / номер)
+7.  background-color: yellow;  (#b6ff2a)					колір тла  (заливка)
+8.  text-align: center;        (left)  (right)				вирівнювання
+
+10. margin: 10px;              (auto)						відступи
+11. padding: 5px;              (2px 0 0 15px)				поля      (зверху справа знизу зліва)
+12. width: 50%;                (250px)						ширина
+13. float: left;               (right)						обтікання
+
+14. border-radius: 15px;									радіус округлення меж
+15. border: 3px solid black;								межі (товщина стиль колір)
+			   (solid) (dotted) (dashed) (double) (none)	стилі меж
+	15a. border-top:    15б. border-bottom:    15в. border-left:    15г. border-right:
+-->
