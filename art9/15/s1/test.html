@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/scripts/tests.css">
+<script src="/scripts/tests.js"></script>
+<title>1</title>
+<script>
+	var test={MinMark:2,MaxMark:12,IsPenalty:true,Questions:[{Text:"Який вид спорту має найбільше шанувальників у світі?",RndAnswers:true,Obj:"",Answers:[{Text:"Футбол",cr:true,Select:false},{Text:"Баскетбол",cr:false,Select:false},{Text:"Крикет",cr:false,Select:false},{Text:"Теніс",cr:false,Select:false},]},{Text:"Який вид спорту є найстарішим у світі?",RndAnswers:true,Obj:"",Answers:[{Text:"Гімнастика",cr:false,Select:false},{Text:"Плавання",cr:false,Select:false},{Text:"Боротьба",cr:false,Select:false},{Text:"Легка атлетика",cr:true,Select:false},]},{Text:"Який вид спорту є найпопулярніший в Україні?",RndAnswers:true,Obj:"1-1.jpg",Answers:[{Text:"Бокс",cr:false,Select:false},{Text:"Футбол",cr:true,Select:false},{Text:"Боротьба",cr:false,Select:false},{Text:"Легка атлетика",cr:false,Select:false},]},{Text:"Який вид спорту є олімпійським, але не є командним?",RndAnswers:true,Obj:"1-2.jpg",Answers:[{Text:"Баскетбол",cr:false,Select:false},{Text:"Футбол",cr:false,Select:false},{Text:"Фігурне катання",cr:true,Select:false},{Text:"Волейбол",cr:false,Select:false},]},{Text:"Який вид спорту є найпопулярнішим серед жінок?",RndAnswers:true,Obj:"1-3.jpg",Answers:[{Text:"Фітнес",cr:true,Select:false},{Text:"Аеробіка",cr:false,Select:false},{Text:"Пілатес",cr:false,Select:false},{Text:"Йога ",cr:false,Select:false},]},{Text:"Американський футбол є найпопулярнішим у США?",RndAnswers:false,Obj:"",Answers:[{Text:"Так",cr:true,Select:false},{Text:"Ні",cr:false,Select:false},]},{Text:"Чи є карате видом бойового мистецтва?",RndAnswers:false,Obj:"",Answers:[{Text:"Так",cr:true,Select:false},{Text:"Ні",cr:false,Select:false},]},{Text:"Чи є плавання зимовим видом спорту?",RndAnswers:false,Obj:"",Answers:[{Text:"Так ",cr:false,Select:false},{Text:"Ні",cr:true,Select:false},]},{Text:"Коли створили футбол?",RndAnswers:false,Obj:"",Answers:[{Text:"1678",cr:false,Select:false},{Text:"1787",cr:false,Select:false},{Text:"1863",cr:true,Select:false},{Text:"2000",cr:false,Select:false},]},{Text:"Коли народився Кріштіано Роналду?",RndAnswers:false,Obj:"",Answers:[{Text:"1960",cr:false,Select:false},{Text:"1972",cr:false,Select:false},{Text:"1985 ",cr:true,Select:false},{Text:"1990",cr:false,Select:false},]},{Text:"Коли був перший матч по волейболу?",RndAnswers:false,Obj:"",Answers:[{Text:"1889",cr:false,Select:false},{Text:"1900",cr:false,Select:false},{Text:"1910",cr:false,Select:false},{Text:"1922 ",cr:true,Select:false},]},{Text:"Чому слони такі товсті?",RndAnswers:true,Obj:"",Answers:[{Text:"Бо багато сплять",cr:false,Select:false},{Text:"Бо багато їдять",cr:true,Select:false},{Text:"Бо багато какають",cr:false,Select:false},]},{Text:"Чому риби мовчать?",RndAnswers:true,Obj:"",Answers:[{Text:"Бо вони плавають",cr:false,Select:false},{Text:"Бо вони під водою",cr:true,Select:false},{Text:"Бо вони лохи",cr:false,Select:false},]},{Text:"Чому у собаки мокрий ніс?",RndAnswers:true,Obj:"",Answers:[{Text:"Щоб краще їсти",cr:false,Select:false},{Text:"Щоб краще нюхати",cr:true,Select:false},{Text:"Щоб краще бігати",cr:false,Select:false},]},{Text:"Якого кольору яблука?",RndAnswers:true,Obj:"",Answers:[{Text:"Чорне",cr:false,Select:false},{Text:"Коричневе",cr:false,Select:false},{Text:"Зелене",cr:true,Select:false},{Text:"Жовте",cr:true,Select:false},{Text:"Червоне",cr:true,Select:false},]},{Text:"Які з наведених тверджень про Україну є правильними?",RndAnswers:true,Obj:"",Answers:[{Text:"Україна - член Європейського Союзу",cr:false,Select:false},{Text:"Україна  -член НАТО",cr:false,Select:false},{Text:"Столиця України - Київ",cr:true,Select:false},{Text:"Найвища гора України - Говерла",cr:true,Select:false},{Text:"Населення України становить понад 40 млн людей",cr:true,Select:false},{Text:"Україна має вихід до Чорного та Азовського морів",cr:true,Select:false},]},{Text:"Які з наведених чисел ділиться на 3?",RndAnswers:false,Obj:"",Answers:[{Text:"12",cr:true,Select:false},{Text:"15",cr:true,Select:false},{Text:"17",cr:false,Select:false},{Text:"22",cr:false,Select:false},{Text:"24",cr:true,Select:false},{Text:"27",cr:true,Select:false},]},]}
+</script>
+
+<body onload="StartTest()">
+
+<table class="page-header" id="tests_header">
+	<tr>
+		<td class="btn btn__exit-test" onclick="ExitTest()">x</td>
+		<td class="page-title">
+			<span class="sign-quest-num">№</span>
+			<span class="quest-num" id="questNum"></span>
+			<span class="quest-count" id="questCount"></span>
+		</td>
+		<td class="btn btn__next-quest" onclick="NextQuestion()">&#9658;&#9658;</td>
+	</tr>
+</table>
+
+<table class="content content--border-around" id="testForm">
+	<tr><td class="test-quest" id="quest"></td></tr>
+	<tr><td class="test-correct-count" id="correctCount"></td></tr>
+
+	<tr><td class="test-answer" id="answer0" onclick="CheckAnswer(0)">
+		<span class="test-answer-num">1.</span>
+		<input id="radio0" type="radio" name="answers">
+		<label id="label0" for="radio0"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer1" onclick="CheckAnswer(1)">
+		<span class="test-answer-num">2.</span>
+		<input id="radio1" type="radio" name="answers">
+		<label id="label1" for="radio1"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer2" onclick="CheckAnswer(2)">
+		<span class="test-answer-num">3.</span>
+		<input id="radio2" type="radio" name="answers">
+		<label id="label2" for="radio2"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer3" onclick="CheckAnswer(3)">
+		<span class="test-answer-num">4.</span>
+		<input id="radio3" type="radio" name="answers">
+		<label id="label3" for="radio3"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer4" onclick="CheckAnswer(4)">
+		<span class="test-answer-num">5.</span>
+		<input id="radio4" type="radio" name="answers">
+		<label id="label4" for="radio4"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer5" onclick="CheckAnswer(5)">
+		<span class="test-answer-num">6.</span>
+		<input id="radio5" type="radio" name="answers">
+		<label id="label5" for="radio5"></label>
+	</td></tr>
+</table>
+
+<div class="test-obj"><img id="questImg" src="" alt=""></div>
+
+<div class="test-result" id="resForm" hidden>
+	<div>
+		<span class="test-result-title">Результат:</span>
+		<span class="test-result-percent" id="resPercent"></span>
+	</div>
+	<div class="test-result-mark" id="testMark"></div>
+</div>
+
+</body>

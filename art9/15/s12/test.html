@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/scripts/tests.css">
+<script src="/scripts/tests.js"></script>
+<title>7</title>
+<script>
+	var test={MinMark:2,MaxMark:12,IsPenalty:true,Questions:[{Text:"Яка висота гори Говерли?",RndAnswers:false,Obj:"",Answers:[{Text:"123 м",cr:false,Select:false},{Text:"1999 м",cr:false,Select:false},{Text:"2000 м",cr:false,Select:false},{Text:"2061 м",cr:true,Select:false},]},{Text:"Коли день Незалежності України?",RndAnswers:false,Obj:"",Answers:[{Text:"1224 р",cr:false,Select:false},{Text:"1654 р",cr:false,Select:false},{Text:"1990 р",cr:false,Select:false},{Text:"1991 р",cr:true,Select:false},]},{Text:"Скільки разів Україна вигравала Євробачення?",RndAnswers:false,Obj:"",Answers:[{Text:"1",cr:false,Select:false},{Text:"2",cr:false,Select:false},{Text:"3",cr:true,Select:false},{Text:"4",cr:false,Select:false},]},{Text:"Хто створив таблицю Менделєєва?",RndAnswers:true,Obj:"",Answers:[{Text:"Наталя Миколаївна",cr:false,Select:false},{Text:"Дмитро Менделєєв",cr:true,Select:false},{Text:"Роман Васильович",cr:false,Select:false},{Text:"Лотар Юліус",cr:false,Select:false},]},{Text:"Що літає в небі?",RndAnswers:true,Obj:"",Answers:[{Text:"Велосипед",cr:false,Select:false},{Text:"Машина",cr:false,Select:false},{Text:"Людина",cr:false,Select:false},{Text:"Літак",cr:true,Select:false},]},{Text:"Борщ це українська страва?",RndAnswers:false,Obj:"",Answers:[{Text:"Так",cr:true,Select:false},{Text:"Ні",cr:false,Select:false},]},{Text:"1 квітня це міжнародний день сміху?",RndAnswers:false,Obj:"",Answers:[{Text:"Так",cr:true,Select:false},{Text:"Ні",cr:false,Select:false},]},{Text:"Корова це дика тварина?",RndAnswers:false,Obj:"",Answers:[{Text:"Так",cr:false,Select:false},{Text:"Ні",cr:true,Select:false},]},{Text:"Хто зображений на фото?",RndAnswers:true,Obj:"7-1.jpg",Answers:[{Text:"Леся Українка",cr:false,Select:false},{Text:"С.Петлюра",cr:false,Select:false},{Text:"Т.Шевченко",cr:true,Select:false},{Text:"І.Франко",cr:false,Select:false},]},{Text:"Що зображено на фото?",RndAnswers:true,Obj:"7-2.jpg",Answers:[{Text:"Черепаха",cr:true,Select:false},{Text:"Риба",cr:false,Select:false},{Text:"Жук",cr:false,Select:false},{Text:"Рак",cr:false,Select:false},]},{Text:"Який номінал зображений на фото?",RndAnswers:true,Obj:"7-3.jpg",Answers:[{Text:"50 грн",cr:false,Select:false},{Text:"10 грн",cr:true,Select:false},{Text:"20 грн",cr:false,Select:false},{Text:"100 грн",cr:false,Select:false},]},{Text:"Яка столиця України?",RndAnswers:true,Obj:"",Answers:[{Text:"Добрячин",cr:false,Select:false},{Text:"Київ",cr:true,Select:false},{Text:"Жвирка",cr:false,Select:false},{Text:"Червоноград",cr:false,Select:false},]},{Text:"В якій країні ми знаходимось?",RndAnswers:true,Obj:"",Answers:[{Text:"Україна",cr:true,Select:false},{Text:"Мухоморна",cr:false,Select:false},{Text:"Дубова",cr:false,Select:false},{Text:"Моховна",cr:false,Select:false},]},{Text:"Де знаходиться Україна?",RndAnswers:true,Obj:"",Answers:[{Text:"В саду",cr:false,Select:false},{Text:"В річці",cr:false,Select:false},{Text:"В Європі",cr:true,Select:false},{Text:"В озері",cr:false,Select:false},]},{Text:"Що з цього їжа?",RndAnswers:true,Obj:"",Answers:[{Text:"Кросівок",cr:false,Select:false},{Text:"Собака",cr:false,Select:false},{Text:"Hotdog",cr:true,Select:false},{Text:"Яблуко",cr:true,Select:false},{Text:"Крейда",cr:false,Select:false},]},{Text:"Що з цього водойми?",RndAnswers:true,Obj:"",Answers:[{Text:"Річка",cr:true,Select:false},{Text:"Город",cr:false,Select:false},{Text:"Озеро",cr:true,Select:false},{Text:"Ліс",cr:false,Select:false},{Text:"Сад",cr:false,Select:false},]},{Text:"Які країни знаходяться в Європі?",RndAnswers:true,Obj:"",Answers:[{Text:"Китай",cr:false,Select:false},{Text:"Австралія",cr:false,Select:false},{Text:"Данія",cr:true,Select:false},{Text:"Україна",cr:true,Select:false},{Text:"Америка",cr:false,Select:false},]},{Text:"Іменник це - ?",RndAnswers:true,Obj:"",Answers:[{Text:"Другорядний член речення що вказує на ознаку",cr:false,Select:false},{Text:"Частина мови що відповідає на питання хто що",cr:true,Select:false},{Text:"Вказує на дію або стан предмета",cr:false,Select:false},]},]}
+</script>
+
+<body onload="StartTest()">
+
+<table class="page-header" id="tests_header">
+	<tr>
+		<td class="btn btn__exit-test" onclick="ExitTest()">x</td>
+		<td class="page-title">
+			<span class="sign-quest-num">№</span>
+			<span class="quest-num" id="questNum"></span>
+			<span class="quest-count" id="questCount"></span>
+		</td>
+		<td class="btn btn__next-quest" onclick="NextQuestion()">&#9658;&#9658;</td>
+	</tr>
+</table>
+
+<table class="content content--border-around" id="testForm">
+	<tr><td class="test-quest" id="quest"></td></tr>
+	<tr><td class="test-correct-count" id="correctCount"></td></tr>
+
+	<tr><td class="test-answer" id="answer0" onclick="CheckAnswer(0)">
+		<span class="test-answer-num">1.</span>
+		<input id="radio0" type="radio" name="answers">
+		<label id="label0" for="radio0"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer1" onclick="CheckAnswer(1)">
+		<span class="test-answer-num">2.</span>
+		<input id="radio1" type="radio" name="answers">
+		<label id="label1" for="radio1"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer2" onclick="CheckAnswer(2)">
+		<span class="test-answer-num">3.</span>
+		<input id="radio2" type="radio" name="answers">
+		<label id="label2" for="radio2"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer3" onclick="CheckAnswer(3)">
+		<span class="test-answer-num">4.</span>
+		<input id="radio3" type="radio" name="answers">
+		<label id="label3" for="radio3"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer4" onclick="CheckAnswer(4)">
+		<span class="test-answer-num">5.</span>
+		<input id="radio4" type="radio" name="answers">
+		<label id="label4" for="radio4"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer5" onclick="CheckAnswer(5)">
+		<span class="test-answer-num">6.</span>
+		<input id="radio5" type="radio" name="answers">
+		<label id="label5" for="radio5"></label>
+	</td></tr>
+</table>
+
+<div class="test-obj"><img id="questImg" src="" alt=""></div>
+
+<div class="test-result" id="resForm" hidden>
+	<div>
+		<span class="test-result-title">Результат:</span>
+		<span class="test-result-percent" id="resPercent"></span>
+	</div>
+	<div class="test-result-mark" id="testMark"></div>
+</div>
+
+</body>

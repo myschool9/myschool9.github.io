@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/scripts/tests.css">
+<script src="/scripts/tests.js"></script>
+<title>5</title>
+<script>
+	var test={MinMark:2,MaxMark:12,IsPenalty:true,Questions:[{Text:"Скільки скінів на Шеллі в бравл старс?",RndAnswers:true,Obj:"",Answers:[{Text:"17 ",cr:true,Select:false},{Text:"6",cr:false,Select:false},{Text:"0",cr:false,Select:false},{Text:"16",cr:false,Select:false},]},{Text:"Скільки скінів в “Меха-Отряд”?",RndAnswers:true,Obj:"",Answers:[{Text:"-1",cr:false,Select:false},{Text:"18 ",cr:true,Select:false},{Text:"300",cr:false,Select:false},{Text:"22",cr:false,Select:false},]},{Text:"Яка перша іконка була в бравл старсі, на момент глобального релізу?",RndAnswers:true,Obj:"5-1.jpg",Answers:[{Text:"3",cr:false,Select:false},{Text:"4",cr:false,Select:false},{Text:"2",cr:false,Select:false},{Text:"1  ",cr:true,Select:false},]},{Text:"В якому пасі був Гейл?",RndAnswers:true,Obj:"5-2.jpg",Answers:[{Text:"1   ",cr:true,Select:false},{Text:"19",cr:false,Select:false},{Text:"23",cr:false,Select:false},{Text:"5",cr:false,Select:false},]},{Text:"Хтось відкривав сундуки в кінотеатрі?",RndAnswers:false,Obj:"",Answers:[{Text:"Так ",cr:true,Select:false},{Text:"НІ",cr:false,Select:false},]},{Text:"В цієї  гри завжди була альбомна орієнтація?",RndAnswers:false,Obj:"",Answers:[{Text:"Так",cr:false,Select:false},{Text:"Ні",cr:true,Select:false},]},{Text:"Цю гру розробили в Фінляндії?",RndAnswers:false,Obj:"",Answers:[{Text:"Так",cr:true,Select:false},{Text:"Ні",cr:false,Select:false},]},{Text:"В якому році гра вийшла в реліз?",RndAnswers:true,Obj:"",Answers:[{Text:"1945",cr:false,Select:false},{Text:"2017",cr:true,Select:false},{Text:"1488",cr:false,Select:false},{Text:"10 до н.е",cr:false,Select:false},]},{Text:"Коли видалили сундуки з цієї гри?",RndAnswers:true,Obj:"",Answers:[{Text:"1488 р.",cr:false,Select:false},{Text:"1914 р.",cr:false,Select:false},{Text:"2024 р.",cr:false,Select:false},{Text:"2022 р. ",cr:true,Select:false},]},{Text:"В якому році в гру додали 2 пасівки?",RndAnswers:true,Obj:"",Answers:[{Text:"2019",cr:false,Select:false},{Text:"1488",cr:false,Select:false},{Text:"1939",cr:false,Select:false},{Text:"2020",cr:true,Select:false},]},{Text:"Де придумали цю гру?",RndAnswers:true,Obj:"",Answers:[{Text:"В Фінляндії",cr:true,Select:false},{Text:"В Чехословаччині",cr:false,Select:false},{Text:"В Казколендї",cr:false,Select:false},{Text:"Вдома",cr:false,Select:false},]},]}
+</script>
+
+<body onload="StartTest()">
+
+<table class="page-header" id="tests_header">
+	<tr>
+		<td class="btn btn__exit-test" onclick="ExitTest()">x</td>
+		<td class="page-title">
+			<span class="sign-quest-num">№</span>
+			<span class="quest-num" id="questNum"></span>
+			<span class="quest-count" id="questCount"></span>
+		</td>
+		<td class="btn btn__next-quest" onclick="NextQuestion()">&#9658;&#9658;</td>
+	</tr>
+</table>
+
+<table class="content content--border-around" id="testForm">
+	<tr><td class="test-quest" id="quest"></td></tr>
+	<tr><td class="test-correct-count" id="correctCount"></td></tr>
+
+	<tr><td class="test-answer" id="answer0" onclick="CheckAnswer(0)">
+		<span class="test-answer-num">1.</span>
+		<input id="radio0" type="radio" name="answers">
+		<label id="label0" for="radio0"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer1" onclick="CheckAnswer(1)">
+		<span class="test-answer-num">2.</span>
+		<input id="radio1" type="radio" name="answers">
+		<label id="label1" for="radio1"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer2" onclick="CheckAnswer(2)">
+		<span class="test-answer-num">3.</span>
+		<input id="radio2" type="radio" name="answers">
+		<label id="label2" for="radio2"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer3" onclick="CheckAnswer(3)">
+		<span class="test-answer-num">4.</span>
+		<input id="radio3" type="radio" name="answers">
+		<label id="label3" for="radio3"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer4" onclick="CheckAnswer(4)">
+		<span class="test-answer-num">5.</span>
+		<input id="radio4" type="radio" name="answers">
+		<label id="label4" for="radio4"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer5" onclick="CheckAnswer(5)">
+		<span class="test-answer-num">6.</span>
+		<input id="radio5" type="radio" name="answers">
+		<label id="label5" for="radio5"></label>
+	</td></tr>
+</table>
+
+<div class="test-obj"><img id="questImg" src="" alt=""></div>
+
+<div class="test-result" id="resForm" hidden>
+	<div>
+		<span class="test-result-title">Результат:</span>
+		<span class="test-result-percent" id="resPercent"></span>
+	</div>
+	<div class="test-result-mark" id="testMark"></div>
+</div>
+
+</body>

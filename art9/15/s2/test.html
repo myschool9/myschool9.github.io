@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/scripts/tests.css">
+<script src="/scripts/tests.js"></script>
+<title>2</title>
+<script>
+	var test={MinMark:2,MaxMark:12,IsPenalty:true,Questions:[{Text:"Як називається місяць, що обертається навколо Землі?",RndAnswers:true,Obj:"",Answers:[{Text:"Марс",cr:false,Select:false},{Text:"Moon ",cr:true,Select:false},{Text:"Нептун",cr:false,Select:false},{Text:"Юpа",cr:false,Select:false},]},{Text:"Що вимірює термометр?",RndAnswers:true,Obj:"",Answers:[{Text:"Відстань",cr:false,Select:false},{Text:"Вагу",cr:false,Select:false},{Text:"Температуру ",cr:true,Select:false},{Text:"Тиск",cr:false,Select:false},]},{Text:"Столиця Івано-Франківська?",RndAnswers:true,Obj:"2-1.jpg",Answers:[{Text:"Париж ",cr:true,Select:false},{Text:"США",cr:false,Select:false},{Text:"ДНР і ЛНР",cr:false,Select:false},{Text:"Антарктида",cr:false,Select:false},]},{Text:"Хто на фото?",RndAnswers:true,Obj:"2-2.jpg",Answers:[{Text:"ОксанаUA",cr:false,Select:false},{Text:"АндрійUA",cr:false,Select:false},{Text:"Моля",cr:false,Select:false},{Text:"ОляUA",cr:true,Select:false},]},{Text:"Що робить годинник?",RndAnswers:true,Obj:"2-3.jpg",Answers:[{Text:"Варить їжу",cr:false,Select:false},{Text:"Вимірює час",cr:false,Select:false},{Text:"Підмиває руки",cr:false,Select:false},{Text:"Літає ",cr:true,Select:false},]},{Text:"Чи є Сахара столицею Антарктиди?",RndAnswers:false,Obj:"",Answers:[{Text:"Так",cr:false,Select:false},{Text:"Ні ",cr:true,Select:false},]},{Text:"Чи є статуя свободи на Гаваях?",RndAnswers:false,Obj:"",Answers:[{Text:"Так",cr:false,Select:false},{Text:"Ні",cr:true,Select:false},]},{Text:"Чи є Піраміда Хеопса однією з Сімох чудес світу?",RndAnswers:false,Obj:"",Answers:[{Text:"Так",cr:true,Select:false},{Text:"Ні",cr:false,Select:false},]},{Text:"Яке число йде після 9?",RndAnswers:false,Obj:"",Answers:[{Text:"2",cr:false,Select:false},{Text:"10",cr:true,Select:false},{Text:"12",cr:false,Select:false},{Text:"13",cr:false,Select:false},]},{Text:"Скільки кіл у квадраті?",RndAnswers:false,Obj:"",Answers:[{Text:"-2",cr:false,Select:false},{Text:"4",cr:true,Select:false},{Text:"99",cr:false,Select:false},{Text:"1488",cr:false,Select:false},]},{Text:"Скільки днів у тижні?",RndAnswers:false,Obj:"",Answers:[{Text:"5",cr:false,Select:false},{Text:"7",cr:true,Select:false},{Text:"10",cr:false,Select:false},{Text:"31",cr:false,Select:false},]},{Text:"Яке слово завжди прочитається невірно?",RndAnswers:true,Obj:"",Answers:[{Text:"Невірно",cr:true,Select:false},{Text:"Pyrus communis L.",cr:false,Select:false},{Text:"Rindfleischetikettierungsuberwachungsaufgabenubert",cr:false,Select:false},{Text:"Паралелепіпед",cr:false,Select:false},]},{Text:"Чому банан засмучений?",RndAnswers:true,Obj:"",Answers:[{Text:"Бо він упакований в шкірку ",cr:true,Select:false},{Text:"Бо його порівнюють з кумкватом",cr:false,Select:false},{Text:"Бо він жовтий",cr:false,Select:false},{Text:"Бо він не може з’явитися в піці",cr:false,Select:false},]},{Text:"Як називається курка, яка постійно розказує анекдоти?",RndAnswers:true,Obj:"",Answers:[{Text:"Куриця-комедіянтка",cr:false,Select:false},{Text:"Коко-приколістка ",cr:true,Select:false},{Text:"Курка-гумористка",cr:false,Select:false},]},{Text:"Що роблять ведмеді під час зимового сну?",RndAnswers:true,Obj:"",Answers:[{Text:"Сплять ",cr:true,Select:false},{Text:"Активно вивчають іноземні мови",cr:false,Select:false},{Text:"Дрімають ",cr:true,Select:false},{Text:"Готують смачні страви",cr:false,Select:false},{Text:"Вчаться жонглювати ",cr:false,Select:false},{Text:"Відвідують лікаря",cr:false,Select:false},]},{Text:"Які здібності має кенгуру?",RndAnswers:true,Obj:"",Answers:[{Text:"Готує пельмені",cr:false,Select:false},{Text:"Плаває у воді ",cr:true,Select:false},{Text:"Скаче на великі відстані ",cr:true,Select:false},{Text:"Підстригає волосся",cr:false,Select:false},{Text:"Душить собак",cr:true,Select:false},{Text:"Вирощує троянди",cr:false,Select:false},]},{Text:"Що може зробити вовк, якщо йому треба допомогти в кулінарії?",RndAnswers:true,Obj:"",Answers:[{Text:"Створює рецепти  ",cr:true,Select:false},{Text:"Готує суп",cr:false,Select:false},{Text:"Готує стейк ",cr:true,Select:false},{Text:"Пече пиріг з ягодами",cr:false,Select:false},{Text:"Запускає кухонний караван ",cr:true,Select:false},]},]}
+</script>
+
+<body onload="StartTest()">
+
+<table class="page-header" id="tests_header">
+	<tr>
+		<td class="btn btn__exit-test" onclick="ExitTest()">x</td>
+		<td class="page-title">
+			<span class="sign-quest-num">№</span>
+			<span class="quest-num" id="questNum"></span>
+			<span class="quest-count" id="questCount"></span>
+		</td>
+		<td class="btn btn__next-quest" onclick="NextQuestion()">&#9658;&#9658;</td>
+	</tr>
+</table>
+
+<table class="content content--border-around" id="testForm">
+	<tr><td class="test-quest" id="quest"></td></tr>
+	<tr><td class="test-correct-count" id="correctCount"></td></tr>
+
+	<tr><td class="test-answer" id="answer0" onclick="CheckAnswer(0)">
+		<span class="test-answer-num">1.</span>
+		<input id="radio0" type="radio" name="answers">
+		<label id="label0" for="radio0"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer1" onclick="CheckAnswer(1)">
+		<span class="test-answer-num">2.</span>
+		<input id="radio1" type="radio" name="answers">
+		<label id="label1" for="radio1"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer2" onclick="CheckAnswer(2)">
+		<span class="test-answer-num">3.</span>
+		<input id="radio2" type="radio" name="answers">
+		<label id="label2" for="radio2"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer3" onclick="CheckAnswer(3)">
+		<span class="test-answer-num">4.</span>
+		<input id="radio3" type="radio" name="answers">
+		<label id="label3" for="radio3"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer4" onclick="CheckAnswer(4)">
+		<span class="test-answer-num">5.</span>
+		<input id="radio4" type="radio" name="answers">
+		<label id="label4" for="radio4"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer5" onclick="CheckAnswer(5)">
+		<span class="test-answer-num">6.</span>
+		<input id="radio5" type="radio" name="answers">
+		<label id="label5" for="radio5"></label>
+	</td></tr>
+</table>
+
+<div class="test-obj"><img id="questImg" src="" alt=""></div>
+
+<div class="test-result" id="resForm" hidden>
+	<div>
+		<span class="test-result-title">Результат:</span>
+		<span class="test-result-percent" id="resPercent"></span>
+	</div>
+	<div class="test-result-mark" id="testMark"></div>
+</div>
+
+</body>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/scripts/tests.css">
+<script src="/scripts/tests.js"></script>
+<title>4</title>
+<script>
+	var test={MinMark:2,MaxMark:12,IsPenalty:true,Questions:[{Text:"Коли день Незалежності України?",RndAnswers:true,Obj:"",Answers:[{Text:"3 жовтня",cr:false,Select:false},{Text:"2 липня",cr:false,Select:false},{Text:"24 серпня ",cr:true,Select:false},{Text:"10 грудня",cr:false,Select:false},]},{Text:"Коли народився Тарас Шевченко?",RndAnswers:true,Obj:"",Answers:[{Text:"19 жовтня",cr:false,Select:false},{Text:"10 січня",cr:false,Select:false},{Text:"9 березня",cr:true,Select:false},{Text:"8 лютого",cr:false,Select:false},]},{Text:"Хто створив Інтернет?",RndAnswers:true,Obj:"4-1.jpg",Answers:[{Text:"Тарас Шевченко",cr:false,Select:false},{Text:"Іван Федоров",cr:false,Select:false},{Text:"Мазепа",cr:false,Select:false},{Text:"Вінтон Серф і Роберт Еліот Кан ",cr:true,Select:false},]},{Text:"Хто створив першу книгу?",RndAnswers:true,Obj:"4-2.jpg",Answers:[{Text:"Іван Федоров ",cr:true,Select:false},{Text:"Крюкін Назар",cr:false,Select:false},{Text:"Люда Нінінчук",cr:false,Select:false},{Text:"Максим Пилип",cr:false,Select:false},]},{Text:"Найрозумніші люди світу?",RndAnswers:true,Obj:"4-3.jpg",Answers:[{Text:"Вільям Джей Сідіс ",cr:true,Select:false},{Text:"Верба Юлія",cr:false,Select:false},{Text:"Зеленський Володимир",cr:false,Select:false},{Text:"Жіліна Альбіна",cr:false,Select:false},]},{Text:"Чм дванадцяти бальна система оцінювання в Україні?",RndAnswers:false,Obj:"",Answers:[{Text:"Так ",cr:true,Select:false},{Text:"Ні",cr:false,Select:false},]},{Text:"Чи Тарас Шевченко португалець?",RndAnswers:false,Obj:"",Answers:[{Text:"Так",cr:false,Select:false},{Text:"Ні",cr:true,Select:false},]},{Text:"Чи Роналду футболіст?",RndAnswers:false,Obj:"",Answers:[{Text:"Так ",cr:true,Select:false},{Text:"Ні",cr:false,Select:false},]},{Text:"Коли народилася Леся Українка?",RndAnswers:false,Obj:"",Answers:[{Text:"1837р",cr:false,Select:false},{Text:"1893р",cr:false,Select:false},{Text:"1871р ",cr:true,Select:false},{Text:"1927р",cr:false,Select:false},]},{Text:"Скільки буде 5601+1037?",RndAnswers:true,Obj:"",Answers:[{Text:"6638",cr:true,Select:false},{Text:"1050",cr:false,Select:false},{Text:"6738",cr:false,Select:false},{Text:"6508",cr:false,Select:false},]},{Text:"Коли почалася Друга Світова війна?",RndAnswers:true,Obj:"",Answers:[{Text:"1939",cr:true,Select:false},{Text:"1947",cr:false,Select:false},{Text:"1946",cr:false,Select:false},{Text:"1845",cr:false,Select:false},]},{Text:"Столиця України?",RndAnswers:true,Obj:"",Answers:[{Text:"Добрячин",cr:false,Select:false},{Text:"Берлін ",cr:true,Select:false},{Text:"Ржищів",cr:false,Select:false},{Text:"Львів",cr:false,Select:false},]},{Text:"Скільки кіт має лап?",RndAnswers:true,Obj:"",Answers:[{Text:"9",cr:false,Select:false},{Text:"5",cr:true,Select:false},{Text:"6",cr:false,Select:false},{Text:"8",cr:false,Select:false},]},{Text:"Як звати Тараса Шевченка?",RndAnswers:true,Obj:"",Answers:[{Text:"Тетяна",cr:true,Select:false},{Text:"Леонід",cr:false,Select:false},{Text:"Тарас",cr:false,Select:false},{Text:"Стас",cr:false,Select:false},]},{Text:"Який з прикладів = 4?",RndAnswers:true,Obj:"",Answers:[{Text:"2-2",cr:false,Select:false},{Text:"8-6",cr:false,Select:false},{Text:"6-2",cr:true,Select:false},{Text:"2+2",cr:true,Select:false},{Text:"4+6",cr:false,Select:false},]},{Text:"Які з цих імен жіночі?",RndAnswers:true,Obj:"",Answers:[{Text:"Тарас",cr:false,Select:false},{Text:"Петро",cr:false,Select:false},{Text:"Оксана",cr:true,Select:false},{Text:"Остап",cr:false,Select:false},{Text:"Ілона",cr:true,Select:false},]},{Text:"Що з цих марок авто?",RndAnswers:true,Obj:"",Answers:[{Text:"Ауді",cr:true,Select:false},{Text:"Моторола",cr:false,Select:false},{Text:"Бмв",cr:true,Select:false},{Text:"Самсунг",cr:false,Select:false},{Text:"Тойота",cr:true,Select:false},]},{Text:"Що таке іменник?",RndAnswers:true,Obj:"",Answers:[{Text:"самостійна частина мови, що має значення предметно",cr:true,Select:false},{Text:"найменша самостійна і вільно відтворювана в мовлен",cr:false,Select:false},{Text:"самостійна частина мови, що вказує на дію або стан",cr:false,Select:false},{Text:"це незмінна самостійна частина мови, що виражає оз",cr:false,Select:false},]},{Text:"Дні тижня?",RndAnswers:true,Obj:"",Answers:[{Text:"Камамбер, кукумер, кепка.",cr:false,Select:false},{Text:"Огірок, помідор, бензин.",cr:false,Select:false},{Text:"Понеділок, вівторок, середа, четвер, п’ятниця.",cr:true,Select:false},{Text:"Казашка, сашка, ілона.",cr:false,Select:false},]},]}
+</script>
+
+<body onload="StartTest()">
+
+<table class="page-header" id="tests_header">
+	<tr>
+		<td class="btn btn__exit-test" onclick="ExitTest()">x</td>
+		<td class="page-title">
+			<span class="sign-quest-num">№</span>
+			<span class="quest-num" id="questNum"></span>
+			<span class="quest-count" id="questCount"></span>
+		</td>
+		<td class="btn btn__next-quest" onclick="NextQuestion()">&#9658;&#9658;</td>
+	</tr>
+</table>
+
+<table class="content content--border-around" id="testForm">
+	<tr><td class="test-quest" id="quest"></td></tr>
+	<tr><td class="test-correct-count" id="correctCount"></td></tr>
+
+	<tr><td class="test-answer" id="answer0" onclick="CheckAnswer(0)">
+		<span class="test-answer-num">1.</span>
+		<input id="radio0" type="radio" name="answers">
+		<label id="label0" for="radio0"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer1" onclick="CheckAnswer(1)">
+		<span class="test-answer-num">2.</span>
+		<input id="radio1" type="radio" name="answers">
+		<label id="label1" for="radio1"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer2" onclick="CheckAnswer(2)">
+		<span class="test-answer-num">3.</span>
+		<input id="radio2" type="radio" name="answers">
+		<label id="label2" for="radio2"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer3" onclick="CheckAnswer(3)">
+		<span class="test-answer-num">4.</span>
+		<input id="radio3" type="radio" name="answers">
+		<label id="label3" for="radio3"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer4" onclick="CheckAnswer(4)">
+		<span class="test-answer-num">5.</span>
+		<input id="radio4" type="radio" name="answers">
+		<label id="label4" for="radio4"></label>
+	</td></tr>
+	<tr><td class="test-answer" id="answer5" onclick="CheckAnswer(5)">
+		<span class="test-answer-num">6.</span>
+		<input id="radio5" type="radio" name="answers">
+		<label id="label5" for="radio5"></label>
+	</td></tr>
+</table>
+
+<div class="test-obj"><img id="questImg" src="" alt=""></div>
+
+<div class="test-result" id="resForm" hidden>
+	<div>
+		<span class="test-result-title">Результат:</span>
+		<span class="test-result-percent" id="resPercent"></span>
+	</div>
+	<div class="test-result-mark" id="testMark"></div>
+</div>
+
+</body>
