@@ -1,0 +1,42 @@
+body{
+	margin: 10px;
+	font-size: 18px;
+	line-height: 1.4;
+}
+/*---------------------------------------------*/
+
+.header {
+	margin: 5px;
+	padding: 5px;
+	text-align: center;
+	background-color: Lightblue;
+}
+
+.footer {
+	margin: 5px;
+	padding: 5px;
+	text-align: right;
+	background-color: lightblue;
+}
+
+.flexbox {
+	margin: 10px;
+	padding: 15px;
+	border: 5px lightblue;
+	
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;	/* center   space-beetween */
+									/*align-items: flex-start;   (flex-end) */
+}
+
+.day {
+	
+	color:red ;
+	background-color:yellow ;
+	font-family:Verdana ;
+	border-radius:15px ;
+	
+	
+	
+}
