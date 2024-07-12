@@ -33,7 +33,7 @@ function CreateImagesArray(folder, countImg, isHomework) {
 	txt += '</table>';
 
 	document.body.innerHTML = txt;
-	document.title = 'Презентація';
+	document.title = 'Зображення';
 }
 
 /*---------------------------------------*/
@@ -81,5 +81,8 @@ function CreateVideosArray(folder, countVideo, countImg) {
 	txt += '</table>';
 
 	document.body.innerHTML = txt;
-	document.title = 'Відео та зображення';
+	let s = 'Відео та зображення';
+	if (countImg === 0) s = 'Відео';
+	if (countVideo === 0) s = 'Зображення';
+	document.title = s;
 }
