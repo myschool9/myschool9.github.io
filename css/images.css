@@ -1,11 +1,11 @@
 .image-container {		/* ---------- TD --------- */
 	text-align: center;
+	max-width: var(--obj-max-width);
 }
 
 .image-container img {
 	display: block;
-	width: 100%;
-	max-width: var(--obj-max-width);
+	max-width: 100%;
 	margin: 10px auto;
 	border: var(--border-style);
 }
