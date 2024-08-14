@@ -4,7 +4,6 @@
 
 .image-container img {
 	display: block;
-	width: 100%;
 	max-width: var(--obj-max-width);
 	margin: 10px auto;
 	border: var(--border-style);
