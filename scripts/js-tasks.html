@@ -20,32 +20,32 @@ var list = [
 	outTitle: ['всього предметів'],
 	inTests: [['17', '6'], ['1', '134'], ['41', '41']],
 	outTests: [['23'], ['135'], ['82']],
-	obj: '',
-	solve: ''},
+	obj: true,
+	solve: true},
 
 	{txt: '«Ідеальна» вага людини в кілограмах&nbsp;– це її ріст у&nbsp;сантиметрах мінус&nbsp;110.<br>Складіть програму обчислення «ідеальної» ваги.',
 	inTitle: ['ріст людини (см)'],
 	outTitle: ['вага людини (кг)'],
 	inTests: [['217'], ['174'], ['2356']],
 	outTests: [['107'], ['64'], ['2246']],
-	obj: '',
-	solve: ''},
+	obj: true,
+	solve: true},
 
 	{txt: 'Іван купив декілька однакових подарункових коробок з&nbsp;цукерками.<br>Скільки всього купив цукерок Іван, якщо відома кількість цукерок в&nbsp;одній коробці?',
 	inTitle: ['кількість коробок', 'кількість цукерок в&nbsp;одній коробці'],
 	outTitle: ['уся кількість цукерок'],
 	inTests: [['1', '6'], ['15', '4'], ['98', '0']],
 	outTests: [['6'], ['60'], ['0']],
-	obj: '',
-	solve: ''},
+	obj: true,
+	solve: true},
 
 	{txt: 'Діагоналі телевізорів та моніторів вимірюють у&nbsp;дюймах. А&nbsp;скільки це сантиметрів? А&nbsp;метрів?<br><span class="task-hint">(підказка: 1&nbsp;дюйм&nbsp;= 2,54&nbsp;см)</span>',
 	inTitle: ['довжина діагоналі у&nbsp;дюймах'],
 	outTitle: ['довжина у&nbsp;см', 'довжина у&nbsp;метрах'],
 	inTests: [['43'], ['10.3'], ['123.5']],
 	outTests: [['106.68', '1.0668'], ['26.16', '0.2616'], ['313.69', '3.1369']],
-	obj: '',
-	solve: 'asdfsd'},
+	obj: true,
+	solve: true},
 
 	{txt: 'Відомо, скільки днів минуло між двома подіями.<br>А&nbsp;скільки це років?',
 	inTitle: ['кількість днів'],
@@ -573,7 +573,7 @@ function ShowItem(nItem) {
 
 		// image ------------
 	if (list[row][nItem].obj !== '') {
-		txtTask += '<tr><td class="task-image task--color-2"><img src="' + folder + '3.png" alt=""></td></tr>';
+		txtTask += '<tr><td class="task-image task--color-2"><img src="' + folder + 'task-' + String(nItem + 1) + '.png" alt=""></td></tr>';
 	}
 
 		// data --------------
