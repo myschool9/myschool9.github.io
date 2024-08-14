@@ -6,10 +6,13 @@
 <link rel="stylesheet" href="/css/videos.css">
 <title>Задачі Scratch</title>
 <!--==========================================-->
+<!-- тільки 2 параметри!
+якщо другий параметр =6 - рядок #1, інакше - рядок #0 -->
+
 <script>
-var group = 0;		// 5 клас
+var row = 0;
 var folder = '';
-var videos = [
+var list = [
 
 [	// -------------- 5 клас! ---------
 	{file:'переправа', name:'Переправа', comment:''},
@@ -81,44 +84,43 @@ var videos = [
 
 ]
 
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+//+++++++++++++++++++++++++++++++++++++++++++++++
 function CreateList(txt) {
 	const symb = '&';
 	const par = decodeURI(txt).split(symb);
-	if (par.length !== 2) return;
 
-	if (par[1] == 6 || par[1] == 1) group = 1;		// 6 клас!
+	if (par.length !== 2) return;
+	if (par[1] === 6) row = 1;   //---- Параметри -----
+
 	folder = par[0].slice(1, par[0].length);
 	folder = '../' + folder.replace('_', '/') + '/';
 
 	let txtSel = '';
-	for (let i = 1; i <= videos[group].length; i++) {
+	for (let i = 1; i <= list[row].length; i++) {
 		txtSel += '<option>' + String(i) + '</option>';
 	}
 	document.getElementById('listBox').innerHTML = txtSel;
 }
 
-//-------------------------------------
+//-----------------------------------------------
 function ShowItem(nItem) {
-	if (nItem < 0 || nItem >= videos[group].length) return;
+	if (nItem < 0 || nItem >= list[row].length) return;
 
-	document.getElementById('mainTable').innerHTML = '<tr><td class="video-title"><span class="video-number">№&nbsp;' + String(nItem+1) + '.</span><span class="video-name">' + videos[group][nItem].name + '</span></td></tr><tr><td class="video-container"><video controls><source src="' + folder + videos[group][nItem].file + '.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr><tr><td class="video-comment">' + videos[group][nItem].comment + '</td></tr>';
+	document.getElementById('mainTable').innerHTML = '<tr><td class="video-title"><span class="video-number">№&nbsp;' + String(nItem+1) + '.</span><span class="video-name">' + list[row][nItem].name + '</span></td></tr><tr><td class="video-container"><video controls><source src="' + folder + list[row][nItem].file + '.mp4" type="video/mp4">Не можна відобразити відео :(</video></td></tr><tr><td class="video-comment">' + list[row][nItem].comment + '</td></tr>';
 
 	document.getElementById('listBox').selectedIndex = nItem;
 }
 
-//-------------------------------------
+//-----------------------------------------------
 </script>
 
-<!--================================--->
+<!--==========================================-->
 <body onload="CreateList(location.search); ShowItem(0)">
 
 <table class="page-header"><tr>
-	<td class="btn btn__scroll" onclick="ShowItem(listBox.selectedIndex - 1)">◄</td>
+	<td class="btn btn__scroll" onclick="ShowItem(listBox.selectedIndex - 1)">&#9668;</td>
 	<td class="page-title"><select id="listBox" size="1" onchange="ShowItem(this.selectedIndex)"></select></td>
-	<td class="btn btn__scroll" onclick="ShowItem(listBox.selectedIndex + 1)">►</td>
+	<td class="btn btn__scroll" onclick="ShowItem(listBox.selectedIndex + 1)">&#9658;</td>
 </tr></table>
 
 <table id="mainTable" class="content content--border-around content--color"></table>
