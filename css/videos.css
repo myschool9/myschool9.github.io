@@ -1,11 +1,11 @@
 .video-container {		/* ---------- TD --------- */
 	text-align: center;
+	max-width: var(--obj-max-width);
 }
 
 .video-container video {
 	display: block;
-	width: 100%;
-	max-width: var(--obj-max-width);
+	max-width: 100%;
 	margin: 10px auto;
 	border: var(--border-style);
 }
