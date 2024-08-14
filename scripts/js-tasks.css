@@ -26,11 +26,12 @@
 
 .task-image {			/* ---------- TD --------- */
 	text-align: center;
+	max-width: var(--obj-max-width);
 }
 
 .task-image img {
 	display: block;
-	max-width: var(--obj-max-width);
+	max-width: 100%;
 	margin: 0 auto;
 	border: var(--border-style);
 	border-radius: 10px;
@@ -66,12 +67,12 @@
 
 .task-solve-img {		/* ---------- TD --------- */
 	text-align: center;
+	max-width: var(--obj-max-width);
 }
 
 .task-solve-img img {
 	display: block;
-	width: 100%;
-	max-width: var(--obj-max-width);
+	max-width: 100%;
 	margin: 0 auto;
 	border: var(--border-style);
 	border-radius: 10px;
