@@ -25,13 +25,15 @@
 }
 
 .task-image {			/* ---------- TD --------- */
-	padding: 5px;
-	line-height: 1;
 	text-align: center;
 }
 
 .task-image img {
+	display: block;
+	max-width: var(--obj-max-width);
+	margin: 0 auto;
 	border: var(--border-style);
+	border-radius: 10px;
 }
 
 .task-tests {			/* ---------- TD --------- */
@@ -62,11 +64,17 @@
 	background-color: #fff;
 }
 
-.task-solve-text {		/* ---------- TD --------- */
-	padding: 0 5px 15px 5px;
-	font-family: monospace;
-	line-height: 1.5;
-	background-color: #fff;
+.task-solve-img {		/* ---------- TD --------- */
+	text-align: center;
+}
+
+.task-solve-img img {
+	display: block;
+	width: 100%;
+	max-width: var(--obj-max-width);
+	margin: 0 auto;
+	border: var(--border-style);
+	border-radius: 10px;
 }
 
 .task-solve-alt-code {
