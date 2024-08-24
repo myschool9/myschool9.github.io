@@ -16,6 +16,14 @@ var list = [
 
 [
 		// 11111111111111
+	{txt: 'Обчисліть значення математичного прикладу.',
+	inTitle: [' '],
+	outTitle: ['значення прикладу'],
+	inTests: [[' ']],
+	outTests: [['3.62857']],
+	obj: true,
+	solve: true},		
+		
 	{txt: 'На&nbsp;складі меблевої фабрики зберігається декілька столиків та стільців.<br>Скільки&nbsp;всього предметів зберігається на&nbsp;складі?',
 	inTitle: ['кількість столиків', 'кількість стільців'],
 	outTitle: ['всього предметів'],
@@ -579,7 +587,11 @@ function ShowItem(nItem) {
 
 		// image ------------
 	if (list[row][nItem].obj) {
-		txtTask += '<tr><td class="task-image task--color-1"><img src="' + folder + 'task-' + String(nItem + 1) + '.png" alt=""></td></tr>';
+		let objCount = 1;
+		for (let i = 0; i < nItem; i++) {
+			if (list[row][i].obj) objCount++;
+		}
+		txtTask += '<tr><td class="task-image task--color-1"><img src="' + folder + 'task-' + String(objCount) + '.png" alt=""></td></tr>';
 	}
 
 		// data --------------

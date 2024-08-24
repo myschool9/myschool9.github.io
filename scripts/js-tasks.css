@@ -1,4 +1,4 @@
-.task-number {			/* ---------- TD --------- */
+	.task-number {			/* ---------- TD --------- */
 	font-size: 0.9em;
 	font-weight: bold;
 	text-align: center;
@@ -32,7 +32,7 @@
 .task-image img {
 	display: block;
 	max-width: 100%;
-	margin: 0 auto;
+	margin: 5px auto;
 	border: var(--border-style);
 	border-radius: 10px;
 }
@@ -73,7 +73,7 @@
 .task-solve-img img {
 	display: block;
 	max-width: 100%;
-	margin: 0 auto;
+	margin: 5px auto;
 	border: var(--border-style);
 	border-radius: 10px;
 }
