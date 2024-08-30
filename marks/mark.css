@@ -1,28 +1,47 @@
 .mark {
-	padding: 5px 10px;
+	padding: 10px;
 	border: var(--border-style);
 }
 
-.mark__author {
-	width:20%;
-	text-align:center;
-	font-weight:bold;
+.mark__td1 {
+	width: 25%;
+	text-align: center;
+	line-height: 1.5;
 	background-color: #fffff0;
 }
 
-.mark__standart {
-	width:35%;
+.mark__td2 {
+	font-size: 0.8em;
+	text-align: left;
+	line-height: 1.5;
+	background-color: #fff;
+}
+
+.mark__td3 {
+	padding: 0 10px;
+	text-align: center;
 	background-color: #f8f8ff;
 }
 
-.mark__about {
-	background-color: #fffff0;
+.mark__td4 {
+	padding: 0 10px;
+	font-size: 0.8em;
+	background-color: #f8f8ff;
 }
 
-.mark__comment {
-	padding-bottom: 15px;
+.comment-short {
 	font-size: 0.8em;
-	text-align: right;
-	line-height: 1.2;
-	background-color: #fff;
+}
+.comment-main {
+	color: blue;
+	font-style: italic;
+}
+
+.comment-project {
+
+}
+
+.comment-task {
+	color: Salmon;
+	font-style: italic;
 }
