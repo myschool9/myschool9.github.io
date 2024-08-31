@@ -25,6 +25,7 @@
 
 .mark__td4 {
 	padding: 0 10px;
+	line-height: 1.5;
 	font-size: 0.8em;
 	background-color: #f8f8ff;
 }
@@ -32,14 +33,13 @@
 .comment-short {
 	font-size: 0.8em;
 }
+
 .comment-main {
 	color: blue;
 	font-style: italic;
 }
 
-.comment-project {
-
-}
+.comment-project {}
 
 .comment-task {
 	color: Salmon;
