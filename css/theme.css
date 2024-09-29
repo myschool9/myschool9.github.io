@@ -34,6 +34,10 @@
 	background-color: #f8f8ff;
 }
 
+.theme--color-3 {		/* ---------- TD --------- */
+	background-color: #ffc0cb;
+}
+
 .small-link {
 	margin: -8px 0;
 	padding: 0 15px;
