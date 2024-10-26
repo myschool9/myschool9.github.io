@@ -52,7 +52,7 @@ function CreateSitesArray(folder, count, startHTML, groupTitle) {
 		} else {
 			txt += '<td class="theme theme--color-2"><a href="';
 		}
-		txt += folder + 's' + String(i) + '/' + startHTML + '.html">Приклад - ' + String(i) + '</a></td>';
+		txt += folder + 's' + String(i) + '/' + startHTML + '.html">Сайт - ' + String(i) + '</a></td>';
 		if (i % 2 === 0) txt += '</tr>';
 	}
 
