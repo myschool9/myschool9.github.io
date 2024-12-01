@@ -5,14 +5,17 @@
 <link rel="stylesheet" href="/css/styles.css">
 <script src="/scripts/scripts.js" defer></script>
 <!--========= Вигляд =========--><form>
-   <h2> Що робити якщо на вас напав Назар? </h2>
- 1. зняти штані і бігати<br>
- 2. заспівати мехабетпияласан<br>
- 3. апельсин<br>
- 4. стати квадробером і кусати за жопу<br>
- Спроба вижити  <input>    <br>
 
- вижив?   <output>  </output>    <br>
+Що робити, якщо ви зустріли мена? <br>
+
+1. Розридатись і втікти <br>
+2. Проігнорити  <br>
+3. Відмудохати його та стати жоскою сігма вумен  <br>
+4. Стати меном  <br>
+
+    <input>    <br>
+
+    <output>  </output>    <br>
 
     <button> Обчислити </button>
 	
@@ -20,20 +23,17 @@
 <!--==== Задача мовою Java Script ====--><script>
 function task1() {
 
-let question = Number(input1.value);
-let answer;
+    let answer = Number(input1.value);
+	let rules;
+	
+    if (answer == 3) {
+	rules = 'Правильно';
+	} else {
+	rules = 'БОШ ЯКИЙ НЕУЧ';
+	}
+	
+	output1.value = rules;
 
-if (question == 4) {
-
-answer = 'Ви вижили, але назавжди стали собакою'
-
-} else {
-
-answer = 'вас сожрав Кузьмів...'
-
-}
-
-output1.value = answer
 
 }<!--===== кінець задачі =====--></script>
 <!--========== Інші об’єкти ==============================

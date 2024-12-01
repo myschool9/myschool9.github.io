@@ -5,14 +5,14 @@
 <link rel="stylesheet" href="/css/styles.css">
 <script src="/scripts/scripts.js" defer></script>
 <!--========= Вигляд =========--><form>
- <h2> Яка найкраща марка кросівок? </h2>  <br>
- 1. Puma   <br>
- 2. Adidas  <br>
- 3. Lacoste <br>
- 4. new Balance  <br>
-    <input>    <br>
+   <h2> Що робити якщо на вас напав Назар? </h2>
+ 1. зняти штані і бігати<br>
+ 2. заспівати мехабетпияласан<br>
+ 3. апельсин<br>
+ 4. стати квадробером і кусати за жопу<br>
+ Спроба вижити  <input>    <br>
 
-    <output>  </output>  
+ вижив?   <output>  </output>    <br>
 
     <button> Обчислити </button>
 	
@@ -20,17 +20,20 @@
 <!--==== Задача мовою Java Script ====--><script>
 function task1() {
 
-    let n = Number(input1.value);
-    let respond;
-	
-	if (n == 4) {
-        respond = 'Молодчинка ти вгадав/вгадала)))';
-    } else {
-        respond = 'На жаль ти не вгадав/ла((( в наступний раз все вийде)))';
-	}
-	
-	output1.value = respond;
-   
+let question = Number(input1.value);
+let answer;
+
+if (question == 4) {
+
+answer = 'Ви вижили, але назавжди стали собакою'
+
+} else {
+
+answer = 'вас сожрав Кузьмів...'
+
+}
+
+output1.value = answer
 
 }<!--===== кінець задачі =====--></script>
 <!--========== Інші об’єкти ==============================

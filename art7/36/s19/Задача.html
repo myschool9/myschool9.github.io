@@ -5,33 +5,33 @@
 <link rel="stylesheet" href="/css/styles.css">
 <script src="/scripts/scripts.js" defer></script>
 <!--========= Вигляд =========--><form>
-<h1> Що робити якщо люди почали мявкати? </h1> 
-1. бігти<br>
-2. стояти <br>
-3. почати з ними мявкати<br>
-4. вдарити<br><br>
-
-  Виберіть відповідь  <input>    <br>
+Хто виграв чемпіонат світу 2022 року з футболу?<br>
+1. Аргентина<br>
+2. Франція<br>
+3. Італія<br>
+4. Бразилія<br>
+	<input>    <br>
+	
 
     <output>  </output>    <br>
 
-    <button> Перевірити </button>
-	
+    <button> Обчислити </button>
 	
 </form>
 <!--==== Задача мовою Java Script ====--><script>
 function task1() {
-let nomer = Number(input1.value);
-let vidpovig;
 
-if (nomer == 3){
-vidpovig = 'правильна відповідь';
-} else {
- 
- vidpovig = 'не правильна відповідь';
- 
-}
- output1.value = vidpovig;
+let nom = Number(input1.value);
+let vidpovid = 'не вводь якусь фігню';
+
+if (nom == 1) vidpovid = 'молодець!!!';
+if (nom == 2) vidpovid = 'майже';
+if (nom == 3) vidpovid = 'ти дурний?';
+if (nom == 4) vidpovid = 'неправильно!';
+
+output1.value = vidpovid ;
+
+
 
 }<!--===== кінець задачі =====--></script>
 <!--========== Інші об’єкти ==============================

@@ -5,35 +5,34 @@
 <link rel="stylesheet" href="/css/styles.css">
 <script src="/scripts/scripts.js" defer></script>
 <!--========= Вигляд =========--><form>
-<h1> Що робити якщо люди почали мявкати? </h1> 
-1. бігти<br>
-2. стояти <br>
-3. почати з ними мявкати<br>
-4. вдарити<br><br>
-
-  Виберіть відповідь  <input>    <br>
+ Який футболіст старіший? <br> 
+ 1. Роналдо<br> 
+ 2. Мессі<br> 
+ 3. Рональдо<br> 
+ 4. Зінченко<br> 
+ <input>    <br>
 
     <output>  </output>    <br>
 
-    <button> Перевірити </button>
-	
+    <button> Обчислити </button>
 	
 </form>
 <!--==== Задача мовою Java Script ====--><script>
 function task1() {
-let nomer = Number(input1.value);
-let vidpovig;
 
-if (nomer == 3){
-vidpovig = 'правильна відповідь';
+let answer = Number(input1.value);
+let rules;
+
+if (answer == 3) {
+rules = 'молодець' ;
 } else {
- 
- vidpovig = 'не правильна відповідь';
- 
+rules = 'ти взагалі щось знаєш?'
 }
- output1.value = vidpovig;
 
-}<!--===== кінець задачі =====--></script>
+output1.value = rules;
+
+}
+<!--===== кінець задачі =====--></script>
 <!--========== Інші об’єкти ==============================
 1.  <h1> Заголовок </h1>					заголовок 1 рівня (h1,h2,h3)
 2.  <img src="fotka.jpg" width="300">		зображення

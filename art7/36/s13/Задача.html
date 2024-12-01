@@ -5,32 +5,32 @@
 <link rel="stylesheet" href="/css/styles.css">
 <script src="/scripts/scripts.js" defer></script>
 <!--========= Вигляд =========--><form>
+ <h2> Яка найкраща марка кросівок? </h2>  <br>
+ 1. Puma   <br>
+ 2. Adidas  <br>
+ 3. Lacoste <br>
+ 4. new Balance  <br>
+    <input>    <br>
 
- Яке місто столиця України?   <br>
-   <br> 1. Берлін, 2. Харків, 3. Варшава, 4. Київ  <br> <input>     
+    <output>  </output>  
 
-    <output>  </output>   <br>  
-
-    <button> Обчислити </button>   
+    <button> Обчислити </button>
 	
 </form>
 <!--==== Задача мовою Java Script ====--><script>
 function task1() {
- 
-let number = Number(input1.value);
-let rules;
 
-if  (number == 4) {
-rules = 'Правильно';
-} else {
-rules = 'Не правильно';
-}
-
-output1.value = rules;
- 
- 
- 
- 
+    let n = Number(input1.value);
+    let respond;
+	
+	if (n == 4) {
+        respond = 'Молодчинка ти вгадав/вгадала)))';
+    } else {
+        respond = 'На жаль ти не вгадав/ла((( в наступний раз все вийде)))';
+	}
+	
+	output1.value = respond;
+   
 
 }<!--===== кінець задачі =====--></script>
 <!--========== Інші об’єкти ==============================

@@ -5,32 +5,37 @@
 <link rel="stylesheet" href="/css/styles.css">
 <script src="/scripts/scripts.js" defer></script>
 <!--========= Вигляд =========--><form>
-  <h2> Що будеш робити якщо бачиш шахєд?  </h2>	
-1. ствнцюю гіпнаденс <br>
-2. ой ні біжимо в укритя <br>
-3. а школу відмінять? <br>
-4. піду на фронт <br>
- відповідь сюди   <input>    <br>
+<h2> Коли померла Леся Українка? </h2>	<br>
+1. 2024 <br>
+2. 666  <br>
+3. 1913 <br>
+4. 2026 <br>
+ 
+Виберіть відповідь <input>    <br>
 
     <output>  </output>    <br>
 
-    <button> Обчислити </button>
+    <button> перевірити </button>
 	
 </form>
+
+
 <!--==== Задача мовою Java Script ====--><script>
 function task1() {
-let nomer = Number(input1.value);
-let vidpovid;
 
-if (nomer == 2) {
-  vidpovid = "наш патріотик";
-} else {
-  vidpovid = "ну ти і крінж";
-}
- output1.value = vidpovid;
-}
+   let n = Number (input1.value);
+   let res;
+   
+   if (n == 3){
+     res = 'молодець! ти знаєш історію';
+	} else {
+	 res = 'стид і позор';
+    }
 
-<!--===== кінець задачі =====--></script>
+output1.value =  res 
+
+
+}<!--===== кінець задачі =====--></script>
 <!--========== Інші об’єкти ==============================
 1.  <h1> Заголовок </h1>					заголовок 1 рівня (h1,h2,h3)
 2.  <img src="fotka.jpg" width="300">		зображення

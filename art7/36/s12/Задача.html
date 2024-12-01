@@ -4,43 +4,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/css/styles.css">
 <script src="/scripts/scripts.js" defer></script>
-<!--========= Вигляд =========--><form>Без чого не включиться комп? <br>
-
-   1) без кнопки <br>
-   2) без відеокарти<br>
-   3) без материнської плати<br>
-   4) без монітора<br>
-
-
-
-
-    <input>    <br>
+<!--========= Вигляд =========--><form>
+<h2> Яка столиця Чехії? </h2><br>
+1. Лондон<br>
+2. Київ <br>
+3. Прага<br>
+4. Італія<br>	
+   Введіть правильну відповідь: <input>    <br>
 
     <output>  </output>    <br>
 
-    <button> Обчислити </button>
+    <button> перевірити </button>
 	
 </form>
 <!--==== Задача мовою Java Script ====--><script>
 function task1() {
+let nomer = Number(input1.value);
+let vidpovid;
 
-    let number = Number(input1.value);
-
-    let rules;
-	
-	
-	if (number == 3) {
-	
-	    rules = 'Правильно'
-    } else {
-	
-	    rules = 'Не Правильно'
-	
-}	
-	
-   output1.value = rules;
-  
+if (nomer == 3) {
+   vidpovid = 'Правильно! Ти добре знаєш столиці'
+} else {
+   vidpovid = 'Не правильно. Іди вчи географію!'
+ }  
+   
+   output1.value = vidpovid
 }<!--===== кінець задачі =====--></script>
 <!--========== Інші об’єкти ==============================
 1.  <h1> Заголовок </h1>					заголовок 1 рівня (h1,h2,h3)
-2.  <img src="fotka.jpg" width="300">		зображення
+2.  <img src="fotka.jpg" width="300">		зображенняЯ

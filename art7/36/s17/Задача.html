@@ -4,34 +4,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/css/styles.css">
 <script src="/scripts/scripts.js" defer></script>
-<!--========= Вигляд =========--><form>
-<h1> Що робити якщо люди почали мявкати? </h1> 
-1. бігти<br>
-2. стояти <br>
-3. почати з ними мявкати<br>
-4. вдарити<br><br>
+<!--========= Вигляд =========--><form>Столиця Швецарії  <br>
 
-  Виберіть відповідь  <input>    <br>
+
+    1)Париж  <br>
+	2)Берн  <br>
+	3)Цюрих  <br>
+    4)Канберра <br>
+
+
+    <input>    <br>
 
     <output>  </output>    <br>
 
-    <button> Перевірити </button>
-	
+    <button> Обчислити </button>
 	
 </form>
 <!--==== Задача мовою Java Script ====--><script>
 function task1() {
-let nomer = Number(input1.value);
-let vidpovig;
 
-if (nomer == 3){
-vidpovig = 'правильна відповідь';
-} else {
- 
- vidpovig = 'не правильна відповідь';
- 
-}
- output1.value = vidpovig;
+   let nom = Number(input1.value)
+   let vidpov ='Ви помилились';
+
+   if (nom == 1) vidpov = 'Не правильно'
+   if (nom == 2) vidpov = 'Правильно'
+   if (nom == 3) vidpov = 'Не вгадав'
+   if (nom == 4) vidpov = 'Вчи географію'
+   
+   
+   
+    output1.value = vidpov;
 
 }<!--===== кінець задачі =====--></script>
 <!--========== Інші об’єкти ==============================

@@ -5,33 +5,32 @@
 <link rel="stylesheet" href="/css/styles.css">
 <script src="/scripts/scripts.js" defer></script>
 <!--========= Вигляд =========--><form>
-<h1> Що робити якщо люди почали мявкати? </h1> 
-1. бігти<br>
-2. стояти <br>
-3. почати з ними мявкати<br>
-4. вдарити<br><br>
 
-  Виберіть відповідь  <input>    <br>
+ Яке місто столиця України?   <br>
+   <br> 1. Берлін, 2. Харків, 3. Варшава, 4. Київ  <br> <input>     
 
-    <output>  </output>    <br>
+    <output>  </output>   <br>  
 
-    <button> Перевірити </button>
-	
+    <button> Обчислити </button>   
 	
 </form>
 <!--==== Задача мовою Java Script ====--><script>
 function task1() {
-let nomer = Number(input1.value);
-let vidpovig;
+ 
+let number = Number(input1.value);
+let rules;
 
-if (nomer == 3){
-vidpovig = 'правильна відповідь';
+if  (number == 4) {
+rules = 'Правильно';
 } else {
- 
- vidpovig = 'не правильна відповідь';
- 
+rules = 'Не правильно';
 }
- output1.value = vidpovig;
+
+output1.value = rules;
+ 
+ 
+ 
+ 
 
 }<!--===== кінець задачі =====--></script>
 <!--========== Інші об’єкти ==============================

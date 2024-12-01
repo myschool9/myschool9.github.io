@@ -5,13 +5,12 @@
 <link rel="stylesheet" href="/css/styles.css">
 <script src="/scripts/scripts.js" defer></script>
 <!--========= Вигляд =========--><form>
-Хто виграв чемпіонат світу 2022 року з футболу?<br>
-1. Аргентина<br>
-2. Франція<br>
-3. Італія<br>
-4. Бразилія<br>
-	<input>    <br>
-	
+ <h2> Яка найліпша пора року? <h2>  <br>
+ 1. Літо  <br>
+ 2. Зима <br>
+ 3. Весна <br>
+ 4. Осінь <br>
+    <input>    <br>
 
     <output>  </output>    <br>
 
@@ -21,17 +20,17 @@
 <!--==== Задача мовою Java Script ====--><script>
 function task1() {
 
-let nom = Number(input1.value);
-let vidpovid = 'не вводь якусь фігню';
+    let n = Number(input1.value);
+	let respond = 'подумай краще';
+	
+	if (n == 1) respond = 'це правильна відповідь ти розумничка)))'
+    if (n == 2) respond = 'на жаль це не правильна відповідь((('
+    if (n == 3) respond = 'подумай краще((('
+    if (n == 4) respond = 'ні((('
+    
+    }
 
-if (nom == 1) vidpovid = 'молодець!!!';
-if (nom == 2) vidpovid = 'майже';
-if (nom == 3) vidpovid = 'ти дурний?';
-if (nom == 4) vidpovid = 'неправильно!';
-
-output1.value = vidpovid ;
-
-
+    output1.value = respond;
 
 }<!--===== кінець задачі =====--></script>
 <!--========== Інші об’єкти ==============================

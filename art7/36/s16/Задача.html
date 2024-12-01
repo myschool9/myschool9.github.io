@@ -4,35 +4,42 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/css/styles.css">
 <script src="/scripts/scripts.js" defer></script>
-<!--========= Вигляд =========--><form>
-<h1> Що робити якщо люди почали мявкати? </h1> 
-1. бігти<br>
-2. стояти <br>
-3. почати з ними мявкати<br>
-4. вдарити<br><br>
+<!--========= Вигляд =========--><form>Без чого не включиться комп? <br>
 
-  Виберіть відповідь  <input>    <br>
+   1) без кнопки <br>
+   2) без відеокарти<br>
+   3) без материнської плати<br>
+   4) без монітора<br>
+
+
+
+
+    <input>    <br>
 
     <output>  </output>    <br>
 
-    <button> Перевірити </button>
-	
+    <button> Обчислити </button>
 	
 </form>
 <!--==== Задача мовою Java Script ====--><script>
 function task1() {
-let nomer = Number(input1.value);
-let vidpovig;
 
-if (nomer == 3){
-vidpovig = 'правильна відповідь';
-} else {
- 
- vidpovig = 'не правильна відповідь';
- 
-}
- output1.value = vidpovig;
+    let number = Number(input1.value);
 
+    let rules;
+	
+	
+	if (number == 3) {
+	
+	    rules = 'Правильно'
+    } else {
+	
+	    rules = 'Не Правильно'
+	
+}	
+	
+   output1.value = rules;
+  
 }<!--===== кінець задачі =====--></script>
 <!--========== Інші об’єкти ==============================
 1.  <h1> Заголовок </h1>					заголовок 1 рівня (h1,h2,h3)

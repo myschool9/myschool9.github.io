@@ -5,29 +5,41 @@
 <link rel="stylesheet" href="/css/styles.css">
 <script src="/scripts/scripts.js" defer></script>
 <!--========= Вигляд =========--><form>
-<h2> Яка планета 4 у сонячній системі? </h2> <br>
-1. Венера <br>
-2. Марс <br> 
-3. Юпітер <br>
-4. Земля  <br>
-   Введи свою відповідь: <input>    <br>
-
+<h1> Що робити якщо в тебе в класі включили сигма бой <br> <h2>
+    
+	
+	1) розстріл (бо це російська музика) <br>
+	2) піти разом слухати <br>
+	3) проігнорити <br>
+	4) хз не придумав <br>
+	
+	
+	<input>    <br>
+	
     <output>  </output>    <br>
 
-    <button> перевір :) </button>
+    <button> Обчислити </button>
+
+
 	
 </form>
 <!--==== Задача мовою Java Script ====--><script>
 function task1() {
-let nomer = Number(input1.value);
-let vidpovid =' не вводь фігню! ';
 
-  if (nomer == 1) vidpovid = 'Венера це 2 від сонця планета. Вчи астрономію!!!' 
-  if (nomer == 2) vidpovid = 'Ти вибрав правильну відповідь! '   
-  if (nomer == 3) vidpovid = 'Юпітер це це 5 від сонця. Вчи астрономію!'
-  if (nomer == 4) vidpovid = 'Земля це 3 від сонця. Вчи астрономію!'
-  
-  output1.value = vidpovid;
+	let putany = Number(input1.value);
+	let vidpovid;
+	
+	if (putany = 1) {
+		putany = "правильна відповідь"
+		
+	} else {
+		putany = "не правильна відповідь"
+		
+	}
+
+output1.value = putany
+
+
 }<!--===== кінець задачі =====--></script>
 <!--========== Інші об’єкти ==============================
 1.  <h1> Заголовок </h1>					заголовок 1 рівня (h1,h2,h3)
