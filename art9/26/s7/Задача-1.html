@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="uk">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/styles.css">
+<!--========== HTML ==========-->
+<main>
+         <h1> Банк "Ярема"  <br> </h1> 
+		 
+         <h2>  Онлайн обмін валют  <br>   </h2>
+
+          уведіть сумму (грн)  <br>
+		  
+    <input id="input1">    <br>
+	
+          курс долара  <br>
+		  
+		<h1>  41.8308  <br>  </h1>
+		<img src="3.jpg" width="200"> <br>
+   купити <output id="output1"> 	</output> Ам. долар    <br>
+      		
+    <button onclick="task1()"> Обчислити </button>
+
+</main>
+<!--====== Java Script =======-->
+<script> function task1() {
+
+    const rate = 41.8308; 
+	
+	const uah = document.getElementById('input1').value;
+	
+	document.getElementById('output1').innerText = (uah / rate).toFixed(2) + 'USD';
+	
+	
+
+
+
+
+
+
+} </script>
+
+
+
+
+
+
+
+<!--============= HTML ================
+
+1. <h1>…</h1>		заголовок 1 рівня (h1,h2,h3)
+2. <br>				розрив рядка
+3. <b>…</b>			потовщений текст
+4. <img>			зображення		<img src="fotka.jpg" width="300">
+									<img src="picture.png" height="160">
+									
+5. <input type="checkbox">	прапорець				<input type="checkbox" id="checkbox1">
+6. <input type="radio">		перемикач				<input type="radio" id="radio1" name="group1">
+7. <textarea>…</textarea>	багаторядковий текст	<textarea id="textarea1">
+
+8. <label>…</label>		текстова мітка
+9. <div>…</div>			блочний елемент
+10.<span>…</span>		лінійний елемент
+
+================= CSS =================
+
+Приклад:	<div style="background-color:red; border-top:2px dotted blue; font-size:80%;">
+
+11. font-size: 150%;           	(14px)		розмір  (відсотки / пікселі)
+12. color: green;                			колір  (назва / номер)
+13. background-color: yellow;  				колір тла  (заливка)
+14. text-align: left;     (center) (right)	вирівнювання
+
+15. width: 50%;                	(250px)		ширина
+16. float: left;               	(right)		обтікання
+17. border-radius: 15px;					радіус округлення меж
+
+18. border: 3px solid black;				межі (товщина стиль колір)
+19. border-top: 5px double red;   			межа зверху
+20. border-bottom: 2px dashed red;			межа знизу
+
+-->

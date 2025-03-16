@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="uk">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/styles.css">
+<!--========== HTML ==========-->
+<main>
+
+<H1> <img><img src="rial.jfif" width="100"> Банк "Хойка" <img><img src="rial.jfif" width="100"></H1>
+<H3>                         Онлайн обмін валют                </H3> <br>
+                              Уведіть суму(грн)<br>
+<br>
+
+
+    <input id="input1">    <br>
+                             Іранський ріал <br>            
+<H3>                           0,00099                         </H3>     
+ Ви можете купити   <output id="output1"> 	</output>  Іранських ріалів    <br> 
+
+    <button onclick="task1()"> Обчислити </button>   <br>
+<button style "color: green;"; onclick="task2()"> Очистити </button>   <button onclick="task3()"> Про нас </button>
+</main>
+
+<!--====== Java Script =======-->
+<script> function task1() {
+
+let g = Number(input1.value)
+
+let r = g * 0.00099
+
+output1.value = r
+
+
+
+} </script>
+
+
+
+<!--============= HTML ================
+
+1. <h1>…</h1>		заголовок 1 рівня (h1,h2,h3)
+2. <br>				розрив рядка
+3. <b>…</b>			потовщений текст
+4. <img>			зображення		<img src="fotka.jpg" width="300">
+									<img src="picture.png" height="160">
+									
+5. <input type="checkbox">	прапорець				<input type="checkbox" id="checkbox1">
+6. <input type="radio">		перемикач				<input type="radio" id="radio1" name="group1">
+7. <textarea>…</textarea>	багаторядковий текст	<textarea id="textarea1">
+
+8. <label>…</label>		текстова мітка
+9. <div>…</div>			блочний елемент (виділення усього рядка)
+10.<span>…</span>		лінійний елемент
+
+================= CSS =================
+
+		style="background-color:red; border-top:2px dotted blue;"
+
+11. font-size: 150%;           	(14px)		розмір  (відсотки / пікселі)
+12. color: green;                			колір  (назва / номер)
+13. background-color: yellow;  				колір тла  (заливка)
+14. text-align: left;     (center) (right)	вирівнювання
+
+15. padding: 5px;							поля
+16. margin: 5px 0 0 10px;		(auto)		відступи
+
+17. width: 50%;                	(250px)		ширина
+18. float: left;               	(right)		обтікання
+19. border-radius: 15px;					радіус округлення меж
+
+20. border: 3px solid black;				межі (товщина стиль колір)
+21. border-top: 5px double red;   			межа зверху
+22. border-bottom: 2px dashed red;			межа знизу
+
+-->
