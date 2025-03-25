@@ -1,0 +1,66 @@
+:root {
+	--js-current-time-color: #f0e68c;
+}
+
+.timetable-day {		/* --- TD --- */
+	min-width: 33px;
+	padding: 4px 5px 2px 5px;
+	text-align: center;
+}
+
+.timetable-day a {
+	color: #8b008b;
+}
+
+.timetable-grp {		/* --- TD --- */
+	min-width: 33px;
+	padding: 4px 5px;
+	text-align: center; 
+}
+
+.timetable-grp a {
+	color: #921;
+}
+
+.timetable-kab {		/* --- TD --- */
+	min-width: 28px;
+	padding: 4px 5px;
+	text-align: center;
+}
+
+.timetable-kab a {
+	color: #008000;
+}
+
+.timetable-tch {		/* --- TD --- */
+	overflow: hidden;
+	max-width: 150px;
+	padding: 4px 5px;
+	line-height: 1.4;
+}
+
+.timetable-tch a {
+	color: #808000;
+}
+
+.timetable-sub {		/* --- TD --- */
+	overflow: hidden;
+	max-width: 140px;
+	padding: 4px 5px;
+}
+
+.timetable-sub {
+	color: var(--font-color);
+}
+
+.timetable--border-top {
+	border-top: var(--border-style);
+}
+
+.timetable--color-1 {
+	background-color: #fff;
+}
+
+.timetable--color-2 {
+	background-color: #f8f8ff;
+}
