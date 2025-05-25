@@ -2,38 +2,37 @@
 <html lang="uk">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="/css/global.css">
 <style>
-.ctnt{
-	width: 96%;
-	margin: 20px 0 20px 6px;
-	background-color: var(--body-color);
+body {
+	margin: 0;
+	padding: 5px;
+	font-family: sans-serif;
+	line-height: 1;
+	color: #333;
+	background-color: #f5f4e5;
 }
-@media screen and (min-width:600px){.ctnt{width:80%; margin:20px 0 20px 10%}}
+.data-content{
+	margin: 15px 5px;
+	max-width: 70em;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
+@media screen and (min-width:600px) {
+	.data-content{
+		margin: 20px 10%;
+	}
+}
 .image-container {
-	max-width: 90%;
-	margin: 5px 10px;
+	max-width: 30em;
+	margin: 7px 10px;
 }
 .image-container img {
 	width: 100%;
-	border: var(--border-style);
+	border: 1px dotted #333;
 }
 </style>
+<script src="/scripts/data_arrays.js"></script>
 <title></title>
 
-<div class="ctnt" style="display:flex; flex-wrap:wrap; align-items:flex-start;">
-	<div class="image-container"><img src="/group5/alg-1/Слайд1.PNG" alt=""></div>
-	<div class="image-container"><img src="/group5/alg-1/Слайд2.PNG" alt=""></div>
-	<div class="image-container"><img src="/group5/alg-1/Слайд3.PNG" alt=""></div>
-	<div class="image-container"><img src="/group5/alg-1/Слайд4.PNG" alt=""></div>
-	<div class="image-container"><img src="/group5/alg-1/Слайд5.PNG" alt=""></div>
-	<div class="image-container"><img src="/group5/alg-1/Слайд6.PNG" alt=""></div>
-	<div class="image-container"><img src="/group5/alg-1/Слайд7.PNG" alt=""></div>
-	<div class="image-container"><img src="/group5/alg-1/Слайд8.PNG" alt=""></div>
-	<div class="image-container"><img src="/group5/alg-1/Слайд9.PNG" alt=""></div>
-	<div class="image-container"><img src="/group5/alg-1/Слайд10.PNG" alt=""></div>
-	<div class="image-container"><img src="/group5/alg-1/Слайд11.PNG" alt=""></div>
-	<div class="image-container"><img src="/group5/alg-1/Слайд12.PNG" alt=""></div>
-	<div class="image-container"><img src="/group5/alg-1/Слайд13.PNG" alt=""></div>
-	<div class="image-container"><img src="/group5/alg-1/Слайд14.PNG" alt=""></div>
-</div>
+<body onload="CreateArray(location.search)"></body>
