@@ -30,11 +30,14 @@
 	margin: 7px 10px;
 	line-height: 1.3;
 	text-align: center;
+	color: var(--link-color);
+	text-decoration: none;
 	border: var(--border-style);
 	border-radius: 5px;
 }
 
-.group-test {
+.group-test, 
+.group-project {
 	font-family: Consolas, monospace;
 	font-size: 90%;
 }
@@ -51,7 +54,6 @@
 	background-color: #ffede9;
 }
 
-.group--special {
-	border-radius: 15px;
+.group--color-4 {
 	background-color: #eee;
 }
