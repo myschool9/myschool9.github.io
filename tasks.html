@@ -91,11 +91,13 @@ const list = [
 //-----------------------------------------------
 function CreateList(txt) {
 	const symb = '&';
-	const par = decodeURI(txt).split(symb);
-	if (par.length !== 2) return;
+	let par = decodeURI(txt).split(symb);
+	if (par.length === 0) par.push('');
+	if (par.length === 1) par.push('1');
 	
-	folder = par[0].slice(1, par[0].length);
-	folder = '/' + folder.replace('-', '/') + '/';
+	folder = par[0].slice(1, par[0].length).trim();
+	folder = '/' + folder.replace('-', '/');
+	if (folder !== '/') folder += '/';
 
 	let txtSel = '';
 	for (let i = 1; i <= list.length; i++) {
@@ -103,7 +105,7 @@ function CreateList(txt) {
 	}
 	document.getElementById('listBox').innerHTML = txtSel;
 	
-	nItem = par[1];
+	nItem = Number(par[1]) - 1;
 	ShowItem();
 }
 
