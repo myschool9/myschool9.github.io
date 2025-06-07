@@ -7,6 +7,7 @@
 
 <!--==========================================-->
 <style>
+
 body {
 	margin: 0;
 	padding: 5px;
@@ -44,13 +45,15 @@ body {
 .video-container video {max-width:100%;	border-radius:5px; border:1px dotted #333333;}
 
 .task-comment {padding:10px; font-size:80%;}
+
 </style>
 
 <!--==========================================-->
 <script>
+
 var startX, startY;
-var nItem;
-var folder = '';
+var nItem = 0;
+var folder = '/';
 const list = [
 	{file:'переправа', name:'Переправа', comment:''},
 	{file:'хижаки', name:'Хижаки', comment:''},
@@ -92,20 +95,15 @@ const list = [
 function CreateList(txt) {
 	const symb = '&';
 	let par = decodeURI(txt).split(symb);
-	if (par.length === 0) par.push('');
-	if (par.length === 1) par.push('1');
-	
-	folder = par[0].slice(1, par[0].length).trim();
-	folder = '/' + folder.replace('-', '/');
-	if (folder !== '/') folder += '/';
+	if (par.length > 0 && par[0].length > 1) folder += par[0].slice(1, par[0].length).replace('-', '/').trim() + '/';
+	if (par.length > 1) nItem = Number(par[1]) - 1;	
 
 	let txtSel = '';
 	for (let i = 1; i <= list.length; i++) {
 		txtSel += '<option>' + String(i) + '</option>';
 	}
 	document.getElementById('listBox').innerHTML = txtSel;
-	
-	nItem = Number(par[1]) - 1;
+
 	ShowItem();
 }
 
