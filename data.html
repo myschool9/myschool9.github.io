@@ -2,15 +2,20 @@
 <html lang="uk">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Презентація</title>
+
+<!--==========================================-->
 <style>
+
 body {
 	margin: 0;
 	padding: 5px;
 	font-family: sans-serif;
 	line-height: 1;
-	color: #333;
+	color: #333333;
 	background-color: #f5f4e5;
 }
+
 .data-content{
 	margin: 5px;
 	padding: 2px;
@@ -18,19 +23,16 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: flex-start;
-}
-@media screen and (min-width:600px) {.data-content{margin:5px 10%;}}
+	justify-content: space-between;
+} @media screen and (min-width:30em) {.data-content{margin:5px 10%;}}
 
-.image-container {
-	max-width: 30em;
-	margin: 7px 10px;
-}
-.image-container img {
-	width: 100%;
-	border: 1px dotted #333;
-}
+.image-container {max-width:30em; margin:7px 10px;}
+.image-container img {width:100%; border-radius:5px; border:1px dotted #333333;}
+
 </style>
-<script src="/scripts/data_arrays.js"></script>
-<title></title>
 
+<!--==========================================-->
+<script src="/scripts/data.js"></script>
+
+<!--==========================================-->
 <body onload="CreateArray(location.search)"></body>
