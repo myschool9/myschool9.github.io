@@ -52,6 +52,11 @@ body {
 	font-size: 90%;
 }
 
+.menu-sub {
+	font-family: Consolas, monospace;
+	font-size: 70%;
+}
+
 .menu--color-1 {
 	background-color: #ffffff;
 }

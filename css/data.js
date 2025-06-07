@@ -9,8 +9,11 @@ function CreateArray(txt) {
 
 	let nItemFrom = 0;
 	let nItemTo = 0;
-	if (par.length > 1) nItemFrom = Number(par[1]) - 1;
-	if (par.length > 2) nItemTo = Number(par[2]) - 1;
+	if (par.length > 1) nItemTo = Number(par[1]) - 1;
+	if (par.length > 2) {
+		nItemFrom = Number(par[1]) - 1;
+		nItemTo = Number(par[2]) - 1;
+	}
 
 	if (isNaN(nItemFrom)) nItemFrom = 0;
 	if (nItemFrom < 0) nItemFrom = 0;
