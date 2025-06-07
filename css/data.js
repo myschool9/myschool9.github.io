@@ -7,27 +7,27 @@ function CreateArray(txt) {
 	
 	if (par.length > 0 && par[0].length > 1) folder += par[0].slice(1, par[0].length).replace('-', '/').trim() + '/';
 
-	let nItemFrom = 0;
-	let nItemTo = 0;
-	if (par.length > 1) nItemTo = Number(par[1]) - 1;
+	let nItemFrom = 1;
+	let nItemTo = 1;
+	if (par.length > 1) nItemTo = Number(par[1]);
 	if (par.length > 2) {
-		nItemFrom = Number(par[1]) - 1;
-		nItemTo = Number(par[2]) - 1;
+		nItemFrom = Number(par[1]);
+		nItemTo = Number(par[2]);
 	}
 
-	if (isNaN(nItemFrom)) nItemFrom = 0;
-	if (nItemFrom < 0) nItemFrom = 0;
+	if (isNaN(nItemFrom)) nItemFrom = 1;
+	if (nItemFrom < 1) nItemFrom = 1;
 	if (nItemFrom > 99) nItemFrom = 99;
-	if (isNaN(nItemTo)) nItemTo = 0;
-	if (nItemTo < 0) nItemTo = 0;
+	if (isNaN(nItemTo)) nItemTo = 1;
+	if (nItemTo < 1) nItemTo = 1;
 	if (nItemTo > 99) nItemTo = 99;
 	if (nItemFrom > nItemTo) nItemFrom = nItemTo;
 	
 	let txtHTML = '<div class="data-content">';
-	for (let i = imgFrom; i <= imgTo; i++) {
-		txtHTML += '<div class="image-container"><img src="' + folder + 'Слайд' + String(i) + '.PNG" alt=""></div>';
+	for (let i = nItemFrom; i <= nItemTo; i++) {
+		txtHTML += '<div class="image-container"><img src="' + folder + String(i) + '.png" alt=""></div>';
 	}
 	txtHTML += '</div>';
 
-	document.body.innerHTML = s;
+	document.body.innerHTML = txtHTML;
 }
