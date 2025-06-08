@@ -1,27 +1,26 @@
 body {
 	margin: 0;
 	padding: 5px;
-	text-align: center;
 	font-family: sans-serif;
 	color: #333333;
 	background-color: #f5f4e5;
 }
 
-.task-content {
+.taskjs-content {
 	margin: 5px;
 	padding: 2px;
 	max-width: 30em;
-	line-height: 1.3;
+	line-height: 1.5;
 	background-color: #ffffff;
 }
 
 @media screen and (min-width:30em) {
-	.task-content {
+	.taskjs-content {
 		margin: 5px 10%;
 	}
 }
 
-.task-header {
+.taskjs-header {
 	margin: 0;
 	padding: 2px;
 	display: flex;
@@ -30,10 +29,11 @@ body {
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
+	text-align: center;
 	background-color: #8fbc8f;
 }
 
-.task-button {
+.taskjs-button {
 	overflow: hidden;
 	margin: 1px;
 	padding: 2px 4px;
@@ -59,26 +59,87 @@ select {
 	background: -o-linear-gradient(top, #fff 0%, #b0c4de 50%, #fff 100%);
 }
 
-.task-title {
-	padding: 20px 0 10px 0;
+.taskjs-main {
+	padding: 5px;
 }
 
-.task-number {
-	padding-right: 7px;
+.taskjs-number {
+	font-size: 0.9em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.taskjs-text {
+	padding: 5px;
+}
+
+.taskjs-hint {
+	font-size: 90%;
+}
+
+.taskjs-in-out {
+	padding: 5px;
+	background-color: #fffff0;
+	border: 1px dotted #333333;
+}
+
+.taskjs-in-title,
+.taskjs-out-title {
+	padding: 5px 30px;
+	font-size: 90%;
+	font-style: italic;
 	font-weight: bold;
 }
 
-.task-name {}
+.taskjs-in,
+.taskjs-out {
+	padding: 5px 10px;
+	font-size: 90%;
+}
 
-.task-container {}
+.taskjs-container,
+.taskjs-solve-container {
+	text-align: center;
+}
 
-.task-container video {
+.taskjs-container img,
+.taskjs-solve-container img {
 	max-width: 100%;
 	border-radius: 5px;
 	border: 1px dotted #333333;
 }
 
-.task-comment {
+.taskjs-tests {
 	padding: 10px;
-	font-size: 80%;
+	font-family: monospace;
+	background-color: #f8f8ff;
 }
+
+.taskjs-tests table {
+	border-spacing: 5px;
+}
+
+.taskjs-tests td {
+	min-width: 30px;
+	padding: 2px 3px;
+}
+
+.taskjs-solve {
+	padding: 5px;
+	border: 1px dotted #333333;
+}
+
+.taksjs-solve-title {
+	padding: 5px;
+	font-size: 90%;
+	text-align: center;
+	font-style: italic;
+	font-weight: bold;
+}
+
+/*
+.task-solve-alt-code {background-color: #ddd;}
+.task--border-top {border-top: var(--border-style);}
+
+
+*/

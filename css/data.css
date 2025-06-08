@@ -23,13 +23,14 @@ body {
 	}
 }
 
-.image-container {
+.data-container {
 	max-width: 30em;
 	margin: 7px 10px;
 }
 
-.image-container img {
-	width: 100%; 
+.data-container img,
+.data-container video {
+	width: 100%;
 	border-radius: 5px;
-	border:1px dotted #333333;
+	border: 1px dotted #333333;
 }

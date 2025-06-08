@@ -6,8 +6,8 @@ var folder = '/';
 function CreateList(txt) {
 	const symb = '&';
 	const par = decodeURI(txt).split(symb);
-	if (par.length > 0 && par[0].length > 1) folder += par[0].slice(1, par[0].length).replace('-', '/').trim() + '/';
-	if (par.length > 1) nItem = Number(par[1]) - 1;	
+	if (par.length > 0 && par[0].length > 1) folder += par[0].slice(1, par[0].length).replace('_', '/').trim() + '/';
+	if (par.length > 1) nItem = Number(par[1]) - 1;
 
 	let txtSel = '';
 	for (let i = 1; i <= list.length; i++) {
@@ -18,7 +18,7 @@ function CreateList(txt) {
 	ShowItem();
 }
 
-//-----------------------------------------------
+//-----------------------------------------------'°'
 function ShowItem() {
 	if (list.length === 0) return;
 	nItem = Number(nItem);
@@ -43,7 +43,7 @@ function touchStart() {
 function touchEnd() {
 	let dX = event.changedTouches[0].clientX - startX;
 	let dY = event.changedTouches[0].clientY - startY;
-	
+
 	if (dX > 50 && Math.abs(dX) > Math.abs(dY)) {
 		nItem -= 1;
 		ShowItem();
