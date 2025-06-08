@@ -2,7 +2,6 @@ body {
 	margin: 0;
 	padding: 5px;
 	font-family: sans-serif;
-	line-height: 1;
 	color: #333333;
 	background-color: #f5f4e5;
 }
@@ -15,6 +14,7 @@ body {
 	flex-wrap: wrap;
 	align-items: flex-start;
 	justify-content: space-between;
+	line-height: 1;
 }
 
 @media screen and (min-width:30em) {
