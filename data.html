@@ -3,11 +3,48 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/css/menu.css">
-<link rel="stylesheet" href="/css/data.css">
 <script src="/css/data.js"></script>
 <title>Презентація</title>
 
 <!--==========================================-->
-<body onload="CreateArray(location.search)">
+<style>
+body {
+	margin: 0;
+	padding: 5px;
+	font-family: sans-serif;
+	color: #333333;
+	background-color: #f5f4e5;
+}
 
-</body>
+.data-content{
+	margin: 5px;
+	padding: 2px;
+	max-width: 70em;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: space-between;
+	line-height: 1;
+}
+
+@media screen and (min-width:30em) {
+	.data-content {
+		margin: 5px 10%;
+	}
+}
+
+.data-container {
+	max-width: 30em;
+	margin: 7px 10px;
+}
+
+.data-container img,
+.data-container video {
+	width: 100%;
+	border-radius: 5px;
+	border: 1px dotted #333333;
+}
+</style>
+
+<!--==========================================-->
+<body onload="CreateArray(location.search)"></body>
