@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uk">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/styles.css">
+<script src="/scripts/scripts.js" defer></script>
+<form>
+<!--===============================-->
+який номер в фудболіста роналдо <br>
+
+1.15           <br>
+2.10           <br>
+3.7            <br>
+4.8            <br>
+
+
+<input id="input1">     <br>
+
+<span id="span1"></span>     <br>
+
+<button type="button" onclick="f1()"></button>
+<!--===============================--><script>
+function f1() {
+
+let nomer = Number(input1.value);
+
+let rules = '';
+
+
+if (nomer===3)
+
+    rules = 'харош';
+
+else
+
+    rules = 'мда ти бот!!!';
+
+
+span1.innerText = rules;
+
+
+}
+<!--===============================--></script></form>
