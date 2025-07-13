@@ -15,7 +15,7 @@ function CreateArray(txt) {
 		if (par[1] === 'v') kod = 2;	// відео		1.mp4, 2,mp4...
 		if (par[1] === 'f') kod = 3;	// форма js		1.html, 2.html
 		if (par[1] === 'h') kod = 4;	// сайт			1/index.html, 2/index.html
-	} alert(kod)
+	}
 	if (par.length > 2) {
 		nItemFrom = Number(par[1]);
 		nItemTo = Number(par[2]);
