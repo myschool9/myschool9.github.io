@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="uk">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Задачі Scratch 5&nbsp;клас</title>
+
+<!--==========================================-->
+<style>
+body {
+	margin: 0;
+	padding: 5px;
+	text-align: center;
+	font-family: sans-serif;
+	color: #333333;
+	background-color: #f5f4e5;
+}
+
+.task-content {
+	margin: 5px;
+	padding: 2px;
+	max-width: 30em;
+	line-height: 1.3;
+	background-color: #ffffff;
+}
+
+@media screen and (min-width:30em) {
+	.task-content {
+		margin: 5px 10%;
+	}
+}
+
+.task-header {
+	margin: 0;
+	padding: 2px;
+	display: flex;
+	border-radius: 5px;
+	line-height: 2;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #8fbc8f;
+}
+
+.task-button {
+	overflow: hidden;
+	margin: 1px;
+	padding: 2px 4px;
+	width: 35px;
+	border: 1px solid #333333;
+	border-radius: 5px;
+	background: -webkit-linear-gradient(top, #d0ecf4 0%, #5bc9e1 50%, #d0ecf4 100%);
+	background: -moz-linear-gradient(top, #d0ecf4 0%, #5bc9e1 50%, #d0ecf4 100%);
+	background: -ms-linear-gradient(top, #d0ecf4 0%, #5bc9e1 50%, #d0ecf4 100%);
+	background: -o-linear-gradient(top, #d0ecf4 0%, #5bc9e1 50%, #d0ecf4 100%);
+	cursor: pointer;
+}
+
+select {
+	min-width: 120px;
+	padding: 2px 5px;
+	font-size: 1em;
+	border: 2px outset #333333;
+	border-radius: 5px;
+	background: -webkit-linear-gradient(top, #fff 0%, #b0c4de 50%, #fff 100%);
+	background: -moz-linear-gradient(top, #fff 0%, #b0c4de 50%, #fff 100%);
+	background: -ms-linear-gradient(top, #fff 0%, #b0c4de 50%, #fff 100%);
+	background: -o-linear-gradient(top, #fff 0%, #b0c4de 50%, #fff 100%);
+}
+
+.task-title {
+	padding: 20px 0 10px 0;
+}
+
+.task-number {
+	padding-right: 7px;
+	font-weight: bold;
+}
+
+.task-name {}
+
+.task-container {}
+
+.task-container video {
+	max-width: 100%;
+	border-radius: 5px;
+	border: 1px dotted #333333;
+}
+
+.task-comment {
+	padding: 10px;
+	font-size: 80%;
+}
+</style>
+
+<!--==========================================-->
+<div class="task-content" ontouchstart="touchStart()" ontouchend="touchEnd()">
+	<div class="task-header">
+		<div class="task-button" onclick="nItem = listBox.selectedIndex - 1; ShowItem()">&#9668;</div>
+		<select id="listBox" size="1" onchange="nItem = this.selectedIndex; ShowItem()"></select>
+		<div class="task-button" onclick="nItem = listBox.selectedIndex + 1; ShowItem()">&#9658;</div>
+	</div>
+
+	<div class="task-title">
+		<span id="taskNumber" class="task-number">№&nbsp;0. </span>
+		<span id="taskName" class="task-name">Назва завдання</span>
+	</div>
+	
+	<div class="task-container"><video id="taskVideo" controls><source src="" type="video/mp4">Не можна відобразити відео :(</video></div>
+	<div id="taskComment" class="task-comment">Коментар до завдання</div>
+</div>
+
+
+<!--==========================================-->
+<script>
+
+const list5 = [
+	{file:'переправа', name:'Переправа', comment:''},
+	{file:'хижаки', name:'Хижаки', comment:''},
+	{file:'у воді', name:'У воді', comment:''},
+	{file:'футбол', name:'Футбол', comment:''},
+	{file:'світ тварин', name:'Світ тварин', comment:''},
+	{file:'перехід дороги', name:'Перехід дороги', comment:'Дорогу і «зебру» треба малювати!'},
+	{file:'гімнастика', name:'Гімнастика', comment:''},
+	{file:'вартовий', name:'Вартовий', comment:''},
+	{file:'капуста', name:'Капуста', comment:'5-7 капустин'},
+	{file:'квітка', name:'Квітка', comment:'Кількість пелюсток – будь-яка'},
+	{file:'світлофор', name:'Світлофор', comment:''},
+	{file:'кіт-футболіст', name:'Кіт-футболіст', comment:''},
+	{file:'вітряки', name:'Вітряки', comment:'Вітряки треба малювати!'},
+	{file:'зоряне небо', name:'Зоряне небо', comment:''},
+	{file:'відліт кажана', name:'Відліт кажана', comment:''},
+	{file:'зустріч', name:'Зустріч', comment:''},
+	{file:'дощ', name:'Дощ', comment:'Кіт перемішується стрілками вліво-вправо'},
+	{file:'годинник', name:'Годинник', comment:'Годинник треба малювати!'},
+	{file:'туди-сюди', name:'Туди-сюди', comment:''},
+	{file:'більярд', name:'Більярд', comment:''},
+	{file:'серце', name:'Серце', comment:''},
+	{file:'сонце і земля', name:'Сонце і Земля', comment:''},
+	{file:'жабка', name:'Жабка', comment:''},
+	{file:'титанік', name:'Титанік', comment:''},
+	{file:'веселка', name:'Веселка', comment:''},
+	{file:'заставка', name:'Заставка', comment:''},
+	{file:'прапорець', name:'Прапорець', comment:'(малювання олівцем)'},
+	{file:'слово', name:'Слово', comment:'(малювання олівцем)'},
+	{file:'сніжинка', name:'«Сніжинка»', comment:'(циклічне малювання олівцем)'},
+	{file:'зірочка', name:'«Зірочка»', comment:'(циклічне малювання олівцем)'},
+	{file:'багатокутник', name:'Багатокутник', comment:'(циклічне малювання олівцем)'},
+	{file:'сходи', name:'Сходи', comment:'(циклічне малювання олівцем)'},
+	{file:'зебра', name:'«Зебра»', comment:'(циклічне малювання олівцем)'},
+	{file:'спіраль', name:'Спіраль', comment:'(циклічне малювання олівцем)'},
+]
+
+const list6 = [
+	{file:'перехід дороги-2', name:'Перехід дороги-2', comment:'Світлофор (2&nbsp;образи) треба малювати!'},
+	{file:'екскурсія', name:'Екскурсія', comment:''},
+	{file:'космічна подорож', name:'Космічна подорож', comment:'Ракету треба малювати!'},
+	{file:'спритна мишка', name:'Спритна мишка', comment:''},
+	{file:'ліс', name:'Ліс', comment:'Ялинки «виростають» різного розміру і «де&nbsp;захочуть»'},
+	{file:'кубик', name:'Кубик', comment:'Вкидання грального кубика:<br>через певний час випадає число від&nbsp;1 до&nbsp;6'},
+	{file:'зоряне небо-2', name:'Зоряне небо-2', comment:'Зірки різного розміру, кольору та напрямку'},
+	{file:'рулетка', name:'Рулетка', comment:'Рулетку треба малювати!'},
+	{file:'заєць і капуста', name:'Заєць і капуста', comment:'Капуста з’являється «де&nbsp;захоче».<br>Заєць намагається її піймати'},
+	{file:'автомобілі', name:'Автомобілі', comment:''},
+	{file:'серце-2', name:'Серце-2', comment:''},
+	{file:'шлюз', name:'Шлюз', comment:'Шлюз відкривається, коли кораблик наблизиться на&nbsp;певну відстань'},
+	{file:'мозаїка', name:'Мозаїка', comment:'Фігури різного розміру, кольору та напрямку'},
+	{file:'пенальті', name:'Пенальті', comment:'Поле з&nbsp;воротами треба малювати!'},
+	{file:'дощ-2', name:'Дощ-2', comment:''},
+	{file:'втеча-1', name:'Втеча-1. Обійти!', comment:''},
+	{file:'втеча-2', name:'Втеча-2. Пролізти!', comment:''},
+	{file:'втеча-3', name:'Втеча-3. Прокласти шлях!', comment:''},
+	{file:'втеча-4', name:'Втеча-4. Відплисти!', comment:''},
+	{file:'дощ-3', name:'Дощ-3', comment:''},
+	{file:'клони', name:'Клони', comment:''},
+	{file:'намисто', name:'Намисто', comment:'Зобразіть не шестикутник,<br>а квадрат або п’ятикутник'},
+	{file:'таймер', name:'Таймер', comment:'Домалюйте кнопку, яка запускає таймер'},
+	{file:'шахівниця', name:'Шахівниця', comment:''},
+	{file:'квіткове поле', name:'Квіткове поле', comment:'Квітки з’являються «де захочуть»,<br>різних кольорів та різного розміру'},
+	{file:'НЛО', name:'НЛО', comment:''},
+	{file:'ліфт', name:'Ліфт', comment:''},
+	{file:'гармата', name:'Гармата', comment:''},
+]
+
+var startX, startY;
+const symb = '&';
+const par = decodeURI(location.search).split(symb);
+var folder = '/';
+if (par.length > 0 && par[0].length > 1) folder += par[0].slice(1, par[0].length).replace('_', '/').trim() + '/';
+var list = (par.length > 1 && par[1] === '6') ? list6 : list5;
+var nItem = (par.length > 2) ? nItem = Number(par[2]) - 1 : 0;
+
+let txtSel = '';
+for (let i = 1; i <= list.length; i++) {
+	txtSel += '<option>' + String(i) + '</option>';
+}
+document.getElementById('listBox').innerHTML = txtSel;
+
+ShowItem();
+
+//-----------------------------------------------
+function ShowItem() {
+	if (list.length === 0) return;
+	nItem = Number(nItem);
+	if (isNaN(nItem)) nItem = 0;
+	if (nItem < 0) nItem = 0;
+	if (nItem >= list.length) nItem = list.length - 1;
+
+	document.getElementById('taskNumber').innerHTML = '№&nbsp;' + String(nItem + 1) + '. ';
+	document.getElementById('taskName').innerHTML = list[nItem].name;
+	document.getElementById('taskVideo').src = folder + list[nItem].file + '.mp4';
+	document.getElementById('taskComment').innerHTML = list[nItem].comment;
+	document.getElementById('listBox').selectedIndex = nItem;
+}
+
+//-----------------------------------------------
+function touchStart() {
+	startX = event.touches[0].clientX;
+	startY = event.touches[0].clientY;
+}
+
+//-----------------------------------------------
+function touchEnd() {
+	let dX = event.changedTouches[0].clientX - startX;
+	let dY = event.changedTouches[0].clientY - startY;
+
+	if (dX > 50 && Math.abs(dX) > Math.abs(dY)) {
+		nItem += 1;
+		ShowItem();
+	}
+	if (dX < -50 && Math.abs(dX) > Math.abs(dY)) {
+		nItem -= 1;
+		ShowItem();
+	}
+}
+</script>
