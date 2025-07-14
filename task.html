@@ -225,11 +225,11 @@ function touchEnd() {
 	let dY = event.changedTouches[0].clientY - startY;
 
 	if (dX > 50 && Math.abs(dX) > Math.abs(dY)) {
-		nItem += 1;
+		nItem -= 1;
 		ShowItem();
 	}
 	if (dX < -50 && Math.abs(dX) > Math.abs(dY)) {
-		nItem -= 1;
+		nItem += 1;
 		ShowItem();
 	}
 }
