@@ -23,11 +23,7 @@ body {
 	background-color: #ffffff;
 }
 
-@media screen and (min-width:30em) {
-	.taskjs-content {
-		margin: 5px 10%;
-	}
-}
+@media screen and (min-width:30em) {.taskjs-content {margin: 5px 10%;} }
 
 .taskjs-header {
 	margin: 0;
@@ -68,9 +64,7 @@ select {
 	background: -o-linear-gradient(top, #fff 0%, #b0c4de 50%, #fff 100%);
 }
 
-.taskjs-main {
-	padding: 5px;
-}
+.taskjs-main {padding: 5px;}
 
 .taskjs-number {
 	font-size: 0.9em;
@@ -78,13 +72,8 @@ select {
 	text-align: center;
 }
 
-.taskjs-text {
-	padding: 5px;
-}
-
-.taskjs-hint {
-	font-size: 90%;
-}
+.taskjs-text {padding: 5px;}
+.taskjs-hint {font-size: 90%;}
 
 .taskjs-in-out {
 	padding: 5px;
@@ -92,31 +81,17 @@ select {
 	border: 1px dotted #333333;
 }
 
-.taskjs-in-title,
-.taskjs-out-title {
+.taskjs-in-title, .taskjs-out-title {
 	padding: 5px 30px;
 	font-size: 90%;
 	font-style: italic;
 	font-weight: bold;
 }
 
-.taskjs-in,
-.taskjs-out {
-	padding: 5px 10px;
-	font-size: 90%;
-}
+.taskjs-in, .taskjs-out {padding: 5px 10px;	font-size: 90%;}
 
-.taskjs-container,
-.taskjs-solve-container {
-	text-align: center;
-}
-
-.taskjs-container img,
-.taskjs-solve-container img {
-	max-width: 100%;
-	border-radius: 5px;
-	border: 1px dotted #333333;
-}
+.taskjs-container, .taskjs-solve-container {text-align: center;}
+.taskjs-container img, .taskjs-solve-container img {max-width: 100%; border-radius: 5px; border: 1px dotted #333333;}
 
 .taskjs-tests {
 	padding: 10px;
@@ -124,20 +99,13 @@ select {
 	background-color: #f8f8ff;
 }
 
-.taskjs-tests table {
-	border-spacing: 5px;
-}
-
-.taskjs-tests td {
-	min-width: 30px;
-	padding: 2px 3px;
-}
+.taskjs-tests table {border-spacing: 5px;}
+.taskjs-tests td {min-width: 30px;	padding: 2px 3px;}
 
 .taskjs-solve {
 	padding: 5px;
 	border: 1px dotted #333333;
 }
-
 .taksjs-solve-title {
 	padding: 5px;
 	font-size: 90%;
@@ -146,21 +114,15 @@ select {
 	font-weight: bold;
 }
 
-/*
-.task-solve-alt-code {background-color: #ddd;}
-.task--border-top {border-top: var(--border-style);}
-
 </style>
 
 <!--==========================================-->
-<body>
-
-<div class="taskjs-content" ontouchstart="touchStart()" ontouchend="touchEnd()">
+<div class="taskjs-content" ontouchstart="touchStart()" ontouchend="touchEnd(listBox.selectedIndex)">
 
 	<div class="taskjs-header">
-		<div class="taskjs-button" onclick="nItem = listBox.selectedIndex - 1; ShowItem()">&#9668;</div>
-		<select id="listBox" size="1" onchange="nItem = this.selectedIndex; ShowItem()"></select>
-		<div class="taskjs-button" onclick="nItem = listBox.selectedIndex + 1; ShowItem()">&#9658;</div>
+		<div class="taskjs-button" onclick="ShowItem(listBox.selectedIndex - 1)">&#9668;</div>
+		<select id="listBox" size="1" onchange="ShowItem(this.selectedIndex)"></select>
+		<div class="taskjs-button" onclick="ShowItem(listBox.selectedIndex + 1)">&#9658;</div>
 	</div>
 
 	<div class="taskjs-main">
@@ -186,8 +148,6 @@ select {
 
 </div>
 
-</body>
-
 <!--==========================================-->
 <script>
 
@@ -197,460 +157,552 @@ const list = [
 	hint: '',
 	inTitle: [''],
 	outTitle: ['значення прикладу'],
-	inTests: [['']],
-	outTests: [['3.62857']],
-	obj: '1',
-	solve: 'task-2'},		
-		
+	tests: [
+		['', '==>', 3.62857], 
+	],
+	obj: true,
+	solve: true},
+
 	{txt: 'На&nbsp;складі меблевої фабрики зберігається декілька столиків та стільців.<br>Скільки&nbsp;всього предметів зберігається на&nbsp;складі?',
 	hint: '',
 	inTitle: ['кількість столиків', 'кількість стільців'],
 	outTitle: ['всього предметів'],
-	inTests: [['17', '6'], ['1', '134'], ['41', '41']],
-	outTests: [['23'], ['135'], ['82']],
-	obj: '3',
-	solve: 'task-3'},
+	tests: [
+		[17, 6, '==>', 23], 
+		[1, 134, '==>', 135],
+		[41, 41, '==>', 82],
+	],
+	obj: true,
+	solve: true},
 
 	{txt: '«Ідеальна» вага людини в кілограмах&nbsp;– це її ріст у&nbsp;сантиметрах мінус&nbsp;110.<br>Складіть програму обчислення «ідеальної» ваги.',
 	hint: '',
 	inTitle: ['ріст людини (см)'],
 	outTitle: ['вага людини (кг)'],
-	inTests: [['217'], ['174'], ['2356']],
-	outTests: [['107'], ['64'], ['2246']],
-	obj: '4',
-	solve: 'task-1'},
+	tests: [
+		[217, '==>', 107], 
+		[174, '==>', 64],
+		[2356,'==>', 2246],
+	],
+	obj: true,
+	solve: true},
 
 	{txt: 'Учень зігнув дріт у&nbsp;формі квадрата.<br>Скільки дроту витратив учень? Яку&nbsp;площу займає квадрат?',
 	hint: '',
 	inTitle: ['довжина однієї сторони квадрата'],
 	outTitle: ['довжина усього дроту', 'площа квадрата'],
-	inTests: [['6.2'], ['17'], ['2.3']],
-	outTests: [['24.8', '38.44'], ['68.0', '289.00'], ['9.2', '5.29']],
-	obj: 'task-5',
-	solve: ''},
+	tests: [
+		[6.2, '==>', 24.8, 38.44], 
+		[17,  '==>', 68.0, 289.00],
+		[2.3, '==>', 9.2, 5.29],
+	],	
+	obj: true,
+	solve: false},
 
 	{txt: 'Діагоналі телевізорів та моніторів вимірюють у&nbsp;дюймах.<br>Cкільки це сантиметрів? А&nbsp;метрів?',
 	hint: '1&nbsp;дюйм&nbsp;= 2,54&nbsp;см',
 	inTitle: ['довжина діагоналі у&nbsp;дюймах'],
 	outTitle: ['довжина у&nbsp;см', 'довжина у&nbsp;метрах'],
-	inTests: [['42'], ['10.3'], ['123.5']],
-	outTests: [['106.68', '1.0668'], ['26.16', '0.2616'], ['313.69', '3.1369']],
-	obj: '',
-	solve: '5'},
+	tests: [
+		[42, '==>', 106.68, 1.0668], 
+		[10.3, '==>', 26.16, 0.2616],
+		[123.5, '==>', 313.69, 3.1369],
+	],	
+	obj: false,
+	solve: true},
 	
 	{txt: 'Відомо, скільки днів минуло між двома подіями.<br>А&nbsp;скільки це років?',
 	hint: '',
 	inTitle: ['кількість днів'],
 	outTitle: ['кількість років'],
-	inTests: [['1000'], ['56'], ['12356']],
-	outTests: [['2.739'], ['0.153'], ['33.852']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[1000, '==>', 2.739], 
+		[56, '==>', 0.153],
+		[12356, '==>', 33.852],
+	],	
+	obj: false,
+	solve: false},
 	
 	{txt: 'Відомо, скільки балів отримали 2&nbsp;призери олімпіади з&nbsp;інформатики.<br>А&nbsp;скільки це в&nbsp;середньому? Скільки балів не&nbsp;вистачило другому місцю, щоб стати першим?',
 	hint: '',
 	inTitle: ['бали переможця', 'бали другого призера'],
 	outTitle: ['середній бал двох призерів', 'перевага у балах 1-го місця над 2-им'],
-	inTests: [['32', '20'], ['54', '31'], ['12', '7']],
-	outTests: [['26.0', '12'], ['42.5', '23'], ['9.5', '5']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[32, 20, '==>', 26.0, 12], 
+		[54, 31, '==>', 42.5, 23],
+		[12, 7, '==>', 9.5, 5],
+	],
+	obj: false,
+	solve: false},
 
 	{txt: 'Найповільніша тварина у&nbsp;світі равлик намагається «здолати» город Івана. Відомо, скільки сантиметрів за&nbsp;хвилину проповзає в&nbsp;середньому равлик.<br>За&nbsp;скільки годин равлик проповзе через город Івана?',
 	hint: '',
 	inTitle: ['довжина городу (у&nbsp;метрах)', 'швидкість равлика (см&nbsp;за&nbsp;хвилину)'],
 	outTitle: ['кількість <b>годин</b>, яку «витратить» равлик'],
-	inTests: [['25', '9'], ['125', '86'], ['350', '115']],
-	outTests: [['4.6'], ['2.4'], ['5.1']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[25, 9, '==>', 4.6], 
+		[125, 86, '==>', 2.4],
+		[350, 115, '==>', 5.1],
+	],
+	obj: false,
+	solve: false},
 
 	{txt: 'Відомо, скільки разів за&nbsp;сезон «Карпати» перемогли, зіграли у&nbsp;нічию і зазнали поразок.<br>Скільки очок набрали «Карпати»? Який у&nbsp;них відсоток перемог?',
 	hint: 'перемога&nbsp;– 3&nbsp;очки, нічия&nbsp;– 1&nbsp;очко, поразка&nbsp;– 0&nbsp;очок',
 	inTitle: ['кількість перемог', 'кількість нічиїх', 'кількість поразок'],
 	outTitle: ['кількість очок', 'відсоток перемог'],
-	inTests: [['4', '6', '12'], ['24', '1', '2'], ['0', '5', '8']],
-	outTests: [['18', '18'], ['73', '89'], ['5', '0']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[4, 6, 12, '==>', 18, 18],
+		[24, 1, 2, '==>', 73, 89],
+		[0, 5, 8, '==>', 5, 0],
+	],
+	obj: false,
+	solve: false},
 
 	{txt: 'Відомо, скільки учнів навчається у&nbsp;9-ій школі. У&nbsp;10-ій навчається на&nbsp;215&nbsp;учнів менше.<br>Скільки учнів навчається у&nbsp;10-ій школі?',
 	hint: '',
 	inTitle: ['кількість учнів у&nbsp;9-ій школі'],
 	outTitle: ['кількість учнів у&nbsp;10-ій школі'],
-	inTests: [['1067'], ['812'], ['256']],
-	outTests: [['852'], ['599'], ['41']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[1067, '==>', 852],
+		[812, '==>', 599],
+		[256, '==>', 41],
+	],
+	obj: false,
+	solve: false},
 
 	{txt: 'Відомо, скільки пенсії отримувала бабуся&nbsp;Катя. Уряд підвищив пенсію на 252&nbsp;грн&nbsp;56&nbsp;коп.<br>Скільки тепер отримує пенсії бабуся&nbsp;Катя?',
 	hint: '',
 	inTitle: ['початкова пенсія бабусі'],
 	outTitle: ['пенсія бабусі після підвищення'],
-	inTests: [['2780.94'], ['4561.17'], ['4.35']],
-	outTests: [['3033.50'], ['4813.73'], ['256.91']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[2780.94, '==>', 3033.50],
+		[4561.17, '==>', 4813.73],
+		[4.35, '==>', 256.91],
+	],
+	obj: false,
+	solve: false},
 	
 	{txt: 'Іван за&nbsp;тиждень споживає 19&nbsp;кг картоплі. Відомо, скільки картоплі зберігається в&nbsp;Івана у&nbsp;льосі.<br>На&nbsp;скільки тижнів її вистачить?<br>А&nbsp;скільки це днів?',
 	hint: '',
 	inTitle: ['вага усієї картоплі у&nbsp;льосі'],
 	outTitle: ['кількість тижнів', 'кількість днів'],
-	inTests: [['254'], ['78'], ['11']],
-	outTests: [['13.368', '93.6'], ['4.105', '28.7'], ['0.579', '4.1']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[254, '==>', 13.368, 93.6],
+		[78, '==>', 4.105, 28.7],
+		[11, '==>', 0.579, 4.1],
+	],
+	obj: false,
+	solve: false},
 
 	{txt: 'Іван мав декілька доларів. Спочатку він їх перевів у&nbsp;гривні, а&nbsp;потім розміняв по&nbsp;25&nbsp;копійок.<br>Скільки гривень, а потім монет отримав Іван?',
 	hint: '1&nbsp;$&nbsp;= 41.53&nbsp;грн',
 	inTitle: ['кількість доларів'],
 	outTitle: ['кількість гривень', 'кількість 25-копійчаних монет'],
-	inTests: [['20'], ['7'], ['217']],
-	outTests: [['830.60', '3322'], ['290.71', '1163'], ['9012.01', '36048']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[20, '==>', 830.60, 3322],
+		[7, '==>', 290.71, 1163],
+		[217, '==>', 9012.01, 36048],
+	],
+	obj: false,
+	solve: false},
 
 	{txt: 'Іван купив декілька півторалітрових і дволітрових пляшок води.<br>Скільки всього літрів води купив Іван?',
 	hint: '',
 	inTitle: ['кількість півторалітрових пляшок', 'кількість 2-літрових пляшок'],
 	outTitle: ['усього літрів води'],
-	inTests: [['3', '4'], ['2', '1'], ['77', '20']],
-	outTests: [['12.5'], ['5.0'], ['155.5']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[3, 4, '==>', 12.5],
+		[2, 1, '==>', 5.0],
+		[77, 20, '==>', 155.5],
+	],
+	obj: false,
+	solve: false},
 	
 	{txt: '7-і та 8-і класи зібрали разом макулатуру та запакували в&nbsp;ящики по&nbsp;40&nbsp;кг.<br>Скільки утворилось ящиків?',
 	hint: '',
 	inTitle: ['вага макулатури 7-класників', 'вага макулатури 8-класників'],
 	outTitle: ['кількість створених ящиків'],
-	inTests: [['212', '456'], ['31', '2'], ['1011', '37']],
-	outTests: [['16.7'], ['0.8'], ['26.2']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[212, 456, '==>', 16.7],
+		[31, 2, '==>', 0.8],
+		[1011, 37, '==>', 26.2],
+	],
+	obj: false,
+	solve: false},
 	
 	{txt: 'Обчислити значення математичного виразу за&nbsp;заданими значеннями <b>a</b> та <b>b</b> .',
 	hint: '',
 	inTitle: ['<b>a</b> ', '<b>b</b> '],
 	outTitle: ['<b>r</b> (значення виразу)'],
-	inTests: [['2.4', '-12'], ['-5', '40.2']],
-	outTests: [['-1.56'], ['-18.07']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[2.4, -12, '==>', -1.56],
+		[-5, 40.2, '==>', -18.07],
+	],
+	obj: false,
+	solve: false},
 	
 	{txt: 'Обчислити нову ціну продукту, який подорожчав на&nbsp;задану кількість відсотків.',
 	hint: '',
 	inTitle: ['<b>c</b> (стара ціна продукту)', '<b>v</b> (відсоток здорожчання)'],
 	outTitle: ['<b>m</b> (нова ціна продукту)'],
-	inTests: [['52.45', '15'], ['112.2', '5.5']],
-	outTests: [['60.32'], ['118.37']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[52.45, 15, '==>', 60.32],
+		[112.2, 5.5, '==>', 118.37],
+	],
+	obj: false,
+	solve: false},
 
 	{txt: 'Обчислити нову ціну продукту, який подешевшав на задану кількість відсотків.',
 	hint: '',
 	inTitle: ['<b>p</b> (стара ціна продукту)', '<b>m</b> (відсоток здешевлення)'],
 	outTitle: ['<b>W</b> (нова ціна продукту)'],
-	inTests: [['71.3', '27'], ['90', '13.2']],
-	outTests: [['52.05'], ['78.12']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[71.3, 27, '==>', 52.05],
+		[90, 13.2, '==>', 78.12],
+	],
+	obj: false,
+	solve: false},
 	
 	{txt: 'Обчислити площу рівностороннього трикутника із&nbsp;заданою стороною.',
 	hint: '',
 	inTitle: ['<b>a</b> (сторона трикутника)'],
 	outTitle: ['<b>S</b> (площа трикутника)'],
-	inTests: [['22.6'], ['15']],
-	outTests: [['217.073'], ['95.625']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[22.6, '==>', 217.073],
+		[15, '==>', 95.625],
+	],
+	obj: false,
+	solve: false},
 
 	{txt: 'Обчислити об’єм кулі із&nbsp;заданим діаметром.',
 	hint: '',
 	inTitle: ['<b>d</b> (діаметр кулі)'],
 	outTitle: ['<b>V</b> (об’єм кулі)'],
-	inTests: [['12.1'], ['54.3']],
-	outTests: [['927.1'], ['83787.2']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[22.6, '==>', 217.073],
+		[15, '==>', 95.625],
+	],
+	obj: false,
+	solve: false},
 	
 	{txt: 'Обчислити довжину бісектриси прямокутного трикутника із&nbsp;заданими катетами.',
 	hint: '',
 	inTitle: ['<b>a</b> (довжина першого катета)', '<b>b</b> (довжина другого катета)'],
 	outTitle: ['<b>L</b> (довжина бісектриси)'],
-	inTests: [['12', '10.4'], ['25.5', '17']],
-	outTests: [['7.80'], ['14.28']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[12, 10.4, '==>', 7.80],
+		[25.5, 17, '==>', 14.28],
+	],
+	obj: false,
+	solve: false},
 
 	{txt: 'Обчислити діюче значення сили струму у паралельно з’єднаних провідниках з&nbsp;заданими опорами.',
 	hint: '',
 	inTitle: ['<b>R<sub>1</sub></b> (опір першого провідника)', '<b>R<sub>2</sub></b> (опір другого провідника)'],
 	outTitle: ['<b>I</b> (діюче значення сили струму)'],
-	inTests: [['34.7', '40'], ['13', '21.3']],
-	outTests: [['8.40'], ['19.33']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[34.7, 40, '==>', 8.40],
+		[13, 21.3, '==>', 19.33],
+	],
+	obj: false,
+	solve: false},
 
 	{txt: 'Обчислити значення математичного виразу за заданими значеннями <b>x</b> та <b>y</b> .',
 	hint: '',
 	inTitle: ['<b>x</b> ', '<b>y</b> '],
 	outTitle: ['<b>F</b> (значення виразу)'],
-	inTests: [['11', '35.4'], ['-4.6', '-56']],
-	outTests: [['8.0485'], ['30.4349']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[11, 35.4, '==>', 8.0485],
+		[-4.6, -56, '==>', 30.4349],
+	],
+	obj: false,
+	solve: false},
 	
 	{txt: 'Обчислити значення математичного виразу за заданими значеннями <b>x</b> та <b>y</b> .',
 	hint: '',
 	inTitle: ['<b>x</b> ', '<b>y</b> '],
 	outTitle: ['<b>h</b> (значення виразу)'],
-	inTests: [['11.52', '-1.2'], ['8', '0.34']],
-	outTests: [['1.5626'], ['-3.1968']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[11.52, -1.2, '==>', 1.5626],
+		[8, 0.34, '==>', -3.1968],
+	],
+	obj: false,
+	solve: false},
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 	{txt: 'В&nbsp;Україні максимально дозволена швидкість у населених пунктах&nbsp;50&nbsp;км/год. Відомо, з&nbsp;якою швидкістю рухається автомобіль Івана.<br>Чи&nbsp;порушує він правила?',
 	hint: '',
 	inTitle: ['швидкість автомобіля Івана'],
 	outTitle: ['чи&nbsp;є порушення правил дорожнього&nbsp;руху'],
-	inTests: [['45'], ['92'], ['50']],
-	outTests: [['Не&nbsp;порушує правила'], ['Порушує правила'], ['Не&nbsp;порушує правила']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[45, '==>', 'Не порушує правила'],
+		[92, '==>', 'Порушує правила'],
+		[50, '==>', 'Не порушує правила'],
+	],
+	obj: false,
+	solve: false},
 
 	{txt: 'Відоми вік людини.<br>Чи&nbsp;є вона повнолітньою?',
 	hint: '',
 	inTitle: ['вік людини'],
 	outTitle: ['чи&nbsp;є людина повнолітньою'],
-	inTests: [['99'], ['7'], ['18']],
-	outTests: [['Повнолітня'], ['Неповнолітня'], ['Повнолітня']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[99, '==>', 'Повнолітня'],
+		[7, '==>', 'Неповнолітня'],
+		[18, '==>', 'Повнолітня'],
+	],
+	obj: false,
+	solve: false},
 	
 	{txt: 'Іван отримав у&nbsp;спадщину деяку суму&nbsp;грошей.<br>Чи&nbsp;може він купити собі будинок ціною 250000&nbsp;грн?',
 	hint: '',
 	inTitle: ['сума грошей'],
 	outTitle: ['чи можна купити будинок'],
-	inTests: [['5500'], ['1350000'], ['250000']],
-	outTests: [['Не можна купити'], ['Можна купити'], ['Можна купити']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[5500, '==>', 'Не можна купити'],
+		[1350000, '==>', 'Можна купити'],
+		[250000, '==>', 'Можна купити'],
+	],
+	obj: false,
+	solve: false},
 	
 	{txt: 'Іван купив на&nbsp;ринку кавун і гарбуз. Відома їхня вага.<br>Що з&nbsp;них важче?',
 	hint: '',
 	inTitle: ['вага кавуна', 'вага гарбуза'],
 	outTitle: ['назва важчої ягоди'],
-	inTests: [['5', '7.7'], ['9.5', '2'], ['11', '11']],
-	outTests: [['Гарбуз важчий'], ['Кавун важчий'], ['Ягоди однакові']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[5, 7.7, '==>', 'Гарбуз важчий'],
+		[9.5, 2, '==>', 'Кавун важчий'],
+		[11, 11, '==>', 'Ягоди однакові'],
+	],
+	obj: false,
+	solve: false},
 
 	{txt: 'Паролем до шкільного Wi-Fi є «w56tt7». Іван пробує «зламати» шкільний Wi-Fi.<br>Чи&nbsp;вдалось це йому?',
 	hint: '',
 	inTitle: ['пароль, який вводить Іван'],
 	outTitle: ['чи&nbsp;є доступ до&nbsp;Wi-Fi'],
-	inTests: [['Озеро'], ['w56tt7'], ['9DD934']],
-	outTests: [['Доступ заборонено'], ['Ok. Є&nbsp;доступ'], ['Доступ заборонено']],
-	obj: '',
-	solve: ''},
+	tests: [
+		['Озеро', '==>', 'Доступ заборонено'],
+		['w56tt7', '==>', 'Ok. Є доступ'],
+		['9DD934', '==>', 'Доступ заборонено'],
+	],
+	obj: false,
+	solve: false},
 
 	{txt: 'У&nbsp;деякій державі великий бізнес (понад&nbsp;1000000 доходу за&nbsp;рік) сплачує податок 10% (десята&nbsp;частина), а малий бізнес не&nbsp;платить податків.<br>До&nbsp;якого бізнесу відноситься фірма Івана і який податок вона сплачує, якщо відомий її&nbsp;дохід за&nbsp;рік?',
 	hint: '',
 	inTitle: ['дохід за&nbsp;рік фірми Івана'],
 	outTitle: ['вид бізнесу', 'податок, який сплачує фірма'],
-	inTests: [['450000'], ['1250344'], ['2500000'], ['3178']],
-	outTests: [['малий бізнес', '0.00'], ['великий бізнес', '125034.40'], ['великий бізнес', '250000.00'], ['малий бізнес', '0.00']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[450000, '==>', 'малий бізнес', 0.00],
+		[1250344, '==>', 'великий бізнес', 125034.40],
+		[2500000, '==>', 'великий бізнес', 250000.00],
+		[3178, '==>', 'малий бізнес', 0.00],
+	],
+	obj: false,
+	solve: false},
 
 	{txt: 'Якщо на овочевій фермі купувати більше 100&nbsp;мішків овочів, то надають знижку 50%&nbsp;(половина). Відомо, скільки мішків картоплі потрібно Івану.<br>А&nbsp;скільки вони коштуватимуть?',
 	hint: '',
 	inTitle: ['ціна одного мішка', 'кількість мішків, які купує Іван'],
 	outTitle: ['сума грошей за&nbsp;усю картоплю'],
-	inTests: [['12.75', '7'], ['21.5', '210'], ['112', '19']],
-	outTests: [['89.25'], ['2257.50'], ['2128.00']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[12.75, 7, '==>', 89.25],
+		[21.5, 210, '==>', 2257.50],
+		[112, 19, '==>', 2128.00],
+	],
+	obj: false,
+	solve: false},
 
 	{txt: 'При заготівлі «закруток» на&nbsp;зиму Іван помітив, що в&nbsp;одну банку вміщується 14&nbsp;огірків. Відомо, скільки банок і огірків є в&nbsp;Івана.<br>А&nbsp;чи вистачить йому банок?',
 	hint: '',
 	inTitle: ['кількість банок', 'кількість огірків'],
 	outTitle: ['чи&nbsp;треба ще банок'],
-	inTests: [['10', '115'], ['96', '3450'], ['19', '266']],
-	outTests: [['Банок вистачить'], ['Треба&nbsp;ще банок'], ['Банок вистачить']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[10, 115, '==>', 'Банок вистачить'],
+		[96, 3450, '==>', 'Треба ще банок'],
+		[19, 266, '==>', 'Банок вистачить'],
+	],
+	obj: false,
+	solve: false},
 
 	{txt: 'Іван працював на&nbsp;заробітках у&nbsp;Польщі і в&nbsp;Німеччині.<br>В&nbsp;якій країні були більші заробітки і на&nbsp;скільки гривень?',
 	hint: '1&nbsp;євро&nbsp;=&nbsp;45&nbsp;грн; 1&nbsp;злотий&nbsp;=&nbsp;10.50&nbsp;грн',
 	inTitle: ['зарплата у&nbsp;Німеччині', 'зарплата у&nbsp;Польщі'],
 	outTitle: ['країна з&nbsp;більшим заробітком', 'різниця зарплат'],
-	inTests: [['40', '220'], ['525', '2250'], ['250', '700']],
-	outTests: [['Польща', '510'], ['Однаково у обох країнах', '0'], ['Німеччина', '3900']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[40, 220, '==>', 'Польща', 510],
+		[525, 2250, '==>', 'Однаково у обох країнах', 0],
+		[250, 700, '==>', 'Німеччина', 3900],
+	],
+	obj: false,
+	solve: false},
 
 	{txt: 'Бабуся Івана зберігає на&nbsp;зиму в&nbsp;льосі буряк і моркву.<br>А&nbsp;якого з&nbsp;овочів є менше і у&nbsp;скільки разів?',
 	hint: '',
 	inTitle: ['вага буряків в&nbsp;льосі', 'вага моркви в&nbsp;льосі'],
 	outTitle: ['назва овочів, яких менше', 'у&nbsp;скільки разів менше'],
-	inTests: [['8', '112'], ['6', '6'], ['60', '34']],
-	outTests: [['Буряків є&nbsp;менше', '14.0'], ['Овочів однаково', '1.0'], ['Моркви є&nbsp;менше', '1.8']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[8, 112, '==>', 'Буряків є менше', 14.0],
+		[6, 6, '==>', 'Овочів однаково', 1.0],
+		[60, 34, '==>', 'Моркви є менше', 1.8],
+	],
+	obj: false,
+	solve: false},
 
 	{txt: 'Іван у&nbsp;понеділок і вівторок читав цікаву книжку.<br>В&nbsp;який день Іван прочитав більше сторінок і на&nbsp;скільки?',
 	hint: '',
 	inTitle: ['кількість сторінок у&nbsp;понеділок', 'кількість сторінок у&nbsp;вівторок'],
 	outTitle: ['день, коли прочитано більше', 'різниця кількості сторінок'],
-	inTests: [['18', '12'], ['150', '150'], ['2', '22']],
-	outTests: [['У&nbsp;понеділок більше', '6'], ['В&nbsp;обидва дні однаково', '0'], ['У&nbsp;вівторок більше', '20']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[18, 12, '==>', 'У понеділок більше', 6],
+		[150, 150, '==>', 'В обидва дні однаково', 0],
+		[2, 22, '==>', 'У вівторок більше', 20],
+	],
+	obj: false,
+	solve: false},
 
 	{txt: 'Іван знає вік свого діда.<br>Але чи&nbsp;може дід «йти&nbsp;на&nbsp;пенсію»?',
 	hint: 'у&nbsp;65&nbsp;років і&nbsp;більше',
 	inTitle: ['вік діда'],
 	outTitle: ['чи&nbsp;можна вийти на&nbsp;пенсію'],
-	inTests: [['56'], ['92'], ['65']],
-	outTests: [['Треба&nbsp;ще працювати'], ['Ура! На&nbsp;пенсію'], ['Ура! На&nbsp;пенсію']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[56, '==>', 'Треба ще працювати'],
+		[92, '==>', 'Ура! На пенсію'],
+		[65, '==>', 'Ура! На пенсію'],
+	],
+	obj: false,
+	solve: false},
 
 	{txt: 'Іван знає, яка температура за&nbsp;вікном.<br>А&nbsp;чи замерзла вода на&nbsp;асфальті?',
 	hint: '0&nbsp;градусів і&nbsp;менше',
 	inTitle: ['температура на&nbsp;вулиці'],
 	outTitle: ['чи&nbsp;замерзла вода'],
-	inTests: [['15'], ['-18'], ['0']],
-	outTests: [['Вода не&nbsp;замерзла'], ['Лід'], ['Лід']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[15, '==>', 'Вода не замерзла'],
+		[-18, '==>', 'Лід'],
+		[0, '==>', 'Лід'],
+	],
+	obj: false,
+	solve: false},
 
 	{txt: 'У&nbsp;супермаркеті при купівлі більше 10&nbsp;пляшок води 1&nbsp;пляшку («бонус») дають безкоштовно. Іван купив у&nbsp;цьому магазині воду.<br>Скільки він заплатив?',
 	hint: '',
 	inTitle: ['ціна 1&nbsp;пляшки води', 'кількість пляшок, які купив Іван'],
 	outTitle: ['сума грошей, яку заплатив Іван'],
-	inTests: [['12.45', '3'], ['15.50', '12'], ['3.00', '26']],
-	outTests: [['37.35'], ['170.50'], ['75.00']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[12.45, 3, '==>', 37.35],
+		[15.50, 12, '==>', 170.50],
+		[3.00, 26, '==>', 75.00],
+	],
+	obj: false,
+	solve: false},
 
 	{txt: 'У&nbsp;супермаркеті при купівлі більше&nbsp;20&nbsp;кг гречки надається знижка -5&nbsp;грн за&nbsp;кожен&nbsp;кг. Іван купив у&nbsp;цьому магазині гречку.<br>Скільки він заплатив?',
 	hint: '',
 	inTitle: ['вага гречки в&nbsp;Івана', 'ціна 1&nbsp;кг&nbsp;гречки (без&nbsp;знижки)'],
 	outTitle: ['сума грошей, яку заплатив Іван'],
-	inTests: [['4', '47.80'], ['30', '15.50'], ['57', '23.00']],
-	outTests: [['191.20'], ['315.00'], ['1026.00']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[4, 47.80, '==>', 191.20],
+		[30, 15.50, '==>', 315.00],
+		[57, 23.00, '==>', 1026.00],
+	],
+	obj: false,
+	solve: false},
 
 	{txt: 'Іван зі свого доходу віддає:<br>19,5&nbsp;%&nbsp;– податки і військовий збір;<br>500&nbsp;грн&nbsp;– на&nbsp;благодійність (але, якщо дохід більше 10 000&nbsp;грн);<br>1/4&nbsp;– своїй бабусі (з&nbsp;того, що&nbsp;залишилось).<br>Скільки грошей отримає бабуся? А&nbsp;скільки залишиться у&nbsp;самого Івана?',
 	hint: '',
 	inTitle: ['дохід Івана'],
 	outTitle: ['гроші, які отримає бабуся', 'зарплата, що&nbsp;залишиться в&nbsp;Івана'],
-	inTests: [['23560.56'], ['12400'], ['5680.24']],
-	outTests: [['4617', '13849.69'], ['2371', '7111.50'], ['1143', '3429.44']],
-	obj: '',
-	solve: ''},
+	tests: [
+		[23560.56, '==>', 4617, 13849.69],
+		[12400, '==>', 2371, 7111.50],
+		[5680.24, '==>', 1143, 3429.44],
+	],
+	obj: false,
+	solve: false},
 
 ]
 
 <!--==========================================-->
 var startX, startY;
-const symb = '&';
-const par = decodeURI(location.search).split(symb);
 var folder = '/';
-if (par.length > 0 && par[0].length > 1) folder += par[0].slice(1, par[0].length).replace('_', '/').trim() + '/';
+Start();
 
-var nItem = (par.length > 1) ? nItem = Number(par[1]) - 1 : 0;
+//-----------------------------------------------
+function Start() {
+	const par = decodeURI(location.search).split('&');
+	if (par.length > 0 && par[0].length > 1) folder += par[0].slice(1, par[0].length).replace('_', '/').trim() + '/';
 
-let txtSel = '';
-for (let i = 1; i <= list.length; i++) {
-	txtSel += '<option>' + String(i) + '</option>';
-}
-document.getElementById('listBox').innerHTML = txtSel;
-
-ShowItem();
-
-//-----------------------------------------------'°'
-function ShowItem() {
-	if (list.length === 0) return;
-	nItem = Number(nItem);
-	if (isNaN(nItem)) nItem = 0;
-	if (nItem < 0) nItem = 0;
-	if (nItem >= list.length) nItem = list.length - 1;
-
-//-----------------
-	document.getElementById('taskJSNumber').innerHTML = '№&nbsp;' + String(nItem + 1);
-	document.getElementById('taskJSText').innerHTML = list[nItem].txt;
-	
-//-----------------
-if (list[nItem].hint.trim() === '') {
-		document.getElementById('taskJSHint').style.display = 'none';
-	} else {
-		document.getElementById('taskJSHint').style.display = '';		
-		document.getElementById('taskJSHint').innerHTML = '(підказка: ' + list[nItem].hint + ')';
-	}	
-
-//-----------------	
-	if (list[nItem].obj.trim() === '') {
-		document.getElementById('taskJSImage').style.display = 'none';
-	} else {
-		document.getElementById('taskJSImage').style.display = '';		
-		document.getElementById('taskJSImage').src = folder + list[nItem].obj + '.png'			
-	}
-	
-//-----------------	
 	let s = '';
-	if (list[nItem].inTitle.length === 1) {
-		s = list[nItem].inTitle[0];
-	} else {
-		for (let i = 0; i < list[nItem].inTitle.length; i++) {
-			if (list[nItem].inTitle.length > 1) s += String(i + 1) + ') ' + list[nItem].inTitle[i] + ';<br>';
-		}
-		s = s.slice(0, -5) + '.';
+	for (let i = 0; i < list.length; i++) {
+		s += '<option>' + (i + 1);
+		if (list[i].solve) s += '°';
+		s += '</option>';
 	}
+	document.getElementById('listBox').innerHTML = s;
+
+	let n = (par.length > 1) ? Number(par[1]) - 1 : 0;
+	ShowItem(n);
+}
+
+//-----------------------------------------------
+function ShowItem(n) {
+	if (list.length === 0) return;
+	if (n >= list.length) n = list.length - 1;
+	if (isNaN(n) || !Number.isInteger(n) || n < 0) n = 0;
+
+		//-----------------
+	document.getElementById('taskJSNumber').innerHTML = '№&nbsp;' + (n + 1);
+	document.getElementById('taskJSText').innerHTML = list[n].txt;
+	
+		//-----------------	
+	let s = '';
+	for (let i = 0; i < list[n].inTitle.length; i++) {
+		s += (i + 1) + ') ' + list[n].inTitle[i] + ';<br>';
+	}
+	s = (list[n].inTitle.length === 1) ? s.slice(3, -5) : s.slice(0, -5) + '.';
 	document.getElementById('taskJSIn').innerHTML = s;
 
-//-----------------	
 	s = '';
-	if (list[nItem].outTitle.length === 1) {
-		s = list[nItem].outTitle[0];
-	} else {
-		for (let i = 0; i < list[nItem].outTitle.length; i++) {
-			if (list[nItem].outTitle.length > 1) s += String(i + 1) + ') ' + list[nItem].outTitle[i] + ';<br>'; 
-		}
-		s = s.slice(0, -5) + '.';
+	for (let i = 0; i < list[n].outTitle.length; i++) {
+		s += (i + 1) + ') ' + list[n].outTitle[i] + ';<br>';
 	}
+	s = (list[n].outTitle.length === 1) ? s.slice(3, -5) : s.slice(0, -5) + '.';
 	document.getElementById('taskJSOut').innerHTML = s;
 
-//-----------------	
+		//-----------------	
 	s = '<table>';
-	for (let i = 0; i < list[nItem].inTests.length; i++) {
-		s += '<tr>';
-		for (let j = 0; j < list[nItem].inTests[i].length; j++) {
-			s += '<td>' + list[nItem].inTests[i][j] + '</td>';
-		}
-		s += '<td>==></td>'
-		for (let j = 0; j < list[nItem].outTests[i].length; j++) {
-			s += '<td>' + list[nItem].outTests[i][j] + '</td>';
-		}
-		s += '</tr>';
+	for (let row of list[n].tests) {
+		s += '<tr><td>' + row.join('</td><td>') + '</td></tr>';
 	}
 	s += '</table>';
 	document.getElementById('taskJSTests').innerHTML = s;
 
-//-----------------
-	if (list[nItem].solve.trim() === '') {
-		document.getElementById('taskJSSolve').style.display = 'none';
+		//-----------------
+	if (list[n].hint) {
+		document.getElementById('taskJSHint').style.display = '';		
+		document.getElementById('taskJSHint').innerHTML = '(підказка: ' + list[n].hint + ')';
 	} else {
+		document.getElementById('taskJSHint').style.display = 'none';
+	}	
+	if (list[n].obj) {
+		document.getElementById('taskJSImage').style.display = '';		
+		document.getElementById('taskJSImage').src = folder + 'task-' + (n + 1) + '.png'			
+	} else {
+		document.getElementById('taskJSImage').style.display = 'none';
+	}
+	if (list[n].solve) {
 		document.getElementById('taskJSSolve').style.display = '';		
-		document.getElementById('taskJSSolveImage').src = folder + list[nItem].obj + '.png'			
+		document.getElementById('taskJSSolveImage').src = folder + (n + 1) + '.png'
+	} else {
+		document.getElementById('taskJSSolve').style.display = 'none';
 	}
 
-//-----------------
-	document.getElementById('listBox').selectedIndex = nItem;
+		//-----------------
+	document.getElementById('listBox').selectedIndex = n;
 }
 
 //-----------------------------------------------
@@ -660,17 +712,11 @@ function touchStart() {
 }
 
 //-----------------------------------------------
-function touchEnd() {
+function touchEnd(n) {
 	let dX = event.changedTouches[0].clientX - startX;
 	let dY = event.changedTouches[0].clientY - startY;
-
-	if (dX > 50 && Math.abs(dX) > Math.abs(dY)) {
-		nItem -= 1;
-		ShowItem();
-	}
-	if (dX < -50 && Math.abs(dX) > Math.abs(dY)) {
-		nItem += 1;
-		ShowItem();
-	}
+	if (dX > 50 && Math.abs(dX) > Math.abs(dY)) ShowItem(n - 1);
+	if (dX < -50 && Math.abs(dX) > Math.abs(dY)) ShowItem(n + 1);
 }
+
 </script>
