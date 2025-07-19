@@ -133,9 +133,9 @@ select {
 	</div>
 
 	<div class="taskjs-in-out">
-		<div class="taskjs-in-title">Дано:</div>
+		<div id="taskJSInTitle" class="taskjs-in-title">Дано:</div>
 		<div id="taskJSIn" class="taskjs-in">Що дано?</div>
-		<div class="taskjs-out-title">Результат:</div>
+		<div id="taskJSOutTitle" class="taskjs-out-title">Результат:</div>
 		<div id="taskJSOut" class="taskjs-out">Що знайти?</div>
 	</div>
 
@@ -155,7 +155,7 @@ const list = [
 
 	{txt: 'Обчисліть значення математичного прикладу.',
 	hint: '',
-	inTitle: [''],
+	inTitle: [],
 	outTitle: ['значення прикладу'],
 	tests: [
 		['', '==>', 3.62857], 
@@ -165,7 +165,7 @@ const list = [
 
 	{txt: 'Обчисліть значення математичних прикладів.',
 	hint: '',
-	inTitle: [''],
+	inTitle: [],
 	outTitle: ['значення прикладів'],
 	tests: [
 		['', '==>', -1090.9],
@@ -176,7 +176,7 @@ const list = [
 
 	{txt: 'Обчисліть значення математичних прикладів.',
 	hint: '',
-	inTitle: [''],
+	inTitle: [],
 	outTitle: ['значення прикладів'],
 	tests: [
 		['', '==>', 0.974], 
@@ -690,7 +690,64 @@ const list = [
 	],
 	obj: false,
 	solve: true},
+	
+		//----------------------------------------------
+	{txt: 'Створіть форму, на&nbsp;якій зобразіть зафарбований трикутник.',
+	hint: '',
+	inTitle: [],
+	outTitle: ['зафарбований трикутник'],
+	tests: [],
+	obj: true,
+	solve: true},
 
+	{txt: 'Створіть форму, на&nbsp;якій зобразіть зафарбований прямокутний трикутник.',
+	hint: '',
+	inTitle: [],
+	outTitle: ['прямокутний трикутник'],
+	tests: [],
+	obj: true,
+	solve: false},
+
+	{txt: 'Створіть форму, на&nbsp;якій зобразіть прапор Швейцарії.',
+	hint: '',
+	inTitle: [],
+	outTitle: ['прапор Швейцарії'],
+	tests: [],
+	obj: true,
+	solve: false},
+
+	{txt: 'Створіть форму, на&nbsp;якій коло, вписане у&nbsp;квадрат.',
+	hint: '',
+	inTitle: [],
+	outTitle: ['коло у квадраті'],
+	tests: [],
+	obj: true,
+	solve: true},
+
+	{txt: 'Створіть форму, на&nbsp;якій зобразіть прапор Великобританії.',
+	hint: '',
+	inTitle: [],
+	outTitle: ['прапор Великобританії'],
+	tests: [],
+	obj: true,
+	solve: false},
+
+	{txt: 'Створіть форму, на&nbsp;якій зобразіть хатинку.',
+	hint: '',
+	inTitle: [],
+	outTitle: ['намальована хатинка'],
+	tests: [],
+	obj: true,
+	solve: false},
+
+	{txt: 'Створіть форму, на&nbsp;якій зобразіть прапори України, Японії, Бразилії, Чехії.',
+	hint: 'використовуйте різні файли!',
+	inTitle: [],
+	outTitle: ['4 прапори'],
+	tests: [],
+	obj: true,
+	solve: false},
+	
 ]
 
 <!--==========================================-->
@@ -725,29 +782,46 @@ function ShowItem(n) {
 	document.getElementById('taskJSNumber').innerHTML = '№&nbsp;' + (n + 1);
 	document.getElementById('taskJSText').innerHTML = list[n].txt;
 	
-		//-----------------	
-	let s = '';
-	for (let i = 0; i < list[n].inTitle.length; i++) {
-		s += (i + 1) + ') ' + list[n].inTitle[i] + ';<br>';
+		//-----------------
+	if (list[n].inTitle.length === 0) {
+		document.getElementById('taskJSIn').style.display = 'none';
+		document.getElementById('taskJSInTitle').style.display = 'none';
+	} else {
+		let s = '';
+		for (let i = 0; i < list[n].inTitle.length; i++) {
+			s += (i + 1) + ') ' + list[n].inTitle[i] + ';<br>';
+		}
+		s = (list[n].inTitle.length === 1) ? s.slice(3, -5) : s.slice(0, -5) + '.';
+		document.getElementById('taskJSIn').style.display = '';
+		document.getElementById('taskJSInTitle').style.display = '';		
+		document.getElementById('taskJSIn').innerHTML = s;
 	}
-	s = (list[n].inTitle.length === 1) ? s.slice(3, -5) : s.slice(0, -5) + '.';
-	document.getElementById('taskJSIn').innerHTML = s;
-
-	s = '';
-	for (let i = 0; i < list[n].outTitle.length; i++) {
-		s += (i + 1) + ') ' + list[n].outTitle[i] + ';<br>';
+		//-----------------
+	if (list[n].outTitle.length === 0) {
+		document.getElementById('taskJSOut').style.display = 'none';
+		document.getElementById('taskJSOutTitle').style.display = 'none';
+	} else {
+		s = '';
+		for (let i = 0; i < list[n].outTitle.length; i++) {
+			s += (i + 1) + ') ' + list[n].outTitle[i] + ';<br>';
+		}
+		s = (list[n].outTitle.length === 1) ? s.slice(3, -5) : s.slice(0, -5) + '.';
+		document.getElementById('taskJSOut').style.display = '';
+		document.getElementById('taskJSOutTitle').style.display = '';
+		document.getElementById('taskJSOut').innerHTML = s;
 	}
-	s = (list[n].outTitle.length === 1) ? s.slice(3, -5) : s.slice(0, -5) + '.';
-	document.getElementById('taskJSOut').innerHTML = s;
-
-		//-----------------	
-	s = '<table>';
-	for (let row of list[n].tests) {
-		s += '<tr><td>' + row.join('</td><td>') + '</td></tr>';
+		//-----------------
+	if (list[n].tests.length === 0) {
+		document.getElementById('taskJSTests').style.display = 'none';
+	} else {
+		s = '<table>';
+		for (let row of list[n].tests) {
+			s += '<tr><td>' + row.join('</td><td>') + '</td></tr>';
+		}
+		s += '</table>';
+		document.getElementById('taskJSTests').style.display = '';
+		document.getElementById('taskJSTests').innerHTML = s;
 	}
-	s += '</table>';
-	document.getElementById('taskJSTests').innerHTML = s;
-
 		//-----------------
 	if (list[n].hint) {
 		document.getElementById('taskJSHint').style.display = '';		
@@ -767,7 +841,6 @@ function ShowItem(n) {
 	} else {
 		document.getElementById('taskJSSolve').style.display = 'none';
 	}
-
 		//-----------------
 	document.getElementById('listBox').selectedIndex = n;
 }
