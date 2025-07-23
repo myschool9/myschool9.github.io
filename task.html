@@ -80,7 +80,7 @@ select {
 </style>
 
 <!--==========================================-->
-<div class="task-content" ontouchstart="touchStart()" ontouchend="touchEnd(listBox.selectedIndex">
+<div class="task-content" ontouchstart="touchStart()" ontouchend="touchEnd(listBox.selectedIndex)">
 
 	<div class="task-header">
 		<div class="task-button" onclick="ShowItem(listBox.selectedIndex - 1)">&#9668;</div>
@@ -218,7 +218,7 @@ function touchStart() {
 }
 
 //-----------------------------------------------
-function touchEnd() {
+function touchEnd(n) {
 	let dX = event.changedTouches[0].clientX - startX;
 	let dY = event.changedTouches[0].clientY - startY;
 	if (dX > 50 && Math.abs(dX) > Math.abs(dY)) ShowItem(n - 1);
