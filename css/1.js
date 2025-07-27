@@ -2,7 +2,7 @@ let tags;
 let haveID;
 let isSolve = typeof solve === 'function';
 
-for (let tagName of ['button', 'radio', 'checkbox', 'input', 'h1', 'h2', 'h3', 'form', 'output', 'label', 'div', 'img', 'textarea', 'canvas']) {
+for (let tagName of ['button', 'radio', 'checkbox', 'input', 'h1', 'h2', 'h3', 'form', 'output', 'label', 'span', 'div', 'img', 'textarea', 'canvas']) {
 	
 	tags = document.querySelectorAll(tagName);
 	if (tags.length === 0) tags = document.querySelectorAll('[type="' + tagName + '"]');
