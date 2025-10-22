@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="uk">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="/css/timetable.js"></script>
+<title>Розклад уроків</title>
+
+<!--==========================================-->
+<style>
+
+body {
+	margin: 0;
+	padding: 5px;
+	font-family: sans-serif;
+	line-height: 2;
+	color: #333;
+	background-color: #f5f4e5;
+}
+
+a {text-decoration: none; color: #921;}
+
+.page-header {
+	position: fixed;
+	top: 2px;
+	left: 10px;
+	width: 94%;
+	max-width: 560px;
+	padding: 2px;
+	border-spacing: 0;
+	border-radius: 5px;
+	text-align: center;
+	background-color: #8fbc8f;
+}
+@media screen and (min-width:600px){.page-header{top:10px;left:10%}}
+
+.btn {
+	overflow: hidden;
+	margin: 0 2px;
+	border: 1px solid #333;
+	border-radius: 5px;
+	cursor: pointer;
+	width: 35px;
+	padding: 2px 4px;
+	background: -webkit-linear-gradient(top, #d0ecf4 0%, #5bc9e1 50%, #d0ecf4 100%);
+	background: -moz-linear-gradient(top, #d0ecf4 0%, #5bc9e1 50%, #d0ecf4 100%);
+	background: -ms-linear-gradient(top, #d0ecf4 0%, #5bc9e1 50%, #d0ecf4 100%);
+	background: -o-linear-gradient(top, #d0ecf4 0%, #5bc9e1 50%, #d0ecf4 100%);	
+}
+
+.page-title {font-size: 1.2em;}
+
+select {
+	min-width: 120px;
+	padding: 2px 5px;
+	border: 2px outset #333;
+	border-radius: 5px;
+	font-size: 1em;
+	background: -webkit-linear-gradient(top, #fff 0%, #b0c4de 50%, #fff 100%);
+	background: -moz-linear-gradient(top, #fff 0%, #b0c4de 50%, #fff 100%);
+	background: -ms-linear-gradient(top, #fff 0%, #b0c4de 50%, #fff 100%);
+	background: -o-linear-gradient(top, #fff 0%, #b0c4de 50%, #fff 100%);
+}
+
+.tt-content {
+	width: 96%;
+	max-width: 560px;
+	margin: 42px 0 20px 6px;
+	border-spacing: 0;
+	background-color: #f5f4e5;
+	border: 1px dotted #333;
+}
+@media screen and (min-width:600px){.tt-content{margin:50px 0 20px 10%}}
+
+.tt-day {
+	min-width: 33px;
+	padding: 4px 5px 2px 5px;
+	text-align: center;
+	color: #8b008b;
+}
+.tt-grp {
+	min-width: 33px;
+	padding: 4px 5px;
+	text-align: center; 
+	color: #921;
+}
+.tt-kab {
+	min-width: 28px;
+	padding: 4px 5px;
+	text-align: center;
+	color: #008000;
+}
+.tt-tch {
+	overflow: hidden;
+	max-width: 150px;
+	padding: 4px 5px;
+	line-height: 1.4;
+	color: #808000;
+}
+.tt-sub {
+	overflow: hidden;
+	max-width: 140px;
+	padding: 4px 5px;
+	color: #333;
+}
+
+.tt--color-1 {border-top: 1px dotted #333; background-color: #FFFFFF;}
+.tt--color-2 {border-top: 1px dotted #333; background-color: #F8F8FF;}
+.tt--color-3 {border-top: 1px dotted #333; background-color: #FFB6C1;}
+.tt--color-4 {border-top: 1px dotted #333; background-color: #F0E68C;}
+
+</style>
+
+<!--==========================================-->
+<body onload="CreateData()">
+
+<table class="page-header" id="timetable_header" ontouchstart="touchStart()" ontouchend="touchEnd(listBox.selectedIndex)">
+	<tr>
+		<td class="btn" onclick="HTMLFilter(listBox.selectedIndex - 1);">&#9668;</td>
+		<td class="page-title"><select id="listBox" size="1" onchange="HTMLFilter(this.selectedIndex)"></select></td>
+		<td class="btn" onclick="HTMLFilter(listBox.selectedIndex + 1)">&#9658;</td>
+	</tr>
+</table>
+
+<table id="tableData" class="tt-content">
+</table>
+
+</body>
