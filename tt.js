@@ -12,15 +12,15 @@ const tchClass = 'tt-tch';
 const kabClass = 'tt-kab';
 const subClass = 'tt-sub';
 
-const nullItem = '-&nbsp;-&nbsp;-&nbsp;-&nbsp;';
+const nullItem = '---';
 
 const lessonsTime = [585, 645, 705, 765, 825, 885, 945];
-const sColor1 = 'tt--color-1';
-const sColor2 = 'tt--color-2';
-const sColorErr = 'tt--color-3';
-const sColorCurr = 'tt--color-4';
+const sLink = ' tt--link'
+const sColor1 = ' tt--color-1';
+const sColor2 = ' tt--color-2';
+const sColorErr = ' tt--color-3';
+const sColorCurr = ' tt--color-4';
 
-var color = sColor1;
 var activeCol = 'tch';
 var currTime = 0;
 
@@ -32,13 +32,11 @@ function GetCurrentTime() {
 	let g = new Date();
 	let day = d.getUTCDay();
 	let min = 60 * g.getHours() + m.getMinutes();
-
 	let i = 0;
 	while (i < 7 && lessonsTime[i] + 3 <= min) {
 		i += 1;
 	}
 	if (i === 7) i = 6;
-
 	if (day === 0 || day === 6) {
 		day = 0;
 		i = 0;
@@ -56,9 +54,8 @@ function isWorkDay(num) {
 
 //-------------------------------------------
 //-- додавання порожніх днів -------------
-function addDay(value, col) {
+function addDay(value, col, rows) {
 	let rowDef = {num:0,grp:'',chZn:0,sub:'',tch:'',kab:0};
-	let rows = a.filter(row => row[col] === value);
 	for (let i = 0; i < DAYS.length; i++) {
 		if (isWorkDay(i) && rows.find(row => row.num === i) === undefined) {
 			row = {...rowDef};
@@ -71,11 +68,30 @@ function addDay(value, col) {
 }
 
 //-------------------------------------------
+//-- додавання порожніх класів -------------
+function addGrp(value, rows) {
+	let rowDef = {num:0,grp:'',chZn:0,sub:'',tch:'',kab:0};
+	let grps = [];
+	for (let row of a) {
+		grps.push(row.grp);
+	}
+	let uniqueGrps = [...new Set(grps)].filter(Boolean);
+	for (unGrp of uniqueGrps) {
+		if (rows.find(row => row.grp === unGrp) === undefined) {
+			row = {...rowDef};
+			row.num = value;
+			row.grp = unGrp;
+			rows.push(row);
+		}
+	}
+	return rows;
+}
+
 //-------------------------------------------
-function getColor(txt) {
-	if (txt === currTime) return sColorCurr;
-	if (txt === '' || isNaN(txt[0])) return sColor1;
-	return Number(txt[0]) % 2 === 1 ? sColor1 : sColor2;
+//-------------------------------------------
+function getColor(n) {
+	if (n === currTime) return sColorCurr;
+	return n % 2 === 1 ? sColor1 : sColor2;
 }
 	
 //-------------------------------------------
@@ -109,7 +125,7 @@ function Filter(col, value) {
 	}
 	if (col === 'day') {
 		index = (value.length <= 4) ? DAYS.indexOf(value) : DAYS_LONG.indexOf(value);
-		if (index < 0 || !isWorkDay(index)) return;
+		if (index < 0) return;
 	}
 		//----------------
 	currTime = GetCurrentTime();
@@ -166,23 +182,47 @@ function touchEnd(n) {
 
 //-------------------------------------------
 //-------------------------------------------
-function SaveDay(n, n1) {
-	return '<td class="' + dayClass + ' ' + color + '" onclick="Filter(\'day\',\'' + n1 + '\')">' + n + '</td>';
+function SaveDay(s, color) {
+	res = '';
+	if (s === nullItem || s === '') {
+		res = '<td class="' + dayClass + color + '">' + s + '</td>';		
+	} else {
+		res = '<td class="' + dayClass + color + sLink + '" onclick="Filter(\'day\',\'' + s + '\')">' + s + '</td>';
+	}
+	return res;
 }
-function SaveGrp(n, n1) {
-	return '<td class="' + grpClass + ' ' + color + '" onclick="Filter(\'grp\',\'' + n1 + '\')">' + n + '</td>';
+function SaveGrp(s, color) {
+	res = '';
+	if (s === nullItem || s === '') {
+		res = '<td class="' + grpClass + color + '">' + s + '</td>';		
+	} else {
+		res = '<td class="' + grpClass + color + sLink + '" onclick="Filter(\'grp\',\'' + s + '\')">' + s + '</td>';
+	}
+	return res;
 }
-function SaveKab(n) {
-	if (n === 0) n = '';
-	let myColor = (n === 15) ? sColorErr : color;	/////////////////////////////////
-	return '<td class="' + kabClass + ' ' + myColor + '" onclick="Filter(\'kab\',\'' + n + '\')">' + n + '</td>';
+function SaveSub(s, x, color) {
+	let sAdd = (x === 0 || s === nullItem) ? s : ((x < 0) ? '*&nbsp;' + s : s + '&nbsp;*');
+	res = '<td class="' + subClass + color + '">' + sAdd + '</td>';		
+	return res;	
 }
-function SaveTch(n) {
-	return '<td class="' + tchClass + ' ' + color + '" onclick="Filter(\'tch\',\'' + n + '\')">' + n + '</td>';	
+function SaveTch(s, color) {
+	res = '';
+	if (s === nullItem || s === '') {
+		res = '<td class="' + tchClass + color + '">' + s + '</td>';
+	} else {
+		res = '<td class="' + tchClass + color + sLink + '" onclick="Filter(\'tch\',\'' + s + '\')">' + s + '</td>';
+	}
+	return res;	
 }
-function SaveSub(n, x) {
-	let sign = (x === 0) ? n : ((x < 0) ? '*&nbsp;' + n : n + '&nbsp;*');
-	return '<td class="' + subClass + ' ' + color + '">' + sign + '</td>';	
+function SaveKab(n, color) {
+	if (n === 15) color = sColorErr;
+	res = '';
+	if (n <= 0) {
+		res = '<td class="' + kabClass + color + '"></td>';		
+	} else {
+		res = '<td class="' + kabClass + color + sLink + '" onclick="Filter(\'kab\',\'' + String(n) + '\')">' + String(n) + '</td>';
+	}
+	return res;	
 }
 //-------------------------------------------
 //-------------------------------------------
@@ -194,18 +234,21 @@ function FilterDay(value) {
 	} else {
 		value = Number(DAYS.indexOf(value));
 	}
+
 	let rows = a.filter(row => row.num === value);
-	rows.sort((x, y) => (x.grp !== y.grp) ? x.grp > y.grp : ((x.chZn !== y.chZn) ? y.chZn - x.chZn : 
-						((x.sub !== y.sub) ? y.sub > x.sub : x.kab - y.kab)));
+	if (isWorkDay(value)) rows = addGrp(value, rows); 
+	rows.sort((x, y) => {if (x.grp !== y.grp) return x.grp.localeCompare(y.grp); if (x.chZn !== y.chZn) return y.chZn - x.chZn;
+						 if (x.sub !== y.sub) return x.sub.localeCompare(y.sub); return x.kab - y.kab});
 	let s = '';
 	let grp1 = '';
-	let sub1 = '';	
+	let sub1 = '';
+	let	color;
 	for (let row of rows) {
-		color = getColor(row.grp);
+		color = getColor(Number(row.grp[0]));
 		s += '<tr>';
-		(grp1 === row.grp) ? s += SaveGrp(nullItem, row.grp) : s += SaveGrp(row.grp, row.grp);
-		(grp1 === row.grp && sub1 === row.sub) ? s += SaveSub(nullItem, row.chZn) : s += SaveSub(row.sub, row.chZn);		
-		s += SaveKab(row.kab) + SaveTch(row.tch) + '</tr>';
+		(grp1 === row.grp) ? s += SaveGrp(nullItem, color) : s += SaveGrp(row.grp, color);
+		(grp1 === row.grp && sub1 === row.sub) ? s += SaveSub(nullItem, row.chZn, color) : s += SaveSub(row.sub, row.chZn, color);		
+		s += SaveKab(row.kab, color) + SaveTch(row.tch, color) + '</tr>';
 		grp1 = row.grp;
 		sub1 = row.sub;		
 	}
@@ -215,18 +258,20 @@ function FilterDay(value) {
 //-------------------------------------------
 //-------------------------------------------
 function FilterGrp(value) {
-	let rows = addDay(value, 'grp');	// + фільтр
-	rows.sort((x, y) => (x.num !== y.num) ? x.num - y.num : ((x.chZn !== y.chZn) ? y.chZn - x.chZn : 
-						((x.sub !== y.sub) ? y.sub > x.sub : x.kab - y.kab)));
+	let rows = a.filter(row => row.grp === value);
+	rows = addDay(value, 'grp', rows);
+	rows.sort((x, y) => {if (x.num !== y.num) return x.num - y.num; if (x.chZn !== y.chZn) return y.chZn - x.chZn;
+						 if (x.sub !== y.sub) return x.sub.localeCompare(y.sub); return x.kab - y.kab});	
 	let s = '';
 	let num1 = '';
-	let sub1 = '';		
+	let sub1 = '';
+	let	color;	
 	for (let row of rows) {
-		color = getColor(row.num);
+		color = getColor(Math.trunc(row.num / 10));
 		s += '<tr>';
-		(num1 === row.num) ? s += SaveDay(nullItem, DAYS[row.num]) : s += SaveDay(DAYS[row.num], DAYS[row.num]);
-		(num1 === row.num && sub1 === row.sub) ? s += SaveSub(nullItem, row.chZn) : s += SaveSub(row.sub, row.chZn);		
-		s += SaveKab(row.kab) + SaveTch(row.tch) + '</tr>';
+		(num1 === row.num) ? s += SaveDay(nullItem, color) : s += SaveDay(DAYS[row.num], color);
+		(num1 === row.num && sub1 === row.sub) ? s += SaveSub(nullItem, row.chZn, color) : s += SaveSub(row.sub, row.chZn, color);		
+		s += SaveKab(row.kab, color) + SaveTch(row.tch, color) + '</tr>';
 		num1 = row.num;
 		sub1 = row.sub;			
 	}
@@ -236,18 +281,20 @@ function FilterGrp(value) {
 //-------------------------------------------
 //-------------------------------------------
 function FilterTch(value) {
-	let rows = addDay(value, 'tch');	// + фільтр
-	rows.sort((x, y) => (x.num !== y.num) ? x.num - y.num : ((x.chZn !== y.chZn) ? y.chZn - x.chZn : 
-						((x.grp !== y.grp) ? y.grp > x.grp : x.kab - y.kab)));	
+	let rows = a.filter(row => row.tch === value);
+	rows = addDay(value, 'tch', rows);
+	rows.sort((x, y) => {if (x.num !== y.num) return x.num - y.num; if (x.chZn !== y.chZn) return y.chZn - x.chZn;
+						 if (x.grp !== y.grp) return x.grp.localeCompare(y.grp); return x.kab - y.kab});		
 	let s = '';
 	let num1 = '';
 	let grp1 = '';	
+	let	color;	
 	for (let row of rows) {
-		color = getColor(row.num);
+		color = getColor(Math.trunc(row.num / 10));
 		s += '<tr>';
-		(num1 === row.num) ? s += SaveDay(nullItem, DAYS[row.num]) : s += SaveDay(DAYS[row.num], DAYS[row.num]);
-		(num1 === row.num && grp1 === row.grp) ? s += SaveGrp(nullItem, row.grp) : s += SaveGrp(row.grp, row.grp);
-		s += SaveSub(row.sub, row.chZn) + SaveKab(row.kab) + '</tr>';
+		(num1 === row.num) ? s += SaveDay(nullItem, color) : s += SaveDay(DAYS[row.num], color);
+		(num1 === row.num && grp1 === row.grp) ? s += SaveGrp(nullItem, color) : s += SaveGrp(row.grp, color);
+		s += SaveSub(row.sub, row.chZn, color) + SaveKab(row.kab, color) + '</tr>';
 		num1 = row.num;
 		grp1 = row.grp;		
 	}
@@ -257,18 +304,20 @@ function FilterTch(value) {
 //-------------------------------------------
 //-------------------------------------------
 function FilterKab(value) {
-	let rows = addDay(value, 'kab');	// + фільтр	
-	rows.sort((x, y) => (x.num !== y.num) ? x.num - y.num : ((x.chZn !== y.chZn) ? y.chZn - x.chZn : 
-						((x.sub !== y.sub) ? y.sub > x.sub : x.grp > y.grp)));	
+	let rows = a.filter(row => row.kab === value);
+	rows = addDay(value, 'kab', rows);
+	rows.sort((x, y) => {if (x.num !== y.num) return x.num - y.num; if (x.chZn !== y.chZn) return y.chZn - x.chZn;
+						 if (x.sub !== y.sub) return x.sub.localeCompare(y.sub); return x.grp.localeCompare(y.grp)});		
 	let s = '';
 	let num1 = '';
 	let sub1 = '';
+	let	color;	
 	for (let row of rows) {
-		color = getColor(row.num);
+		color = getColor(Math.trunc(row.num / 10));
 		s += '<tr>';
-		(num1 === row.num) ? s += SaveDay(nullItem, DAYS[row.num]) : s += SaveDay(DAYS[row.num], DAYS[row.num]);
-		(num1 === row.num && sub1 === row.sub) ? s += SaveSub(nullItem, row.chZn) : s += SaveSub(row.sub, row.chZn);
-		s += SaveGrp(row.grp) + SaveTch(row.tch) + '</tr>';
+		(num1 === row.num) ? s += SaveDay(nullItem, color) : s += SaveDay(DAYS[row.num], color);
+		(num1 === row.num && sub1 === row.sub) ? s += SaveSub(nullItem, row.chZn, color) : s += SaveSub(row.sub, row.chZn, color);
+		s += SaveGrp(row.grp, color) + SaveTch(row.tch, color) + '</tr>';
 		num1 = row.num;
 		sub1 = row.sub;
 	}
