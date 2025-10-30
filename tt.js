@@ -6,11 +6,15 @@ const DS = ['Пн', 'Вв', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'];
 var DAYS_LONG = []
 var DAYS = []
 
+const rowDef = {num:-1,grp:'',chZn:0,sub:'',tch:'',kab:0};
 const dayClass = 'tt-day';
 const grpClass = 'tt-grp';
 const tchClass = 'tt-tch';
 const kabClass = 'tt-kab';
 const subClass = 'tt-sub';
+
+const kabSport = 59;
+const kabFalse = 15;
 
 const nullItem = '---';
 
@@ -55,7 +59,6 @@ function isWorkDay(num) {
 //-------------------------------------------
 //-- додавання порожніх днів -------------
 function addDay(value, col, rows) {
-	let rowDef = {num:0,grp:'',chZn:0,sub:'',tch:'',kab:0};
 	for (let i = 0; i < DAYS.length; i++) {
 		if (isWorkDay(i) && rows.find(row => row.num === i) === undefined) {
 			row = {...rowDef};
@@ -70,7 +73,6 @@ function addDay(value, col, rows) {
 //-------------------------------------------
 //-- додавання порожніх класів -------------
 function addGrp(value, rows) {
-	let rowDef = {num:0,grp:'',chZn:0,sub:'',tch:'',kab:0};
 	let grps = [];
 	for (let row of a) {
 		grps.push(row.grp);
@@ -91,7 +93,7 @@ function addGrp(value, rows) {
 //-------------------------------------------
 function getColor(n) {
 	if (n === currTime) return sColorCurr;
-	return n % 2 === 1 ? sColor1 : sColor2;
+	return n % 2 === 0 ? sColor1 : sColor2;
 }
 	
 //-------------------------------------------
@@ -201,7 +203,7 @@ function SaveGrp(s, color) {
 	return res;
 }
 function SaveSub(s, x, color) {
-	let sAdd = (x === 0 || s === nullItem) ? s : ((x < 0) ? '*&nbsp;' + s : s + '&nbsp;*');
+	let sAdd = (x === 0) ? s : ((x < 0) ? '*&nbsp;' + s : s + '&nbsp;*');
 	res = '<td class="' + subClass + color + '">' + sAdd + '</td>';		
 	return res;	
 }
@@ -215,7 +217,7 @@ function SaveTch(s, color) {
 	return res;	
 }
 function SaveKab(n, color) {
-	if (n === 15) color = sColorErr;
+	if (n === kabFalse) color = sColorErr;
 	res = '';
 	if (n <= 0) {
 		res = '<td class="' + kabClass + color + '"></td>';		
@@ -240,17 +242,26 @@ function FilterDay(value) {
 	rows.sort((x, y) => {if (x.grp !== y.grp) return x.grp.localeCompare(y.grp); if (x.chZn !== y.chZn) return y.chZn - x.chZn;
 						 if (x.sub !== y.sub) return x.sub.localeCompare(y.sub); return x.kab - y.kab});
 	let s = '';
-	let grp1 = '';
-	let sub1 = '';
+	let rowPrev = {...rowDef};
 	let	color;
 	for (let row of rows) {
-		color = getColor(Number(row.grp[0]));
+		color = getColor(Number(row.grp[0]) + 1);
+
+			//---перевірка на помилки
+		if (row.grp === rowPrev.grp) {
+			if (rowPrev.chZn === 1 && row.chZn === 0) color = sColorErr;
+			if (rowPrev.chZn === 0 && row.chZn !== 0) color = sColorErr;
+			if (rowPrev.chZn === -1 && row.chZn !== -1) color = sColorErr;
+			if (row.chZn === rowPrev.chZn && row.tch === rowPrev.tch) color = sColorErr;
+			if (row.chZn === rowPrev.chZn && row.kab === rowPrev.kab && row.kab !== kabSport) color = sColorErr;
+		}
+			//---------		
+
 		s += '<tr>';
-		(grp1 === row.grp) ? s += SaveGrp(nullItem, color) : s += SaveGrp(row.grp, color);
-		(grp1 === row.grp && sub1 === row.sub) ? s += SaveSub(nullItem, row.chZn, color) : s += SaveSub(row.sub, row.chZn, color);		
+		(row.grp === rowPrev.grp) ? s += SaveGrp(nullItem, color) : s += SaveGrp(row.grp, color);
+		(row.grp === rowPrev.grp && row.sub === rowPrev.sub) ? s += SaveSub(nullItem, row.chZn, color) : s += SaveSub(row.sub, row.chZn, color);
 		s += SaveKab(row.kab, color) + SaveTch(row.tch, color) + '</tr>';
-		grp1 = row.grp;
-		sub1 = row.sub;		
+		rowPrev = {...row};		
 	}
 	return s;
 }
@@ -263,17 +274,26 @@ function FilterGrp(value) {
 	rows.sort((x, y) => {if (x.num !== y.num) return x.num - y.num; if (x.chZn !== y.chZn) return y.chZn - x.chZn;
 						 if (x.sub !== y.sub) return x.sub.localeCompare(y.sub); return x.kab - y.kab});	
 	let s = '';
-	let num1 = '';
-	let sub1 = '';
+	let rowPrev = {...rowDef};
 	let	color;	
 	for (let row of rows) {
 		color = getColor(Math.trunc(row.num / 10));
+		
+			//---перевірка на помилки
+		if (row.num === rowPrev.num) {
+			if (rowPrev.chZn === 1 && row.chZn === 0) color = sColorErr;
+			if (rowPrev.chZn === 0 && row.chZn !== 0) color = sColorErr;
+			if (rowPrev.chZn === -1 && row.chZn !== -1) color = sColorErr;
+			if (row.chZn === rowPrev.chZn && row.tch === rowPrev.tch) color = sColorErr;
+			if (row.chZn === rowPrev.chZn && row.kab === rowPrev.kab && row.kab !== kabSport) color = sColorErr;
+		}
+			//---------
+			
 		s += '<tr>';
-		(num1 === row.num) ? s += SaveDay(nullItem, color) : s += SaveDay(DAYS[row.num], color);
-		(num1 === row.num && sub1 === row.sub) ? s += SaveSub(nullItem, row.chZn, color) : s += SaveSub(row.sub, row.chZn, color);		
+		(row.num === rowPrev.num) ? s += SaveDay(nullItem, color) : s += SaveDay(DAYS[row.num], color);
+		(row.num === rowPrev.num && row.sub === rowPrev.sub) ? s += SaveSub(nullItem, row.chZn, color) : s += SaveSub(row.sub, row.chZn, color);
 		s += SaveKab(row.kab, color) + SaveTch(row.tch, color) + '</tr>';
-		num1 = row.num;
-		sub1 = row.sub;			
+		rowPrev = {...row};		
 	}
 	return s;	
 }
@@ -286,17 +306,24 @@ function FilterTch(value) {
 	rows.sort((x, y) => {if (x.num !== y.num) return x.num - y.num; if (x.chZn !== y.chZn) return y.chZn - x.chZn;
 						 if (x.grp !== y.grp) return x.grp.localeCompare(y.grp); return x.kab - y.kab});		
 	let s = '';
-	let num1 = '';
-	let grp1 = '';	
+	let rowPrev = {...rowDef};
 	let	color;	
 	for (let row of rows) {
 		color = getColor(Math.trunc(row.num / 10));
+
+			//---перевірка на помилки
+		if (row.num === rowPrev.num) {
+			if (row.chZn !== -1 || rowPrev.chZn !== 1) color = sColorErr;
+			if (row.chZn === -1 && rowPrev.chZn === 1 && row.sub === rowPrev.sub 
+				&& row.grp === rowPrev.grp && row.kab === rowPrev.kab) color = sColorErr;
+		}
+			//---------
+
 		s += '<tr>';
-		(num1 === row.num) ? s += SaveDay(nullItem, color) : s += SaveDay(DAYS[row.num], color);
-		(num1 === row.num && grp1 === row.grp) ? s += SaveGrp(nullItem, color) : s += SaveGrp(row.grp, color);
+		(row.num === rowPrev.num) ? s += SaveDay(nullItem, color) : s += SaveDay(DAYS[row.num], color);
+		(row.num === rowPrev.num && row.grp === rowPrev.grp) ? s += SaveGrp(nullItem, color) : s += SaveGrp(row.grp, color);
 		s += SaveSub(row.sub, row.chZn, color) + SaveKab(row.kab, color) + '</tr>';
-		num1 = row.num;
-		grp1 = row.grp;		
+		rowPrev = {...row};
 	}
 	return s;	
 }	
@@ -309,17 +336,32 @@ function FilterKab(value) {
 	rows.sort((x, y) => {if (x.num !== y.num) return x.num - y.num; if (x.chZn !== y.chZn) return y.chZn - x.chZn;
 						 if (x.sub !== y.sub) return x.sub.localeCompare(y.sub); return x.grp.localeCompare(y.grp)});		
 	let s = '';
-	let num1 = '';
-	let sub1 = '';
+	let rowPrev = {...rowDef};
 	let	color;	
 	for (let row of rows) {
 		color = getColor(Math.trunc(row.num / 10));
+		
+			//---перевірка на помилки
+		if (row.num === rowPrev.num) {
+				// фізкультуа
+			if (row.kab === kabSport) {
+				if (rowPrev.chZn === 1 && row.chZn === 0) color = sColorErr;
+				if (rowPrev.chZn === 0 && row.chZn !== 0) color = sColorErr;
+				if (rowPrev.chZn === -1 && row.chZn !== -1) color = sColorErr;
+				if (row.chZn === rowPrev.chZn && row.tch === rowPrev.tch) color = sColorErr;
+			} else {
+				if (row.chZn !== -1 || rowPrev.chZn !== 1) color = sColorErr;
+				if (row.chZn === -1 && rowPrev.chZn === 1 && row.sub === rowPrev.sub 
+					&& row.grp === rowPrev.grp && row.tch === rowPrev.tch) color = sColorErr;
+			}
+		}
+			//---------
+			
 		s += '<tr>';
-		(num1 === row.num) ? s += SaveDay(nullItem, color) : s += SaveDay(DAYS[row.num], color);
-		(num1 === row.num && sub1 === row.sub) ? s += SaveSub(nullItem, row.chZn, color) : s += SaveSub(row.sub, row.chZn, color);
+		(row.num === rowPrev.num) ? s += SaveDay(nullItem, color) : s += SaveDay(DAYS[row.num], color);
+		(row.num === rowPrev.num && row.sub === rowPrev.sub) ? s += SaveSub(nullItem, row.chZn, color) : s += SaveSub(row.sub, row.chZn, color);
 		s += SaveGrp(row.grp, color) + SaveTch(row.tch, color) + '</tr>';
-		num1 = row.num;
-		sub1 = row.sub;
+		rowPrev = {...row};
 	}
 	return s;
 }	
