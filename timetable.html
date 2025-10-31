@@ -63,6 +63,8 @@ select {
 	background: -o-linear-gradient(top, #fff 0%, #b0c4de 50%, #fff 100%);
 }
 
+@media screen and (min-width:600px){.select{width:140px;}}
+
 .tt-content {
 	width: 96%;
 	max-width: 560px;
@@ -117,7 +119,7 @@ select {
 <!--================================#FFB6C1==========-->
 <body onload="CreateData()">
 
-<table class="page-header" id="timetable_header" ontouchstart="touchStart()" ontouchend="touchEnd(listBox.selectedIndex)">
+<table class="page-header" id="timetable_header">
 	<tr>
 		<td class="btn" onclick="HTMLFilter(listBox.selectedIndex - 1);">&#9668;</td>
 		<td class="page-title"><select id="listBox" size="1" onchange="HTMLFilter(this.selectedIndex)"></select></td>
@@ -125,7 +127,7 @@ select {
 	</tr>
 </table>
 
-<table id="tableData" class="tt-content">
+<table id="tableData" class="tt-content" ontouchstart="touchStart()" ontouchend="touchEnd(listBox.selectedIndex)">
 </table>
 
 </body>
