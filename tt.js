@@ -91,9 +91,15 @@ function addGrp(value, rows) {
 
 //-------------------------------------------
 //-------------------------------------------
-function getColor(n) {
-	if (n === currTime) return sColorCurr;
-	return n % 2 === 0 ? sColor1 : sColor2;
+function getColor(x) {
+	if (x === '') return sColor1;
+	if (typeof x === 'number') {
+		if (x === currTime) return sColorCurr;
+		x = (Math.trunc(x / 10));
+	} else {
+		x = Number(x[0]);
+	}
+	return (isNaN(x) || x % 2 === 1) ? sColor2 : sColor1;
 }
 	
 //-------------------------------------------
@@ -245,7 +251,7 @@ function FilterDay(value) {
 	let rowPrev = {...rowDef};
 	let	color;
 	for (let row of rows) {
-		color = getColor(Number(row.grp[0]) + 1);
+		color = getColor(row.grp);
 
 			//---перевірка на помилки
 		if (row.grp === rowPrev.grp) {
@@ -277,7 +283,7 @@ function FilterGrp(value) {
 	let rowPrev = {...rowDef};
 	let	color;	
 	for (let row of rows) {
-		color = getColor(Math.trunc(row.num / 10));
+		color = getColor(row.num);
 		
 			//---перевірка на помилки
 		if (row.num === rowPrev.num) {
@@ -309,7 +315,7 @@ function FilterTch(value) {
 	let rowPrev = {...rowDef};
 	let	color;	
 	for (let row of rows) {
-		color = getColor(Math.trunc(row.num / 10));
+		color = getColor(row.num);
 
 			//---перевірка на помилки
 		if (row.num === rowPrev.num) {
@@ -339,7 +345,7 @@ function FilterKab(value) {
 	let rowPrev = {...rowDef};
 	let	color;	
 	for (let row of rows) {
-		color = getColor(Math.trunc(row.num / 10));
+		color = getColor(row.num);
 		
 			//---перевірка на помилки
 		if (row.num === rowPrev.num) {
