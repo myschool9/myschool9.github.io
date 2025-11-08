@@ -259,14 +259,14 @@ function FilterDay(value) {
 	let s = '';
 	let rowPrev = {...rowDef};
 	let	color;
+	let countNull = 0;
 	for (let row of rows) {
 		color = getColor(row.grp);
 
 			//---перевірка на помилки
 		if (row.grp === rowPrev.grp) {
-			if (rowPrev.chZn === -1 && row.chZn === 0) color = sColorErr;
-			if (rowPrev.chZn === 0 && row.chZn !== 0) color = sColorErr;
-			if (rowPrev.chZn === 1 && row.chZn !== 1) color = sColorErr;
+			if (rowPrev.chZn > row.chZn) color = sColorErr;
+			if (row.chZn === rowPrev.chZn + 1 && (row.tch === rowPrev.tch || row.kab === rowPrev.kab)) color = sColorErr;
 			if (row.chZn === rowPrev.chZn && row.tch === rowPrev.tch) color = sColorErr;
 			if (row.chZn === rowPrev.chZn && row.kab === rowPrev.kab && row.kab !== kabSport) color = sColorErr;
 		}
@@ -274,7 +274,13 @@ function FilterDay(value) {
 
 		s += '<tr>';
 		(row.grp === rowPrev.grp) ? s += SaveGrp(nullItem, color) : s += SaveGrp(row.grp, color);
-		(row.grp === rowPrev.grp && row.sub === rowPrev.sub) ? s += SaveSub(nullItem, row.chZn, color) : s += SaveSub(row.sub, row.chZn, color);
+		if (row.grp === rowPrev.grp && row.sub === rowPrev.sub && countNull === 0) {
+			s += SaveSub(nullItem, row.chZn, color);
+			countNull += 1;
+		} else {
+			s += SaveSub(row.sub, row.chZn, color);
+			countNull = 0;
+		}
 		s += SaveKab(row.kab, color, row.grp) + SaveTch(row.tch, color) + '</tr>';
 		rowPrev = {...row};		
 	}
@@ -291,14 +297,14 @@ function FilterGrp(value) {
 	let s = '';
 	let rowPrev = {...rowDef};
 	let	color;	
+	let countNull = 0;
 	for (let row of rows) {
 		color = getColor(row.num);
 		
 			//---перевірка на помилки
 		if (row.num === rowPrev.num) {
-			if (rowPrev.chZn === -1 && row.chZn === 0) color = sColorErr;
-			if (rowPrev.chZn === 0 && row.chZn !== 0) color = sColorErr;
-			if (rowPrev.chZn === 1 && row.chZn !== 1) color = sColorErr;
+			if (rowPrev.chZn > row.chZn) color = sColorErr;
+			if (row.chZn === rowPrev.chZn + 1 && (row.tch === rowPrev.tch || row.kab === rowPrev.kab)) color = sColorErr;
 			if (row.chZn === rowPrev.chZn && row.tch === rowPrev.tch) color = sColorErr;
 			if (row.chZn === rowPrev.chZn && row.kab === rowPrev.kab && row.kab !== kabSport) color = sColorErr;
 		}
@@ -306,7 +312,13 @@ function FilterGrp(value) {
 			
 		s += '<tr>';
 		(row.num === rowPrev.num) ? s += SaveDay(nullItem, color) : s += SaveDay(DAYS[row.num], color);
-		(row.num === rowPrev.num && row.sub === rowPrev.sub) ? s += SaveSub(nullItem, row.chZn, color) : s += SaveSub(row.sub, row.chZn, color);
+		if (row.num === rowPrev.num && row.sub === rowPrev.sub && countNull === 0) {
+			s += SaveSub(nullItem, row.chZn, color);
+			countNull += 1;
+		} else {
+			s += SaveSub(row.sub, row.chZn, color);
+			countNull = 0;
+		}
 		s += SaveKab(row.kab, color, row.grp) + SaveTch(row.tch, color) + '</tr>';
 		rowPrev = {...row};		
 	}
@@ -322,7 +334,8 @@ function FilterTch(value) {
 						 if (x.grp !== y.grp) return x.grp.localeCompare(y.grp); return MySort(x.kab, y.kab)});
 	let s = '';
 	let rowPrev = {...rowDef};
-	let	color;	
+	let	color;
+	let countNull = 0;
 	for (let row of rows) {
 		color = getColor(row.num);
 
@@ -336,7 +349,13 @@ function FilterTch(value) {
 
 		s += '<tr>';
 		(row.num === rowPrev.num) ? s += SaveDay(nullItem, color) : s += SaveDay(DAYS[row.num], color);
-		(row.num === rowPrev.num && row.grp === rowPrev.grp) ? s += SaveGrp(nullItem, color) : s += SaveGrp(row.grp, color);
+		if (row.num === rowPrev.num && row.grp === rowPrev.grp && countNull === 0) {
+			s += SaveGrp(nullItem, color);
+			countNull += 1;
+		} else {
+			s += SaveGrp(row.grp, color);
+			countNull = 0;
+		}
 		s += SaveSub(row.sub, row.chZn, color) + SaveKab(row.kab, color, row.grp) + '</tr>';
 		rowPrev = {...row};
 	}
@@ -352,7 +371,8 @@ function FilterKab(value) {
 						 if (x.sub !== y.sub) return x.sub.localeCompare(y.sub); return x.grp.localeCompare(y.grp)});
 	let s = '';
 	let rowPrev = {...rowDef};
-	let	color;	
+	let	color;
+	let countNull = 0;
 	for (let row of rows) {
 		color = getColor(row.num);
 		
@@ -374,7 +394,13 @@ function FilterKab(value) {
 			
 		s += '<tr>';
 		(row.num === rowPrev.num) ? s += SaveDay(nullItem, color) : s += SaveDay(DAYS[row.num], color);
-		(row.num === rowPrev.num && row.sub === rowPrev.sub) ? s += SaveSub(nullItem, row.chZn, color) : s += SaveSub(row.sub, row.chZn, color);
+		if (row.num === rowPrev.num && row.sub === rowPrev.sub && countNull === 0) {
+			s += SaveSub(nullItem, row.chZn, color);
+			countNull += 1;
+		} else {
+			s += SaveSub(row.sub, row.chZn, color);
+			countNull = 0;
+		}
 		s += SaveGrp(row.grp, color) + SaveTch(row.tch, color) + '</tr>';
 		rowPrev = {...row};
 	}
@@ -448,7 +474,7 @@ var a0 = [
 ["5-Б",30,0,"укр.літ.","Македонська О.Р.",  "8"],
 ["5-Б",31,0,"укр.мова","Македонська О.Р.",  "8"],
 ["5-Б",32,0,"математика","Каравець Г.М.",  "33"],
-["5-Б",33,-1,"англ.мова","Смолинець Г.А.",  "16"],  ["5-Б",33,0,"англ.мова","Пронів Х.І.",  "30"], ["5-Б",33,1,"англ.мова","Смолинець Г.А.",  "32"],
+["5-Б",33,-1,"англ.мова","Смолинець Г.А.",  "16"],  ["5-Б",33,0,"англ.мова","Пронів Х.І.",  "30"],  ["5-Б",33,1,"англ.мова","Смолинець Г.А.",  "32"],
 ["5-Б",34,0,"фіз-ра","Тиндик Т.О.",  "с/з"], 
 ["5-Б",35,0,"технології","Шевчук М.Б.",  "6"],  ["5-Б",35,0,"технології","Цуркан І.М.",  "7"],
 ["5-Б",36,1,"духовність","Павлів О.Я.",  "19"],
