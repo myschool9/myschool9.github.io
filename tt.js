@@ -19,7 +19,7 @@ const kabFalse = 'xx';
 
 const nullItem = '---';
 
-const lessonsTime = [585, 645, 705, 765, 825, 885, 945];
+const lessonsTime = [558, 618, 678, 745, 813, 873, 1500];
 const sLink = ' tt--link'
 const sColor1 = ' tt--color-1';
 const sColor2 = ' tt--color-2';
@@ -33,21 +33,14 @@ var currTime = 0;
 //---------------------------------------------------------------------------
 function GetCurrentTime() {
 	let d = new Date();
+	let day = d.getUTCDay();
+	if (day > 5) return 0;
+	
 	let m = new Date();
 	let g = new Date();
-	let day = d.getUTCDay();
 	let min = 60 * g.getHours() + m.getMinutes();
-	let i = 0;
-	while (i < 7 && lessonsTime[i] + 3 <= min) {
-		i += 1;
-	}
-	if (i === 7) i = 6;
-	if (day === 0 || day === 6) {
-		day = 0;
-		i = 0;
-	} else {
-		day -= 1;
-	}
+	let i = lessonsTime.findIndex(x => x > min);
+	
 	return 10 * day + i;
 }
 
