@@ -34,7 +34,7 @@ var currTime = 0;
 function GetCurrentTime() {
 	let d = new Date();
 	let day = d.getUTCDay();
-	if (day > 5) return 0;
+	if (day > 5 || day < 1) return 0;
 	
 	let m = new Date();
 	let g = new Date();
