@@ -15,7 +15,7 @@ const subClass = 'tt-sub';
 
 const kabSport = 'с/з';
 const kabsFalse = ['15', 'а/з', '']
-const kabFalse = 'xx';
+const kabFalse = 'x';
 
 const nullItem = '---';
 
@@ -207,32 +207,32 @@ function touchEnd(n) {
 function SaveDay(s, color) {
 	res = '';
 if (s === nullItem || s === '' || !isWorkDay(DAYS.indexOf(s))) {
-		res = '<td class="' + dayClass + color + '">' + s + '</td>';
+		res = '<td class="' + dayClass + color + '"><span ' + s + '</span></td>';
 	} else {
-		res = '<td class="' + dayClass + color + sLink + '" onclick="Filter(\'day\',\'' + s + '\')">' + s + '</td>';
+		res = '<td class="' + dayClass + color + '"><span class="' + sLink + '" onclick="Filter(\'day\',\'' + s + '\')">' + s + '</span></td>';
 	}
 	return res;
 }
 function SaveGrp(s, color) {
 	res = '';
 	if (s === nullItem || s === '' || !isGrp19(s))  {
-		res = '<td class="' + grpClass + color + '">' + s + '</td>';		
+		res = '<td class="' + grpClass + color + '"><span ' + s + '</span></td>';		
 	} else {
-		res = '<td class="' + grpClass + color + sLink + '" onclick="Filter(\'grp\',\'' + s + '\')">' + s + '</td>';
+		res = '<td class="' + grpClass + color + '"><span class="' + sLink + '" onclick="Filter(\'grp\',\'' + s + '\')">' + s + '</span></td>';
 	}
 	return res;
 }
 function SaveSub(s, x, color) {
 	let sAdd = (x === 0 || s === nullItem) ? s : ((x > 0) ? '*&nbsp;' + s : s + '&nbsp;*');
-	res = '<td class="' + subClass + color + '">' + sAdd + '</td>';		
+	res = '<td class="' + subClass + color + '"><span>' + sAdd + '</span></td>';
 	return res;	
 }
 function SaveTch(s, color) {
 	res = '';
 	if (s === nullItem || s === '') {
-		res = '<td class="' + tchClass + color + '">' + s + '</td>';
+		res = '<td class="' + tchClass + color + '"><span ' + s + '</span></td>';
 	} else {
-		res = '<td class="' + tchClass + color + sLink + '" onclick="Filter(\'tch\',\'' + s + '\')">' + s + '</td>';
+		res = '<td class="' + tchClass + color + '"><span class="' + sLink + '" onclick="Filter(\'tch\',\'' + s + '\')">' + s + '</span></td>';
 	}
 	return res;	
 }
@@ -240,9 +240,9 @@ function SaveKab(s, color, grp) {
 	if (s === kabFalse && isGrp19(grp)) color = sColorErr;
 	res = '';
 	if (s === '' || s === kabFalse) {
-		res = '<td class="' + kabClass + color + '">' + s + '</td>';
+		res = '<td class="' + kabClass + color + '"><span ' + s + '</span></td>';
 	} else {
-		res = '<td class="' + kabClass + color + sLink + '" onclick="Filter(\'kab\',\'' + s + '\')">' + s + '</td>';
+		res = '<td class="' + kabClass + color + '"><span class="' + sLink + '" onclick="Filter(\'kab\',\'' + s + '\')">' + s + '</span></td>';
 	}
 	return res;	
 }
@@ -659,15 +659,18 @@ var a0 = [
 
 ["3-Б",0,0,"фіз-ра","Голько Н.І.",  "2"],
 ["3-Б",1,0,"я досл.світ","Федишин В.В.",  "56"],
+["3-Б",2,0,"укр.мова","Іонайтєнє Н.В.",  "56"],
 ["3-Б",3,0,"англ.мова","Федишин В.В.",  "56"],
 ["3-Б",4,0,"математика","Капустяк О.П.",  "56"],
 
 ["3-Б",10,0,"математика","Капустяк О.П.",  "56"],
+["3-Б",11,0,"укр.мова","Іонайтєнє Н.В.",  "56"],
 ["3-Б",12,0,"англ.мова","Федишин В.В.",  "56"],
 ["3-Б",13,0,"фіз-ра","Голько Н.І.",  "2"],
 ["3-Б",14,0,"я досл.світ","Федишин В.В.",  "56"],
 ["3-Б",15,0,"христ. етика","Брошко О.І.",  "56"],
 
+["3-Б",20,0,"укр.мова","Іонайтєнє Н.В.",  "56"],
 ["3-Б",21,0,"музика","Паралюш О.М.",  "56"],
 ["3-Б",22,0,"я досл.світ","Федишин В.В.",  "56"],
 ["3-Б",23,0,"я досл.світ","Федишин В.В.",  "56"],
@@ -676,10 +679,13 @@ var a0 = [
 ["3-Б",30,0,"математика","Капустяк О.П.",  "56"],
 ["3-Б",31,0,"англ.мова","Федишин В.В.",  "56"],
 ["3-Б",32,0,"мистецтво","Федишин В.В.",  "56"],
+["3-Б",33,0,"укр.мова","Іонайтєнє Н.В.",  "56"],
+["3-Б",34,0,"укр.мова","Іонайтєнє Н.В.",  "56"],
 
 ["3-Б",40,0,"математика","Капустяк О.П.",  "56"],
 ["3-Б",41,0,"я досл.світ","Федишин В.В.",  "56"],
 ["3-Б",42,0,"я досл.світ","Федишин В.В.",  "56"],
+["3-Б",43,0,"інформатика","Іонайтєнє Н.В.",  "56"],
 ["3-Б",44,0,"я досл.світ","Федишин В.В.",  "56"],
 
 
