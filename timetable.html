@@ -17,8 +17,6 @@ body {
 	background-color: #f5f4e5;
 }
 
-a {text-decoration: none; color: #921;}
-
 .page-header {
 	position: fixed;
 	top: 2px;
@@ -31,7 +29,6 @@ a {text-decoration: none; color: #921;}
 	text-align: center;
 	background-color: #8fbc8f;
 }
-@media screen and (min-width:600px){.page-header{top:10px;left:10%}}
 
 .btn {
 	overflow: hidden;
@@ -47,8 +44,6 @@ a {text-decoration: none; color: #921;}
 	background: -o-linear-gradient(top, #d0ecf4 0%, #5bc9e1 50%, #d0ecf4 100%);	
 }
 
-@media screen and (min-width:600px){.btn{width:80px;}}
-
 .page-title {font-size: 1.2em;}
 
 select {
@@ -63,8 +58,6 @@ select {
 	background: -o-linear-gradient(top, #fff 0%, #b0c4de 50%, #fff 100%);
 }
 
-@media screen and (min-width:600px){.select{width:140px;}}
-
 .tt-content {
 	width: 96%;
 	max-width: 560px;
@@ -73,7 +66,6 @@ select {
 	background-color: #f5f4e5;
 	border: 1px dotted #333;
 }
-@media screen and (min-width:600px){.tt-content{margin:50px 0 20px 10%}}
 
 .tt-day {
 	min-width: 33px;
@@ -112,12 +104,20 @@ select {
 .tt--color-3 {border-top: 1px dotted #333; background-color: #FFD6D1;}
 .tt--color-4 {border-top: 1px dotted #333; background-color: #F0E68C;}
 
-.tt--link {cursor: pointer; padding: 5px 4px;}
-.tt-tch .tt--link {padding: 5px 0;}
+.tt--link {cursor: pointer; padding: 2px;}
+.tt-tch .tt--link {padding: 2px 0;}
+
+@media screen and (min-width:700px){
+	.page-header {top:10px; left:10%}
+	.btn {width:80px;}
+	.select {width:140px;}
+	.tt-content {margin:50px 0 20px 10%}
+	.tt--link {cursor: pointer; padding: 5px 10px;}
+}
 
 </style>
 
-<!--================================#FFB6C1==========-->
+<!--==========================================-->
 <body onload="CreateData()">
 
 <table class="page-header" id="timetable_header">
