@@ -20,11 +20,11 @@ const kabFalse = 'x';
 const nullItem = '---';
 
 const lessonsTime = [558, 618, 678, 745, 813, 873, 1500];
-const sLink = ' tt--link'
-const sColor1 = ' tt--color-1';
-const sColor2 = ' tt--color-2';
-const sColorErr = ' tt--color-3';
-const sColorCurr = ' tt--color-4';
+const sLink = 'tt--link'
+const sColor1 = 'tt--color-1';
+const sColor2 = 'tt--color-2';
+const sColorErr = 'tt--color-3';
+const sColorCurr = 'tt--color-4';
 
 var activeCol = 'tch';
 var currTime = 0;
@@ -207,32 +207,32 @@ function touchEnd(n) {
 function SaveDay(s, color) {
 	res = '';
 if (s === nullItem || s === '' || !isWorkDay(DAYS.indexOf(s))) {
-		res = '<td class="' + dayClass + color + '"><span ' + s + '</span></td>';
+		res = `<td class="${dayClass} ${color}"><span>${s}</span></td>`;		
 	} else {
-		res = '<td class="' + dayClass + color + '"><span class="' + sLink + '" onclick="Filter(\'day\',\'' + s + '\')">' + s + '</span></td>';
+		res = `<td class="${dayClass} ${color}"><span class="${sLink}" onclick="Filter(\'day\', \'${s}\')">${s}</span></td>`;
 	}
 	return res;
 }
 function SaveGrp(s, color) {
 	res = '';
 	if (s === nullItem || s === '' || !isGrp19(s))  {
-		res = '<td class="' + grpClass + color + '"><span ' + s + '</span></td>';		
+		res = `<td class="${grpClass} ${color}"><span>${s}</span></td>`;
 	} else {
-		res = '<td class="' + grpClass + color + '"><span class="' + sLink + '" onclick="Filter(\'grp\',\'' + s + '\')">' + s + '</span></td>';
+		res = `<td class="${grpClass} ${color}"><span class="${sLink}" onclick="Filter(\'grp\', \'${s}\')">${s}</span></td>`;
 	}
 	return res;
 }
 function SaveSub(s, x, color) {
 	let sAdd = (x === 0 || s === nullItem) ? s : ((x > 0) ? '*&nbsp;' + s : s + '&nbsp;*');
-	res = '<td class="' + subClass + color + '"><span>' + sAdd + '</span></td>';
+	res = `<td class="${subClass} ${color}"><span>${sAdd}</span></td>`;
 	return res;	
 }
 function SaveTch(s, color) {
 	res = '';
 	if (s === nullItem || s === '') {
-		res = '<td class="' + tchClass + color + '"><span ' + s + '</span></td>';
+		res = `<td class="${tchClass} ${color}"><span>${s}</span></td>`;
 	} else {
-		res = '<td class="' + tchClass + color + '"><span class="' + sLink + '" onclick="Filter(\'tch\',\'' + s + '\')">' + s + '</span></td>';
+		res = `<td class="${tchClass} ${color}"><span class="${sLink}" onclick="Filter(\'tch\', \'${s}\')">${s}</span></td>`;
 	}
 	return res;	
 }
@@ -240,9 +240,9 @@ function SaveKab(s, color, grp) {
 	if (s === kabFalse && isGrp19(grp)) color = sColorErr;
 	res = '';
 	if (s === '' || s === kabFalse) {
-		res = '<td class="' + kabClass + color + '"><span ' + s + '</span></td>';
+		res = `<td class="${kabClass} ${color}"><span>${s}</span></td>`;
 	} else {
-		res = '<td class="' + kabClass + color + '"><span class="' + sLink + '" onclick="Filter(\'kab\',\'' + s + '\')">' + s + '</span></td>';
+		res = `<td class="${kabClass} ${color}"><span class="${sLink}" onclick="Filter(\'kab\', \'${s}\')">${s}</span></td>`;
 	}
 	return res;	
 }
