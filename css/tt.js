@@ -15,7 +15,7 @@ const subClass = 'tt-sub';
 
 const kabSport = 'с/з';
 const kabsFalse = ['15', 'а/з', '']
-const kabFalse = 'x';\
+const kabFalse = 'x';
 const subFalse = 'заміна';
 
 const nullItem = '---';
