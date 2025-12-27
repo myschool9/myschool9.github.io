@@ -20,9 +20,9 @@ function CreateArray(txt) {
 		nItemTo = Number(par[2]);
 	}	
 
-	if (nItemFrom > 99) nItemFrom = 99;
+	if (nItemFrom > 300) nItemFrom = 300;
 	if (isNaN(nItemFrom) || !Number.isInteger(nItemFrom) || nItemFrom < 1) nItemFrom = 1;
-	if (nItemTo > 99) nItemTo = 99;
+	if (nItemTo > 300) nItemTo = 300;
 	if (isNaN(nItemTo) || !Number.isInteger(nItemTo) || nItemTo < 1) nItemTo = 1;
 	if (nItemFrom > nItemTo) nItemFrom = nItemTo;
 
