@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/1.css">
+<script src="/css/1.js" defer></script>
+<form>
+<!--===============================-->
+Що кажуть коти?<br><br>
+1 кря<br>
+2 гав<br>
+3 муу<br>
+4 мяу<br>
+
+
+
+      <input id="input1">     <br>
+
+      <span id="span1"></span>     <br>
+
+<button type="button" onclick="solve()">   показати відповідь   </button>
+<!--===============================--><script>
+function solve() {
+
+let nomer = Number(input1.value) ;
+let rez = '' ;
+
+if (nomer == 1)
+   rez = 'так кажуть качки';
+if (nomer == 2)
+   rez = 'так кажуть собаки';
+if (nomer == 3)
+   rez = 'так кажуть корови';
+if (nomer == 4)
+   rez = 'відповідь правильна';
+
+
+
+span1.innerText = rez;
+
+
+
+
+
+
+
+
+
+
+
+}
+<!--===============================--></script></form>
