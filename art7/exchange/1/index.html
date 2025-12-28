@@ -1,0 +1,29 @@
+<!--========= Вигляд =========-->
+<form>
+<h1   style="background-color:LightSalmon"   > мій банк  	 </h1> 
+<h2> Онлайн обмін валют </h2>
+<h4> уведіть суму в гривнях </h4>
+   <img  style="border-radius:15px" src="2.jpg" width="150">  <input>   <img style="border-radius:15px"  src="5.jpg" width="150"> <br>
+<h4> Курс австралійського долара </h4>
+<h2> 27.30 </h2>
+   ви можете купити  <output>  </output> австр.доларів   <br> 
+
+    <button  style="background-color:Plum"  > Обчислити </button><br> 
+	<button style="background-color:Violet"    > Очистити </button>  <button   style="background-color:Violet"> Про нас </button> 
+
+</form>
+<!--==== Задача мовою Java Script ====--><script>
+function solve() {
+let gryvna  = Number(input1.value);
+
+let austr = gryvna / 27.30;
+
+output1.value = austr.toFixed(2);
+
+
+}<!--===== кінець задачі =====--></script>
+
+<meta name="viewport"content="width=device-width,initial-scale=1.0">
+<style>body{margin:10px 10%;padding:5px;max-width:35em;font-family:Arial,sans-serif;font-size:18px;line-height:1.4}@media screen and (max-width:450px){body{margin:15px 10px;font-size:16px;line-height:1.2}}form{margin:5px;padding:5px;;text-align:center;min-height:10em;border:1px dotted #000;border-radius:10px;background-color:#f0f0f0}h1,h2,h3{margin:.3em auto .5em;padding:.3em}img{margin:5px;vertical-align:middle;border-radius:5px}div{margin:5px;padding:5px;text-align:center}output{display:inline-block;min-width:3em;min-height:1.4em;margin:5px 7px;padding:5px;font-size:90%;background-color:#e0ffff;text-align:center;vertical-align:middle}button{margin:10px 20px;padding:10px;min-width:4em;min-height:2.5em;border:2px outset #ccc;border-radius:10px;font-family:inherit;font-size:100%;line-height:1.2;background-color:#e9e9ed}button:hover{background-color:#d0d0d0;cursor:pointer}button:active{border-style:inset}input{margin:10px;padding:2px 5px;width:6em;border:2px inset #ccc;font-family:monospace;font-size:90%}input:focus,button:focus,textarea:focus{outline:2px solid #0060df}input[type="checkbox"],input[type="radio"]{width:1.1em;height:1.1em;vertical-align:middle;cursor:pointer}textarea{margin:10px;padding:2px 5px;min-width:5em;min-height:4em;max-width:95%;max-height:25em;width:15em;height:15em;border:2px inset #ccc;border-radius:3px;font-size:90%;vertical-align:top}label{margin:5px;padding:5px;cursor:pointer}canvas{margin:5px;border:1px dotted black}span{margin:5px;padding:5px}input:disabled,button:disabled,textarea:disabled{color:GrayText;background-color:#f0f0f0;border:2px outset #ccc;cursor:inherit}</style>
+<script>let tags;let haveID;let isSolve=typeof solve==='function';for(let tagName of['button','radio','checkbox','input','h1','h2','h3','form','output','label','div','img','textarea','canvas']){tags=document.querySelectorAll(tagName);if(tags.length===0)tags=document.querySelectorAll('[type="'+tagName+'"]');haveID=0;tags.forEach((tag,i)=>(tag.id==='')?tag.id=tagName+(i+1-haveID):haveID+=1);if(tagName==='button'&&tags.length!==0){tags[0].focus();tags.forEach((tag)=>{tag.type='button';if(typeof tag.onclick!=='function'&&isSolve)tag.onclick=function(){solve()}})}
+if(['h1','h2','h3'].includes(tagName))tags.forEach((tag)=>tag.id=tagName);if(['input','radio','checkbox'].includes(tagName)&&tags.length!==0){tags[0].focus();tags.forEach((tag,i)=>{tag.addEventListener('keydown',function(event){if(event.keyCode===13&&isSolve){solve();event.preventDefault()}})})}}</script>
