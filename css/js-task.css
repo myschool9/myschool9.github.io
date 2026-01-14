@@ -1,6 +1,6 @@
 /*-------------- <eлемент атрибут="значення"> -------------
-1. <input id="in1">                     поле введення
-2. <output id="out1"> </output>         результат обчислень
+1. <input id="input1">                  поле введення
+2. <output id="output1"> </output>      результат обчислень
 3. <button onclick="f1()"> … </button>  кнопка
 
 4. <br>                                 розрив рядка
@@ -10,10 +10,10 @@
 7. <div> … </div>                       блок (для стилів)
 8. <label> … </label>                   текстова мітка
 
-9. <input type="checkbox" checked id="check1">    прапорець
-10.<input type="radio" name="group" id="radio1">  перемикач
+9.  <input type="checkbox" checked id="checkbox1">  прапорець
+10. <input type="radio" name="group" id="radio1">   перемикач
 
-11.<textarea readonly id="text1"> </textarea>     багаторядковий текст 
+11. <textarea readonly id="textarea1"> </textarea>  багаторядковий текст 
 
 Корисний стиль: style="width:150px; height:150px; resize:none; white-space:nowrap;"
 
