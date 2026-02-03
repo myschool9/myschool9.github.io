@@ -17,7 +17,11 @@ function loadVideo(src) {
 }
   
 //=============================================================================
-async function loadData() {
+async function loadData(folder) {
+  const data_div = document.createElement('div');
+  data_div.className = 'data-content';
+  document.body.appendChild(data_div);
+
   for (let i = n1; i <= n2; i++) {
     try {
       const img = await loadImage(`${folder}Слайд${i}.PNG`);
@@ -55,23 +59,6 @@ async function loadData() {
   }
 }
 
-/*
-  for (let i = 1; i <= 200; i++) {
-    try {
-      href = `art8/tthtml/${i}/index.html`;
-      new URL(href, document.baseURI);
-      
-      const a = document.createElement('a');
-      a.href = `art8/tthtml/${i}/index.html`;
-      a.textContent = `Сторінка ${i}`;
-      a.className = `menu-item menu--color-{i % 2 + 1}`;
-      document.body.appendChild(a);
-    } catch {
-      break;
-    }
-  }
-*/
-
 //=============================================================================
 function CreateArray(txt) {
   const MAX_DATA = 200;
@@ -90,7 +77,10 @@ function CreateArray(txt) {
   if (par.length === 2 && Number.isInteger(par[1])) {
     n2 = Number(par[1]);
   }    
-    
+
+  loadData(folder);    
+}
+
 /*
 	} else if (kod === 3) {
 		txtHTML = '<div class="menu-content"><div class="menu-header">Форми-задачі</div>';
@@ -106,11 +96,20 @@ function CreateArray(txt) {
 		}
 		txtHTML += '</div>';
 //	document.body.innerHTML = txtHTML;
+
+/*
+  for (let i = 1; i <= 200; i++) {
+    try {
+      href = `art8/tthtml/${i}/index.html`;
+      new URL(href, document.baseURI);
+      
+      const a = document.createElement('a');
+      a.href = `art8/tthtml/${i}/index.html`;
+      a.textContent = `Сторінка ${i}`;
+      a.className = `menu-item menu--color-{i % 2 + 1}`;
+      document.body.appendChild(a);
+    } catch {
+      break;
+    }
+  }
 */
-
-  const data_div = document.createElement('div');
-  data_div.className = 'data-content';
-  document.body.appendChild(data_div);
-
-  loadData();
-}
