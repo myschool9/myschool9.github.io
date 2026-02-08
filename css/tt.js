@@ -1,10 +1,11 @@
 var startX, startY;
 var selList = [];
-var a = []
-const DS_LONG = ['Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П\'ятниця', 'Субота', 'Неділя'];
-const DS = ['Пн', 'Вв', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'];	
-var DAYS_LONG = []
-var DAYS = []
+var a = [];
+const DS_LONG = ['Понеділок', 'Вівторок', 'Середа', 'Четвер',
+  'П\'ятниця', 'Субота', 'Неділя'];
+const DS = ['Пн', 'Вв', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'];  
+var DAYS_LONG = [];
+var DAYS = [];
 
 const rowDef = {grp:'',num:-1,chZn:0,sub:'',tch:'',kab:''};
 const dayClass = 'tt-day';
@@ -13,409 +14,525 @@ const tchClass = 'tt-tch';
 const kabClass = 'tt-kab';
 const subClass = 'tt-sub';
 
-const kabSport = 'с/з';
-const kabsFalse = ['15', 'а/з', '']
-const kabFalse = 'x';
-const subFalse = 'заміна';
+const kabSport = 'с/з';   // кабінет, де можна кільком класам і вчителям
+const falseKabs = ['15', 'а/з', ''];   // список неіснуючих кабінетів  ///////////////////////
+const errorKab = 'x';   // усі кабінети з falseKabs замінюються на ЦЕЙ кабінет
+const falseSubs = ['заміна', ''];   // список неіснуючих предметів
 
-const nullItem = '---';
+const nullItem = '---';   // замінює дні, предмети, класи, які повторюються
 
-const lessonsTime = [558, 618, 678, 745, 813, 873, 1500];
-const sLink = 'tt--link'
-const sColor1 = 'tt--color-1';
-const sColor2 = 'tt--color-2';
-const sColorErr = 'tt--color-3';
-const sColorCurr = 'tt--color-4';
+const lessonsTime = [558, 618, 678, 745, 813, 873, 1500];   ///////////////////////////////////
+const shift = 0;   // зсув розкладу = 1 - нульового уроку, 0 - для першого   /////////////////
+
+const sLink = 'tt-link';   // стиль посилань для SPAN
+const sChZn = 'tt-ch-zn';   // стиль посилань для SPAN
+
+const sColor1 = 'tt--color-1';   // стиль непарного рядка для TD
+const sColor2 = 'tt--color-2';   // стиль парного рядка для TD
+const sErrorColor = 'tt--color-3';   // стиль, коли помилка для TD
+const sCurrentColor = 'tt--color-4';   // стиль поточного рядка за часом для TD
 
 var activeCol = 'tch';
-var currTime = 0;
+var currTime = shift;
 
-//---------------------------------------------------------------------------
-//---------------------------------------------------------------------------
+//=============================================================================
 function GetCurrentTime() {
-	let d = new Date();
-	let day = d.getUTCDay() - 1;
-	if (day > 4 || day < 0) return 0;
-	
-	let m = new Date();
-	let g = new Date();
-	let min = 60 * g.getHours() + m.getMinutes();
-	let i = lessonsTime.findIndex(x => x > min);
-	
-	return 10 * day + i;
+  let d = new Date();
+  let day = d.getUTCDay() - 1;
+  if (day > 4 || day < 0) return 0;
+  
+  let m = new Date();
+  let g = new Date();
+  let min = 60 * g.getHours() + m.getMinutes();
+  let i = lessonsTime.findIndex(x => x > min);
+  
+  return 10 * day + i + shift;
 }
 
-//-------------------------------------------
-//-------------------------------------------
+//-----------------------------------------------------------------------------
 function isWorkDay(num) {
-	return num < 50 && num % 10 <= 6;
+  return num < 50 && num % 10 >= 0 + shift & num % 10 <= 6 + shift;
 }
 function isGrp59(grp) {
-	return grp.length === 3 && grp[0] >= '5' && grp[0] <= '9';
+  return grp.length === 3 && grp[0] >= '5' && grp[0] <= '9';
 }
 function isGrp19(grp) {
-	return grp.length === 3 && grp[0] >= '1' && grp[0] <= '9';
+  return grp.length === 3 && grp[0] >= '1' && grp[0] <= '9';
 }
 
-//-------------------------------------------
-//-- додавання порожніх днів -------------
+//-----------------------------------------------------------------------------
+  // додавання порожніх днів
 function addDay(value, col, rows) {
-	for (let i = 0; i < DAYS.length; i++) {
-		if (isWorkDay(i) && rows.find(row => row.num === i) === undefined) {
-			row = {...rowDef};
-			row[col] = value;
-			row.num = i;
-			rows.push(row);
-		}
-	}
-	return rows;
+  for (let i = 0; i < DAYS.length; i++) {
+    if (isWorkDay(i) && rows.find(row => row.num === i) === undefined) {
+      row = {...rowDef};
+      row[col] = value;
+      row.num = i;
+      rows.push(row);
+    }
+  }
+  return rows;
 }
 
-//-------------------------------------------
-//-- додавання порожніх класів -------------
+//-----------------------------------------------------------------------------
+  // додавання порожніх класів
 function addGrp(value, rows) {
-	let grps = [];
-	for (let row of a) {
-		grps.push(row.grp);
-	}
-	let uniqueGrps = [...new Set(grps)].filter(Boolean);
-	for (unGrp of uniqueGrps) {
-		if (isGrp59(unGrp) && rows.find(row => row.grp === unGrp) === undefined) {
-			row = {...rowDef};
-			row.num = value;
-			row.grp = unGrp;
-			rows.push(row);
-		}
-	}
-	return rows;
+  let grps = [];
+  for (let row of a) {
+    grps.push(row.grp);
+  }
+  let uniqueGrps = [...new Set(grps)].filter(Boolean);
+  for (unGrp of uniqueGrps) {
+    if (isGrp59(unGrp) && rows.find(row => row.grp === unGrp) === undefined) {
+      row = {...rowDef};
+      row.num = value;
+      row.grp = unGrp;
+      rows.push(row);
+    }
+  }
+  return rows;
 }
 
-//-------------------------------------------
-//-------------------------------------------
+//-----------------------------------------------------------------------------
 function getColor(x) {
-	if (x === '') return sColor1;
-	if (typeof x === 'number') {
-		if (x === currTime) return sColorCurr;
-		x = (Math.trunc(x / 10));
-	} else {
-		x = Number(x[0]);
-	}
-	return (isNaN(x) || x % 2 === 1) ? sColor2 : sColor1;
-}
-	
-//-------------------------------------------
-//-------------------------------------------
-function CreateData() {
-	for (let j = 0; j < 7; j++) {
-		for (let i = 0; i < 10; i++) {
-			DAYS.push(DS[j] + '-' + String(i + 1));
-			DAYS_LONG.push(DS_LONG[j] + '-' + String(i + 1));
-		}
-	}
-	for (let row of a0) {
-		if (kabsFalse.includes(row[5])) row[5] = kabFalse;
-		a.push({grp: row[0], num: row[1], chZn: row[2], sub: row[3], tch: row[4], kab: row[5]});
-	}
-	currTime = GetCurrentTime();	
-	Filter('day', DAYS[currTime]);
+  if (x === '') return sColor1;
+  if (typeof x === 'number') {
+    if (x === currTime) return sCurrentColor;
+    x = (Math.trunc(x / 10));
+  } else {
+    x = Number(x[0]);
+  }
+  return (isNaN(x) || x % 2 === 1) ? sColor2 : sColor1;
 }
 
-//-------------------------------------------
-//-----------------------------------------
+//-----------------------------------------------------------------------------
 function HTMLFilter(index) {
-	if (index >= 0 && index < selList.length) Filter(activeCol, selList[index]);
+  if (index >= 0 && index < selList.length) Filter(activeCol, selList[index]);
 }
 
-//-------------------------------------------
-//-----------------------------------------
+//-----------------------------------------------------------------------------
 function MySort(x, y) {
-	let xx = Number(x);
-	let yy = Number(y);
-	if (!isNaN(xx) && !isNaN(yy)) return xx - yy;
-	if (isNaN(xx) && isNaN(yy)) return x.localeCompare(y);
-	if (!isNaN(xx) && isNaN(yy)) return -1;	
-	if (isNaN(xx) && !isNaN(yy)) return 1;
-	return 0;
-}	
+  let xx = Number(x);
+  let yy = Number(y);
+  if (!isNaN(xx) && !isNaN(yy)) return xx - yy;
+  if (isNaN(xx) && isNaN(yy)) return x.localeCompare(y);
+  if (!isNaN(xx) && isNaN(yy)) return -1; 
+  if (isNaN(xx) && !isNaN(yy)) return 1;
+  return 0;
+} 
 
-//-----------------------------------------
-function Filter(col, value) {
-		// можливі помилки
-	if (value === '') return;
-	if (col === 'day') {
-		index = (value.length <= 4) ? DAYS.indexOf(value) : DAYS_LONG.indexOf(value);
-		if (index < 0) return;
-	}
-		//----------------
-	currTime = GetCurrentTime();
-	if (col !== activeCol) {
-		activeCol = col;
-		selList = Unique(col);
-		document.getElementById('listBox').innerHTML = '<option>' + selList.join('</option><option>') + '</option>';
-	}
-		// фільтрування ---------------------------------
-	let s = '';
-	if (col === 'day') s = FilterDay(value);
-	if (col === 'grp') s = FilterGrp(value);
-	if (col === 'kab') s = FilterKab(value);
-	if (col === 'tch') s = FilterTch(value);
-
-	if (col === 'day' && value.length <= 4) value = DAYS_LONG[DAYS.indexOf(value)];
-	document.getElementById('listBox').selectedIndex = selList.indexOf(value);
-	document.getElementById('tableData').innerHTML = s;
-}
-
-//-------------------------------------------
-//-------------------------------------------
+//-----------------------------------------------------------------------------
 function Unique(col) {
-	let list = [];
-	let myList = [];
-	if (col === 'day') col = 'num';
-	for (let row of a) {
-		if (col === 'grp' && isGrp19(row[col]) ||
-			col === 'kab' && row[col] !== kabFalse ||
-			col === 'num' && isWorkDay(row[col]) ||
-			col === 'tch') 
-			list.push(row[col]);
-	}
-	myList = [...new Set(list)].filter(Boolean);
-	if (col === 'num') {
-		myList.push(0);
-		myList.sort((x, y) => x - y);
-		myList.forEach((num, index) => {myList[index] = DAYS_LONG[num];});
-	} else {
-		myList.sort((x, y) => MySort(x, y));
-	}
-	return myList;
+  let list = [];
+  let myList = [];
+  if (col === 'day') col = 'num';
+  for (let row of a) {
+    if (col === 'grp' && isGrp19(row[col]) ||
+      col === 'kab' && row[col] !== errorKab ||
+      col === 'num' && isWorkDay(row[col]) ||
+      col === 'tch') 
+      list.push(row[col]);
+  }
+  myList = [...new Set(list)].filter(Boolean);
+  if (col === 'num') {
+    if (shift === 0) myList.push(0);
+    myList.sort((x, y) => x - y);
+    myList.forEach((num, index) => {myList[index] = DAYS_LONG[num];});
+  } else {
+    myList.sort((x, y) => MySort(x, y));
+  }
+  return myList;
 }
 
-//-------------------------------------------
-//-----------------------------------------------
+//-----------------------------------------------------------------------------
 function touchStart() {
-	startX = event.touches[0].clientX;
-	startY = event.touches[0].clientY;
+  startX = event.touches[0].clientX;
+  startY = event.touches[0].clientY;
 }
-//-----------------------------------------------
 function touchEnd(n) {
-	let dX = event.changedTouches[0].clientX - startX;
-	let dY = event.changedTouches[0].clientY - startY;
-	if (dX > 50 && Math.abs(dX) > Math.abs(dY)) HTMLFilter(n - 1);
-	if (dX < -50 && Math.abs(dX) > Math.abs(dY)) HTMLFilter(n + 1);
+  let dX = event.changedTouches[0].clientX - startX;
+  let dY = event.changedTouches[0].clientY - startY;
+  if (dX > 50 && Math.abs(dX) > Math.abs(dY)) HTMLFilter(n - 1);
+  if (dX < -50 && Math.abs(dX) > Math.abs(dY)) HTMLFilter(n + 1);
 }
 
-//-------------------------------------------
-//-------------------------------------------
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 function SaveDay(s, color) {
-	res = '';
-if (s === nullItem || s === '' || !isWorkDay(DAYS.indexOf(s))) {
-		res = `<td class="${dayClass} ${color}"><span>${s}</span></td>`;		
-	} else {
-		res = `<td class="${dayClass} ${color}"><span class="${sLink}" onclick="Filter(\'day\', \'${s}\')">${s}</span></td>`;
-	}
-	return res;
+  const td = document.createElement('td');
+  td.className = dayClass + ' ' + color;
+  const span = document.createElement('span'); 
+  span.innerText = s;
+  if (s !== nullItem && s !== '' && isWorkDay(DAYS.indexOf(s))) {
+    span.className = sLink;
+    span.addEventListener('click', function() { Filter('day', s); });
+  }
+  td.appendChild(span);
+  return td;
 }
 function SaveGrp(s, color) {
-	res = '';
-	if (s === nullItem || s === '' || !isGrp19(s))  {
-		res = `<td class="${grpClass} ${color}"><span>${s}</span></td>`;
-	} else {
-		res = `<td class="${grpClass} ${color}"><span class="${sLink}" onclick="Filter(\'grp\', \'${s}\')">${s}</span></td>`;
-	}
-	return res;
+  const td = document.createElement('td');
+  td.className = grpClass + ' ' + color;
+  const span = document.createElement('span'); 
+  span.innerText = s;
+  
+  if (s !== nullItem && s !== '' && isGrp19(s))  {
+    span.className = sLink;
+    span.addEventListener('click', function() { Filter('grp', s); });
+  }
+  td.appendChild(span);  
+  return td;
 }
 function SaveSub(s, x, color) {
-	if (s === subFalse) color = sColorErr;
-	let sAdd = (x === 0) ? s : ((x > 0) ? '*&nbsp;' + s : s + '&nbsp;*');
-	res = `<td class="${subClass} ${color}"><span>${sAdd}</span></td>`;
-	return res;	
+  if (s in falseSubs) color = sErrorColor;
+  const td = document.createElement('td');
+  td.className = subClass + ' ' + color;
+  const span = document.createElement('span'); 
+  span.innerText = s;
+  
+  if (x !== 0) {   // для чисельників і знаменників
+    const spanAdd = document.createElement('span');
+    spanAdd.innerHTML = (x < 0) ? '1&nbsp;' : '2&nbsp;';
+    spanAdd.className = sChZn;
+    td.appendChild(spanAdd);
+  }  
+
+  td.appendChild(span);
+  return td;  
 }
 function SaveTch(s, color) {
-	res = '';
-	if (s === nullItem || s === '') {
-		res = `<td class="${tchClass} ${color}"><span>${s}</span></td>`;
-	} else {
-		res = `<td class="${tchClass} ${color}"><span class="${sLink}" onclick="Filter(\'tch\', \'${s}\')">${s}</span></td>`;
-	}
-	return res;	
+  const td = document.createElement('td');
+  td.className = tchClass + ' ' + color;
+  const span = document.createElement('span'); 
+  span.innerText = s;  
+  if (s !== nullItem && s !== '') {
+    span.className = sLink;
+    span.addEventListener('click', function() { Filter('tch', s); });
+  }    
+  td.appendChild(span);  
+  return td;  
 }
 function SaveKab(s, color, grp) {
-	if (s === kabFalse && isGrp19(grp)) color = sColorErr;
-	res = '';
-	if (s === '' || s === kabFalse) {
-		res = `<td class="${kabClass} ${color}"><span>${s}</span></td>`;
-	} else {
-		res = `<td class="${kabClass} ${color}"><span class="${sLink}" onclick="Filter(\'kab\', \'${s}\')">${s}</span></td>`;
-	}
-	return res;	
+  if (s === errorKab && isGrp19(grp)) color = sErrorColor;
+  const td = document.createElement('td');
+  td.className = kabClass + ' ' + color;
+  const span = document.createElement('span'); 
+  span.innerText = s;  
+  if (s !== '' && s !== errorKab) {
+    span.className = sLink;
+    span.addEventListener('click', function() { Filter('kab', s); });
+  }    
+  td.appendChild(span);  
+  return td;  
 }
-//-------------------------------------------
-//-------------------------------------------
+
+//-----------------------------------------------------------------------------
 function FilterDay(value) {
 
-		// якщо Понеділок-4 (повне) - то записуємо скорочено Пн-4
-	if (value.length > 4) {
-		value = Number(DAYS_LONG.indexOf(value));
-	} else {
-		value = Number(DAYS.indexOf(value));
-	}
+    // якщо Понеділок-4 (повне) - то записуємо скорочено Пн-4
+  if (value.length > 4) {
+    value = Number(DAYS_LONG.indexOf(value));
+  } else {
+    value = Number(DAYS.indexOf(value));
+  }
 
-	let rows = a.filter(row => row.num === value);
-	if (isWorkDay(value)) rows = addGrp(value, rows); 
-	rows.sort((x, y) => {if (x.grp !== y.grp) return x.grp.localeCompare(y.grp); if (x.chZn !== y.chZn) return x.chZn - y.chZn;
-						 if (x.sub !== y.sub) return x.sub.localeCompare(y.sub); return MySort(x.kab, y.kab)});
-	let s = '';
-	let rowPrev = {...rowDef};
-	let	color;
-	let countNull = 0;
-	for (let row of rows) {
-		color = getColor(row.grp);
+  let rows = a.filter(row => row.num === value);
+  if (isWorkDay(value)) rows = addGrp(value, rows); 
+  rows.sort((x, y) => {
+    if (x.grp !== y.grp) return x.grp.localeCompare(y.grp);
+    if (x.chZn !== y.chZn) return x.chZn - y.chZn;
+    if (x.sub !== y.sub) return x.sub.localeCompare(y.sub);
+    return MySort(x.kab, y.kab);
+  });
 
-			//---перевірка на помилки
-		if (row.grp === rowPrev.grp) {
-			if (rowPrev.chZn > row.chZn) color = sColorErr;
-			if (row.chZn === rowPrev.chZn + 1 && (row.tch === rowPrev.tch || row.kab === rowPrev.kab)) color = sColorErr;
-			if (row.chZn === rowPrev.chZn && row.tch === rowPrev.tch) color = sColorErr;
-			if (row.chZn === rowPrev.chZn && row.kab === rowPrev.kab && row.kab !== kabSport) color = sColorErr;
-		}
-			//---------		
+  let rowPrev = {...rowDef};
+  let color;
+  let countNull = 0;
 
-		s += '<tr>';
-		(row.grp === rowPrev.grp) ? s += SaveGrp(nullItem, color) : s += SaveGrp(row.grp, color);
-		if (row.grp === rowPrev.grp && row.sub === rowPrev.sub && countNull === 0) {
-			s += SaveSub(nullItem, row.chZn, color);
-			countNull += 1;
-		} else {
-			s += SaveSub(row.sub, row.chZn, color);
-			countNull = 0;
-		}
-		s += SaveKab(row.kab, color, row.grp) + SaveTch(row.tch, color) + '</tr>';
-		rowPrev = {...row};		
-	}
-	return s;
+  let tr;
+  let table = document.getElementById('ttData');
+  table.innerHTML = '';  
+
+  for (let row of rows) {
+    color = getColor(row.grp);
+    tr = document.createElement('tr');
+    
+      //---перевірка на помилки
+    if (row.grp === rowPrev.grp) {
+      if (rowPrev.chZn > row.chZn) {
+        color = sErrorColor;
+      }
+      if (row.chZn === rowPrev.chZn + 1 && 
+        (row.tch === rowPrev.tch || row.kab === rowPrev.kab)) {
+          color = sErrorColor;
+        }
+      if (row.chZn === rowPrev.chZn && row.tch === rowPrev.tch) {
+        color = sErrorColor;
+      }
+      if (row.chZn === rowPrev.chZn && row.kab === rowPrev.kab &&
+        row.kab !== kabSport) {
+          color = sErrorColor;
+      }
+    }
+
+    if (row.grp === rowPrev.grp) {
+      tr.appendChild(SaveGrp(nullItem, color));
+    } else {
+      tr.appendChild(SaveGrp(row.grp, color));
+    }
+    if (row.grp === rowPrev.grp && row.sub === rowPrev.sub &&
+      countNull === 0) {
+        tr.appendChild(SaveSub(nullItem, row.chZn, color));
+        countNull += 1;
+    } else {
+      tr.appendChild(SaveSub(row.sub, row.chZn, color));
+      countNull = 0;
+    }
+    tr.appendChild(SaveKab(row.kab, color, row.grp));
+    tr.appendChild(SaveTch(row.tch, color));
+    rowPrev = {...row}; 
+    
+    table.appendChild(tr);
+  }
 }
 
-//-------------------------------------------
-//-------------------------------------------
+//-----------------------------------------------------------------------------
 function FilterGrp(value) {
-	let rows = a.filter(row => row.grp === value);
-	if (isGrp59(value)) rows = addDay(value, 'grp', rows);
-	rows.sort((x, y) => {if (x.num !== y.num) return x.num - y.num; if (x.chZn !== y.chZn) return x.chZn - y.chZn;
-						 if (x.sub !== y.sub) return x.sub.localeCompare(y.sub); return MySort(x.kab, y.kab)});	
-	let s = '';
-	let rowPrev = {...rowDef};
-	let	color;	
-	let countNull = 0;
-	for (let row of rows) {
-		color = getColor(row.num);
-		
-			//---перевірка на помилки
-		if (row.num === rowPrev.num) {
-			if (rowPrev.chZn > row.chZn) color = sColorErr;
-			if (row.chZn === rowPrev.chZn + 1 && (row.tch === rowPrev.tch || row.kab === rowPrev.kab)) color = sColorErr;
-			if (row.chZn === rowPrev.chZn && row.tch === rowPrev.tch) color = sColorErr;
-			if (row.chZn === rowPrev.chZn && row.kab === rowPrev.kab && row.kab !== kabSport) color = sColorErr;
-		}
-			//---------
-			
-		s += '<tr>';
-		(row.num === rowPrev.num) ? s += SaveDay(nullItem, color) : s += SaveDay(DAYS[row.num], color);
-		if (row.num === rowPrev.num && row.sub === rowPrev.sub && countNull === 0) {
-			s += SaveSub(nullItem, row.chZn, color);
-			countNull += 1;
-		} else {
-			s += SaveSub(row.sub, row.chZn, color);
-			countNull = 0;
-		}
-		s += SaveKab(row.kab, color, row.grp) + SaveTch(row.tch, color) + '</tr>';
-		rowPrev = {...row};		
-	}
-	return s;	
+  let rows = a.filter(row => row.grp === value);
+  if (isGrp59(value)) rows = addDay(value, 'grp', rows);
+  rows.sort((x, y) => {
+    if (x.num !== y.num) return x.num - y.num; 
+    if (x.chZn !== y.chZn) return x.chZn - y.chZn;
+    if (x.sub !== y.sub) return x.sub.localeCompare(y.sub); 
+    return MySort(x.kab, y.kab);
+  }); 
+
+  let rowPrev = {...rowDef};
+  let color;  
+  let countNull = 0;
+  
+  let tr;
+  let table = document.getElementById('ttData');
+  table.innerHTML = '';  
+  
+  for (let row of rows) {
+    color = getColor(row.num);
+    tr = document.createElement('tr');    
+    
+      //---перевірка на помилки
+    if (row.num === rowPrev.num) {
+      if (rowPrev.chZn > row.chZn) {
+        color = sErrorColor;
+      }
+      if (row.chZn === rowPrev.chZn + 1 && 
+        (row.tch === rowPrev.tch || row.kab === rowPrev.kab)) {
+          color = sErrorColor;
+        }
+      if (row.chZn === rowPrev.chZn && row.tch === rowPrev.tch) {
+        color = sErrorColor;
+      }
+      if (row.chZn === rowPrev.chZn && row.kab === rowPrev.kab &&
+        row.kab !== kabSport) {
+          color = sErrorColor;
+      }
+    }
+      
+    if (row.num === rowPrev.num) {
+      tr.appendChild(SaveDay(nullItem, color));
+    } else {
+      tr.appendChild(SaveDay(DAYS[row.num], color));
+    }
+    if (row.num === rowPrev.num && row.sub === rowPrev.sub && countNull === 0) {
+      tr.appendChild(SaveSub(nullItem, row.chZn, color));
+      countNull += 1;
+    } else {
+      tr.appendChild(SaveSub(row.sub, row.chZn, color));
+      countNull = 0;
+    }
+    tr.appendChild(SaveKab(row.kab, color, row.grp))
+    tr.appendChild(SaveTch(row.tch, color));
+    rowPrev = {...row};
+
+    table.appendChild(tr);
+  }
 }
 
-//-------------------------------------------
-//-------------------------------------------
+//-----------------------------------------------------------------------------
 function FilterTch(value) {
-	let rows = a.filter(row => row.tch === value);
-	rows = addDay(value, 'tch', rows);
-	rows.sort((x, y) => {if (x.num !== y.num) return x.num - y.num; if (x.chZn !== y.chZn) return x.chZn - y.chZn;
-						 if (x.grp !== y.grp) return x.grp.localeCompare(y.grp); return MySort(x.kab, y.kab)});
-	let s = '';
-	let rowPrev = {...rowDef};
-	let	color;
-	let countNull = 0;
-	for (let row of rows) {
-		color = getColor(row.num);
+  let rows = a.filter(row => row.tch === value);
+  rows = addDay(value, 'tch', rows);
+  rows.sort((x, y) => {
+    if (x.num !== y.num) return x.num - y.num;
+    if (x.chZn !== y.chZn) return x.chZn - y.chZn;
+    if (x.grp !== y.grp) return x.grp.localeCompare(y.grp);
+    return MySort(x.kab, y.kab);
+  });
 
-			//---перевірка на помилки
-		if (row.num === rowPrev.num) {
-			if (row.chZn !== 1 || rowPrev.chZn !== -1) color = sColorErr;
-			if (row.chZn === 1 && rowPrev.chZn === -1 && row.sub === rowPrev.sub 
-				&& row.grp === rowPrev.grp && row.kab === rowPrev.kab) color = sColorErr;
-		}
-			//---------
+  let rowPrev = {...rowDef};
+  let color;
+  let countNull = 0;
 
-		s += '<tr>';
-		(row.num === rowPrev.num) ? s += SaveDay(nullItem, color) : s += SaveDay(DAYS[row.num], color);
-		if (row.num === rowPrev.num && row.grp === rowPrev.grp && countNull === 0) {
-			s += SaveGrp(nullItem, color);
-			countNull += 1;
-		} else {
-			s += SaveGrp(row.grp, color);
-			countNull = 0;
-		}
-		s += SaveSub(row.sub, row.chZn, color) + SaveKab(row.kab, color, row.grp) + '</tr>';
-		rowPrev = {...row};
-	}
-	return s;	
-}	
+  let tr;
+  let table = document.getElementById('ttData');
+  table.innerHTML = '';
+  
+  for (let row of rows) {
+    color = getColor(row.num);
+    tr = document.createElement('tr');    
 
-//-------------------------------------------
-//-------------------------------------------
+      //---перевірка на помилки
+    if (row.num === rowPrev.num) {
+      if (row.chZn !== 1 || rowPrev.chZn !== -1) {
+        color = sErrorColor;
+      }
+      if (row.chZn === 1 && rowPrev.chZn === -1 && row.sub === rowPrev.sub 
+        && row.grp === rowPrev.grp && row.kab === rowPrev.kab) {
+          color = sErrorColor;
+      }
+    }
+
+    if (row.num === rowPrev.num) {
+      tr.appendChild(SaveDay(nullItem, color));
+    } else {
+      tr.appendChild(SaveDay(DAYS[row.num], color));
+    }
+    if (row.num === rowPrev.num && row.grp === rowPrev.grp && countNull === 0) {
+      tr.appendChild(SaveGrp(nullItem, color));
+      countNull += 1;
+    } else {
+      tr.appendChild(SaveGrp(row.grp, color));
+      countNull = 0;
+    }
+    tr.appendChild(SaveSub(row.sub, row.chZn, color));
+    tr.appendChild(SaveKab(row.kab, color, row.grp));
+    rowPrev = {...row};
+    
+    table.appendChild(tr);    
+  }
+} 
+
+//-----------------------------------------------------------------------------
 function FilterKab(value) {
-	let rows = a.filter(row => row.kab === value);
-	if (value !== kabFalse) rows = addDay(value, 'kab', rows);
-	rows.sort((x, y) => {if (x.num !== y.num) return x.num - y.num; if (x.chZn !== y.chZn) return x.chZn - y.chZn;
-						 if (x.sub !== y.sub) return x.sub.localeCompare(y.sub); return x.grp.localeCompare(y.grp)});
-	let s = '';
-	let rowPrev = {...rowDef};
-	let	color;
-	let countNull = 0;
-	for (let row of rows) {
-		color = getColor(row.num);
-		
-			//---перевірка на помилки
-		if (row.num === rowPrev.num) {
-				// фізкультуа
-			if (row.kab === kabSport) {
-				if (rowPrev.chZn === -1 && row.chZn === 0) color = sColorErr;
-				if (rowPrev.chZn === 0 && row.chZn !== 0) color = sColorErr;
-				if (rowPrev.chZn === 1 && row.chZn !== 1) color = sColorErr;
-				if (row.chZn === rowPrev.chZn && row.tch === rowPrev.tch) color = sColorErr;
-			} else {
-				if (row.chZn !== 1 || rowPrev.chZn !== -1) color = sColorErr;
-				if (row.chZn === 1 && rowPrev.chZn === -1 && row.sub === rowPrev.sub 
-					&& row.grp === rowPrev.grp && row.tch === rowPrev.tch) color = sColorErr;
-			}
-		}
-			//---------
-			
-		s += '<tr>';
-		(row.num === rowPrev.num) ? s += SaveDay(nullItem, color) : s += SaveDay(DAYS[row.num], color);
-		if (row.num === rowPrev.num && row.sub === rowPrev.sub && countNull === 0) {
-			s += SaveSub(nullItem, row.chZn, color);
-			countNull += 1;
-		} else {
-			s += SaveSub(row.sub, row.chZn, color);
-			countNull = 0;
-		}
-		s += SaveGrp(row.grp, color) + SaveTch(row.tch, color) + '</tr>';
-		rowPrev = {...row};
-	}
-	return s;
-}	
+  let rows = a.filter(row => row.kab === value);
+  if (value !== errorKab) rows = addDay(value, 'kab', rows);
+  rows.sort((x, y) => {
+    if (x.num !== y.num) return x.num - y.num;
+    if (x.chZn !== y.chZn) return x.chZn - y.chZn;
+    if (x.sub !== y.sub) return x.sub.localeCompare(y.sub);
+    return x.grp.localeCompare(y.grp);
+  });
 
-//-------------------------------------------
-//-------------------------------------------
+  let rowPrev = {...rowDef};
+  let color;
+  let countNull = 0;
+
+  let tr;
+  let table = document.getElementById('ttData');
+  table.innerHTML = '';
+
+  for (let row of rows) {
+    color = getColor(row.num);
+    tr = document.createElement('tr');    
+    
+      //---перевірка на помилки
+    if (row.num === rowPrev.num) {
+        // фізкультуа
+      if (row.kab === kabSport) {
+        if (rowPrev.chZn === -1 && row.chZn === 0) {
+          color = sErrorColor;
+        }
+        if (rowPrev.chZn === 0 && row.chZn !== 0) {
+          color = sErrorColor;
+        }
+        if (rowPrev.chZn === 1 && row.chZn !== 1) {
+          color = sErrorColor;
+        }
+        if (row.chZn === rowPrev.chZn && row.tch === rowPrev.tch) {
+          color = sErrorColor;
+        }
+      } else {
+        if (row.chZn !== 1 || rowPrev.chZn !== -1) {
+          color = sErrorColor;
+        }
+        if (row.chZn === 1 && rowPrev.chZn === -1 && row.sub === rowPrev.sub 
+          && row.grp === rowPrev.grp && row.tch === rowPrev.tch) {
+            color = sErrorColor;
+        }
+      }
+    }
+      
+    if (row.num === rowPrev.num) {
+      tr.appendChild(SaveDay(nullItem, color));
+    } else {
+      tr.appendChild(SaveDay(DAYS[row.num], color));
+    }
+    if (row.num === rowPrev.num && row.sub === rowPrev.sub && countNull === 0) {
+      tr.appendChild(SaveSub(nullItem, row.chZn, color));
+      countNull += 1;
+    } else {
+      tr.appendChild(SaveSub(row.sub, row.chZn, color));
+      countNull = 0;
+    }
+    tr.appendChild(SaveGrp(row.grp, color));
+    tr.appendChild(SaveTch(row.tch, color));
+    rowPrev = {...row};
+    
+    table.appendChild(tr);    
+  }
+} 
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function Start() {
+  for (let j = 0; j < 7; j++) {
+    for (let i = 0; i < 10; i++) {
+      DAYS.push(DS[j] + '-' + String(i + 1 - shift));
+      DAYS_LONG.push(DS_LONG[j] + '-' + String(i + 1 - shift));
+    }
+  }
+  for (let row of a0) {
+    if (falseKabs.includes(row[5])) row[5] = errorKab;
+    a.push({grp: row[0], num: row[1], chZn: row[2], 
+      sub: row[3], tch: row[4], kab: row[5]});
+  }
+  currTime = GetCurrentTime();  
+  Filter('day', DAYS[currTime]);
+}
+
+//-----------------------------------------------------------------------------
+function Filter(col, value) {
+    // можливі помилки
+  if (value === '') return;
+  if (col === 'day') {
+    if (value.length <= 4) {
+      index = DAYS.indexOf(value);
+    } else {
+      DAYS_LONG.indexOf(value);
+    }
+    if (index < 0) return;
+  }
+    //----------------
+  currTime = GetCurrentTime();
+  if (col !== activeCol) {
+    activeCol = col;
+    selList = Unique(col);
+    document.getElementById('listBox').innerHTML =
+      '<option>' + selList.join('</option><option>') + '</option>';
+  }
+
+  if (col === 'day') FilterDay(value);
+  if (col === 'grp') FilterGrp(value);
+  if (col === 'kab') FilterKab(value);
+  if (col === 'tch') FilterTch(value);
+
+  if (col === 'day' && value.length <= 4) {
+    value = DAYS_LONG[DAYS.indexOf(value)];
+  }
+  document.getElementById('listBox').selectedIndex = selList.indexOf(value);
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 var a0 = [
 
 ["1-А",0,0,"англ.мова","Приймак Л.А.",  "47"],
