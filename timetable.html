@@ -5,7 +5,7 @@
 <script src="/css/tt.js"></script>
 <title>Розклад уроків</title>
 
-<!--==========================================-->
+<!--========================================================================-->
 <style>
 
 body {
@@ -44,9 +44,7 @@ body {
   background: -o-linear-gradient(top, #d0ecf4 0%, #5bc9e1 50%, #d0ecf4 100%); 
 }
 
-.page-title {
-  font-size: 1.2em;
- }
+.page-title {font-size: 1.2em}
 
 select {
   min-width: 120px;
@@ -60,7 +58,8 @@ select {
   background: -o-linear-gradient(top, #ffffff 0%, #b0c4de 50%, #ffffff 100%);
 }
 
-.tt-content {
+/*---------------------------------------------------------------------------*/
+.tt-data {
   width: 96%;
   max-width: 560px;
   margin: 42px 0 20px 6px;
@@ -75,28 +74,24 @@ select {
   text-align: center;
   color: #8b008b;
 }
-
 .tt-grp {
   min-width: 33px;
   padding: 4px 5px;
   text-align: center; 
   color: #992211;
 }
-
 .tt-kab {
   min-width: 28px;
   padding: 4px 5px;
   text-align: center;
   color: #008000;
 }
-
 .tt-tch {
   overflow: hidden;
   max-width: 160px;
   padding: 4px 5px;
   line-height: 1.4;
   color: #808000;
-
 }
 .tt-sub {
   overflow: hidden;
@@ -107,68 +102,62 @@ select {
 
 .tt--color-1 {
   border-top: 1px dotted #333333;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
  }
- 
 .tt--color-2 {
   border-top: 1px dotted #333333;
-  background-color: #F8F8FF;
+  background-color: #f8f8ff;
  }
-
 .tt--color-3 {
   border-top: 1px dotted #333333;
-  background-color: #FFD6D1;
+  background-color: #ffd6d1;
  }
-
 .tt--color-4 {
   border-top: 1px dotted #333333;
-  background-color: #F0E68C;
+  background-color: #f0e68c;
 }
 
-.tt--link {
+.tt-link {
   cursor: pointer;
   padding: 2px;
 }
+.tt-tch .tt-link {padding: 2px 0}
 
-.tt-tch 
-.tt--link {
-  padding: 2px 0;
+.tt-ch-zn {
+  vertical-align: super; 
+  font-family: monospace;
+  font-size: 0.8em;
 }
 
+/*---------------------------------------------------------------------------*/
 @media screen and (min-width:700px) {
-  .page-header {
-    top:10px;
-    left:10%;
-   }
-  .btn {
-    width: 80px;
-   }
-  .select {
-    width: 140px;
-  }
-  .tt-content {
-    margin: 50px 0 20px 10%;
-  }
-  .tt--link {
-    cursor: pointer;
-    padding: 5px 10px;
-  }
+  .page-header {top:10px; left:10%}
+  .btn {width: 80px}
+  .select {width: 140px}
+  .tt-data {margin: 50px 0 20px 10%}
+  .tt-link {padding: 5px 10px}
 }
 
 </style>
 
-<!--==========================================-->
-<body onload="CreateData()">
+<!--========================================================================-->
+<body onload="Start()">
 
-<table class="page-header" id="timetable_header">
-  <tr>
-    <td class="btn" onclick="HTMLFilter(listBox.selectedIndex - 1);">&#9668;</td>
-    <td class="page-title"><select id="listBox" size="1" onchange="HTMLFilter(this.selectedIndex)"></select></td>
-    <td class="btn" onclick="HTMLFilter(listBox.selectedIndex + 1)">&#9658;</td>
-  </tr>
-</table>
+<table class="page-header"><tr>
 
-<table id="tableData" class="tt-content" ontouchstart="touchStart()" ontouchend="touchEnd(listBox.selectedIndex)">
+  <td class="btn" onclick="HTMLFilter(listBox.selectedIndex - 1)">&#9668;</td>
+
+  <td class="page-title">
+    <select id="listBox" size="1" onchange="HTMLFilter(this.selectedIndex)">
+    </select>
+  </td>
+
+  <td class="btn" onclick="HTMLFilter(listBox.selectedIndex + 1)">&#9658;</td>
+
+</tr></table>
+
+<table id="ttData" class="tt-data" 
+  ontouchstart="touchStart()" ontouchend="touchEnd(listBox.selectedIndex)">
 </table>
 
 </body>
