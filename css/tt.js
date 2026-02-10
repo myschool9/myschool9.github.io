@@ -25,7 +25,8 @@ const lessonsTime = [558, 618, 678, 745, 813, 873, 1500];   ////////////////////
 const shift = 0;   // зсув розкладу = 1 - нульового уроку, 0 - для першого   /////////////////
 
 const sLink = 'tt-link';   // стиль посилань для SPAN
-const sChZn = 'tt-ch-zn';   // стиль посилань для SPAN
+const sCh = 'tt-ch';   // стиль посилань для SPAN
+const sZn = 'tt-zn';   // стиль посилань для SPAN
 
 const sColor1 = 'tt--color-1';   // стиль непарного рядка для TD
 const sColor2 = 'tt--color-2';   // стиль парного рядка для TD
@@ -39,7 +40,7 @@ var currTime = shift;
 function GetCurrentTime() {
   let d = new Date();
   let day = d.getUTCDay() - 1;
-  if (day > 4 || day < 0) return 0;
+  if (day > 4 || day < 0) return shift;
   
   let m = new Date();
   let g = new Date();
@@ -193,7 +194,7 @@ function SaveSub(s, x, color) {
   if (x !== 0) {   // для чисельників і знаменників
     const spanAdd = document.createElement('span');
     spanAdd.innerHTML = (x < 0) ? '1&nbsp;' : '2&nbsp;';
-    spanAdd.className = sChZn;
+    spanAdd.className = (x < 0) ? sCh : sZn;
     td.appendChild(spanAdd);
   }  
 
@@ -1429,7 +1430,7 @@ var a0 = [
 
 ["8-В",10,0,"укр.літ.","Малко Н.Я.",  "31"],
 ["8-В",11,0,"укр.мова","Денисюк Л.К.",  "27"],  ["8-В",11,0,"укр.мова","Малко Н.Я.",  "31"],
-["8-В",12,-1,"географія","Тарасюк Р.М.",  "5"],
+["8-В",12,0,"географія","Тарасюк Р.М.",  "5"],
 ["8-В",13,0,"інформатика","Білібін Р.В.",  "24"],  ["8-В",13,0,"інформатика","Смоляк І.Я.",  "32"],
 ["8-В",14,0,"алгебра","Курій Т.Б.",  "19"],
 ["8-В",15,0,"фіз-ра","Тиндик Т.О.",  "с/з"],
