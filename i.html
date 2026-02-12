@@ -180,13 +180,32 @@ function loadImage(src) {
 }
 
 //-----------------------------------------------------------------------------
-async function loadData(folder, n1, n2) {
+async function load2Data(folder, n1, n2) {
   const data_div = document.createElement('div');
   data_div.className = 'data-content';
   document.body.appendChild(data_div);
   for (let i = n1; i <= n2; i++) {
     try {
       const img = await loadImage(`${folder}Слайд${i}.PNG`);
+      const div = document.createElement('div');
+      div.className = 'data-container';
+      div.appendChild(img);
+      data_div.appendChild(div);        
+    } catch {
+      break;
+    }
+  }
+}
+
+
+function loadData(folder, n1, n2) {
+  const data_div = document.createElement('div');
+  data_div.className = 'data-content';
+  document.body.appendChild(data_div);
+  for (let i = n1; i <= n2; i++) {
+    try {
+      const img = new Image();
+      img.src = `${folder}Слайд${i}.PNG`;    
       const div = document.createElement('div');
       div.className = 'data-container';
       div.appendChild(img);
