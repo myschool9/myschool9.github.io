@@ -2,30 +2,92 @@
 <html lang="uk">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="/css/menu.css">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 <title>Інформатика</title>
 
-<!--==========================================-->
-<div class="menu-content">  
 
-  <div class="menu-header">Інформатика<br><span class="menu-sub">Гімназія ім. родини&nbsp;Луговських</span></div>
+<!--========================================================================-->
+<style>
 
-  <a class="menu-item menu--color-2" href="/group5.html">Уроки 5&nbsp;кл</a>
-  <a class="menu-item menu--color-1" href="/group6.html">Уроки 6&nbsp;кл</a>
-  <a class="menu-item menu--color-2" href="/group7.html">Уроки 7&nbsp;кл</a>
-  <a class="menu-item menu--color-1" href="/group8.html">Уроки 8&nbsp;кл</a>
-  <a class="menu-item menu--color-2" href="/group9.html">Уроки 9&nbsp;кл</a>
+body {
+  margin: 0;
+  padding: 5px;
+  font-family: "Arial", sans-serif;
+  color: #333333;
+  background-color: #f5f4e5;
+}
 
-  <div style="margin:7px 2px; padding:5px; width:100%; display:flex; flex-wrap:wrap; justify-content:space-around; align-items:flex-start; border-top:1px dotted #333333;">   
-    <a class="menu-item menu--color-3" href="/art.html">Проєкти<br>5-9&nbsp;кл</a>
-    <a class="menu-item menu--color-4" href="/data.html?safety&1&13">Техніка<br>безпеки</a>
-    <a class="menu-item menu--color-3" href="/mark.html">Оцінювання<br>&nbsp;</a>
-    <a class="menu-item menu--color-4" href="/timetable.html">Розклад<br>уроків</a>
-    <a class="menu-item menu--color-1" href="/data.html?reports&1&16">Успішність<br>школи</a>    
+.menu-content {
+  margin: 5px;
+  padding: 2px;
+  max-width: 70em;
+  line-height: 1.3;
+}
+@media screen and (min-width:30em) {
+  .menu-content {margin: 5px 10%}
+}
+
+.menu-header {
+  width: 100%;
+  padding: 5px;
+  margin: 10px 2px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  text-align: center;
+  background-color: #8fbc8f;
+}
+
+.menu-content-group {
+  margin: 5px;
+  padding: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  line-height: 1.3;
+  border: 1px dotted #333333;
+  border-radius: 5px;  
+}
+
+.menu-item {
+  display: block;
+  min-width: 3em;
+  padding: 10px 10px;
+  margin: 7px 10px;
+  text-align: center;
+  color: #992211;
+  text-decoration: none;
+  border: 1px dotted #333333;
+  border-radius: 5px;
+}
+
+.menu--color-1 {background-color: #ffffff}
+.menu--color-2 {background-color: #f8f8ff}
+}
+
+</style>
+
+<!--========================================================================-->
+<div class="menu-content">
+  <div class="menu-header">Інформатика<br>Гімназія ім. родини&nbsp;Луговських</div>
+
+  <div class="menu-content-group">
+    <a class="menu-item menu--color-1" href="i.html">Треба<br>знати!</a>
+    <a class="menu-item menu--color-2" href="j.html">Задачі<br>(програмування)</a>
+    <a class="menu-item menu--color-1" href="s.html">Задачі<br>(Scratch)</a>  
+    <a class="menu-item menu--color-2" href="p.html">Проєкти<br>учнів</a>
+    <a class="menu-item menu--color-1" href="t.html">Тестування<br></a>
   </div>
-  
+
+  <div class="menu-content-group">
+    <a class="menu-item menu--color-2" href="/i.html?tb">Техніка<br>безпеки</a>
+    <a class="menu-item menu--color-1" href="/mark.html">Оцінювання<br>&nbsp;</a>
+    <a class="menu-item menu--color-2" href="/timetable.html">Розклад<br>уроків</a>
+    <a class="menu-item menu--color-1" href="/rozklad.html">Розклад<br>8&nbsp;школа</a>    
+    <a class="menu-item menu--color-2" href="/i.html?reports">Успішність<br>школи</a>    
+    <a class="menu-item menu--color-1" href="/i.html?reports8">Успішність<br>8&nbsp;школи</a>        
+  </div>
 </div>
