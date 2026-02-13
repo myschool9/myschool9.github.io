@@ -216,7 +216,7 @@ body {
 
   <div class="menu-content-group">  
     <div class="menu-item menu--group-header">Програми&nbsp;=></div>
-    <a class="menu-item menu--color-1" href="/p.html?valuta&1">Обмін<br>валюти</a>
+    <a class="menu-item menu--color-1" href="/p.html?valuta&h&4">Обмін<br>валюти</a>
     <a class="menu-item menu--color-2" href="/p.html?test-in&1">Тест<br>(input)</a>
     <a class="menu-item menu--color-1" href="/p.html?parkan&1">Паркан<br>&nbsp;</a>  
     <a class="menu-item menu--color-2" href="/p.html?prapory&1">Прапори<br>&nbsp;</a>
@@ -259,7 +259,18 @@ function loadData(folder, type, n) {
       div.appendChild(video);
       data_div.appendChild(div);
     }
+    return;
   }
+  if (type === 'h') {
+    for (let i = 1; i <= n; i++) {
+      const a = document.createElement('a');
+      a.href = `${folder}${i}.html`;
+      a.innerHTML = `Форма - ${i}<br>&nbsp;`;
+      a.className = `menu-item menu--color-${i % 2 + 1}`;
+      data_div.appendChild(a);
+    }
+    return;
+  }  
 }
 
 //-----------------------------------------------------------------------------
