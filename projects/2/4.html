@@ -1,0 +1,50 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<h2>Скільки буде 23 + 12<h2/>
+<text>1. 45<text/> <br> 
+<text>2. 35<text/> <br> 
+<text>3. 25<text/> <br> 
+<text>4. 11<text/> <br> 
+<input id="input1">  <br>
+
+<output id="output1"> </output>  <br>
+
+<button onclick="f1()"> Обчислити </button> <br>
+
+<img src="math.avif" width=250 height=200 />
+            
+<script> function f1() {
+
+    let input = Number(input1.value);
+    let result = '';
+    
+    if (input == 1) {
+        result = 'Ні'
+    } else {
+        if (input == 2) {
+            result = 'Правильно'
+        } else {
+            if (input == 3) {
+                result = 'Це 12 а не 2'
+            } else {
+                if (input == 4) {
+                    result = 'Неправильно'
+                } else {
+                    result = 'Дурня'
+                }
+            }
+        }
+    }
+
+    output1.value = result;
+
+} </script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://myschool9.github.io/css/js-task.css">

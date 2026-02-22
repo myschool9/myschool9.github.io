@@ -1,0 +1,28 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <h2>Столиця України?</h2>
+1.Дніпропертровськ 2.Київ 3.Харків 4.Каїр <br>
+
+Ваша відповідь: <input id="input1">  <br>
+
+Правильна відповідь:<output id="output1"> </output>  <br>
+
+<button onclick="f1()"> Перевірити </button>
+
+
+<script> function f1() {
+let num = Number(input1.value)
+let res = "Київ"
+
+if (num == 2 ) {
+   res="Правильно";
+} else {
+   res = "Не правильно";
+}
+
+
+output1.value = res
+} </script>
+
+
+
+<link rel="stylesheet" href="https://myschool9.github.io/css/js-task.css">

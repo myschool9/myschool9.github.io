@@ -1,0 +1,38 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+В якому році закінчилася друга світова?  <br> <br>
+1.1943  <br>  2.1953 <br> 3.1945  <br>  4.1913 <br>
+
+Виберіть правільну відповідь  <br> <input id="input1">  <br>
+
+<output id="output1"> </output>  <br>
+
+<button onclick="f1()"> Перевірте свою думку </button>
+
+
+<script> function f1() {
+let num = Number(input1.value);
+let res = '';
+
+if (num == 1 ) {
+ res = 'Трохи пізніше';
+ }
+ if (num == 2 ) {
+ res = 'Трохи раніше';
+ }
+ if (num == 3 ) {
+ res = 'Правельно';
+ }
+ if (num == 4 ) {
+ res = 'Пізніше';
+}
+output1.value = res;
+
+} </script>
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://myschool9.github.io/css/js-task.css">

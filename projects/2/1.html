@@ -1,0 +1,45 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ Яка з цих річок є найдовшою в світі?
+  <br>  1. Амазонка  <br>     2. Ніл   <br>    3. Янцзи   <br>   4. Міссісіпі  <br>   
+
+
+Введіть номер відповіді <input id="input1">  <br>
+
+<output id="output1"> </output>  <br>
+
+<button onclick="f1()"> Перевірити </button>
+
+
+<script> function f1() {
+let num = Number(input1.value);
+  let correct = " ";
+
+ if (num == 1) {
+   correct = "Молодець";
+   }
+   if (num == 2) {
+   correct = "Неправильно";
+   }
+   if (num == 3) {
+   correct = "Спробуй ще раз";
+   }
+if (num == 4) {
+   correct = "Неправильна відповідь";
+  }
+  output1.value = correct;
+} </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://myschool9.github.io/css/js-task.css">
