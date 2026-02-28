@@ -146,9 +146,9 @@ body {
     <a class="menu-item menu--color-1" href="/i.html?8rar&10">Архіви<br>даних</a>
     <a class="menu-item menu--color-2" href="/i.html?8bud&37">Апаратне<br>забезпечення</a>
     <a class="menu-item menu--color-1" href="/i.html?8alg1&35">Алгоритми<br>та&nbsp;програми-1</a>
-  <!-- <a class="menu-item menu--color-2" href="/i.html?8alg2">Алгоритми<br>та&nbsp;програми-2</a>  
-    <a class="menu-item menu--color-1" href="/i.html?8net">Створення<br>вебресурсів<br></a>
-    <a class="menu-item menu--color-2" href="/i.html?8xls">Електронні<br>таблиці</a>
+  <!-- <a class="menu-item menu--color-2" href="/i.html?8alg2">Алгоритми<br>та&nbsp;програми-2</a>  -->
+    <a class="menu-item menu--color-2" href="/i.html?8net&53">Створення<br>вебресурсів<br></a>
+  <!--  <a class="menu-item menu--color-2" href="/i.html?8xls">Електронні<br>таблиці</a>
     <a class="menu-item menu--color-1" href="/i.html?8ai">Штучний<br>інтелект</a>  
 -->  
   </div>
@@ -176,16 +176,12 @@ function loadData(folder, n1, n2) {
   data_div.className = 'data-content';
   document.body.appendChild(data_div);
   for (let i = n1; i <= n2; i++) {
-    try {
-      const img = new Image();
-      img.src = `${folder}Слайд${i}.PNG`;    
-      const div = document.createElement('div');
-      div.className = 'data-container';
-      div.appendChild(img);
-      data_div.appendChild(div);        
-    } catch {
-      break;
-    }
+    const img = new Image();
+    img.src = `${folder}Слайд${i}.PNG`;    
+    const div = document.createElement('div');
+    div.className = 'data-container';
+    div.appendChild(img);
+    data_div.appendChild(div);        
   }
 }
 
